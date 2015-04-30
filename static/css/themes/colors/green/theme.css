@@ -1,0 +1,138 @@
+
+/*
+    Green Theme
+*/
+
+/*------------------------------------------------------------------
+[Content]
+*/
+
+
+#content .inner {	
+
+    background: #fff;
+}
+
+#content .container {
+    border-width: 4px;
+    border-color: #444;
+}
+
+
+
+/*------------------------------------------------------------------
+[Landing]
+*/
+
+#landing .inner {
+    background: #98B740 url(./img/header-bg.png) repeat 0 0;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+
+
+
+
+/*------------------------------------------------------------------
+[Screenshots / #screenshots]
+*/
+
+#screenshots {	
+    background: #E8E8E8;
+
+    border-top: 1px solid #CCC;
+}
+
+#screenshots .inner {
+    border-top: 1px solid #FFF;
+}
+
+
+
+
+/*------------------------------------------------------------------
+[Subheader]
+*/
+
+#subheader {
+    color: #EEE;
+
+    background: #444;
+
+    border-color: #556828;
+}
+
+#subheader .inner {
+    background: #98B740 url(./img/header-bg.png) repeat 0 0;
+}
+
+
+
+/*------------------------------------------------------------------
+[Extra]
+*/
+
+#extra {
+    border-top: 1px solid #000;
+}
+
+#extra .inner {
+    color: #fff;
+
+    background-color: #222;
+
+    border-top: 1px solid #555;
+}
+
+
+
+/*------------------------------------------------------------------
+[Footer]
+*/
+
+#footer {
+    border-top: 1px solid #000;
+}
+
+#footer .inner {
+    background: #111;
+
+    border-top: 1px solid #222;
+}
+
+.footer-links a {
+    color: #777;
+}
+
+
+
+/*------------------------------------------------------------------
+[Miscellaneous]
+*/
+
+.circle-icon {	
+
+    background: #393939;
+}
+
+.circle-icon div {
+    color: #98B740;
+}
+
+.slash {
+    color: #677E30;
+}
+
+.sidebar {
+
+    background: #EEE;
+}
+
+
+
+.nav-list > li.active > a,
+.nav-list > li.active > a:hover {	
+    color: #FFF;
+
+    background: #98B740;
+}
