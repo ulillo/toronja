@@ -1,5 +1,5 @@
 fun.views.reports = Backbone.View.extend({
-	
+
     events : {
         'click #fun-btn-find' : 'findReport',
         'click #fun-btn-hours' : 'hours',
@@ -9,27 +9,32 @@ fun.views.reports = Backbone.View.extend({
         'click #fun-btn-months' : 'months',
         'click #fun-btn-years' : 'years'
     },
-    
-	initialize: function(options){
+
+    initialize: function(options){
         fun.containers.reports = this.$el;
-	},
+    },
 
-	render: function(){
-		console.log('render reports view');
+    render: function(){
+        'use strict';
+        console.log('render reports view');
 
-		var template = _.template(fun.utils.getTemplate(fun.conf.templates.reports));
+        var template = _.template(fun.utils.getTemplate(fun.conf.templates.reports));
 
-		this.$el.html(template);
+        this.$el.html(template);
         this.$el.show();
 
         this.renderControl();
-	},
+    },
 
-	renderControl : function(){
+    renderControl : function(){
+        'use strict';
+        var templateFrom,
+            templateTo,
+            templateFindLapse;
 
-        var templateFrom = _.template(fun.utils.getTemplate(fun.conf.templates.controlFrom));
-        var templateTo = _.template(fun.utils.getTemplate(fun.conf.templates.controlTo));
-        var templateFindLapse = _.template(fun.utils.getTemplate(fun.conf.templates.findLapse));
+        templateFrom = _.template(fun.utils.getTemplate(fun.conf.templates.controlFrom));
+        templateTo = _.template(fun.utils.getTemplate(fun.conf.templates.controlTo));
+        templateFindLapse = _.template(fun.utils.getTemplate(fun.conf.templates.findLapse));
 
         this.controlFrom = this.$('#fun-control-from');
         this.controlTo = this.$('#fun-control-to');
@@ -41,10 +46,11 @@ fun.views.reports = Backbone.View.extend({
 
         this.fromDate = this.$('#from-date');
         this.toDate = this.$('#to-date');
-   
+
         this.$('#from-date').datepicker({
             'format':'yyyy-mm-dd'
         });
+
         this.$('#to-date').datepicker({
             'format':'yyyy-mm-dd'
         });
@@ -58,7 +64,7 @@ fun.views.reports = Backbone.View.extend({
         var modelCount = 0;
         var fromDate = this.fromDate.data('datepicker').getDate();
         var toDate = this.toDate.data('datepicker').getDate();
-        
+
         // unix timestamps
         this.start = Math.round(fromDate.getTime()/1000);
         this.end = Math.round(toDate.getTime()/1000);
@@ -166,7 +172,7 @@ fun.views.reports = Backbone.View.extend({
         */
         var htmlId = this.$('#no-records');
         htmlId.html(_.template(
-                        fun.utils.getTemplate(fun.conf.tpls.warning)
+                        fun.utils.getTemplate(fun.conf.templates.warning)
                     )({msg:'noDataAvailable'})
         );
     },
