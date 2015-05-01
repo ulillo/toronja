@@ -150,7 +150,7 @@ fun.views.reports = Backbone.View.extend({
            
             for ( i; i < length; ++i ) {
                 var data = _.extend(this.collection.at(i).toJSON(), {i:i})
-                var recordRow = _.template(fun.utils.getTemplate(fun.conf.tpls.cdrRow))(data)
+                var recordRow = _.template(fun.utils.getTemplate(fun.conf.templates.recordRow))(data)
                 
                 rows.append(recordRow);
             }
