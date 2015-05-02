@@ -60,21 +60,29 @@ fun.views.reports = Backbone.View.extend({
         /*
          find report
         */
+        'use strict';
         event.preventDefault();
-        var modelCount = 0;
-        var fromDate = this.fromDate.data('datepicker').getDate();
-        var toDate = this.toDate.data('datepicker').getDate();
+        var modelCount = 0,
+            fromDate,
+            toDate,
+            startEnd,
+            startEndLapse,
+            models,
+            success;
+
+        fromDate = this.fromDate.data('datepicker').getDate();
+        toDate = this.toDate.data('datepicker').getDate();
 
         // unix timestamps
         this.start = Math.round(fromDate.getTime()/1000);
         this.end = Math.round(toDate.getTime()/1000);
 
-        var startEnd = {
+        startEnd = {
             start:this.start,
             end:this.end
         };
 
-        var startEndLapse = {
+        startEndLapse = {
             start:this.start,
             end:this.end,
             
@@ -83,7 +91,7 @@ fun.views.reports = Backbone.View.extend({
             lapse:this.lapse
         };
 
-        var models = {
+        models = {
             records: new fun.models.RecordsStartEnd(startEnd),
             summary: new fun.models.SummaryStartEnd(startEnd),
             summaries: new fun.models.SummariesStartEnd(startEnd),
@@ -92,7 +100,7 @@ fun.views.reports = Backbone.View.extend({
             // lapseSummary : new fun.models.LapseSummaryStartEnd(startEndLapse)
         };
 
-        var success = function() {
+        success = function() {
             if (++modelCount == _.keys(models).length) {
                 fun.instances.reports.renderRecordsDetails(models.records);
                 fun.instances.reports.renderRecordsSummary(models.summary, models.billing);
@@ -145,18 +153,22 @@ fun.views.reports = Backbone.View.extend({
     },
 
     renderDetailsRows : function(){
+        'use strict';
         /*
          render details rows
         */
-        var i = 0;
-        var length = this.collection.length;
+        var i = 0,
+            length = this.collection.length,
+            rows,
+            data,
+            recordRow;
 
         if (length > 0){
-            var rows = this.tbody.html('');
+            rows = this.tbody.html('');
            
             for ( i; i < length; ++i ) {
-                var data = _.extend(this.collection.at(i).toJSON(), {i:i})
-                var recordRow = _.template(fun.utils.getTemplate(fun.conf.templates.recordRow))(data)
+                data = _.extend(this.collection.at(i).toJSON(), {i:i})
+                recordRow = _.template(fun.utils.getTemplate(fun.conf.templates.recordRow))(data)
                 
                 rows.append(recordRow);
             }
