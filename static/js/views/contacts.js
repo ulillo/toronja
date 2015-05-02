@@ -196,7 +196,7 @@ fun.views.contacts = Backbone.View.extend({
         reader = new FileReader();
         reader.onload = function (fileEvent) {
             this.model.set({
-                'filearg': fileEvent.target.result // file name is part of the data
+                'filearg': fileEvent.target.result
             });
         }.bind(this)
         reader.onerror = function () {
@@ -227,6 +227,10 @@ fun.views.contacts = Backbone.View.extend({
         });
 
         upload.save();
+
+        // Clear the stuff from the inputs ;)
+        view.$('#directory_name').val('');
+        view.$('#directory_description').val('');
     },
 
     /*
