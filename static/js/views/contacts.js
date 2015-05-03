@@ -231,6 +231,7 @@ fun.views.contacts = Backbone.View.extend({
         // Clear the stuff from the inputs ;)
         view.$('#directory_name').val('');
         view.$('#directory_description').val('');
+        view.$('#filearg').val('');
     },
 
     /*
