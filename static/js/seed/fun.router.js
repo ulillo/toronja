@@ -291,7 +291,7 @@ fun.Router = Backbone.Router.extend({
         var features = translate('features');
         fun.utils.hideAll();
         fun.instances.navbar.render();
-        fun.instances.subheader.render(features);
+        //fun.instances.subheader.render(features);
         fun.instances.features.render();
         fun.instances.footer.render();
     },
@@ -301,7 +301,7 @@ fun.Router = Backbone.Router.extend({
         var enterprise = translate('enterprise');
         fun.utils.hideAll();
         fun.instances.navbar.render();
-        fun.instances.subheader.render(enterprise);
+        //fun.instances.subheader.render(enterprise);
         fun.instances.enterprise.render();
         fun.instances.footer.render();
     },
