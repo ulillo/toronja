@@ -52,12 +52,14 @@ fun.views.dashboard = Backbone.View.extend({
         if (account) {
             this.orgs = account.get("orgs");
         } else {
-            this.orgs = 0;
+            this.orgs = [];
         }
 
         this.accountList = this.$('#account-dropdown ul');
 
-        length = this.orgs.length;
+        if (this.orgs){
+            length = this.orgs.length;
+        }
         
         if (length > 0){
 
