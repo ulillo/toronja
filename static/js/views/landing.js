@@ -83,7 +83,7 @@ fun.views.landing = Backbone.View.extend({
                 // Clear the stuff from the inputs ;)
                 view.$('#landing_username').val('');
                 view.$('#landing_email').val('');
-                view.$('#langing_password').val('');
+                view.$('#landing_password').val('');
                 signupError.hide();
                 // login the created user
                 fun.utils.login(account, password,
