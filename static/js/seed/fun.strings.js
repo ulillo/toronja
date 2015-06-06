@@ -35,6 +35,8 @@ fun.strings = {
     yourFirstName: "Your First Name",
     yourLastName: "Your Last Name",
     followUp: "Follow up",
+
+    sendQuery: "Send Query!",
     
     A: "Action",
     M: "Move",
