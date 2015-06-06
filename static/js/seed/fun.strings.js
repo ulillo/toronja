@@ -26,6 +26,13 @@ fun.strings = {
     clickYouAgree: 'By clicking "Sign up", you agree to our',
     weSpawn: 'We spawn the stuff for you everywhere',
     fileInput: "File input",
+
+    yourLastName: "Your Last Name",
+    heyHowCanWeHelpYou: "Hey!, How can we help you?",
+    resource: "Resource",
+    yourFirstName: "Your First Name",
+    yourLastName: "Your Last Name",
+    followUp: "Follow up",
     
     A: "Action",
     M: "Move",
