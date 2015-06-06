@@ -73,8 +73,6 @@ fun.views.landing = Backbone.View.extend({
         }
         validationRules = $.extend (rules, fun.utils.validationRules);
 
-        console.log(validationRules);
-
         $('#langing-signup-form').validate(validationRules);
         
         // new user account callbacks
