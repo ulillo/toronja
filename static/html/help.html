@@ -10,6 +10,34 @@
               <!-- Default panel contents -->
               <div class="panel-heading">Customer Support System</div>
               <div class="panel-body">
+
+                <form id="help-form" class="form-help" novalidate="novalidate">
+
+
+                    <div class="form-group">
+                        <input type="text" id="help_firstname" name="signup_firstname" class="form-control" placeholder="<%= translate("yourFirstName") %>">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="help_lastname" name="signup_lastname" class="form-control" placeholder="<%= translate("yourLastName") %>">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="help_email" name="signup_email" class="form-control" placeholder="<%= translate("yourEmail") %>">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="help_resource" name="help_resource" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="help_title" name="help_title" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="help_description" name="help_description" placeholder="<%= translate("tellYourStory?") %>"/>
+                    </div>
+                </form>
                 <!-- Table -->
                                       <table class="table">
                                         <tbody>
