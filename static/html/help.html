@@ -22,20 +22,12 @@
                         <input type="text" id="help_lastname" name="signup_lastname" class="form-control" placeholder="<%= translate("yourLastName") %>">
                     </div>
 
-                    <div class="form-group">
-                        <input type="text" id="help_email" name="signup_email" class="form-control" placeholder="<%= translate("yourEmail") %>">
-                    </div>
+                    
+
+                    
 
                     <div class="form-group">
-                        <input type="text" id="help_resource" name="help_resource" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="help_title" name="help_title" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="help_description" name="help_description" placeholder="<%= translate("tellYourStory?") %>"/>
+                        <input type="text" class="form-control" id="help_description" name="help_description" placeholder="<%= translate("heyWhoCanWeHelpYou?") %>"/>
                     </div>
                 </form>
                 <!-- Table -->
@@ -43,7 +35,11 @@
                                         <tbody>
                                           <tr>
                                             <th scope="row"><%= translate("title") %></th>
-                                            <td id="help-title"></td>
+                                            <td id="help-title">
+                                                <div class="form-group">
+                                                    <input type="text" id="help_title" name="help_title" class="form-control">
+                                                </div>
+                                            </td>
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("description") %></th>
@@ -51,11 +47,19 @@
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("resource") %></th>
-                                            <td id="help-resource"></td>
+                                            <td id="help-resource">
+                                                <div class="form-group">
+                                                    <input type="text" id="help_resource" name="help_resource" class="form-control">
+                                                </div>
+                                            </td>
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("followUp") %></th>
-                                            <td id="help-followup"></td>
+                                            <td id="help-followup">
+                                                <div class="form-group">
+                                                    <input type="text" id="help_email" name="signup_email" class="form-control" placeholder="<%= translate("yourEmail") %>">
+                                                </div>
+                                            </td>
                                           </tr>
                                         </tbody>
                                       </table>
