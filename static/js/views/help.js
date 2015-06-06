@@ -34,7 +34,7 @@ fun.views.help = Backbone.View.extend({
 
     sendTask: function(event) {
         'use strict';
-        var description, firstName, lastName, email;
+        var idVal, description, firstName, lastName, email, resource;
 
         description = this.description.val();
         firstName = this.firstName.val();
@@ -44,14 +44,12 @@ fun.views.help = Backbone.View.extend({
         event.preventDefault();
 
         $('input[name="current_resource"]:checked').each(function() {
-            var idVal = $(this).attr("id");
+            idVal = $(this).attr("id");
 
-            var stt = $("label[for='"+idVal+"']").text();
-
-            console.log(idVal, stt);
+            resource = $("label[for='"+idVal+"']").text();
         });
 
-        console.log('ninja', description, firstName, lastName, email);
+        console.log('ninja', resource, description, firstName, lastName, email);
     }
 
 });
