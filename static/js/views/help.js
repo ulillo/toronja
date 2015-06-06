@@ -43,6 +43,14 @@ fun.views.help = Backbone.View.extend({
 
         event.preventDefault();
 
+        $('input[name="current_resource"]:checked').each(function() {
+            var idVal = $(this).attr("id");
+
+            var stt = $("label[for='"+idVal+"']").text();
+
+            console.log(idVal, stt);
+        });
+
         console.log('ninja', description, firstName, lastName, email);
     }
 
