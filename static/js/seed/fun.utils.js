@@ -170,6 +170,7 @@ fun.utils.hideAll = function() {
     for (var i in fun.containers){
         // hide all containers including footer
         fun.containers[i].hide();
+        console.log(i);
         //if ( i != 'footer'){
         //    fun.containers[i].hide();
         //}
