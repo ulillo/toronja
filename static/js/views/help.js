@@ -22,7 +22,8 @@ fun.views.help = Backbone.View.extend({
             var template = _.template(fun.utils.getTemplate(fun.conf.templates.help));
             this.$el.html(template);
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
+        //this.$el.show();
     },
 
     sendTask: function(event) {
