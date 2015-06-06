@@ -4,7 +4,7 @@ fun.views.help = Backbone.View.extend({
     * Bind the event functions to the different HTML elements
     */
     events : {
-
+        "click #help-query-btn": "sendTask",
     },
     
     /*
@@ -23,6 +23,12 @@ fun.views.help = Backbone.View.extend({
             this.$el.html(template);
         }
         this.$el.show();
+    },
+
+    sendTask: function(event) {
+        'use strict';
+        event.preventDefault();
+        console.log('ninja');
     }
 
 });
