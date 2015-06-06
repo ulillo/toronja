@@ -170,6 +170,10 @@ fun.utils.hideAll = function() {
     for (var i in fun.containers){
         // hide all containers including footer
         //fun.containers[i].hide();
+        if (i == "help"){
+            console.log('wtf');
+            alert('wtf');
+        }
         fun.containers[i].removeClass("show").addClass("hide");
         //if ( i != 'footer'){
         //    fun.containers[i].hide();
