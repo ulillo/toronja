@@ -148,6 +148,52 @@ fun.models.Orgs = Backbone.Collection.extend({
 });
 
 
+fun.models.Task = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    initialize: function(options) {
+        this.taskId = options.taskId;
+    },
+    
+    urlRoot: fun.conf.urls.task,
+    
+    url: function() {
+        var url = this.urlRoot.replace(fun.conf.taskId, this.taskId);
+        if (!this.isNew()){
+            url += '/' + this.id;
+        }
+        return url;
+    },
+    
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+fun.models.Tasks = Backbone.Collection.extend({
+    
+    model: fun.models.Task,
+    
+    urlRoot: fun.conf.urls.tasks,
+    
+    url: function() {
+        return this.urlRoot;
+    },
+    
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    },
+    
+    parse: function(response) {
+        return response.results;
+    }
+});
+
+
 fun.models.Record = Backbone.Model.extend({
 
     idAttribute: 'uuid',
