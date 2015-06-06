@@ -171,8 +171,7 @@ fun.utils.hideAll = function() {
         // hide all containers including footer
         //fun.containers[i].hide();
         if (i == "help"){
-            console.log('wtf');
-            alert('wtf');
+            $.('#fun-help').hide();
         }
         fun.containers[i].removeClass("show").addClass("hide");
         //if ( i != 'footer'){
