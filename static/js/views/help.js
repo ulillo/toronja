@@ -34,8 +34,16 @@ fun.views.help = Backbone.View.extend({
 
     sendTask: function(event) {
         'use strict';
+        var description, firstName, lastName, email;
+
+        description = this.description.val();
+        firstName = this.firstName.val();
+        lastName = this.lastName.val();
+        email = this.email.val();
+
         event.preventDefault();
-        console.log('ninja', this.description, this.firstName, this.lastName, this.email);
+
+        console.log('ninja', description, firstName, lastName, email);
     }
 
 });
