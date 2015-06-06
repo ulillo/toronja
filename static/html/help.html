@@ -8,9 +8,29 @@
             tittle, description, resource, contact email
             <div class="panel panel-default">
               <!-- Default panel contents -->
-              <div class="panel-heading">Support system</div>
+              <div class="panel-heading">Customer Support System</div>
               <div class="panel-body">
-                <p>...</p>
+                <!-- Table -->
+                                      <table class="table">
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row"><%= translate("title") %></th>
+                                            <td id="help-title"></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("description") %></th>
+                                            <td id="help-description"></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("resource") %></th>
+                                            <td id="help-resource"></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("followUp") %></th>
+                                            <td id="help-followup"></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
               </div>
 
               <!-- List group -->
