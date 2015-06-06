@@ -48,7 +48,7 @@ fun.views.members = Backbone.View.extend({
 
         this.$el.html(template);
         this.membersList = this.$('#members-list');
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         this.renderMemberRows();
     },
 

@@ -34,7 +34,7 @@ fun.views.signup = Backbone.View.extend({
             this.password = this.$('#signup_password');
             this.confirmPassword = this.$('#confirm_password');
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
     
     /*

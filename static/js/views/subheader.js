@@ -42,7 +42,7 @@ fun.views.subheader = Backbone.View.extend({
         template = _.template(fun.utils.getTemplate(fun.conf.templates.subheader))(data);
 
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
 
     renderHeadNav : function(){

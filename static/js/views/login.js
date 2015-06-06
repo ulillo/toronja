@@ -29,7 +29,7 @@ fun.views.login = Backbone.View.extend({
             this.username = this.$('#username');
             this.password = this.$('#password');
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
     
     /**

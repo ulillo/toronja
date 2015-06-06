@@ -29,7 +29,7 @@ fun.views.dashboard = Backbone.View.extend({
         )({'account':this.account});
 
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
 
         this.renderTodaySummary(this.account, summary, billing);
         this.renderTodayActivityChart();
@@ -207,7 +207,7 @@ fun.views.dashboard = Backbone.View.extend({
         latestRecords.html(template);
 
         this.tbody = this.$('#records-list > tbody');
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         this.renderRows();
     },
 

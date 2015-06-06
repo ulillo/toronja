@@ -19,7 +19,7 @@ fun.views.navbar = Backbone.View.extend({
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.navbar));
 
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
 
         if(fun.utils.loggedIn()){
             console.log('Just enter the dungeon!');

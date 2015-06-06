@@ -48,7 +48,7 @@ fun.views.teams = Backbone.View.extend({
 
         this.$el.html(template);
         this.teamsList = this.$('#teams-list');
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         this.renderTeamRows();
     },
 

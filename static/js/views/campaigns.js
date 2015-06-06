@@ -35,7 +35,7 @@ fun.views.campaigns = Backbone.View.extend({
             
             this.account = account;
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
 
     /*
@@ -60,7 +60,7 @@ fun.views.campaigns = Backbone.View.extend({
 
         this.tbody = this.$('#campaigns-list > tbody');
 
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         
         this.renderCampaignRows();
     },

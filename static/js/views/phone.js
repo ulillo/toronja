@@ -39,7 +39,7 @@ fun.views.phone = Backbone.View.extend({
         var funPhone = new JsSIP.UA(configuration);
 
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
 
         var selfView = this.$('#my-video');
         var remoteView = this.$('#peer-video');

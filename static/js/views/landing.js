@@ -33,7 +33,7 @@ fun.views.landing = Backbone.View.extend({
             this.email = this.$('#landing_email');
             this.password = this.$('#landing_password');
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
 
     signup: function(event){

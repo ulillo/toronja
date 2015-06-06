@@ -40,7 +40,7 @@ fun.views.contacts = Backbone.View.extend({
         this.newPhoneNumber.intlTelInput({
             utilsScript: "static/js/plugins/libphonenumber/utils.js"
         });
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
 
     /*
@@ -64,7 +64,7 @@ fun.views.contacts = Backbone.View.extend({
         allContacts.html(template);
 
         this.tbody = this.$('#contacts-list > tbody');
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         this.renderContactRows();
     },
 
@@ -134,7 +134,7 @@ fun.views.contacts = Backbone.View.extend({
         directoryList.html(template);
 
         this.dtbody = this.$('#directory-list > tbody');
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
         this.renderDirectoryRows();
     },
 

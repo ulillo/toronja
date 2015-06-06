@@ -27,7 +27,7 @@ fun.views.orgs = Backbone.View.extend({
             this.orgName = this.$('#organization_name');
             this.orgEmail = this.$('#billing_email');
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     },
 
     /*

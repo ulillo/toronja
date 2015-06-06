@@ -26,7 +26,7 @@ fun.views.profile = Backbone.View.extend({
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.profile));
 
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
 
         //var cal = new CalHeatMap();
         //cal.init({
