@@ -22,7 +22,7 @@ fun.views.gateways = Backbone.View.extend({
             var template = _.template(fun.utils.getTemplate(fun.conf.templates.help));
             this.$el.html(template);
         }
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     }
 
 });

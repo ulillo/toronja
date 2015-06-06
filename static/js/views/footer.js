@@ -13,7 +13,7 @@ fun.views.footer = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.footer)
         );
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
     }
 
 });

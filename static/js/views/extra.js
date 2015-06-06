@@ -13,7 +13,7 @@ fun.views.extra = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.extra)
         );
         this.$el.html(template);
-        this.$el.show();
+        this.$el.removeClass("hide").addClass("show");
 
         if(fun.utils.loggedIn()){
             this.renderNavDashboard();
