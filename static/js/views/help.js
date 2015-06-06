@@ -21,6 +21,12 @@ fun.views.help = Backbone.View.extend({
         if (!this.$el.html()){
             var template = _.template(fun.utils.getTemplate(fun.conf.templates.help));
             this.$el.html(template);
+
+            // Form inputs
+            this.description = this.$('#help_description');
+            this.firstName = this.$('#help_firstname');
+            this.lastName = this.$('#help_lastname');
+            this.email = this.$('#help_email');
         }
         this.$el.removeClass("hide").addClass("show");
         //this.$el.show();
@@ -29,7 +35,7 @@ fun.views.help = Backbone.View.extend({
     sendTask: function(event) {
         'use strict';
         event.preventDefault();
-        console.log('ninja');
+        console.log('ninja', this.description, this.firstName, this.lastName, this.email);
     }
 
 });
