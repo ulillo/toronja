@@ -11,15 +11,15 @@ fun.views.gateways = Backbone.View.extend({
     * Class constructor
     */
     initialize : function(options) {
-        fun.containers.help = this.$el;
+        fun.containers.gateways = this.$el;
     },
     
     /*
-    * Render the help view
+    * Render the gateways view
     */
     render : function(){
         if (!this.$el.html()){
-            var template = _.template(fun.utils.getTemplate(fun.conf.templates.help));
+            var template = _.template(fun.utils.getTemplate(fun.conf.templates.gateways));
             this.$el.html(template);
         }
         this.$el.removeClass("hide").addClass("show");
