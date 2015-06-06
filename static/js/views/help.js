@@ -4,7 +4,7 @@ fun.views.help = Backbone.View.extend({
     * Bind the event functions to the different HTML elements
     */
     events : {
-        "click #help-query-btn": "sendTask",
+        "click #help-query": "sendTask",
     },
     
     /*
