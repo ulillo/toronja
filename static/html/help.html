@@ -14,37 +14,44 @@
                 <form id="help-form" class="form-help" novalidate="novalidate">
 
 
-                    <div class="form-group">
-                        <input type="text" id="help_firstname" name="signup_firstname" class="form-control" placeholder="<%= translate("yourFirstName") %>">
-                    </div>
+                    
 
-                    <div class="form-group">
-                        <input type="text" id="help_lastname" name="signup_lastname" class="form-control" placeholder="<%= translate("yourLastName") %>">
-                    </div>
+                    
 
                     
 
                     
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="help_description" name="help_description" placeholder="<%= translate("heyWhoCanWeHelpYou?") %>"/>
-                    </div>
+                    
                 </form>
                 <!-- Table -->
                                       <table class="table">
                                         <tbody>
                                           <tr>
-                                            <th scope="row"><%= translate("title") %></th>
-                                            <td id="help-title">
+                                            <th scope="row"><%= translate("firstName") %></th>
+                                            <td id="help-firstname">
                                                 <div class="form-group">
-                                                    <input type="text" id="help_title" name="help_title" class="form-control">
+                                                    <input type="text" id="help_firstname" name="signup_firstname" class="form-control" placeholder="<%= translate("yourFirstName") %>">
                                                 </div>
                                             </td>
                                           </tr>
                                           <tr>
-                                            <th scope="row"><%= translate("description") %></th>
-                                            <td id="help-description"></td>
+                                            <th scope="row"><%= translate("lastName") %></th>
+                                            <td id="help-firstname">
+                                                <div class="form-group">
+                                                    <input type="text" id="help_lastname" name="signup_lastname" class="form-control" placeholder="<%= translate("yourLastName") %>">
+                                                </div>
+                                            </td>
                                           </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("help") %></th>
+                                            <td id="help-title">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="help_description" name="help_description" placeholder="<%= translate("heyWhoCanWeHelpYou?") %>"/>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          
                                           <tr>
                                             <th scope="row"><%= translate("resource") %></th>
                                             <td id="help-resource">
