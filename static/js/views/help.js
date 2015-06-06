@@ -34,7 +34,7 @@ fun.views.help = Backbone.View.extend({
 
     sendTask: function(event) {
         'use strict';
-        var idVal, description, firstName, lastName, email, resource;
+        var idVal, description, firstName, lastName, email, resource, task;
 
         description = this.description.val();
         firstName = this.firstName.val();
@@ -48,6 +48,15 @@ fun.views.help = Backbone.View.extend({
 
             resource = $("label[for='"+idVal+"']").text();
         });
+
+        task = new fun.models.Tasks({
+            'first_name': firstName,
+            'last_name': lastName,
+            'email': email,
+            'description': description
+        });
+
+        task.save();
 
         console.log('ninja', resource, description, firstName, lastName, email);
     }
