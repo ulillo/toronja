@@ -24,5 +24,6 @@ fun.views.developers = Backbone.View.extend({
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.developers));
 
         this.$el.html(template);
+        this.$el.show();
     }
 });
