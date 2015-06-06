@@ -49,14 +49,14 @@ fun.views.help = Backbone.View.extend({
             resource = $("label[for='"+idVal+"']").text();
         });
 
-        task = new fun.models.Tasks({
+        task = new fun.models.Tasks();
+
+        task.save({
             'first_name': firstName,
             'last_name': lastName,
             'email': email,
             'description': description
-        });
-
-        task.save();
+        }, {success: function (){}, error: function(){}});
 
         console.log('ninja', resource, description, firstName, lastName, email);
     }
