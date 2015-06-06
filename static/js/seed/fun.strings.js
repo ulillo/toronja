@@ -4,6 +4,7 @@
 fun.strings = {
     ioFun: "IO FUN",
     login: "Login",
+    customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
     warning : 'Warning!',
     validateRequired: "This field is required.",
@@ -27,6 +28,7 @@ fun.strings = {
     weSpawn: 'We spawn the stuff for you everywhere',
     fileInput: "File input",
 
+    aboutWaves: "About waves and other dimensions build with an organizational structure inspired on the Marian Reforms of the Roman Empire, X abstract Cubes with 6 Cohorts each representing every face of the Roman dice, otherwise it is all about the monkeys",
     yourLastName: "Your Last Name",
     heyHowCanWeHelpYou: "Hey!, How can we help you?",
     resource: "Resource",
