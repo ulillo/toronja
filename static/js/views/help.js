@@ -50,7 +50,7 @@ fun.views.help = Backbone.View.extend({
         });
 
         task = new fun.models.Task({
-            'resource': resource,
+            'label': resource,
             'first_name': firstName,
             'last_name': lastName,
             'email': email,
