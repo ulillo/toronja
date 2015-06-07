@@ -385,7 +385,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(help);
         fun.instances.help.render();
-        fun.instances.footer.render();
+        //fun.instances.footer.render();
     },
 
     support: function(){
