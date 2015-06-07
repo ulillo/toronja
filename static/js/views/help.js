@@ -5,6 +5,7 @@ fun.views.help = Backbone.View.extend({
     */
     events : {
         "click #help-query": "sendTask",
+        "click #close-help": "closeHelp"
     },
     
     /*
@@ -60,6 +61,15 @@ fun.views.help = Backbone.View.extend({
         task.save();
 
         console.log('ninja', resource, description, firstName, lastName, email);
+    },
+
+    closeHelp: function(event) {
+        'use strict';
+        event.preventDefault();
+        $('#fun-help').hide().removeClass('show').addClass('hide');
+        
+
+
     }
 
 });
