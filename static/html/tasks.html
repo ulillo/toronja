@@ -56,7 +56,7 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
-                                <%= translate("inbound") %>
+                                <%= translate("humans") %>
                             </label>
                             <span class="mega-octicon octicon-repo"></span>
 
@@ -68,7 +68,7 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
-                                <%= translate("outbound") %>
+                                <%= translate("monkeys") %>
                             </label>
                             <span class="mega-octicon octicon-lock"></span>
                             <span class="note">
@@ -76,7 +76,7 @@
                             </span>
                         </div>
 
-                        <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
+                        <button id="create-task-btn" class="btn btn-success btn-block" type="submit"><%= translate("createTask") %></button>
                     </form>
                       
                 </div>
@@ -87,18 +87,20 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-                <li><a href="#all-campaigns-tab" data-toggle="tab"><%= translate("all") %></a></li>
-                <li><a href="#active-tab" data-toggle="tab"><%= translate("active") %></a></li>
-                <li><a href="#paused-tab" data-toggle="tab"><%= translate("paused") %></a></li>
-                <li><a href="#inbound-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
-                <li><a href="#outbound-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+                <li><a href="#all-tasks-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#now-tab" data-toggle="tab"><%= translate("now") %></a></li>
+                <li><a href="#later-tab" data-toggle="tab"><%= translate("later") %></a></li>
+                <li><a href="#done-tab" data-toggle="tab"><%= translate("done") %></a></li>
+                <li><a href="#humans-tab" data-toggle="tab"><%= translate("humans") %></a></li>
+                <li><a href="#monkeys-tab" data-toggle="tab"><%= translate("monkeys") %></a></li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade active in" id="all-campaigns-tab"></div>
-                <div class="tab-pane" id="active-tab"></div>
-                <div class="tab-pane" id="paused-tab"></div>
-                <div class="tab-pane" id="inbound-tab"></div>
-                <div class="tab-pane" id="outbound-tab"></div>
+                <div class="tab-pane fade active in" id="all-tasks-tab"></div>
+                <div class="tab-pane" id="now-tab"></div>
+                <div class="tab-pane" id="later-tab"></div>
+                <div class="tab-pane" id="done-tab"></div>
+                <div class="tab-pane" id="humans-tab"></div>
+                <div class="tab-pane" id="monkeys-tab"></div>
             </div>  
         </div>
     </div>
