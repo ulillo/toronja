@@ -177,6 +177,7 @@ fun.strings = {
     useFunEnterprise: "Use IO FUN Enterprise, the best way to manage communications, on your servers",
     learnAboutEnterprise: "Learn more about Enterprise",
     greatCampaignNames: "Great campaign names are short and memorable",
+    greatTaskNames: "Great task names are short and memorable",
     youChooseWhoUseCampaign: "You choose who to reach can see and use this campaign",
     getDirectoryList: "Get a directory contact list already added",
     security: "Security",
