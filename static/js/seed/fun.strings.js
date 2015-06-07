@@ -27,6 +27,11 @@ fun.strings = {
     clickYouAgree: 'By clicking "Sign up", you agree to our',
     weSpawn: 'We spawn the stuff for you everywhere',
     fileInput: "File input",
+    monkeys: "Monkeys",
+    humans: "Humans",
+    now: "Now",
+    later: "Later",
+    done: "Done",
 
     aboutWaves: "About waves and other dimensions build with an organizational structure inspired on the Marian Reforms of the Roman Empire, X abstract Cubes with 6 Cohorts each representing every face of the Roman dice, otherwise it is all about the monkeys",
     yourLastName: "Your Last Name",
