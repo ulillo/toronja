@@ -30,7 +30,7 @@ fun.views.tasks = Backbone.View.extend({
      /*
     * Render tasks list
     */
-    rendertasksList: function(tasks){
+    renderTasksList: function(tasks){
         'use strict';
         var template,
             allTasks;
