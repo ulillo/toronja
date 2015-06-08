@@ -25,5 +25,122 @@ fun.views.tasks = Backbone.View.extend({
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
+    },
+
+     /*
+    * Render tasks list
+    */
+    rendertasksList: function(tasks){
+        'use strict';
+        var template,
+            allTasks;
+        console.log('render tasks list');
+        if (tasks) {
+            this.tasks = tasks;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.allTasks)
+        );
+
+        allTasks = this.$('#all-tasks-tab');
+
+        allTasks.html(template);
+
+        this.tbody = this.$('#tasks-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        
+        this.renderTaskRows();
+    },
+
+    /*
+    * Render task rows
+    */
+    renderTaskRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.tasks.length;
+
+        console.log('tasks length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.tasks.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.taskRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noTasks();
+        }
+    },
+
+    /*
+    * No tasks
+    */
+    noTasks: function(){
+        'use strict';
+        var template,
+            noTasks;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noTasks = this.$('#no-tasks');
+
+        noTasks.html(template);
+    },
+
+    /*
+    * Create task
+    */
+    createTask: function(event){
+        'use strict';
+        event.preventDefault();
+        // view cache
+        var view = this,
+            account,
+            task,
+            taskName,
+            taskDescription,
+            taskPayload;
+
+        console.log('create task event');
+
+        this.taskName = this.$('#task_name');
+        this.taskDescription = this.$('#task_description');
+
+        account = this.account;
+
+        taskName = this.taskName.val();
+
+        taskDescription = this.taskDescription.val();
+
+        console.log(account, taskName, taskDescription);
+
+        taskPayload = {
+            account: account,
+            name: taskName,
+            description: taskDescription
+        };
+
+        if (account != undefined & taskName != undefined){
+            task = new fun.models.task(taskPayload);
+            task.save();
+        }
+
+        // Clear the stuff from the inputs ;)
+        view.$('#task_name').val('');
+        view.$('#task_description').val('');
     }
 });

@@ -67,9 +67,6 @@ fun.views.help = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         $('#fun-help').hide().removeClass('show').addClass('hide');
-        
-
-
     }
 
 });
