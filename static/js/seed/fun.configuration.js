@@ -213,7 +213,12 @@ fun.conf.templates = {
     howto: fun.utils.format('%s/howto.html', fun.conf.html),
     blog: fun.utils.format('%s/blog.html', fun.conf.html),
     status: fun.utils.format('%s/status.html', fun.conf.html),
+    
     tasks: fun.utils.format('%s/tasks.html', fun.conf.html),
+    allTasks: fun.utils.format('%s/allTasks.html', fun.conf.html),
+    taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
+    taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
+
     developers: fun.utils.format('%s/developers.html', fun.conf.html),
     help: fun.utils.format('%s/help.html', fun.conf.html),
     security: fun.utils.format('%s/security.html', fun.conf.html),
