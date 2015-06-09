@@ -133,14 +133,14 @@ fun.views.tasks = Backbone.View.extend({
             description: taskDescription
         };
 
-        if (!account){
+        if (typeof(account) === undefined){
             account = false;
             taskPayload['public'] = account;
         }
 
         if (account != undefined & taskName != undefined){
 
-            task = new fun.models.task(taskPayload);
+            task = new fun.models.Task(taskPayload);
             task.save();
         }
 
