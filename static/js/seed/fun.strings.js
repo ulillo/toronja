@@ -33,6 +33,11 @@ fun.strings = {
     later: "Later",
     done: "Done",
     allTasks: "All Tasks",
+    exportTasks: "Export Tasks",
+    getTaskList: "Get Task List",
+    exportCSV: "Export CSV",
+    title: "Title",
+    label: "Lable",
 
     aboutWaves: "About waves and other dimensions build with an organizational structure inspired on the Marian Reforms of the Roman Empire, X abstract Cubes with 6 Cohorts each representing every face of the Roman dice, otherwise it is all about the monkeys",
     yourLastName: "Your Last Name",
