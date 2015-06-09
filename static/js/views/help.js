@@ -50,8 +50,6 @@ fun.views.help = Backbone.View.extend({
             resource = $("label[for='"+idVal+"']").text();
         });
 
-        task = new fun.models.Task();
-
         taskPayload = {
             'label': resource,
             'first_name': firstName,
@@ -60,19 +58,15 @@ fun.views.help = Backbone.View.extend({
             'description': description
         };
 
-        taskCallback = {
-            success: function () {
-                this.description.val('');
-                this.firstName.val('');
-                this.lastName.val('');
-                this.email.val('');
-            },
-            error: function () {}
-        };
+        task = new fun.models.Task(taskPayload);
 
-        task.save(taskPayload, taskCallback);
+        task.save();
 
-        console.log('ninja', resource, description, firstName, lastName, email);
+        // Clear the stuff from the inputs ;)
+        this.$('#help_description').val('');
+        this.$('#help_firstname').val('');
+        this.$('#help_lastname').val('');
+        this.$('#help_email').val('');
     },
 
     closeHelp: function(event) {
