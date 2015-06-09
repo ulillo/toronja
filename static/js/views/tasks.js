@@ -5,7 +5,7 @@ fun.views.tasks = Backbone.View.extend({
     */
     // click events missing
     events: {
-
+        "click #create-task-btn": "createTask",
     },
 
     /**
