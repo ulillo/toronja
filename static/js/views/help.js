@@ -51,6 +51,7 @@ fun.views.help = Backbone.View.extend({
         });
 
         taskPayload = {
+            'title': 'On site help alert',
             'label': resource,
             'first_name': firstName,
             'last_name': lastName,
