@@ -1,11 +1,42 @@
 <div class="container">
         
     <div class="row">
-        <div class="col-md-2">
-            <span class="fa-stack fa-4x">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-key fa-stack-1x"></i>
-            </span>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("upload") %></h3>
+                </div>
+                <div class="panel-body">
+
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-cloud-upload fa-stack-1x"></i>
+                    </span>
+
+                    <form enctype="multipart/form-data" action="/upload/" method="post" id="upload-yaml-form" class="form-yaml" novalidate="novalidate">
+
+                        <div class="form-group">
+                            <label for="yaml_name"><%= translate("directoryName") %></label>
+                            <input type="text" id="directory_name" name="directory_name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="yaml_description"><%= translate("descriptionOptional") %></label>
+                            <input type="text" id="yaml_description" name="yaml_description" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="filearg"><%= translate("fileInput") %></label>
+                            <input type="file" name="filearg" id="filearg">
+                            <p class="help-block"><%= translate("uploadFromMyDevice") %>.</p>
+                        </div>
+
+                        <button id="upload-yaml-btn" class="btn btn-success btn-block" type="submit" value="upload"><%= translate("uploadYAMLfile") %></button>
+                    </form>
+                          
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
@@ -20,19 +51,19 @@
                         <i class="fa fa-folder fa-stack-1x"></i>
                     </span>
 
-                    <form id="answer-sound-form" class="form-sound" novalidate="novalidate">
+                    <form id="export-task-form" class="form-export" novalidate="novalidate">
   
 
-                        <p class="help-block"><%= translate("getDirectoryList") %>.</p>
+                        <p class="help-block"><%= translate("getTaskList") %>.</p>
 
-                        <button id="get-dir-btn" class="btn btn-success btn-block" type="submit"><%= translate("getDirectory") %></button>
+                        <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
                           
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><%= translate("newTask") %></h3>
