@@ -66,6 +66,8 @@
                             <input type="text" id="task_description" name="task_description" class="form-control">
                         </div>
 
+                        <!--
+
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
@@ -89,6 +91,8 @@
                             </span>
                         </div>
 
+                        -->
+
                         <button id="create-task-btn" class="btn btn-success btn-block" type="submit"><%= translate("createTask") %></button>
                     </form>
                       
@@ -100,20 +104,24 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-                <li><a href="#all-tasks-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#all-tasks-tab" data-toggle="tab"><%= translate("allTasks") %></a></li>
                 <li><a href="#now-tab" data-toggle="tab"><%= translate("now") %></a></li>
                 <li><a href="#later-tab" data-toggle="tab"><%= translate("later") %></a></li>
                 <li><a href="#done-tab" data-toggle="tab"><%= translate("done") %></a></li>
+                <!--
                 <li><a href="#humans-tab" data-toggle="tab"><%= translate("humans") %></a></li>
                 <li><a href="#monkeys-tab" data-toggle="tab"><%= translate("monkeys") %></a></li>
+                -->
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-tasks-tab"></div>
                 <div class="tab-pane" id="now-tab"></div>
                 <div class="tab-pane" id="later-tab"></div>
                 <div class="tab-pane" id="done-tab"></div>
+                <!--
                 <div class="tab-pane" id="humans-tab"></div>
                 <div class="tab-pane" id="monkeys-tab"></div>
+                -->
             </div>  
         </div>
     </div>
