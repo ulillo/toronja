@@ -28,6 +28,7 @@ fun.views.settings = Backbone.View.extend({
 	},
 
 	setProfileInformation: function(model){
-		console.log(model.toJSON());
+		console.log('setting profile information');
+		localStorage.setItem("profile", model.toJSON());
 	}
 });
