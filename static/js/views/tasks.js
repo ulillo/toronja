@@ -197,6 +197,10 @@ fun.views.tasks = Backbone.View.extend({
 
         name = $(event.target).data('name');
         console.log(name);
+
+        $('#taskModal').modal({
+            'show': true
+        });
     }
 
 });

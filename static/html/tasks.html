@@ -169,3 +169,80 @@
     </div>
 </div>
 -->
+
+<!-- task Modal popup -->
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel"><%= translate("taskDetails") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <form id="signup-form" class="form-signup" novalidate="novalidate">
+
+                <div class="form-group">
+                    <input type="text" id="client_holdername" name="client_holdername" class="form-control" placeholder="<%= translate("cardHoldName") %>">
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+
+                        <div id="account-dropdown" class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                <i class="fa fa-credit-card fa-fw"></i>
+                                <span data-label-placement=""><%= translate("cardType") %></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="account-list-ul" class="dropdown-menu">
+                                <li>
+                                    <input type="radio" id="credit_card_0" name="card_type" value="0" checked="">
+                                    <label for="credit_card_0"><%= translate("dinersClub") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="credit_card_1" name="card_type" value="1" checked="">
+                                    <label for="credit_card_1"><%= translate("discover") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="credit_card_2" name="card_type" value="2" checked="">
+                                    <label for="credit_card_2"><%= translate("amex") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="credit_card_3" name="card_type" value="3" checked="">
+                                    <label for="credit_card_3"><%= translate("masterCard") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="credit_card_4" name="card_type" value="4" checked="">
+                                    <label for="credit_card_4"><%= translate("visa") %></label>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <input id="client_cc_digits" type="text" class="form-control" placeholder="<%= translate("theLast4CCDigits") %>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="client_email" name="client_email" class="form-control" placeholder="<%= translate("yourEmail") %>">
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="client_phone" name="client_phone" class="form-control">
+                </div>
+
+            </form>
+                
+            </div>
+            <div class="modal-footer">
+
+                <button id="next-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("next") %></button>
+                <!--
+                <button id="signup-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("signUp") %></button>
+                <button id="fun-login" type="button" class="btn btn-lg btn-default btn-block"><%= translate("login") %></button>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
