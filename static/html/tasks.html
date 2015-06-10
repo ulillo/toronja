@@ -230,7 +230,29 @@ Lable   Title   Description Name    Email   Status  UUID
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("status") %></th>
-                                            <td id="task-status"></td>
+                                            <td id="task-status">
+                                                <div class="btn-group ">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                        <i class="fa fa-user fa-fw"></i>
+                                                        <span data-label-placement="">now</span> 
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <input type="radio" id="current_account_1" name="current_account" value="1" checked="">
+                                                            <label for="current_account_1">now</label>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="#settings"><i class="fa fa-heartbeat fa-fw"></i> later</a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#settings"><i class="fa fa-paw fa-fw"></i> done</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("priority") %></th>
