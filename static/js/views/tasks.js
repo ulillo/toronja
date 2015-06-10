@@ -162,15 +162,7 @@ fun.views.tasks = Backbone.View.extend({
         event.preventDefault();
         //view cache
         var view = this,
-            account,
-            id = this.id,
             name;
-
-        console.log('class stuff works dude!');
-         
-        console.log(id);
-        
-        //console.log($(event.target));
 
         name = $(event.target).data('name');
         console.log(name);
