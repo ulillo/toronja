@@ -115,7 +115,11 @@ fun.views.tasks = Backbone.View.extend({
             taskName,
             taskDescription,
             taskLabel,
-            taskPayload;
+            taskPayload,
+            profile,
+            first_name,
+            last_name,
+            user;
 
         console.log('create task event');
 
@@ -139,24 +143,22 @@ fun.views.tasks = Backbone.View.extend({
             label: taskLabel
         };
 
-        
+        profile = JSON.parse(localStorage.getItem("profile"));
 
-        var profile = JSON.parse(localStorage.getItem("profile"));
-
-        var user = new fun.models.User(profile);
+        user = new fun.models.User(profile);
 
         user.fetch()
 
         console.log(user.get('uuid'));
         console.log(user.get('first_name'));
 
-        if (user.get('first_name') == 'undefined'){
+        if (typeof(user.get('first_name')) === 'undefined'){
             first_name = 'Mauricio'
         } else {
             first_name = user.get('first_name');
         }
 
-        if (user.get('last_name')== 'undefined'){
+        if (typeof(user.get('last_name')) === 'undefined'){
             last_name = 'Montero'
         } else {
             last_name = user.get('last_name');
