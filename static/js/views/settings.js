@@ -27,6 +27,9 @@ fun.views.settings = Backbone.View.extend({
         this.$el.removeClass("hide").addClass("show");
 	},
 
+	/**
+	* Set profile information
+	*/
 	setProfileInformation: function(model){
 		console.log('setting profile information');
 		localStorage.setItem("profile", JSON.stringify(model.toJSON()));
