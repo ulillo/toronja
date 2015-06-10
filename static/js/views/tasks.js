@@ -147,10 +147,10 @@ fun.views.tasks = Backbone.View.extend({
 
         user.fetch()
 
-        console.log(user.get('uuid', false));
-        console.log(user.get('first_name', 'Joe'));
+        console.log(user.get('uuid'));
+        console.log(user.get('first_name'));
 
-        console.log(JSON.stringify(profile));
+        //console.log(JSON.stringify(profile));
 
         if (typeof(account) === undefined){
             account = false;
