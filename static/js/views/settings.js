@@ -25,5 +25,9 @@ fun.views.settings = Backbone.View.extend({
 
 		this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
+	},
+
+	setProfileInformation: function(model){
+		console.log(model);
 	}
 });
