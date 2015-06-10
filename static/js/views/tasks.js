@@ -113,12 +113,14 @@ fun.views.tasks = Backbone.View.extend({
             task,
             taskName,
             taskDescription,
+            taskLabel,
             taskPayload;
 
         console.log('create task event');
 
         this.taskName = this.$('#task_name');
         this.taskDescription = this.$('#task_description');
+        this.taskLabel = 'Service Requests';
 
         account = this.account;
 
@@ -126,11 +128,14 @@ fun.views.tasks = Backbone.View.extend({
 
         taskDescription = this.taskDescription.val();
 
+        taskLabel = this.taskLabel;
+
         console.log(account, taskName, taskDescription);
 
         taskPayload = {
             title: taskName,
-            description: taskDescription
+            description: taskDescription,
+            label: taskLabel
         };
 
         if (typeof(account) === undefined){
