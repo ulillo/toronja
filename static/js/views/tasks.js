@@ -193,10 +193,27 @@ fun.views.tasks = Backbone.View.extend({
         event.preventDefault();
         //view cache
         var view = this,
+            task,
             name;
+
+        this.taskUuid = this.$('#task-uuid');
+        this.taskTitle = this.$('#task-title');
+        this.taskAssigned = this.$('#task-assigned');
+        this.taskLabel = this.$('#task-label');
+
+        this.taskSource = this.$('#task-source');
+        this.taskStatus = this.$('#task-status');
+        this.taskPriority = this.$('#task-priority');
+        this.taskSeverity = this.$('#task-severity');
 
         name = $(event.target).data('name');
         console.log(name);
+
+        task = new fun.models.Task({'uuid':name});
+
+        task.fetch();
+
+        console.log(task.toJSON());
 
         $('#taskModal').modal({
             'show': true
