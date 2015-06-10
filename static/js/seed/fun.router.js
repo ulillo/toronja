@@ -710,6 +710,11 @@ fun.Router = Backbone.Router.extend({
 
                 // need to pass stuff to renderRecordType()                   
                 fun.instances.dashboard.renderRecordType();
+
+                // set profile info
+                fun.instances.settings.setProfileInformation(
+                    models.user
+                );
             }
         };
 
