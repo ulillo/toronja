@@ -139,10 +139,12 @@ fun.views.tasks = Backbone.View.extend({
         }
 
         if (account != undefined & taskName != undefined){
-
-            task = new fun.models.Task(taskPayload);
-            task.save();
+            taskPayload['account'] = account;
+            
         }
+
+        task = new fun.models.Task(taskPayload);
+        task.save();
 
         // Clear the stuff from the inputs ;)
         view.$('#task_name').val('');
