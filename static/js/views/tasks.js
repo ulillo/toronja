@@ -150,6 +150,22 @@ fun.views.tasks = Backbone.View.extend({
         console.log(user.get('uuid'));
         console.log(user.get('first_name'));
 
+        if (user.get('first_name') == 'undefined'){
+            first_name = 'Mauricio'
+        } else {
+            first_name = user.get('first_name');
+        }
+
+        if (user.get('last_name')== 'undefined'){
+            last_name = 'Montero'
+        } else {
+            last_name = user.get('last_name');
+        }
+
+        taskPayload['first_name'] = first_name;
+        taskPayload['last_name'] = last_name;
+        taskPayload['email'] = user.get('email');
+
         //console.log(JSON.stringify(profile));
 
         if (typeof(account) === undefined){
