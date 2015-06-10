@@ -928,11 +928,12 @@ fun.Router = Backbone.Router.extend({
 
     settings: function(){
         'use strict';
+        this.account = localStorage.getItem("username");
         var settings = translate('settings');
         fun.utils.hideAll();
         fun.instances.navbar.render();
         fun.instances.subheader.render(settings);
-        fun.instances.settings.render();
+        fun.instances.settings.render(this.account);
         //fun.instances.footer.render();
     },
 

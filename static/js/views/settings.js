@@ -18,10 +18,10 @@ fun.views.settings = Backbone.View.extend({
 	/**
 	* Render view
 	*/
-	render: function(){
+	render: function(account){
 		console.log('render settings view');
 
-		var template = _.template(fun.utils.getTemplate(fun.conf.templates.settings));
+		var template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
 
 		this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
