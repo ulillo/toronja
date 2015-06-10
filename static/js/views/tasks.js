@@ -6,6 +6,7 @@ fun.views.tasks = Backbone.View.extend({
     // click events missing
     events: {
         "click #create-task-btn": "createTask",
+        "click .task-popup": "taskDetails",
     },
 
     /**
@@ -154,5 +155,25 @@ fun.views.tasks = Backbone.View.extend({
         // Clear the stuff from the inputs ;)
         view.$('#task_name').val('');
         view.$('#task_description').val('');
+    },
+
+    taskDetails: function(event){
+        'use strict';
+        event.preventDefault();
+        //view cache
+        var view = this,
+            account,
+            id = this.id,
+            name;
+
+        console.log('class stuff works dude!');
+         
+        console.log(id);
+        
+        //console.log($(event.target));
+
+        name = $(event.target).data('name');
+        console.log(name);
     }
+
 });
