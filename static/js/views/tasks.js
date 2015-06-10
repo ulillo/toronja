@@ -145,7 +145,7 @@ fun.views.tasks = Backbone.View.extend({
 
         var user = new fun.models.User(profile);
 
-        //user.fetch()
+        user.fetch()
 
         console.log(user.get('uuid', false));
         console.log(user.get('first_name', 'Joe'));
