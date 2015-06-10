@@ -350,6 +350,10 @@ fun.Router = Backbone.Router.extend({
                 fun.instances.tasks.renderTasksList(
                     resources.tasks
                 );
+
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
             }
         };
 
