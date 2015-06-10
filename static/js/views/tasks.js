@@ -139,6 +139,12 @@ fun.views.tasks = Backbone.View.extend({
             label: taskLabel
         };
 
+        
+
+        var profile = JSON.parse(localStorage.getItem("profile"));
+
+        console.log(JSON.stringify(profile));
+
         if (typeof(account) === undefined){
             account = false;
             taskPayload['public'] = account;
