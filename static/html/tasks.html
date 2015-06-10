@@ -188,8 +188,71 @@ Lable   Title   Description Name    Email   Status  UUID
                 <p>Trouble Tickets track and manage IT problems and their solutions for multiple clients. Use this page to change the contents of an existing Trouble Ticket.</p>
 
                 <div class="row">
-                    <div class="col-md-6">love</div>
-                    <div class="col-md-6">hate</div>
+                    <div class="col-md-6">love
+                        <div class="panel panel-default">
+                                      <!-- Default panel contents -->
+
+                                      <!-- Table -->
+                                      <table class="table">
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row"><%= translate("merchant") %></th>
+                                            <td id="settle-merchant">Preway</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("paymentPeriod") %></th>
+                                            <td id="settle-date-period"></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("transactionFee") %></th>
+                                            <td id="settle-trans-fee">15%</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("rollingReserve") %></th>
+                                            <td id="settle-roll-reserve-fee">10%</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("perTransactionFee") %></th>
+                                            <td id="settle-per-trans-fee">$0.85</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                    </div>
+                    <div class="col-md-6">hate
+
+                        <div class="panel panel-default">
+                                      <!-- Default panel contents -->
+
+                                      <!-- Table -->
+                                      <table class="table">
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row"><%= translate("merchant") %></th>
+                                            <td id="settle-merchant">Preway</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("paymentPeriod") %></th>
+                                            <td id="settle-date-period"></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("transactionFee") %></th>
+                                            <td id="settle-trans-fee">15%</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("rollingReserve") %></th>
+                                            <td id="settle-roll-reserve-fee">10%</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"><%= translate("perTransactionFee") %></th>
+                                            <td id="settle-per-trans-fee">$0.85</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                    </div>
                 </div>
 
                 <form id="signup-form" class="form-signup" novalidate="novalidate">
