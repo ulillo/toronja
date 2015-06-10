@@ -247,59 +247,25 @@ Lable   Title   Description Name    Email   Status  UUID
                     </div>
                 </div>
 
-                <form id="signup-form" class="form-signup" novalidate="novalidate">
-
-                <div class="form-group">
-                    <input type="text" id="client_holdername" name="client_holdername" class="form-control" placeholder="<%= translate("cardHoldName") %>">
-                </div>
-
-
-                <div class="form-group">
-                    <div class="input-group">
-
-                        <div id="account-dropdown" class="btn-group">
-                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                <i class="fa fa-credit-card fa-fw"></i>
-                                <span data-label-placement=""><%= translate("cardType") %></span>
-                                <span class="caret"></span>
-                            </button>
-                            <ul id="account-list-ul" class="dropdown-menu">
-                                <li>
-                                    <input type="radio" id="credit_card_0" name="card_type" value="0" checked="">
-                                    <label for="credit_card_0"><%= translate("dinersClub") %></label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="credit_card_1" name="card_type" value="1" checked="">
-                                    <label for="credit_card_1"><%= translate("discover") %></label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="credit_card_2" name="card_type" value="2" checked="">
-                                    <label for="credit_card_2"><%= translate("amex") %></label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="credit_card_3" name="card_type" value="3" checked="">
-                                    <label for="credit_card_3"><%= translate("masterCard") %></label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="credit_card_4" name="card_type" value="4" checked="">
-                                    <label for="credit_card_4"><%= translate("visa") %></label>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <input id="client_cc_digits" type="text" class="form-control" placeholder="<%= translate("theLast4CCDigits") %>">
+                <div>
+                    <div class="row">
+                        <h3>History:</h3>
                     </div>
+                    
+
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="client_email" name="client_email" class="form-control" placeholder="<%= translate("yourEmail") %>">
-                </div>
+                <div>
+                    <div class="row">
+                        <h3>Comment:</h3>
+                    </div>
+                    
 
-                <div class="form-group">
-                    <input type="tel" id="client_phone" name="client_phone" class="form-control">
                 </div>
+                
+                
 
-            </form>
+
                 
             </div>
             <div class="modal-footer">
