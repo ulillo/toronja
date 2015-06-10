@@ -163,6 +163,7 @@ fun.models.Task = Backbone.Model.extend({
         //if (!this.isNew()){
         //    url += '/' + this.id;
         //}
+        console.log(url);
         return url;
     },
     
