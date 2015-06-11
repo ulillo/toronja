@@ -216,6 +216,8 @@ fun.views.tasks = Backbone.View.extend({
         var taskPriority = this.$('#task-priority');
         var taskSeverity = this.$('#task-severity');
 
+        var taskDescription = this.$('#task-description');
+
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
 
@@ -241,6 +243,8 @@ fun.views.tasks = Backbone.View.extend({
                 taskPriority.html(response.get('priority'));
 
                 taskSeverity.html(response.get('severity'));
+
+                taskDescription.html(response.get('description'));
 
                 //console.log(title);
 
