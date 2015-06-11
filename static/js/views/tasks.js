@@ -207,7 +207,6 @@ fun.views.tasks = Backbone.View.extend({
         this.taskSeverity = this.$('#task-severity');
 
         name = $(event.target).data('name');
-        console.log(name);
 
         task = new fun.models.Task({'uuid':name});
 
