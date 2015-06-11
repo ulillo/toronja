@@ -213,9 +213,11 @@ fun.views.tasks = Backbone.View.extend({
 
         task.fetch();
 
-        console.log(task.toJSON());
+        //console.log(task.toJSON());
 
         this.taskTitle.html(task.get('title'));
+
+        console.log(task.get('uuid'), task.get('title', task.get('assigned'), task.get('label'), task.get('source'), task.get('status'), task.get('priority'), task.get('severity')))
 
         $('#taskModal').modal({
             'show': true
