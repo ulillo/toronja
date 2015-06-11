@@ -206,11 +206,14 @@ fun.views.tasks = Backbone.View.extend({
         this.taskPriority = this.$('#task-priority');
         this.taskSeverity = this.$('#task-severity');
 
+        // get the name of the element targeted by this event
         name = $(event.target).data('name');
 
         task = new fun.models.Task({'uuid':name});
 
         task.fetch();
+
+        // missing callback here.. or q?, 10 to Q then callback if necessary.
 
         //console.log(task.toJSON());
 
