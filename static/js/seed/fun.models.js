@@ -857,7 +857,37 @@ fun.models.Carriers = Backbone.Collection.extend({
     }
 });
 
+'''
+fun.models.Task = Backbone.Model.extend({
 
+    idAttribute: 'uuid',
+
+    initialize: function(options) {
+        this.taskId = options.taskId;
+    },
+    
+    urlRoot: fun.conf.urls.task,
+    
+    url: function() {
+
+        var url = this.urlRoot.replace(fun.conf.uuidTask, this.id);
+        if (!this.isNew()){
+            console.log(url);
+            //url += '/' + this.id;
+        } else {
+            url = fun.conf.urls.tasks;
+        }
+        return url;
+    },
+    
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+'''
 fun.models.Task = Backbone.Model.extend({
 
     idAttribute: 'uuid',
@@ -869,9 +899,10 @@ fun.models.Task = Backbone.Model.extend({
     urlRoot: fun.conf.urls.task,
 
     url: function() {
-        var url = this.urlRoot.replace(fun.conf.taskId, this.taskId);
+        var url = this.urlRoot.replace(fun.conf.taskId, this.id);
         if (!this.isNew()){
-            url += '/' + this.id;
+            console.log(url);
+           // url += '/' + this.id;
         } else {
             url = fun.conf.urls.tasks;
         }
