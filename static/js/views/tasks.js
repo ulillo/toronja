@@ -197,7 +197,7 @@ fun.views.tasks = Backbone.View.extend({
             name;
 
         this.taskUuid = this.$('#task-uuid');
-        this.taskTitle = this.$('#task-title');
+        var taskTitle = this.$('#task-title');
         this.taskAssigned = this.$('#task-assigned');
         this.taskLabel = this.$('#task-label');
 
@@ -214,7 +214,8 @@ fun.views.tasks = Backbone.View.extend({
         task.fetch({
             success: function(response){
                 console.log(response)
-                this.taskTitle.html();
+                
+                taskTitle.html();
 
                 var title = response.get('title') || "where's the title boy?";
 
