@@ -211,19 +211,23 @@ fun.views.tasks = Backbone.View.extend({
 
         task = new fun.models.Task({'uuid':name});
 
-        task.fetch();
+        task.fetch({
+            success: function(response){
+                console.log(response)
+                this.taskTitle.html(task.get('title'));
 
-        // missing callback here.. or q?, 10 to Q then callback if necessary.
+                console.log(task.get('uuid'), task.get('title', response.get('assigned'), task.get('label'), task.get('source'), task.get('status'), task.get('priority'), task.get('severity')))
+
+                $('#taskModal').modal({
+                    'show': true
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
 
         //console.log(task.toJSON());
-
-        this.taskTitle.html(task.get('title'));
-
-        console.log(task.get('uuid'), task.get('title', task.get('assigned'), task.get('label'), task.get('source'), task.get('status'), task.get('priority'), task.get('severity')))
-
-        $('#taskModal').modal({
-            'show': true
-        });
     }
 
 });
