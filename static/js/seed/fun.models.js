@@ -869,9 +869,9 @@ fun.models.Task = Backbone.Model.extend({
     urlRoot: fun.conf.urls.task,
 
     url: function() {
-        var url = this.urlRoot.replace(fun.conf.taskId, this.id);
+        var url = this.urlRoot.replace(fun.conf.uuidTask, this.uuid);
         if (!this.isNew()){
-            console.log(url);
+            console.log(url, this.id, this.uuid);
            // url += '/' + this.id;
         } else {
             url = fun.conf.urls.tasks;
