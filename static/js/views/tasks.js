@@ -187,24 +187,34 @@ fun.views.tasks = Backbone.View.extend({
         view.$('#task_name').val('');
         view.$('#task_description').val('');
     },
-
+    
+    /*
+    * Task details
+    */
     taskDetails: function(event){
         'use strict';
         event.preventDefault();
         //view cache
         var view = this,
             task,
-            name;
+            name,
+            taskUuid,
+            taskTitle,
+            taskAssigned,
+            taskLabel,
+            taskSource,
+            taskStatus,
+            taskPriority,
+            taskSeverity;
 
-        this.taskUuid = this.$('#task-uuid');
+        var taskUuid = this.$('#task-uuid');
         var taskTitle = this.$('#task-title');
-        this.taskAssigned = this.$('#task-assigned');
-        this.taskLabel = this.$('#task-label');
-
-        this.taskSource = this.$('#task-source');
-        this.taskStatus = this.$('#task-status');
-        this.taskPriority = this.$('#task-priority');
-        this.taskSeverity = this.$('#task-severity');
+        var taskAssigned = this.$('#task-assigned');
+        var taskLabel = this.$('#task-label');
+        var taskSource = this.$('#task-source');
+        var taskStatus = this.$('#task-status');
+        var taskPriority = this.$('#task-priority');
+        var taskSeverity = this.$('#task-severity');
 
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
@@ -213,12 +223,24 @@ fun.views.tasks = Backbone.View.extend({
 
         task.fetch({
             success: function(response){
-                //console.log(response)
-                
-                
-                var title = response.get('title') || "where's the title boy?";
 
-                taskTitle.html(title);
+                //console.log(response)
+
+                taskUuid.html(response.get('uuid'));
+
+                taskTitle.html(response.get('title') || "Where's the title boy?");
+
+                taskAssigned.html(response.get('assigned'));
+
+                taskLabel.html(response.get('label'));
+
+                taskSource.html(response.get('source'));
+
+                taskStatus.html(response.get('status'));
+
+                taskPriority.html(response.get('priority'));
+
+                taskSeverity.html(response.get('severity'));
 
                 //console.log(title);
 
