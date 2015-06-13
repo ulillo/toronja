@@ -4,6 +4,7 @@
 fun.strings = {
     ioFun: "IO FUN",
     login: "Login",
+    developers: "Developers",
     customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
     warning : 'Warning!',
