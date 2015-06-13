@@ -29,7 +29,7 @@ fun.views.settings = Backbone.View.extend({
             location,
             company,
             url,
-            templat;
+            template;
 
         console.log('render settings view');
 
