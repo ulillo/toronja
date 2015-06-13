@@ -1,42 +1,60 @@
 fun.views.settings = Backbone.View.extend({
 
-	/**
-	* Bind the event functions to the different HTML elements
-	*/
-	// click events missing
-	events: {
+    /**
+    * Bind the event functions to the different HTML elements
+    */
+    // click events missing
+    events: {
 
-	},
-	
-	/**
-	* Class constructor
-	*/
-	initialize: function(options){
-		fun.containers.settings = this.$el;
-		this.accountProfile = JSON.parse(localStorage.getItem("profile"));
+    },
+    
+    /**
+    * Class constructor
+    */
+    initialize: function(options){
+        fun.containers.settings = this.$el;
+        this.accountProfile = JSON.parse(localStorage.getItem("profile"));
+    },
 
-		console.log(this.accountProfile['email']||'random@dude.com');
+    /**
+    * Render view
+    */
+    render: function(account){
+        'use strict';
+        //view cache
+        var view = this,
+            email,
+            firstName,
+            lastName,
+            location,
+            company,
+            url,
+            templat;
 
-		console.log(this.accountProfile['first_name'] || 'Random');
-	},
+        console.log('render settings view');
 
-	/**
-	* Render view
-	*/
-	render: function(account){
-		console.log('render settings view');
 
-		var template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
+        email = this.$('#user_email');
+        firstName = this.$('#user_first_name');
+        lastName = this.$('#user_last_name');
+        location = this.$('#user_location');
+        company = this.$('#user_company');
+        url = this.$('#user_url');
 
-		this.$el.html(template);
+
+        template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
+
+        email.html('wuakka@wuakka.com');
+
+        this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
-	},
+    },
 
-	/**
-	* Set profile information
-	*/
-	setProfileInformation: function(model){
-		console.log('setting profile information');
-		localStorage.setItem("profile", JSON.stringify(model.toJSON()));
-	}
+    /**
+    * Set profile information
+    */
+    setProfileInformation: function(model){
+        console.log('setting profile information');
+        localStorage.setItem("profile", JSON.stringify(model.toJSON()));
+    }
 });
