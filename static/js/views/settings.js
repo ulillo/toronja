@@ -48,7 +48,7 @@ fun.views.settings = Backbone.View.extend({
         this.$el.html(template);
         
 
-        email.html('wuakka@wuakka.com');
+        email.val('wuakka@wuakka.com');
         firstName.html('c');
         lastName.html('z');
         location.html('a');
