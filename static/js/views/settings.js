@@ -13,9 +13,7 @@ fun.views.settings = Backbone.View.extend({
 	*/
 	initialize: function(options){
 		fun.containers.settings = this.$el;
-		this.accountProfile = localStorage.getItem("profile");
-
-		console.log(JSON.parse(this.accountProfile));
+		this.accountProfile = JSON.parse(localStorage.getItem("profile"));
 
 		console.log(this.accountProfile['email']||'random@dude.com');
 
