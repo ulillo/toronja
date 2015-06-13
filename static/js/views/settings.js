@@ -44,10 +44,21 @@ fun.views.settings = Backbone.View.extend({
 
         template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
 
-        email.html('wuakka@wuakka.com');
-
+        
         this.$el.html(template);
+        
+
+        email.html('wuakka@wuakka.com');
+        firstName.html('c');
+        lastName.html('z');
+        location.html('a');
+        company.html('ss');
+        url.html('sdsd');
+
+
         this.$el.removeClass("hide").addClass("show");
+
+
     },
 
     /**
