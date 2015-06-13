@@ -33,6 +33,11 @@ fun.views.settings = Backbone.View.extend({
 
         console.log('render settings view');
 
+        template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
+
+        
+        this.$el.html(template);
+
 
         email = this.$('#user_email');
         firstName = this.$('#user_first_name');
@@ -42,18 +47,17 @@ fun.views.settings = Backbone.View.extend({
         url = this.$('#user_url');
 
 
-        template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
-
         
-        this.$el.html(template);
         
 
-        email.val('wuakka@wuakka.com');
+        
         firstName.html('c');
         lastName.html('z');
         location.html('a');
         company.html('ss');
         url.html('sdsd');
+
+        email.val('wuakka@wuakka.com');
 
 
         this.$el.removeClass("hide").addClass("show");
