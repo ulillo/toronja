@@ -5,7 +5,7 @@ fun.views.settings = Backbone.View.extend({
     */
     // click events missing
     events: {
-
+        "click #user-update-btn": "updateUserAccount",
     },
     
     /**
@@ -61,8 +61,6 @@ fun.views.settings = Backbone.View.extend({
 
 
         this.$el.removeClass("hide").addClass("show");
-
-
     },
 
     /**
@@ -71,5 +69,11 @@ fun.views.settings = Backbone.View.extend({
     setProfileInformation: function(model){
         console.log('setting profile information');
         localStorage.setItem("profile", JSON.stringify(model.toJSON()));
+    },
+
+    updateUserAccount: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('like a ninja');
     }
 });
