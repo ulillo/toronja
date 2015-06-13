@@ -39,25 +39,21 @@ fun.views.settings = Backbone.View.extend({
         this.$el.html(template);
 
 
-        email = this.$('#user_email');
-        firstName = this.$('#user_first_name');
-        lastName = this.$('#user_last_name');
-        location = this.$('#user_location');
-        company = this.$('#user_company');
-        url = this.$('#user_url');      
+        this.email = this.$('#user_email');
+        this.firstName = this.$('#user_first_name');
+        this.lastName = this.$('#user_last_name');
+        this.location = this.$('#user_location');
+        this.company = this.$('#user_company');
+        this.url = this.$('#user_url');      
 
         
-        firstName.val(this.accountProfile['first_name'] || '');
-        lastName.val(this.accountProfile['last_name'] || '');
-        location.val(this.accountProfile['location'] || '');
-        company.val(this.accountProfile['company'] || '');
-        url.val(this.accountProfile['url'] || '');
+        this.firstName.val(this.accountProfile['first_name'] || '');
+        this.lastName.val(this.accountProfile['last_name'] || '');
+        this.location.val(this.accountProfile['location'] || '');
+        this.company.val(this.accountProfile['company'] || '');
+        this.url.val(this.accountProfile['url'] || '');
 
-        email.val(this.accountProfile['email'] || '');
-
-        //var raton = email.val();
-
-        //console.log('got this sutff up', raton);
+        this.email.val(this.accountProfile['email'] || '');
 
 
         this.$el.removeClass("hide").addClass("show");
@@ -75,5 +71,29 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         console.log('like a ninja');
+
+        var confirm = new fun.models.User({'account':this.accountProfile['account']});
+
+        var email, first_name, last_name, location, company, url;
+
+        email = this.email.val();
+        first_name = this.firstName.val();
+        last_name = this.lastName.val();
+        location = this.location.val();
+        company = this.company.val();
+        url = this.url.val();
+
+        var newRandomStuff = {
+            'first_name': first_name,
+            'last_name': last_name,
+            'email': email,
+            'company': company,
+            'location': location,
+            'url': url
+        };
+
+        console.log(newRandomStuff);
+
+        confirm.save(newRandomStuff, {patch: true});
     }
 });
