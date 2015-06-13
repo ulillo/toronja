@@ -44,20 +44,20 @@ fun.views.settings = Backbone.View.extend({
         lastName = this.$('#user_last_name');
         location = this.$('#user_location');
         company = this.$('#user_company');
-        url = this.$('#user_url');
-
-
-        
-        
+        url = this.$('#user_url');      
 
         
-        firstName.html('c');
-        lastName.html('z');
-        location.html('a');
-        company.html('ss');
-        url.html('sdsd');
+        firstName.val('c');
+        lastName.val('z');
+        location.val('a');
+        company.val('ss');
+        url.val('sdsd');
 
         email.val('wuakka@wuakka.com');
+
+        var raton = email.val();
+
+        console.log('got this sutff up', raton);
 
 
         this.$el.removeClass("hide").addClass("show");
