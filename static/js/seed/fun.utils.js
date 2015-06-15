@@ -84,6 +84,8 @@ fun.utils.subscribe = function(callbacks){
     var email = $("#subscribe-email").val();
 
     console.log(email);
+
+    $("#subscribe-email").val('');
 };
 
 
