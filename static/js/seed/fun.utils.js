@@ -86,8 +86,6 @@ fun.utils.subscribe = function(callbacks){
         task,
         taskPayload;
 
-    console.log(email);
-
     taskPayload = {
         first_name: 'Random',
         last_name: 'Funster',
