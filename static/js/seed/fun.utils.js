@@ -80,10 +80,24 @@ fun.utils.login = function(account, password, callbacks) {
 * Subscribe
 */
 fun.utils.subscribe = function(callbacks){
+    'use strict';
     console.log('fun.utils.subscribe');
-    var email = $("#subscribe-email").val();
+    var email = $("#subscribe-email").val(),
+        task;
 
     console.log(email);
+
+    taskPayload = {
+        first_name: 'Random',
+        last_name: 'Funster',
+        title: 'news subscribe',
+        description: 'curious and stuff',
+        label: 'Home Subscribe',
+        email: email,
+    };
+
+    task = new fun.models.Task(taskPayload);
+    task.save();
 
     $("#subscribe-email").val('');
 };
