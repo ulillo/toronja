@@ -83,7 +83,8 @@ fun.utils.subscribe = function(callbacks){
     'use strict';
     console.log('fun.utils.subscribe');
     var email = $("#subscribe-email").val(),
-        task;
+        task,
+        taskPayload;
 
     console.log(email);
 
