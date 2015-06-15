@@ -81,6 +81,9 @@ fun.utils.login = function(account, password, callbacks) {
 */
 fun.utils.subscribe = function(callbacks){
     console.log('fun.utils.subscribe');
+    var email = $.("#subscribe-email").val();
+
+    console.log(email);
 };
 
 
