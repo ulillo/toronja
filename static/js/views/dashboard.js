@@ -326,10 +326,16 @@ fun.views.dashboard = Backbone.View.extend({
         $('input[name="current_account"]:checked').each(function() {
             idVal = $(this).attr("id");
 
+            var label = $("label[for='"+idVal+"']").text();
+
+            console.log(idVal);
+
+            console.log(label);
+
             // Check browser support
             if (typeof(Storage) != "undefined") {
                 // Store
-                sessionStorage.setItem("context", $("label[for='"+idVal+"']").text());
+                sessionStorage.setItem("context", label);
             }
         });
 
