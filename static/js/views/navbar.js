@@ -53,7 +53,6 @@ fun.views.navbar = Backbone.View.extend({
         context = sessionStorage.getItem("context");
 
         if (account !== context|| typeof(context) == 'undefined' ){
-            console.log('wakabanga');
             this.$('#nav-new-member').removeClass('hide').addClass('show');
             this.$('#nav-new-team').removeClass('hide').addClass('show');
         } else {
