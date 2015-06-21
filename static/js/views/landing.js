@@ -106,7 +106,7 @@ fun.views.landing = Backbone.View.extend({
                                     // Check browser support
                                     if (typeof(Storage) != "undefined") {
                                         // Store
-                                        localStorage.setItem("username", username);
+                                        localStorage.setItem("username", account);
                                     }
                                     fun.utils.redirect(fun.conf.hash.login);
                                     break;
