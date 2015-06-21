@@ -112,9 +112,24 @@ fun.views.signup = Backbone.View.extend({
                             fun.utils.redirect(fun.conf.hash.dashboard);
                         },
                         error : function(xhr, status, error){
-                            // aqui es donde tiene sentido 
-                            // enviar al dude a login con un error.
-                            fun.utils.redirect(fun.conf.hash.login);
+                            switch(xhr.status) {
+                                case 403:
+                                    var message = fun.utils.translate("usernameOrPasswordError");
+                                    signupError.find('p').html(message);
+                                    signupError.removeClass("hide" ).addClass("show");
+                                    break;
+                                case 200:
+                                    // Check browser support
+                                    if (typeof(Storage) != "undefined") {
+                                        // Store
+                                        localStorage.setItem("username", account);
+                                    }
+                                    fun.utils.redirect(fun.conf.hash.login);
+                                    break;
+                                default:
+                                    console.log('the monkey is down');
+                                    break;
+                            }
                         }
                     }
                 );
