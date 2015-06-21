@@ -661,7 +661,9 @@ fun.Router = Backbone.Router.extend({
             dashboard,
             message;
 
-        console.log(account, org);
+        console.log(
+            fun.utils.format('account: %s, organization: %s', account, org)
+        );
 
         if (!account){
             account = localStorage.getItem("username");
