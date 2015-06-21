@@ -126,6 +126,8 @@ fun.utils.logout = function(callbacks){
 
             // Clean storage
             if (typeof(Storage) != "undefined") {
+
+                console.log('hey!');
                 localStorage.removeItem('username');
                 sessionStorage.removeItem('context');
             }
