@@ -71,7 +71,7 @@ fun.views.landing = Backbone.View.extend({
                 }
             }
         }
-        validationRules = $.extend (rules, fun.utils.validationRules);
+        validationRules = $.extend(rules, fun.utils.validationRules);
 
         $('#langing-signup-form').validate(validationRules);
         
@@ -111,7 +111,6 @@ fun.views.landing = Backbone.View.extend({
             },
 
 /*
-
             fun.utils.login(username, password, {
             success : function(jqXHR, textStatus){
                 // currently this success call is never executed
@@ -119,7 +118,7 @@ fun.views.landing = Backbone.View.extend({
                 // Why? well... I really don't fucking know...
                 loginSuccess(view, loginError);
             },
-
+*/
 
             error: function(model, error){
                 // Catch duplicate errors or some random stuff
@@ -137,7 +136,7 @@ fun.views.landing = Backbone.View.extend({
                 
             }
         };
-*/
+
         // check for a valid form and create the new user account
         validForm = $('#langing-signup-form').valid();
         if (validForm){
