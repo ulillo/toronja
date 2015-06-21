@@ -15,14 +15,17 @@ fun.views.dashboard = Backbone.View.extend({
         // Initialize view constructor
         'use strict';
         fun.containers.dashboard = this.$el;
-        this.account = localStorage.getItem("username");
     },
 
     render: function(account, summary, billing){
         // Render view function
         'use strict';
         var template;
-        console.log("username = " + this.account)
+        console.log("username = " + account)
+
+        this.account = localStorage.getItem("username");
+
+        console.log(this.account);
 
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.dashboard)
