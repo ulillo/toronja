@@ -113,6 +113,8 @@ fun.utils.logout = function(callbacks){
         dataType : 'json',
         success : function(data, textStatus, jqXHR) {
 
+            console.log('where are we?');
+
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
             }
@@ -126,7 +128,6 @@ fun.utils.logout = function(callbacks){
 
             // Clean storage
             if (typeof(Storage) != "undefined") {
-
                 console.log('hey!');
                 localStorage.removeItem('username');
                 sessionStorage.removeItem('context');
@@ -134,6 +135,7 @@ fun.utils.logout = function(callbacks){
 
         },
         error : function(jqXHR, textStatus, errorThrown) {
+            console.log('where are we?');
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error(jqXHR, textStatus, errorThrown);
             }
