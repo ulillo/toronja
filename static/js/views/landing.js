@@ -121,7 +121,7 @@ fun.views.landing = Backbone.View.extend({
 
             error: function(model, error){
                 // Catch duplicate errors or some random stuff
-                signupError.show();
+                signupError.removeClass("hide").addClass("show");
                 // TODO: on error add class error and label to the input field
                 if (error.responseText.indexOf('account') != -1){
                     signupError.find('p').html('Username is already taken.');
