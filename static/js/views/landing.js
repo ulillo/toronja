@@ -100,7 +100,7 @@ fun.views.landing = Backbone.View.extend({
                                 case 403:
                                     var message = fun.utils.translate("usernameOrPasswordError");
                                     signupError.find('p').html(message);
-                                    signupError.removeClass("hide" ).addClass("show");
+                                    signupError.removeClass("hide").addClass("show");
                                     break;
                                 case 200:
                                     // Check browser support
