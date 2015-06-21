@@ -330,10 +330,12 @@ fun.Router = Backbone.Router.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
-        console.log(account, context);
+        console.log(
+            fun.utils.format('username: %s, context: %s', account, context)
+        );
 
         // first of all here on resources the stuff seems to be fine.
-
+        // new note: wut?
         resources = {
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
@@ -757,7 +759,9 @@ fun.Router = Backbone.Router.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
-        console.log(account, context);
+        console.log(
+            fun.utils.format('username: %s, context: %s', account, context)
+        );
 
         // first of all here on resources the stuff seems to be fine.
 
