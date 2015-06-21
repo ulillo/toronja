@@ -113,7 +113,9 @@ fun.utils.logout = function(callbacks){
         dataType : 'json',
         success : function(data, textStatus, jqXHR) {
 
-            console.log('where are we?');
+            // this is kind of crazy.
+
+            // why? cuz it don't work anymore... 
 
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
@@ -121,40 +123,31 @@ fun.utils.logout = function(callbacks){
 
             // Clear the html from the containers
             for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar'){
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
             }
-
-            // Clean storage
-            if (typeof(Storage) != "undefined") {
-                console.log('hey!');
-                localStorage.removeItem('username');
-                sessionStorage.removeItem('context');
-            }
-
         },
         error : function(jqXHR, textStatus, errorThrown) {
-            console.log('where are we?');
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error(jqXHR, textStatus, errorThrown);
             }
 
             // Clear the html from the containers
             for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar'){
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
             }
-
-            // Clean storage
-            if (typeof(Storage) != "undefined") {
-                console.log('hey!');
-                localStorage.removeItem('username');
-                sessionStorage.removeItem('context');
-            }
         }
     });
+
+    // Clean storage outside ajax call, this way we always clean the stuff.
+    if (typeof(Storage) != "undefined") {
+        localStorage.removeItem('username');
+        localStorage.removeItem('profile');
+        sessionStorage.removeItem('context');
+    }
 };
 
 
