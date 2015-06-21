@@ -88,37 +88,36 @@ fun.views.landing = Backbone.View.extend({
                     {
                         success : function(xhr, status){
 
-                            console.log(status);
-
-                            console.log('login success callback');
+                            // currently this success call is never executed
+                            // the success stuff is going on case 200 of the error function.
+                            // Why? well... I really don't fucking know...
 
                             fun.utils.redirect(fun.conf.hash.dashboard);
                         },
                         error : function(xhr, status, error){
-                            // aqui es donde tiene sentido 
-                            // enviar al dude a login con un error.
 
-                            console.log(status);
-
-                            console.log('login error callback');
-
-                            console.log(error);
-
-                            fun.utils.redirect(fun.conf.hash.login);
+                            switch(jqXHR.status) {
+                                case 403:
+                                    var message = fun.utils.translate("usernameOrPasswordError");
+                                    signupError.find('p').html(message);
+                                    signupError.removeClass("hide" ).addClass("show");
+                                    break;
+                                case 200:
+                                    // Check browser support
+                                    if (typeof(Storage) != "undefined") {
+                                        // Store
+                                        localStorage.setItem("username", username);
+                                    }
+                                    fun.utils.redirect(fun.conf.hash.login);
+                                    break;
+                                default:
+                                    console.log('the monkey is down');
+                                    break;
+                            }
                         }
                     }
                 );
             },
-
-/*
-            fun.utils.login(username, password, {
-            success : function(jqXHR, textStatus){
-                // currently this success call is never executed
-                // the success stuff is going on case 200 of the error function.
-                // Why? well... I really don't fucking know...
-                loginSuccess(view, loginError);
-            },
-*/
 
             error: function(model, error){
                 // Catch duplicate errors or some random stuff
