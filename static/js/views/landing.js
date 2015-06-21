@@ -110,6 +110,7 @@ fun.views.landing = Backbone.View.extend({
                 );
             },
 
+/*
 
             fun.utils.login(username, password, {
             success : function(jqXHR, textStatus){
@@ -136,7 +137,7 @@ fun.views.landing = Backbone.View.extend({
                 
             }
         };
-        
+*/
         // check for a valid form and create the new user account
         validForm = $('#langing-signup-form').valid();
         if (validForm){
