@@ -96,7 +96,7 @@ fun.views.landing = Backbone.View.extend({
                         },
                         error : function(xhr, status, error){
 
-                            switch(jqXHR.status) {
+                            switch(xhr.status) {
                                 case 403:
                                     var message = fun.utils.translate("usernameOrPasswordError");
                                     signupError.find('p').html(message);
