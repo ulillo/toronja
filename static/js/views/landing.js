@@ -87,16 +87,38 @@ fun.views.landing = Backbone.View.extend({
                 fun.utils.login(account, password,
                     {
                         success : function(xhr, status){
+
+                            console.log(status);
+
+                            console.log('login success callback');
+
                             fun.utils.redirect(fun.conf.hash.dashboard);
                         },
                         error : function(xhr, status, error){
                             // aqui es donde tiene sentido 
                             // enviar al dude a login con un error.
+
+                            console.log(status);
+
+                            console.log('login error callback');
+
+                            console.log(error);
+
                             fun.utils.redirect(fun.conf.hash.login);
                         }
                     }
                 );
             },
+
+
+            fun.utils.login(username, password, {
+            success : function(jqXHR, textStatus){
+                // currently this success call is never executed
+                // the success stuff is going on case 200 of the error function.
+                // Why? well... I really don't fucking know...
+                loginSuccess(view, loginError);
+            },
+
 
             error: function(model, error){
                 // Catch duplicate errors or some random stuff
