@@ -28,8 +28,6 @@ fun.views.dashboard = Backbone.View.extend({
             this.account = account;
         }
 
-        console.log(this.account);
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.dashboard)
         )({'account':this.account});
