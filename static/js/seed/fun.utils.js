@@ -139,6 +139,20 @@ fun.utils.logout = function(callbacks){
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error(jqXHR, textStatus, errorThrown);
             }
+
+            // Clear the html from the containers
+            for (var i in fun.containers) {
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar'){
+                    fun.containers[i].empty();
+                }
+            }
+
+            // Clean storage
+            if (typeof(Storage) != "undefined") {
+                console.log('hey!');
+                localStorage.removeItem('username');
+                sessionStorage.removeItem('context');
+            }
         }
     });
 };
