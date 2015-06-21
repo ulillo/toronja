@@ -118,12 +118,18 @@ fun.utils.logout = function(callbacks){
             }
 
             // Clear the html from the containers
-            for (var i in fun.containers)
-            {
-                if( i !== 'login' && i !== 'footer' && i !== 'navbar' ){
+            for (var i in fun.containers) {
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar'){
                     fun.containers[i].empty();
                 }
             }
+
+            // Clean storage
+            if (typeof(Storage) != "undefined") {
+                localStorage.removeItem('username');
+                sessionStorage.removeItem('context');
+            }
+
         },
         error : function(jqXHR, textStatus, errorThrown) {
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
