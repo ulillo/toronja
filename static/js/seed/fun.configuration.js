@@ -110,8 +110,8 @@ fun.conf.sip = {
 */
 fun.conf.urls = {
     upload: '/upload/',
-    login: '/login',
-    logout: '/logout',
+    login: '/login/',
+    logout: '/logout/',
 
     user: fun.utils.format('/users/%s', fun.conf.account),
     users: '/users/',
@@ -127,8 +127,8 @@ fun.conf.urls = {
     billing: fun.utils.format('/billings/%s', fun.conf.uuidBilling),
     billings: '/billings/',
     
-    summary: '/records/summary',
-    summaries: '/records/summaries',
+    summary: '/records/summary/',
+    summaries: '/records/summaries/',
 
     summaryStart: fun.utils.format('/records/summary/start/%s', fun.conf.startTime),
     summaryStartEnd: fun.utils.format('/records/summary/start/%s/end/%s', fun.conf.startTime, fun.conf.endTime),
