@@ -21,9 +21,12 @@ fun.views.dashboard = Backbone.View.extend({
         // Render view function
         'use strict';
         var template;
-        console.log("username = " + account)
-
-        this.account = localStorage.getItem("username");
+        
+        if (typeof(account) === 'undefined'){
+            this.account = localStorage.getItem("username");
+        } else {
+            this.account = account;
+        }
 
         console.log(this.account);
 
