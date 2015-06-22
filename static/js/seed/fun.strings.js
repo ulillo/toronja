@@ -4,6 +4,8 @@
 fun.strings = {
     ioFun: "IO FUN",
     login: "Login",
+    active: "Active",
+    disable: "Disable"
     developers: "Developers",
     customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
@@ -39,6 +41,7 @@ fun.strings = {
 
     allCompanies: "All Companies",
     exportCompanies: "Export Companies",
+    createCompany: "Create Company",
     getCompanyList: "Get Company List",
     companyDetails: "Company Details",
     companyDetail: "Company Detail",
