@@ -29,6 +29,7 @@ fun.conf = {
     uuidCohort: 'cohort_uuid',
     uuidCube: 'cube_uuid',
     uuidTask: 'task_uuid',
+    uuidCompany: 'company_uuid',
     uuidDirectory: 'directory_uuid',
     uuidSound: 'sound_uuid',
     uuidGateway: 'gateway_uuid',
@@ -169,6 +170,9 @@ fun.conf.urls = {
     task: fun.utils.format('/tasks/%s', fun.conf.uuidTask),
     tasks: '/tasks/',
 
+    company: fun.utils.format('/companies/%s', fun.conf.uuidCompany),
+    companies: '/companies/',
+
     directory: fun.utils.format('/directories/%s', fun.conf.uuidDirectory),
     directories: '/directories/',
 
@@ -218,6 +222,11 @@ fun.conf.templates = {
     allTasks: fun.utils.format('%s/allTasks.html', fun.conf.html),
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
     taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
+
+    companies: fun.utils.format('%s/companies.html', fun.conf.html),
+    allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
+    companyRow: fun.utils.format('%s/companyRow.html', fun.conf.html),
+    companyListItem: fun.utils.format('%s/companyListItem.html', fun.conf.html),
 
     developers: fun.utils.format('%s/developers.html', fun.conf.html),
     help: fun.utils.format('%s/help.html', fun.conf.html),
@@ -368,6 +377,7 @@ fun.conf.hash = {
     cubes: '#cubes',
     contactsWithPage: '#contacts/p{page}',
     tasks: '#tasks',
+    companies: '#companies',
 
     sounds: '#sounds',
     recordings: '#recordings',

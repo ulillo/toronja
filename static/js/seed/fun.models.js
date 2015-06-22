@@ -901,3 +901,48 @@ fun.models.Tasks = Backbone.Collection.extend({
         return response.results;
     }
 });
+
+
+fun.models.Company = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.company,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidCompany, this.id);
+        } else {
+            url = fun.conf.urls.companies;
+        }
+        return url;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+fun.models.Companies = Backbone.Collection.extend({
+
+    model: fun.models.Company,
+
+    urlRoot: fun.conf.urls.companies,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});

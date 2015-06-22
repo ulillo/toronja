@@ -33,6 +33,9 @@ fun.Router = Backbone.Router.extend({
         "tasks": "tasks",
         "tasks/p:page": "tasks",
 
+        "companies": "companies",
+        "companies/p:page": "companies",
+
         
         "campaigns": "campaigns",
         "cubes": "cubes",
@@ -183,6 +186,11 @@ fun.Router = Backbone.Router.extend({
         // tasks
         fun.instances.tasks = new fun.views.tasks({
             el:"#fun-tasks"
+        });
+
+        // companies
+        fun.instances.companies = new fun.views.companies({
+            el:"#fun-companies"
         });
 
         // campaigns
@@ -366,6 +374,72 @@ fun.Router = Backbone.Router.extend({
             fun.instances.subheader.renderHeadNav();
             
             fun.instances.tasks.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
+
+        //fun.instances.footer.render();
+    },
+
+    companies: function(){
+        'use strict';
+        var companies = translate('companies'),
+            account,
+            context,
+            resourceCount = 0,
+            resources,
+            resource,
+            onSuccess;
+
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
+
+        console.log(
+            fun.utils.format('username: %s, context: %s', account, context)
+        );
+
+        // first of all here on resources the stuff seems to be fine.
+        // new note: wut?
+        resources = {
+            //account: new fun.models.Account({'account':account}),
+            user: new fun.models.User({'account':account}),
+            companies: new fun.models.Companies()            
+        };
+
+        // but, onSuccess we're rendering multiple times the same campaigns.render()
+        // and that stuff is bananas. ok
+
+        onSuccess = function(){
+            if(++resourceCount == _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.companies.renderCompaniesList(
+                    resources.companies
+                );
+
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(companies);
+            fun.instances.subheader.renderHeadNav();
+            
+            fun.instances.companies.render();
 
             for (resource in resources){
                 resources[resource].fetch({
