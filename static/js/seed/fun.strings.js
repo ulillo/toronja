@@ -5,7 +5,7 @@ fun.strings = {
     ioFun: "IO FUN",
     login: "Login",
     active: "Active",
-    disable: "Disable"
+    disable: "Disable",
     developers: "Developers",
     customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
