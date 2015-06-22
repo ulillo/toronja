@@ -35,9 +35,8 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         var template,
             allCompanies;
-        console.log('render companies list');
 
-        console.log(companies);
+        console.log('render companies list');
 
         if (companies) {
             this.companies = companies;
