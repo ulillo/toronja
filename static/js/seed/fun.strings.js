@@ -36,6 +36,13 @@ fun.strings = {
     allTasks: "All Tasks",
     exportTasks: "Export Tasks",
     getTaskList: "Get Task List",
+
+    allCompanies: "All Companies",
+    exportCompanies: "Export Companies"
+    getCompanyList: "Get Company List",
+    companyDetails: "Company Details",
+    companyDetail: "Company Detail",
+
     exportCSV: "Export CSV",
     title: "Title",
     label: "Lable",
@@ -151,10 +158,14 @@ fun.strings = {
     total: "Total",
     paused: "Paused",
     newCube: "New Cube",
+    company: "Company",
+    companies: "Companies",
+    newCompany: "New Company",
     task: "Task",
     tasks: "Tasks",
     newTask: "New Task",
     greatCubeNames: "Great cube names are short and memorable",
+    greatCompanyNames: "Great company names are short and memorable",
     createCube: "Create Cube",
     durationAverage: "Duration Average",
     termsOfService: "terms of service",
