@@ -254,8 +254,9 @@ fun.views.companies = Backbone.View.extend({
                     'show': true
                 });
             },
-            error: function(error){
-                console.log(error);
+            error: function(model, status, error){
+                console.log(error, status, model);
+                console.log('error getting company uuid:' + name);
             }
         });
 
