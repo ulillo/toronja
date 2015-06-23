@@ -252,6 +252,7 @@ fun.strings = {
     directoryName: "Directory name",
     checked: "Checked",
     selectMessage: "Select message",
+    newAccount: "New Account",
     dnc: "DNC",
     join: "Join",
     owner: "Owner",

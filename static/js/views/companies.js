@@ -261,6 +261,7 @@ fun.views.companies = Backbone.View.extend({
         console.log('muther fucker say wut?');
 
         companyUuid = this.$('#company-uuid');
+        account = this.$('#reg_signup_username');
         companyName = this.companyName;
         streetAddress = this.streetAddress
         cityTown = this.cityTown;
@@ -306,6 +307,8 @@ fun.views.companies = Backbone.View.extend({
                 //console.log(response)
 
                 companyUuid.html(response.get('uuid'));
+
+                account.html(response.get('account'));
 
                 companyName.html(response.get('company_name'));
 
