@@ -307,25 +307,59 @@ fun.views.companies = Backbone.View.extend({
 
                 companyUuid.html(response.get('uuid'));
 
-                ifCompanySubsidiaryRegistrationNum.html(response.get('uuid'));
+                companyName.html(response.get('company_name'));
+
+                streetAddress.html(response.get('street_address'));
+                cityTown.html(response.get('city_town'));
+                stateProvince.html(response.get('state_province'));
+                zipPostal.html(response.get('zip_postal'));
+                countryCompany.html(response.get('country_company'));
+                dba.html(response.get('dba'));
+                telephone.html(response.get('telephone'));
+                fax.html(response.get('fax'));
+                companyEmail.html(response.get('company_name'));
+                incorporatedNumber.html(response.get('incorporated_number'));
+                legalCompanyName.html(response.get('reg_legal_company_name'));
+                //dateOfIncorporation.html(response.get(''));
+                incorporatedStateProvince.html(response.get('incorporated_state_province'));
+                incorporatedAddress.html(response.get('incorporated_address'));
+                incorporatedNumber.html(response.get('incorporated_number'));
+                incorporatedCountry.html(response.get('incoportated_country'));
+                federalTaxId.html(response.get('federal_tax_id'));
+                vatTaxIdFileNumber.html(response.get('vat_tax_id_file_number'));
+                ifCompanySubsidiaryName.html(response.get('subsidiary_name'));
+
+
+                ifCompanySubsidiaryRegistrationNum.html(response.get('subsidiary_reg_num'));
 
                 /*
 
-                companyTitle.html(response.get('title') || "Where's the title boy?");
+                account: "Chumster"
+                account_type: "user"
+                checked: false
+                city_town: "sdsd sds "
+                company_email: "sd@sdsd.com"
+                company_name: "sodsodosd"
+                country_company: "Sds sds d"
+                created: "2015-06-19T23:55:06.860462"
+                dba: "sdsdss"
+                email: "Chumster@osdosd.com"
+                fax: "28282882828"
+                federal_tax_id: ""
+                incoportated_country: ""
+                incorporated_address: ""
+                incorporated_number: ""
+                incorporated_state_province: ""
+                password: "zafary00"
+                state_province: "sdosdos"
+                street_address: "sdsdosod"
+                subsidiary_name: ""
+                subsidiary_reg_num: ""
+                telephone: "8282828282"
+                uuid: "bb06b5c8-8ff7-4c25-be18-781c42c7de1c"
+                vat_tax_id_file_number: ""
+                zip_postal: "sdsdsodos"
 
-                companyAssigned.html(response.get('assigned'));
-
-                companyLabel.html(response.get('label'));
-
-                companySource.html(response.get('source'));
-
-                companyStatus.html(response.get('status'));
-
-                companyPriority.html(response.get('priority'));
-
-                companySeverity.html(response.get('severity'));
-
-                companyDescription.html(response.get('description'));
 
                 */
 
