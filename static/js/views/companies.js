@@ -309,6 +309,8 @@ fun.views.companies = Backbone.View.extend({
 
                 ifCompanySubsidiaryRegistrationNum.html(response.get('uuid'));
 
+                /*
+
                 companyTitle.html(response.get('title') || "Where's the title boy?");
 
                 companyAssigned.html(response.get('assigned'));
@@ -324,6 +326,8 @@ fun.views.companies = Backbone.View.extend({
                 companySeverity.html(response.get('severity'));
 
                 companyDescription.html(response.get('description'));
+
+                */
 
                 $('#companyModal').modal({
                     'show': true
