@@ -177,29 +177,30 @@
                                         <td id="company-uuid"></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <th scope="row"><%= translate("checked") %></th>
+                                        <td scope="row">
                                             <div class="btn-group ">
                                                 <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
                                                     <i class="fa fa-user fa-fw"></i>
-                                                    <span data-label-placement="">username</span> 
+                                                    <span data-label-placement="">disable</span> 
                                                     <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <input type="radio" id="task_account_1" name="task_account" value="1" checked="">
-                                                        <label for="task_account_1">username</label>
+                                                        <label for="task_account_1">disable</label>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a href="#settings"><i class="fa fa-heartbeat fa-fw"></i> io fun owners</a>
+                                                        <a href="#settings">active</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#settings"><i class="fa fa-paw fa-fw"></i> fun-heads team</a>
+                                                        <a href="#settings">disable</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </th>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><%= translate("newAccount") %></th>
