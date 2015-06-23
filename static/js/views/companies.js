@@ -22,9 +22,34 @@ fun.views.companies = Backbone.View.extend({
     render: function(){
         console.log('render tasts view');
 
-        var template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
+        var template;
 
-        this.$el.html(template);
+        if (!this.$el.html()){
+            template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
+            this.$el.html(template);
+
+            this.companyName = this.$('#reg_company_name');
+            this.streetAddress = this.$('#reg_street_address');
+            this.cityTown = this.$('#reg_city_town');
+            this.stateProvince = this.$('#reg_state_province');
+            this.zipPostal = this.$('#reg_zip_postal');
+            this.countryCompany = this.$('#reg_country_company');
+            this.dba = this.$('#reg_dba');
+            this.telephone = this.$('#reg_telephone');
+            this.fax = this.$('#reg_fax');
+            this.companyEmail = this.$('#reg_company_email');
+            this.incorporatedNumber = this.$('#reg_incorporated_number');
+            this.legalCompanyName = this.$('#reg_legal_company_name');
+            this.dateOfIncorporation = this.$('#reg_date_incorporation');
+            this.incorporatedAddress = this.$('#reg_incorporated_address');
+            this.incorporatedStateProvince = this.$('#reg_incorporated_state');
+            this.incorporatedCountry = this.$('#reg_incorporated_country');
+            this.federalTaxId = this.$('#reg_federal_tax_id');
+            this.vatTaxIdFileNumber = this.$('#reg_vat_tax_id');
+            this.ifCompanySubsidiaryName = this.$('#reg_subsidiary_name');
+            this.ifCompanySubsidiaryRegistrationNum = this.$('#reg_subsidiary_reg_num');
+        }
+        //this.$el.show();
         this.$el.removeClass("hide").addClass("show");
     },
 
@@ -198,20 +223,67 @@ fun.views.companies = Backbone.View.extend({
         event.preventDefault();
         //view cache
         var view = this,
+            account,
             company,
             name,
             companyUuid,
+            /*
             companyTitle,
             companyAssigned,
             companyLabel,
             companySource,
             companyStatus,
             companyPriority,
+            */
+            companyName,
+            streetAddress,
+            cityTown,
+            stateProvince,
+            zipPostal,
+            countryCompany,
+            dba,
+            telephone,
+            fax,
+            companyEmail,
+            incorporatedNumber,
+            legalCompanyName,
+            dateOfIncorporation,
+            incorporatedStateProvince,
+            incorporatedAddress,
+            incorporatedNumber,
+            incorporatedCountry,
+            federalTaxId,
+            vatTaxIdFileNumber,
+            ifCompanySubsidiaryName,
+            ifCompanySubsidiaryRegistrationNum,
             companySeverity;
 
         console.log('muther fucker say wut?');
 
-        var companyUuid = this.$('#company-uuid');
+        companyUuid = this.$('#company-uuid');
+        companyName = this.companyName;
+        streetAddress = this.streetAddress
+        cityTown = this.cityTown;
+        stateProvince = this.stateProvince;
+        zipPostal = this.zipPostal;
+        countryCompany = this.countryCompany;
+        dba = this.dba;
+        telephone = this.telephone;
+        fax = this.fax;
+        companyEmail = this.companyEmail;
+        incorporatedNumber = this.incorporatedNumber;
+        legalCompanyName = this.legalCompanyName;
+        dateOfIncorporation = this.dateOfIncorporation;
+        incorporatedStateProvince = this.incorporatedStateProvince;
+        incorporatedAddress = this.incorporatedAddress;
+        incorporatedNumber = this.incorporatedNumber;
+        incorporatedCountry = this.incorporatedCountry;
+        federalTaxId = this.federalTaxId;
+        vatTaxIdFileNumber = this.vatTaxIdFileNumber;
+        ifCompanySubsidiaryName = this.ifCompanySubsidiaryName
+        ifCompanySubsidiaryRegistrationNum = this.ifCompanySubsidiaryRegistrationNum;
+
+        /*
         var companyTitle = this.$('#company-title');
         var companyAssigned = this.$('#company-assigned');
         var companyLabel = this.$('#company-label');
@@ -221,6 +293,7 @@ fun.views.companies = Backbone.View.extend({
         var companySeverity = this.$('#company-severity');
 
         var companyDescription = this.$('#company-description');
+        */
 
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
@@ -233,6 +306,8 @@ fun.views.companies = Backbone.View.extend({
                 //console.log(response)
 
                 companyUuid.html(response.get('uuid'));
+
+                ifCompanySubsidiaryRegistrationNum.html(response.get('uuid'));
 
                 companyTitle.html(response.get('title') || "Where's the title boy?");
 
