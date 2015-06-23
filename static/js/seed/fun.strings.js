@@ -376,7 +376,7 @@ fun.strings = {
     suitPercent: "percent.",
     suitPowerLevel: "Power level is one hundred percent.",
 
-
+    companyEmail: "Company Email",
     dateOfIncorporation: "Date of Incorporation",
     incorporatedAddress: "Incorporated Address",
     incorporatedStateProvince: "Incorporated State / Province",
