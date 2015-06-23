@@ -209,6 +209,8 @@ fun.views.companies = Backbone.View.extend({
             companyPriority,
             companySeverity;
 
+        console.log('muther fucker say wut?');
+
         var companyUuid = this.$('#company-uuid');
         var companyTitle = this.$('#company-title');
         var companyAssigned = this.$('#company-assigned');
