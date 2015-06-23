@@ -317,7 +317,7 @@ fun.views.companies = Backbone.View.extend({
                 dba.html(response.get('dba'));
                 telephone.html(response.get('telephone'));
                 fax.html(response.get('fax'));
-                companyEmail.html(response.get('company_name'));
+                companyEmail.html(response.get('company_email'));
                 incorporatedNumber.html(response.get('incorporated_number'));
                 legalCompanyName.html(response.get('reg_legal_company_name'));
                 //dateOfIncorporation.html(response.get(''));
