@@ -148,35 +148,7 @@
         </div>
     </div>
 </div>
-<!--
-<div class="container">
-        
-    <div class="row">
 
-        <div class="col-md-12">
-            <p>now, later, done</p>  
-
-            Star, Who, Title, Date, Flag, UUID
-
-            resource/collections
-            location
-
-            all-day
-            starts at
-            ends at
-            occurs {dropdown, once, etc..}
-            alarm {dropdown, none, etc}
-            message
-        </div>
-            
-    </div>
-</div>
-
-
-Lable   Title   Description Name    Email   Status  UUID
-
-
--->
 
 <!-- company Modal popup -->
 <div class="modal fade" id="companyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -191,137 +163,337 @@ Lable   Title   Description Name    Email   Status  UUID
                 <p>Trouble Tickets track and manage IT problems and their solutions for multiple clients. Use this page to change the contents of an existing Trouble Ticket.</p>
 
                 <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("yourUsername") %></th>
+                                        <td id="company-uuid"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("yourEmail") %></th>
+                                        <td id="company-title"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("companyName") %></th>
+                                        <td id="company-assigned"></td>        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("streetAddress") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("cityTown") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("stateProvince") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("zipPostal") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("countryCompany") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("dba") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("telephone") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("fax") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("companyEmail") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("legalCompanyName") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("dateOfIncorporation") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("incorporatedNumber") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("incorporatedAddress") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("incorporatedStateProvince") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("incorporatedCountry") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("federalTaxId") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("vatTaxIdFileNumber") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("ifCompanySubsidiaryName") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("ifCompanySubsidiaryRegistrationNum") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <form id="signup-form" class="form-signup" novalidate="novalidate">
+
+                            <div class="form-group">
+                                <input type="text" id="reg_signup_username" name="reg_signup_username" class="form-control" placeholder="<%= translate("yourUsername") %>">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="reg_signup_email" name="reg_signup_email" class="form-control" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="reg_signup_password" name="reg_signup_password" placeholder="<%= translate("password") %>"/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="reg_confirm_password" name="reg_confirm_password" placeholder="<%= translate("confirmPassword") %>"/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_company_name" name="reg_company_name" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_street_address" name="reg_street_address" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_city_town" name="reg_city_town" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_state_province" name="reg_state_province" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_zip_postal" name="reg_zip_postal" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_country_company" name="reg_country_company" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_dba" name="reg_dba" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_telephone" name="reg_telephone" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_fax" name="reg_fax" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_company_email" name="reg_company_email" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_legal_company_name" name="reg_legal_company_name" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_date_incorporation" name="reg_date_incorporation" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_incorporated_number" name="reg_incorporated_number" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_incorporated_address" name="reg_incorporated_address" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_incorporated_state" name="reg_incorporated_state" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_incorporated_country" name="reg_incorporated_country" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_federal_tax_id" name="reg_federal_tax_id" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_vat_tax_id" name="reg_vat_tax_id" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_subsidiary_name" name="reg_subsidiary_name" placeholder=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reg_subsidiary_reg_num" name="reg_subsidiary_reg_num" placeholder=""/>
+                            </div>
+
+
+                            <button id="signup-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("signUp") %></button>
+
+                            <p>By clicking "Sign up", you agree to our terms of service and privacy policy. We will send you account related emails occasionally.</p>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col-md-6">
                         <div class="panel panel-default">
-                                      <!-- Default panel contents -->
+                            <!-- Default panel contents -->
 
-                                      <!-- Table -->
-                                      <table class="table">
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row"><%= translate("uuid") %></th>
-                                            <td id="company-uuid"></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("title") %></th>
-                                            <td id="company-title"></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("assigned") %></th>
-                                            <td id="company-assigned"></td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("label") %></th>
-                                            <td id="company-label"></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("uuid") %></th>
+                                        <td id="company-uuid"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("title") %></th>
+                                        <td id="company-title"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("assigned") %></th>
+                                        <td id="company-assigned"></td>        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("label") %></th>
+                                        <td id="company-label"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="col-md-6">
 
                         <div class="panel panel-default">
-                                      <!-- Default panel contents -->
+                            <!-- Default panel contents -->
 
-                                      <!-- Table -->
-                                      <table class="table">
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row"><%= translate("source") %></th>
-                                            <td id="company-source"></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("status") %></th>
-                                            <td id="company-status">
-                                                <div class="btn-group ">
-                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                        <i class="fa fa-user fa-fw"></i>
-                                                        <span data-label-placement="">now</span> 
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <input type="radio" id="current_status_0" name="current_status" value="0" checked="">
-                                                            <label for="current_status_0">now</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input type="radio" id="current_status_1" name="current_status" value="1" checked="">
-                                                            <label for="current_status_1">later</label>
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("source") %></th>
+                                        <td id="company-source"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("status") %></th>
+                                        <td id="company-status">
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <i class="fa fa-user fa-fw"></i>
+                                                    <span data-label-placement="">now</span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="current_status_0" name="current_status" value="0" checked="">
+                                                        <label for="current_status_0">now</label>
+                                                    </li>    
+                                                    <li>
+                                                        <input type="radio" id="current_status_1" name="current_status" value="1" checked="">
+                                                        <label for="current_status_1">later</label>        
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="current_status_2" name="current_status" value="2" checked="">
+                                                        <label for="current_status_2">done</label>
                                                             
-                                                        </li>
-                                                        <li>
-                                                            <input type="radio" id="current_status_2" name="current_status" value="2" checked="">
-                                                            <label for="current_status_2">done</label>
-                                                            
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("priority") %></th>
-                                            <td id="company-priority">
-                                                <div class="btn-group ">
-                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                        <i class="fa fa-user fa-fw"></i>
-                                                        <span data-label-placement="">small</span> 
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <input type="radio" id="current_status_0" name="current_priority" value="0" checked="">
-                                                            <label for="current_priority_0">small</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input type="radio" id="current_status_1" name="current_priority" value="1" checked="">
-                                                            <label for="current_priority_1">medium</label>
-                                                            
-                                                        </li>
-                                                        <li>
-                                                            <input type="radio" id="current_status_2" name="current_priority" value="2" checked="">
-                                                            <label for="current_priority_2">hight</label>
-                                                            
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("severity") %></th>
-                                            <td id="company-severity">
-                                                <div class="btn-group ">
-                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                        <i class="fa fa-user fa-fw"></i>
-                                                        <span data-label-placement="">info</span> 
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <input type="radio" id="current_status_0" name="current_severity" value="0" checked="">
-                                                            <label for="current_severity_0">info</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input type="radio" id="current_status_1" name="current_severity" value="1" checked="">
-                                                            <label for="current_severity_1">warning</label>
-                                                            
-                                                        </li>
-                                                        <li>
-                                                            <input type="radio" id="current_status_2" name="current_severity" value="2" checked="">
-                                                            <label for="current_severity_2">error</label>
-                                                            
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("priority") %></th>
+                                        <td id="company-priority">
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <i class="fa fa-user fa-fw"></i>
+                                                    <span data-label-placement="">small</span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="current_status_0" name="current_priority" value="0" checked="">
+                                                        <label for="current_priority_0">small</label>
+                                                    </li>            
+                                                    <li>
+                                                        <input type="radio" id="current_status_1" name="current_priority" value="1" checked="">
+                                                        <label for="current_priority_1">medium</label>            
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="current_status_2" name="current_priority" value="2" checked="">
+                                                        <label for="current_priority_2">hight</label>
+                                                                
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("severity") %></th>
+                                        <td id="company-severity">
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <i class="fa fa-user fa-fw"></i>
+                                                    <span data-label-placement="">info</span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="current_status_0" name="current_severity" value="0" checked="">
+                                                        <label for="current_severity_0">info</label>
+                                                    </li> 
+                                                    <li>
+                                                        <input type="radio" id="current_status_1" name="current_severity" value="1" checked="">
+                                                        <label for="current_severity_1">warning</label>        
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="current_status_2" name="current_severity" value="2" checked="">
+                                                        <label for="current_severity_2">error</label>    
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
