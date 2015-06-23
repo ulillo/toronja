@@ -354,7 +354,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.tasks.renderTasksList(
@@ -420,7 +420,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.companies.renderCompaniesList(
@@ -548,7 +548,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
                 fun.instances.teams.render(
                     resources.org
@@ -597,7 +597,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.members.render(
@@ -647,7 +647,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.contacts.renderContactLists(
@@ -742,7 +742,7 @@ fun.Router = Backbone.Router.extend({
         if (!account){
             account = localStorage.getItem("username");
         } else {
-            if (account.substring(0, 1) == ':') { 
+            if (account.substring(0, 1) === ':') { 
                 account = account.substring(1);
             }
         }
@@ -765,7 +765,7 @@ fun.Router = Backbone.Router.extend({
         }
 
         onSuccess = function(){
-            if(++modelCount == _.keys(models).length){
+            if(++modelCount === _.keys(models).length){
                 console.log('spawn daemon success!');
 
                 fun.instances.dashboard.renderLatestRecords(
@@ -851,7 +851,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount == _.keys(resources).length){
+            if(++resourceCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.campaigns.renderCampaignsList(

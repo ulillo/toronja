@@ -101,7 +101,7 @@ fun.views.reports = Backbone.View.extend({
         };
 
         success = function() {
-            if (++modelCount == _.keys(models).length) {
+            if (++modelCount === _.keys(models).length) {
                 fun.instances.reports.renderRecordsDetails(models.records);
                 fun.instances.reports.renderRecordsSummary(models.summary, models.billing);
             }

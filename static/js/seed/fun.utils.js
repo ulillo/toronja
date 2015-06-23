@@ -218,7 +218,7 @@ fun.utils.hideAll = function() {
  * @return Object
  */
 fun.utils.round = function (number, decimals) {
-  if (typeof decimals == 'undefined')
+  if (typeof decimals === 'undefined')
   {
       var decimals = 2;
   }

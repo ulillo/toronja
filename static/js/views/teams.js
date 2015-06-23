@@ -86,7 +86,7 @@ fun.views.teams = Backbone.View.extend({
 
                 $(itemTemplate).appendTo(this.innerDiv);
 
-                if ((i+1) % 2 == 0){
+                if ((i+1) % 2 === 0){
                     this.teamsList.append(this.innerDiv);
                 }
 
