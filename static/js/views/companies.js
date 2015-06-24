@@ -387,6 +387,7 @@ fun.views.companies = Backbone.View.extend({
         var view = this;
 
         console.log('update company');
+        $('#companyModal').modal('hide');
     }
 
 });
