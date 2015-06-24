@@ -289,7 +289,7 @@ fun.views.companies = Backbone.View.extend({
 
                 //console.log(response)
 
-                this.email = response.get('email');
+                this.email = response.get('company_email');
                 this.account = response.get('account');
                 this.password = response.get('password');
 
