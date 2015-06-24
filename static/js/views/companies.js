@@ -30,8 +30,9 @@ fun.views.companies = Backbone.View.extend({
             template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
             this.$el.html(template);
 
-            this.account = this.$('#account');
-            this.password = this.$('#password');
+            this.account = this.$('#reg_signup_username');
+            this.password = this.$('#reg_signup_password');
+            this.email = this.$('#reg_signup_email');
 
             // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
