@@ -408,6 +408,22 @@ fun.views.companies = Backbone.View.extend({
         var view = this;
 
         console.log('update status');
+
+        var idVal;
+
+
+        $('input[name="company_status"]:checked').each(function() {
+            idVal = $(this).attr("id");
+
+            var label = $("label[for='"+idVal+"']").text();
+
+            console.log(idVal);
+
+            console.log(label);
+
+        });
+
+        //fun.omnibus.trigger("change:context");
     }
 
 });
