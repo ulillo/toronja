@@ -329,6 +329,8 @@ fun.views.companies = Backbone.View.extend({
                 ifCompanySubsidiaryName.html(response.get('subsidiary_name'));
                 ifCompanySubsidiaryRegistrationNum.html(response.get('subsidiary_reg_num'));
 
+                console.log(response.get('account'), response.get('reg_signup_password'));
+
                 $('#companyModal').modal({
                     'show': true
                 });
