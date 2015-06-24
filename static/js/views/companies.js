@@ -289,6 +289,12 @@ fun.views.companies = Backbone.View.extend({
 
                 //console.log(response)
 
+                this.email = response.get('email');
+                this.account = response.get('account');
+                this.password = response.get('password');
+
+                console.log(this.email, this.account, this.password);
+
                 companyUuid.html(response.get('uuid'));
 
                 account.html(response.get('account'));
@@ -366,6 +372,18 @@ fun.views.companies = Backbone.View.extend({
             console.log(idVal);
 
             console.log(label);
+
+            if (label === 'active'){
+                this.model = new fun.models.Account();
+                this.model.save(
+                    {
+                        account: this.account,
+                        password: this.password,
+                        email: this.email
+                    },
+                    callbacks
+                );
+            }
 
         });
 
