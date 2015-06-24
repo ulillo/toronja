@@ -291,6 +291,8 @@ fun.views.companies = Backbone.View.extend({
 
         company = new fun.models.Company({'uuid':name});
 
+        console.log(this.email, this.account, this.password);
+
         company.fetch({
             success: function(response){
 
@@ -298,8 +300,7 @@ fun.views.companies = Backbone.View.extend({
 
                 
                 password = response.get('password');
-
-                console.log(this.email, this.account, this.password);
+                
 
                 companyUuid.html(response.get('uuid'));
 
