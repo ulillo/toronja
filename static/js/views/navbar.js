@@ -53,11 +53,13 @@ fun.views.navbar = Backbone.View.extend({
         context = sessionStorage.getItem("context");
 
         if (account !== context || typeof(context) === 'undefined' ){
+            this.$('#nav-new-org').removeClass('show').addClass('hide');
             this.$('#nav-new-member').removeClass('hide').addClass('show');
             this.$('#nav-new-team').removeClass('hide').addClass('show');
         } else {
             this.$('#nav-new-member').removeClass('show').addClass('hide');
-            this.$('#nav-new-team').removeClass('show').addClass('hide');   
+            this.$('#nav-new-team').removeClass('show').addClass('hide');
+            this.$('#nav-new-org').removeClass('hide').addClass('show');  
         }
     },
 
