@@ -389,6 +389,16 @@ fun.views.companies = Backbone.View.extend({
 
         console.log('update company');
         $('#companyModal').modal('hide');
+    },
+
+    closePopup: function(event){
+        'use strict';
+        event.preventDefault();
+        // view cache
+        var view = this;
+
+        console.log('close company details popup');
+        $('#companyModal').modal('hide');
     }
 
 });
