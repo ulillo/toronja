@@ -3,7 +3,6 @@ fun.views.companies = Backbone.View.extend({
     /**
     * Bind the event functions to the different HTML elements
     */
-    // click events missing
     events: {
         "click #create-company-btn": "createCompany",
         "click .company-popup": "companyDetails",
@@ -31,6 +30,7 @@ fun.views.companies = Backbone.View.extend({
             template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
             this.$el.html(template);
 
+            // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
             this.streetAddress = this.$('#reg_street_address');
             this.cityTown = this.$('#reg_city_town');
@@ -230,14 +230,6 @@ fun.views.companies = Backbone.View.extend({
             company,
             name,
             companyUuid,
-            /*
-            companyTitle,
-            companyAssigned,
-            companyLabel,
-            companySource,
-            companyStatus,
-            companyPriority,
-            */
             companyName,
             streetAddress,
             cityTown,
@@ -287,18 +279,6 @@ fun.views.companies = Backbone.View.extend({
         ifCompanySubsidiaryName = this.ifCompanySubsidiaryName
         ifCompanySubsidiaryRegistrationNum = this.ifCompanySubsidiaryRegistrationNum;
 
-        /*
-        var companyTitle = this.$('#company-title');
-        var companyAssigned = this.$('#company-assigned');
-        var companyLabel = this.$('#company-label');
-        var companySource = this.$('#company-source');
-        var companyStatus = this.$('#company-status');
-        var companyPriority = this.$('#company-priority');
-        var companySeverity = this.$('#company-severity');
-
-        var companyDescription = this.$('#company-description');
-        */
-
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
 
@@ -334,40 +314,7 @@ fun.views.companies = Backbone.View.extend({
                 federalTaxId.html(response.get('federal_tax_id'));
                 vatTaxIdFileNumber.html(response.get('vat_tax_id_file_number'));
                 ifCompanySubsidiaryName.html(response.get('subsidiary_name'));
-
-
                 ifCompanySubsidiaryRegistrationNum.html(response.get('subsidiary_reg_num'));
-
-                /*
-
-                account: "Chumster"
-                account_type: "user"
-                checked: false
-                city_town: "sdsd sds "
-                company_email: "sd@sdsd.com"
-                company_name: "sodsodosd"
-                country_company: "Sds sds d"
-                created: "2015-06-19T23:55:06.860462"
-                dba: "sdsdss"
-                email: "Chumster@osdosd.com"
-                fax: "28282882828"
-                federal_tax_id: ""
-                incoportated_country: ""
-                incorporated_address: ""
-                incorporated_number: ""
-                incorporated_state_province: ""
-                password: "zafary00"
-                state_province: "sdosdos"
-                street_address: "sdsdosod"
-                subsidiary_name: ""
-                subsidiary_reg_num: ""
-                telephone: "8282828282"
-                uuid: "bb06b5c8-8ff7-4c25-be18-781c42c7de1c"
-                vat_tax_id_file_number: ""
-                zip_postal: "sdsdsodos"
-
-
-                */
 
                 $('#companyModal').modal({
                     'show': true
@@ -410,7 +357,6 @@ fun.views.companies = Backbone.View.extend({
         console.log('update status');
 
         var idVal;
-
 
         $('input[name="company_status"]:checked').each(function() {
             idVal = $(this).attr("id");
