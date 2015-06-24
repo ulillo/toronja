@@ -70,7 +70,8 @@ fun.views.subheader = Backbone.View.extend({
         if (account !== context && typeof(context) !== 'undefined' && context !== null){
             this.$('#head-nav-members').removeClass('hide').addClass('show');
             this.$('#head-nav-teams').removeClass('hide').addClass('show');
-            this.$('#head-nav-contacts').removeClass('hide').addClass('show');
+            this.$('#head-nav-contacts').removeClass('show').addClass('hide');
+            this.$('#head-nav-companies').removeClass('show').addClass('hide');
             this.$('#head-nav-activity').removeClass('hide').addClass('show');
         } else {
             this.$('#head-nav-members').removeClass('show').addClass('hide');
