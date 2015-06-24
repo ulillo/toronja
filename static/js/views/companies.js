@@ -258,9 +258,9 @@ fun.views.companies = Backbone.View.extend({
             ifCompanySubsidiaryRegistrationNum,
             companySeverity;
 
-        console.log('muther fucker say wut?');
+        password = this.$('#reg_signup_password');
 
-        password = this.$('#')
+        console.log('muther fucker say wut?');
 
         companyUuid = this.$('#company-uuid');
         account = this.$('#reg_signup_username');
