@@ -7,6 +7,7 @@ fun.views.companies = Backbone.View.extend({
     events: {
         "click #create-company-btn": "createCompany",
         "click .company-popup": "companyDetails",
+        "click #update-btn": "updateCompany"
     },
 
     /**
@@ -377,6 +378,15 @@ fun.views.companies = Backbone.View.extend({
         });
 
         //console.log(company.toJSON());
+    },
+
+    updateCompany: function(event){
+        'use strict';
+        event.preventDefault();
+        // view cache
+        var view = this;
+
+        console.log('update company');
     }
 
 });
