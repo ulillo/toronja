@@ -30,6 +30,9 @@ fun.views.companies = Backbone.View.extend({
             template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
             this.$el.html(template);
 
+            this.account = this.$('#account');
+            this.password = this.$('#password');
+
             // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
             this.streetAddress = this.$('#reg_street_address');
@@ -227,6 +230,7 @@ fun.views.companies = Backbone.View.extend({
         //view cache
         var view = this,
             account,
+            password,
             company,
             name,
             companyUuid,
@@ -254,6 +258,8 @@ fun.views.companies = Backbone.View.extend({
             companySeverity;
 
         console.log('muther fucker say wut?');
+
+        password = this.$('#')
 
         companyUuid = this.$('#company-uuid');
         account = this.$('#reg_signup_username');
@@ -289,9 +295,8 @@ fun.views.companies = Backbone.View.extend({
 
                 //console.log(response)
 
-                this.email = response.get('company_email');
-                this.account = response.get('account');
-                this.password = response.get('password');
+                
+                password = response.get('password');
 
                 console.log(this.email, this.account, this.password);
 
