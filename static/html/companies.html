@@ -55,12 +55,12 @@
                             </div>
                         </div>                                       
 
+                        <!--
+                        
                         <div class="form-group">
                             <label for="company_description"><%= translate("description") %></label>
                             <input type="text" id="company_description" name="company_description" class="form-control">
                         </div>
-
-                        <!--
 
                         <div class="form-checkbox">
                             <label>
@@ -187,18 +187,18 @@
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <input type="radio" id="task_account_1" name="task_account" value="1" checked="">
-                                                        <label for="task_account_1">disable</label>
-                                                    </li>
-                                                    
-                                                    <li>
-                                                        <input type="radio" id="task_account_2" name="task_account" value="2" checked="">
-                                                        <label for="task_account_2">active</label>
+                                                        <input type="radio" id="company_status_disable" name="company_status" value="1" checked="">
+                                                        <label for="company_status_disable">disable</label>
                                                     </li>
 
                                                     <li>
-                                                        <input type="radio" id="task_account_3" name="task_account" value="3" checked="">
-                                                        <label for="task_account_3">suspended</label>
+                                                        <input type="radio" id="company_status_active" name="company_status" value="2" checked="">
+                                                        <label for="company_status_active">active</label>
+                                                    </li>
+
+                                                    <li>
+                                                        <input type="radio" id="company_status_suspended" name="company_status" value="3" checked="">
+                                                        <label for="company_status_suspended">suspended</label>
                                                     </li>
                                                 </ul>
                                             </div>
