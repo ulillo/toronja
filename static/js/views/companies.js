@@ -376,8 +376,6 @@ fun.views.companies = Backbone.View.extend({
 
             var label = $("label[for='"+idVal+"']").text();
 
-            console.log(idVal);
-
             console.log(label);
 
             if (label === 'active'){
