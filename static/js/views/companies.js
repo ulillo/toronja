@@ -296,10 +296,8 @@ fun.views.companies = Backbone.View.extend({
 
                 //console.log(response)
 
-                
                 password = response.get('password');
                 
-
                 companyUuid.html(response.get('uuid'));
 
                 account.html(response.get('account'));
@@ -365,16 +363,16 @@ fun.views.companies = Backbone.View.extend({
     updateStatus: function(event){
         'use strict';
         event.preventDefault();
-        var view = this;
+        var view = this,
+                   idVal,
+                   label;
 
         console.log('update status');
-
-        var idVal;
 
         $('input[name="company_status"]:checked').each(function() {
             idVal = $(this).attr("id");
 
-            var label = $("label[for='"+idVal+"']").text();
+            label = $("label[for='" + idVal + "']").text();
 
             console.log(label);
 
