@@ -261,7 +261,7 @@ fun.views.companies = Backbone.View.extend({
 
         account = this.account;
         password = this.password;
-        email= this.email;
+        email = this.email;
 
         console.log(account, password, email);
 
@@ -380,9 +380,13 @@ fun.views.companies = Backbone.View.extend({
 
         console.log('update status');
 
-        account = view.account;
-        password = view.password;
-        email= view.email;
+        //account = $('#companyModal').val();
+        //password = $('#companyModal').val();
+        //email = $('#companyModal').val();
+
+        account = this.$('#reg_signup_username');
+        password = this.$('#reg_signup_password');
+        email = this.$('#reg_signup_email');
 
         cosole.log(account.val(), password.val(), email.val());
 
@@ -398,9 +402,7 @@ fun.views.companies = Backbone.View.extend({
             }
         };
 
-
         console.log(this.account.val(), this.password.val(), this.email.val());
-
 
         $('input[name="company_status"]:checked').each(function() {
             idVal = $(this).attr("id");
