@@ -369,6 +369,19 @@ fun.views.companies = Backbone.View.extend({
 
         console.log('update status');
 
+        // new user account callbacks
+        callbacks = {
+            success: function(){
+                console.log('new account success');
+            },
+
+            error: function(model, error){
+                console.log('wrong stuff on account create');
+                console.log(model, error);
+            }
+        };
+
+
         $('input[name="company_status"]:checked').each(function() {
             idVal = $(this).attr("id");
 
