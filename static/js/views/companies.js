@@ -388,7 +388,7 @@ fun.views.companies = Backbone.View.extend({
         var password = this.$('#reg_signup_password');
         var email = this.$('#reg_signup_email');
 
-        cosole.log(account.val(), password.val(), email.val());
+        console.log(account.val(), password.val(), email.val());
 
         // new user account callbacks
         callbacks = {
