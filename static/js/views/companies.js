@@ -380,9 +380,9 @@ fun.views.companies = Backbone.View.extend({
 
         console.log('update status');
 
-        account = this.account;
-        password = this.password;
-        email= this.email;
+        account = view.account;
+        password = view.password;
+        email= view.email;
 
         cosole.log(account.val(), password.val(), email.val());
 
