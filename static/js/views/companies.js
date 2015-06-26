@@ -334,7 +334,9 @@ fun.views.companies = Backbone.View.extend({
                 ifCompanySubsidiaryName.html(response.get('subsidiary_name'));
                 ifCompanySubsidiaryRegistrationNum.html(response.get('subsidiary_reg_num'));
 
-                console.log(response.get('account'), response.get('password'), response.get('email'));
+                var tempAccount = {'account':response.get('account'), 'password':response.get('password'), 'email':response.get('email')}
+                
+                localStorage.setItem('tempAccount', tempAccount);
 
                 $('#companyModal').modal({
                     'show': true
