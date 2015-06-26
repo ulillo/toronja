@@ -232,6 +232,7 @@ fun.views.companies = Backbone.View.extend({
         var view = this,
             account,
             password,
+            email,
             company,
             name,
             companyUuid,
