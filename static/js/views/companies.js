@@ -384,9 +384,9 @@ fun.views.companies = Backbone.View.extend({
         //password = $('#companyModal').val();
         //email = $('#companyModal').val();
 
-        account = this.$('#reg_signup_username');
-        password = this.$('#reg_signup_password');
-        email = this.$('#reg_signup_email');
+        var account = this.$('#reg_signup_username');
+        var password = this.$('#reg_signup_password');
+        var email = this.$('#reg_signup_email');
 
         cosole.log(account.val(), password.val(), email.val());
 
