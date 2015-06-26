@@ -260,8 +260,6 @@ fun.views.companies = Backbone.View.extend({
 
         password = this.$('#reg_signup_password');
 
-        console.log('muther fucker say wut?');
-
         companyUuid = this.$('#company-uuid');
         account = this.$('#reg_signup_username');
         companyName = this.companyName;
