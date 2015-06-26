@@ -365,7 +365,8 @@ fun.views.companies = Backbone.View.extend({
         event.preventDefault();
         var view = this,
                    idVal,
-                   label;
+                   label,
+                   callbacks;
 
         console.log('update status');
 
