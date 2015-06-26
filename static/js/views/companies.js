@@ -383,6 +383,9 @@ fun.views.companies = Backbone.View.extend({
         };
 
 
+        console.log(this.account, this.password, this.email);
+
+
         $('input[name="company_status"]:checked').each(function() {
             idVal = $(this).attr("id");
 
