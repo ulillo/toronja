@@ -378,6 +378,9 @@ fun.views.companies = Backbone.View.extend({
         var view = this,
                    idVal,
                    label,
+                   account,
+                   password,
+                   email,
                    callbacks;
 
         console.log('update status');
@@ -386,9 +389,14 @@ fun.views.companies = Backbone.View.extend({
         //password = $('#companyModal').val();
         //email = $('#companyModal').val();
 
-        var account = $('#reg_signup_username').val();
-        var password = $('#reg_signup_password').val();
-        var email = $('#reg_signup_email').val();
+        
+        var stuff = JSON.parse(localStorage.getItem('tempAccount'));
+
+        account = stuff['account'];
+
+        password = stuff['password'];
+
+        email = stuff['email'];
 
         console.log(account, password, email);
 
