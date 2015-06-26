@@ -391,7 +391,7 @@ fun.views.companies = Backbone.View.extend({
         };
 
 
-        console.log(this.account, this.password, this.email);
+        console.log(this.account.val(), this.password.val(), this.email.val());
 
 
         $('input[name="company_status"]:checked').each(function() {
