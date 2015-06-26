@@ -258,10 +258,8 @@ fun.views.companies = Backbone.View.extend({
             ifCompanySubsidiaryRegistrationNum,
             companySeverity;
 
-        password = this.$('#reg_signup_password');
-
         companyUuid = this.$('#company-uuid');
-        account = this.$('#reg_signup_username');
+
         companyName = this.companyName;
         streetAddress = this.streetAddress
         cityTown = this.cityTown;
@@ -294,10 +292,12 @@ fun.views.companies = Backbone.View.extend({
         company.fetch({
             success: function(response){
 
+                password = response.get('password');
+                account = response.get('account');
+                email = response.get('email');
+
                 //console.log(response)
 
-                password = response.get('password');
-                
                 companyUuid.html(response.get('uuid'));
 
                 account.html(response.get('account'));
@@ -338,6 +338,7 @@ fun.views.companies = Backbone.View.extend({
         });
 
         //console.log(company.toJSON());
+        console.log(account, email, password);
     },
 
     updateCompany: function(event){
