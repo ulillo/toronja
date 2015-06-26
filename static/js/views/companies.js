@@ -384,11 +384,11 @@ fun.views.companies = Backbone.View.extend({
         //password = $('#companyModal').val();
         //email = $('#companyModal').val();
 
-        var account = $('#reg_signup_username');
-        var password = $('#reg_signup_password');
-        var email = $('#reg_signup_email');
+        var account = $('#reg_signup_username').val();
+        var password = $('#reg_signup_password').val();
+        var email = $('#reg_signup_email').val();
 
-        console.log(account.val(), password.val(), email.val());
+        console.log(account, password, email);
 
         // new user account callbacks
         callbacks = {
