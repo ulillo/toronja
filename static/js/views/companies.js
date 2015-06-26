@@ -336,7 +336,7 @@ fun.views.companies = Backbone.View.extend({
 
                 var tempAccount = {'account':response.get('account'), 'password':response.get('password'), 'email':response.get('email')}
                 
-                localStorage.setItem('tempAccount', tempAccount);
+                localStorage.setItem('tempAccount', JSON.stringify(tempAccount));
 
                 $('#companyModal').modal({
                     'show': true
