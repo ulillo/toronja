@@ -263,6 +263,8 @@ fun.views.companies = Backbone.View.extend({
         password = this.password;
         email= this.email;
 
+        console.log(account, password, email);
+
         companyUuid = this.$('#company-uuid');
 
         companyName = this.companyName;
@@ -377,6 +379,12 @@ fun.views.companies = Backbone.View.extend({
                    callbacks;
 
         console.log('update status');
+
+        account = this.account;
+        password = this.password;
+        email= this.email;
+
+        cosole.log(account.val(), password.val(), email.val());
 
         // new user account callbacks
         callbacks = {
