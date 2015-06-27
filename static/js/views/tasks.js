@@ -340,22 +340,19 @@ fun.views.tasks = Backbone.View.extend({
 
         console.log('update task');
 
-        taskUuid = this.uuid.val();
+        taskUuid = this.uuid.text();
         status = this.status.val();
         comment = this.comment.val();
 
         update = new fun.models.Task({'uuid':taskUuid});
-
-        console.log(taskUuid, status, comment);
 
         var newRandomStuff = {
             'status': status,
             'comment': comment
         };
 
-        console.log(newRandomStuff);
-
         update.save(newRandomStuff, {patch: true});
+
     },
 
     /*
