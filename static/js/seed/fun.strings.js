@@ -191,7 +191,7 @@ fun.strings = {
     privacyPolicy: "privacy policy",
     manageInbondAndOutbound: "Manage inbound and outbound",
     willSendRelatedEmails: "We will send you account related emails occasionally",
-    powerComCamColIntAndS: "Powerful features to make communication campaigns more intelligente and simple",
+    powerComCamColIntAndS: "Powerful features to make communication campaigns more efficient and simple",
     bcastMsgsThsndsCnts: "Broadcast messages to thousands of contacts",
     sndVoiceMsgsCnts: "Send voice messages and reminders to thousands or millions of contacts at high speed bananas",
     orgToolMonkeys: "Organization tools for message passing artificial monkeys",
