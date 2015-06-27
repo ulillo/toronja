@@ -83,7 +83,27 @@
         </div>
 
         <div class="col-md-6">
-            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                </div>
+                <div class="panel-body">
+
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-cloud-download fa-stack-1x"></i>
+                    </span>
+
+                    <form id="export-campaign-form" class="form-export" novalidate="novalidate">
+  
+
+                        <p class="help-block"><%= translate("getCampaignList") %>.</p>
+
+                        <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                    </form>
+                          
+                </div>
+            </div>
         </div>
     </div>
 
