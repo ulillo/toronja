@@ -336,8 +336,11 @@ fun.views.tasks = Backbone.View.extend({
 
         this.status= $('input[name="task_status"]:checked');
         this.comment = this.$('#task-comment');
+        this.uuid = this.$('#task-uuid');
 
-        console.log('update task');
+        console.log('update task ', this.uuid, this.status, this.comment);
+
+        taskUuid = this.uuid;
 
         update = new fun.models.Task({'uuid':taskUuid});
 
