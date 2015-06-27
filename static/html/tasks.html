@@ -230,36 +230,8 @@ Lable   Title   Description Name    Email   Status  UUID
                                           </tr>
                                           <tr>
                                             <th scope="row"><%= translate("status") %></th>
+                                            <!-- da fuq -->
                                             <td id="task-status">
-                                                <div class="btn-group ">
-                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                        <i class="fa fa-user fa-fw"></i>
-                                                        <span data-label-placement="">now</span> 
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <input type="radio" id="current_status_0" name="current_status" value="0" checked="">
-                                                            <label for="current_status_0">now</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input type="radio" id="current_status_1" name="current_status" value="1" checked="">
-                                                            <label for="current_status_1">later</label>
-                                                            
-                                                        </li>
-                                                        <li>
-                                                            <input type="radio" id="current_status_2" name="current_status" value="2" checked="">
-                                                            <label for="current_status_2">done</label>
-                                                            
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("status") %></th>
-                                            <td scope="row">
                                                 <div class="btn-group ">
                                                     <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
                                                         <i class="fa fa-user fa-fw"></i>
@@ -268,18 +240,18 @@ Lable   Title   Description Name    Email   Status  UUID
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li>
-                                                            <input type="radio" id="company_status_disable" name="company_status" value="1" checked="">
-                                                            <label for="company_status_disable">disable</label>
+                                                            <input type="radio" id="task_status_disable" name="task_status" value="1" checked="">
+                                                            <label for="task_status_disable">disable</label>
                                                         </li>
 
                                                         <li>
-                                                            <input type="radio" id="company_status_active" name="company_status" value="2" checked="">
-                                                            <label for="company_status_active">active</label>
+                                                            <input type="radio" id="task_status_active" name="task_status" value="2" checked="">
+                                                            <label for="task_status_active">active</label>
                                                         </li>
 
                                                         <li>
-                                                            <input type="radio" id="company_status_suspended" name="company_status" value="3" checked="">
-                                                            <label for="company_status_suspended">suspended</label>
+                                                            <input type="radio" id="task_status_suspended" name="task_status" value="3" checked="">
+                                                            <label for="task_status_suspended">suspended</label>
                                                         </li>
                                                     </ul>
                                                 </div>
