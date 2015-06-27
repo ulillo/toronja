@@ -340,6 +340,8 @@ fun.views.tasks = Backbone.View.extend({
                    callbacks;
 
         console.log('close task');
+        
+        $('#taskModal').modal('hide');
     }
 
 });
