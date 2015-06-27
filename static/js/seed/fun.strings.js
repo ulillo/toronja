@@ -188,6 +188,8 @@ fun.strings = {
     status: "Status",
     terms: "Terms",
     privacy: "Privacy",
+    exportCampaigns: "Export Campaigns",
+    getCampaignList: "Get Campaign List",
     privacyPolicy: "privacy policy",
     manageInbondAndOutbound: "Manage inbound and outbound",
     willSendRelatedEmails: "We will send you account related emails occasionally",
