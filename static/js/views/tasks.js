@@ -16,6 +16,7 @@ fun.views.tasks = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.tasks = this.$el;
+        this.status = 'gut?';
     },
 
     /**
@@ -298,6 +299,8 @@ fun.views.tasks = Backbone.View.extend({
 
             console.log(label);
 
+            this.status = label;
+
             if (label === 'active'){
                 /*
                 this.model = new fun.models.Account();
@@ -325,9 +328,29 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         var view = this,
+                   update,
+                   status,
+                   comment,
+                   taskUuid,
                    callbacks;
 
         console.log('update task');
+
+        var update = new fun.models.Task({'uuid':taskUuid});
+
+        this.comment = this.$('#task-comment');
+
+        status = this.status;
+        comment = this.comment.val();
+
+        var newRandomStuff = {
+            'status': status,
+            'comment': comment
+        };
+
+        console.log(newRandomStuff);
+
+        update.save(newRandomStuff, {patch: true});
     },
 
     /*
@@ -340,7 +363,7 @@ fun.views.tasks = Backbone.View.extend({
                    callbacks;
 
         console.log('close task');
-        
+
         $('#taskModal').modal('hide');
     }
 
