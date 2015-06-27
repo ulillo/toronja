@@ -334,13 +334,14 @@ fun.views.tasks = Backbone.View.extend({
                    taskUuid,
                    callbacks;
 
-        console.log('update task');
-
-        var update = new fun.models.Task({'uuid':taskUuid});
-
+        this.status= $('input[name="task_status"]:checked');
         this.comment = this.$('#task-comment');
 
-        status = this.status;
+        console.log('update task');
+
+        update = new fun.models.Task({'uuid':taskUuid});
+
+        status = this.status.val();
         comment = this.comment.val();
 
         var newRandomStuff = {
