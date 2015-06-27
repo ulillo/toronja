@@ -258,6 +258,34 @@ Lable   Title   Description Name    Email   Status  UUID
                                             </td>
                                           </tr>
                                           <tr>
+                                            <th scope="row"><%= translate("status") %></th>
+                                            <td scope="row">
+                                                <div class="btn-group ">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                        <i class="fa fa-user fa-fw"></i>
+                                                        <span data-label-placement="">disable</span> 
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <input type="radio" id="company_status_disable" name="company_status" value="1" checked="">
+                                                            <label for="company_status_disable">disable</label>
+                                                        </li>
+
+                                                        <li>
+                                                            <input type="radio" id="company_status_active" name="company_status" value="2" checked="">
+                                                            <label for="company_status_active">active</label>
+                                                        </li>
+
+                                                        <li>
+                                                            <input type="radio" id="company_status_suspended" name="company_status" value="3" checked="">
+                                                            <label for="company_status_suspended">suspended</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
                                             <th scope="row"><%= translate("priority") %></th>
                                             <td id="task-priority">
                                                 <div class="btn-group ">
