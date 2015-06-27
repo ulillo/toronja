@@ -7,6 +7,7 @@ fun.views.tasks = Backbone.View.extend({
     events: {
         "click #create-task-btn": "createTask",
         "click .task-popup": "taskDetails",
+        "click input[name='task_status']": 'updateStatus'
     },
 
     /**
@@ -262,6 +263,58 @@ fun.views.tasks = Backbone.View.extend({
         });
 
         //console.log(task.toJSON());
+    },
+
+    /*
+    * Update Task Status
+    */
+    updateStatus: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+                   idVal,
+                   label,
+                   callbacks;
+
+        console.log('update status');
+
+        // new user account callbacks
+        callbacks = {
+            success: function(){
+                console.log('new account success');
+            },
+
+            error: function(model, error){
+                console.log('wrong stuff on account create');
+                console.log(model, error);
+            }
+        };
+
+        $('input[name="task_status"]:checked').each(function() {
+            idVal = $(this).attr("id");
+
+            label = $("label[for='" + idVal + "']").text();
+
+            console.log(label);
+
+            if (label === 'active'){
+                /*
+                this.model = new fun.models.Account();
+                this.model.save(
+                    {
+                        account: stuff['account'],
+                        password: stuff['password'],
+                        email: stuff['email']
+                    },
+                    callbacks
+                );
+                */
+            }
+
+            // missing switch and case stuff...
+            // using now, later and done?
+
+        });
     }
 
 });
