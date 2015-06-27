@@ -3,10 +3,11 @@ fun.views.tasks = Backbone.View.extend({
     /**
     * Bind the event functions to the different HTML elements
     */
-    // click events missing
     events: {
         "click #create-task-btn": "createTask",
         "click .task-popup": "taskDetails",
+        "click #update-task-btn": "updateTask",
+        "click #close-task-btn": "closeTask",
         "click input[name='task_status']": 'updateStatus'
     },
 
@@ -315,6 +316,30 @@ fun.views.tasks = Backbone.View.extend({
             // using now, later and done?
 
         });
+    },
+
+    /*
+    * Update Task
+    */
+    updateTask: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+                   callbacks;
+
+        console.log('update task');
+    },
+
+    /*
+    * Close Task
+    */
+    closeTask: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+                   callbacks;
+
+        console.log('close task');
     }
 
 });
