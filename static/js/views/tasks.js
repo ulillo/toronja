@@ -352,12 +352,12 @@ fun.views.tasks = Backbone.View.extend({
 
         var newRandomStuff = {
             'status': status,
-            'comments': {
+            'comments': [{
                 comments: {
                     account: this.account,
                     comment: comment
                 }
-            }
+            }]
         };
 
         update.save(newRandomStuff, {patch: true});
