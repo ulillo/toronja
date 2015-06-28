@@ -193,7 +193,7 @@ fun.strings = {
     privacyPolicy: "privacy policy",
     scriptDetail: "Your teams may need to follow a script when speaking with a contact. This script will be visible in our user interface.",
     callerIdDetail: "This is the number that people see when you place a phone call to them",
-    manageInbondAndOutbound: "Manage inbound and outbound",
+    manageInbondAndOutbound: "Manage inbound and outbound campaigns",
     willSendRelatedEmails: "We will send you account related emails occasionally",
     powerComCamColIntAndS: "Powerful features to make communication campaigns more efficient and simple",
     bcastMsgsThsndsCnts: "Broadcast messages to thousands of contacts",
