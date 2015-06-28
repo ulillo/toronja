@@ -218,49 +218,47 @@ Lable   Title   Description Name    Email   Status  UUID
                     <div class="col-md-6">
 
                         <div class="panel panel-default">
-                                      <!-- Default panel contents -->
+                            <!-- Default panel contents -->
 
-                                      <!-- Table -->
-                                      <table class="table">
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row"><%= translate("source") %></th>
-                                            <td id="task-source"></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("status") %></th>
-                                            <!-- da fuq 
-                                            <td id="task-status">
-                                            -->
-                                            <td>
-                                                <div class="btn-group ">
-                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                        <span data-label-placement="">now</span> 
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <input type="radio" id="task_status_now" name="task_status" value="1" checked="">
-                                                            <label for="task_status_now">now</label>
-                                                        </li>
-
-                                                        <li>
-                                                            <input type="radio" id="task_status_later" name="task_status" value="2" checked="">
-                                                            <label for="task_status_later">later</label>
-                                                        </li>
-
-                                                        <li>
-                                                            <input type="radio" id="task_status_done" name="task_status" value="3" checked="">
-                                                            <label for="task_status_done">done</label>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row"><%= translate("priority") %></th>
-                                            <td id="task-priority">
-                                                <div class="btn-group ">
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("source") %></th>
+                                        <td id="task-source"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("status") %></th>
+                                        <!-- da fuq 
+                                        <td id="task-status">
+                                        -->
+                                        <td>
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <span data-label-placement="">now</span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="task_status_now" name="task_status" value="now" checked="">
+                                                        <label for="task_status_now">now</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="task_status_later" name="task_status" value="later" checked="">
+                                                        <label for="task_status_later">later</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="task_status_done" name="task_status" value="done" checked="">
+                                                        <label for="task_status_done">done</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("priority") %></th>
+                                        <td id="task-priority">
+                                            <div class="btn-group ">
                                                     <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
                                                         <i class="fa fa-user fa-fw"></i>
                                                         <span data-label-placement="">small</span> 
