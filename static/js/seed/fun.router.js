@@ -1034,10 +1034,10 @@ fun.Router = Backbone.Router.extend({
         };
 
         fun.utils.logout({
-            success: onSuccess,
-            error: function() {
+            success: function() {
                 console.log('fuck error!');
-            }
+            },
+            error: onSuccess
         });
 
         fun.utils.hideAll();
