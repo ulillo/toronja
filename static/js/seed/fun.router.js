@@ -1030,7 +1030,6 @@ fun.Router = Backbone.Router.extend({
             onSuccess;
 
         onSuccess = function(){
-            console.log('super kika powers');
             fun.instances.navbar.render()
         };
 
@@ -1047,7 +1046,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.login.render();
         //fun.instances.footer.render();
     }
-
 });
 
 // init the shit out of this
