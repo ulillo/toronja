@@ -1031,17 +1031,18 @@ fun.Router = Backbone.Router.extend({
 
         onSuccess = function(){
             console.log('super kika powers');
+            fun.instances.navbar.render()
         };
+
+        fun.utils.hideAll();
 
         fun.utils.logout({
             success: function() {
-                console.log('fuck error!');
+                console.log('fuck error with kika and success!');
             },
             error: onSuccess
         });
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render()
         fun.instances.subheader.render(goodBye);      
         fun.instances.login.render();
         //fun.instances.footer.render();
