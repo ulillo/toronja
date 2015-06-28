@@ -1026,8 +1026,19 @@ fun.Router = Backbone.Router.extend({
 
     logout: function(){
         'use strict';
-        var goodBye = translate('goodBye');
-        fun.utils.logout();
+        var goodBye = translate('goodBye'),
+            callbacks;
+
+        callbacks = function(){
+            success: function(){
+                console.log('super kika powers');
+            },
+            error: function(){
+                console.log('kika find errors');
+            }
+        };
+
+        fun.utils.logout(callbacks);
         fun.utils.hideAll();
         fun.instances.navbar.render()
         fun.instances.subheader.render(goodBye);      

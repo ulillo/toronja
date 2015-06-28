@@ -135,8 +135,7 @@ fun.utils.logout = function(callbacks){
 
             // Clear the html from the containers
             for (var i in fun.containers) {
-                //if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
-                if(i !== 'login' && i !== 'footer' && i !== 'subheader'){    
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
             }
