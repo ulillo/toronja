@@ -29,6 +29,10 @@ fun.views.tasks = Backbone.View.extend({
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
+
+        if (typeof(account) === 'undefined'){
+            this.account = localStorage.getItem("username");
+        }
     },
 
      /*
@@ -348,7 +352,12 @@ fun.views.tasks = Backbone.View.extend({
 
         var newRandomStuff = {
             'status': status,
-            'comments': comment
+            'comments': {
+                comments: {
+                    account: this.account,
+                    comment: comment
+                }
+            }
         };
 
         update.save(newRandomStuff, {patch: true});
