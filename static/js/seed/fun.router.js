@@ -1027,18 +1027,19 @@ fun.Router = Backbone.Router.extend({
     logout: function(){
         'use strict';
         var goodBye = translate('goodBye'),
-            callbacks;
+            onSuccess;
 
-        callbacks = function(){
-            success: function(){
-                console.log('super kika powers');
-            },
-            error: function(){
-                console.log('kika find errors');
-            }
+        onSuccess = function(){
+            console.log('super kika powers');
         };
 
-        fun.utils.logout(callbacks);
+        fun.utils.logout({
+            success: onSuccess,
+            error: function() {
+                console.log('fuck error!');
+            }
+        });
+
         fun.utils.hideAll();
         fun.instances.navbar.render()
         fun.instances.subheader.render(goodBye);      
