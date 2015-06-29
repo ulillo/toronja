@@ -763,20 +763,18 @@ fun.models.Campaigns = Backbone.Collection.extend({
     }
 });
 
+
 fun.models.Alert = Backbone.Model.extend({
 
     idAttribute: 'uuid',
 
-    initialize: function(options) {
-        this.alertId = options.alertId;
-    },
-
     urlRoot: fun.conf.urls.alert,
 
     url: function() {
-        var url = this.urlRoot.replace(fun.conf.alertId, this.alertId);
+        'use strict';
+        var url;
         if (!this.isNew()){
-            url += '/' + this.id;
+            url = this.urlRoot.replace(fun.conf.uuidAlert, this.id);
         } else {
             url = fun.conf.urls.alerts;
         }
