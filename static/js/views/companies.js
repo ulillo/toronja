@@ -214,6 +214,10 @@ fun.views.companies = Backbone.View.extend({
         //company = new fun.models.Company(companyPayload);
         //company.save();
 
+        $('#newCompanyModal').modal({
+            'show': true
+        });
+
         // Clear the stuff from the inputs ;)
         view.$('#company_name').val('');
         view.$('#company_description').val('');
