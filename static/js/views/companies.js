@@ -164,58 +164,55 @@ fun.views.companies = Backbone.View.extend({
         account = this.account;
 
         companyName = this.companyName.val();
-
         companyDescription = this.companyDescription.val();
-
         companyLabel = this.companyLabel;
 
-        console.log(account, companyName, companyDescription);
+        console.log(account, companyName, companyDescription, companyLabel);
 
-        companyPayload = {
-            title: companyName,
-            description: companyDescription,
-            label: companyLabel
-        };
+        //companyPayload = {
+        //    title: companyName,
+        //    description: companyDescription,
+        //    label: companyLabel
+        //};
 
-        profile = JSON.parse(localStorage.getItem("profile"));
+        //profile = JSON.parse(localStorage.getItem("profile"));
 
-        user = new fun.models.User(profile);
+        //user = new fun.models.User(profile);
+        //user.fetch()
 
-        user.fetch()
+        //console.log(user.get('uuid'));
+        //console.log(user.get('first_name'));
 
-        console.log(user.get('uuid'));
-        console.log(user.get('first_name'));
+        //if (typeof(user.get('first_name')) === 'undefined'){
+        //    first_name = 'Mauricio'
+        //} else {
+        //    first_name = user.get('first_name');
+        //}
 
-        if (typeof(user.get('first_name')) === 'undefined'){
-            first_name = 'Mauricio'
-        } else {
-            first_name = user.get('first_name');
-        }
+        //if (typeof(user.get('last_name')) === 'undefined'){
+        //    last_name = 'Montero'
+        //} else {
+        //    last_name = user.get('last_name');
+        //}
 
-        if (typeof(user.get('last_name')) === 'undefined'){
-            last_name = 'Montero'
-        } else {
-            last_name = user.get('last_name');
-        }
-
-        companyPayload['first_name'] = first_name;
-        companyPayload['last_name'] = last_name;
-        companyPayload['email'] = user.get('email');
+        //companyPayload['first_name'] = first_name;
+        //companyPayload['last_name'] = last_name;
+        //companyPayload['email'] = user.get('email');
 
         //console.log(JSON.stringify(profile));
 
-        if (typeof(account) === undefined){
-            account = false;
-            companyPayload['public'] = account;
-        }
+        //if (typeof(account) === undefined){
+        //    account = false;
+        //    companyPayload['public'] = account;
+        //}
 
-        if (account != undefined & companyName != undefined){
-            companyPayload['account'] = account;
-            
-        }
+        //if (account != undefined & companyName != undefined){
+        //    companyPayload['account'] = account;
+        //    
+        //}
 
-        company = new fun.models.Company(companyPayload);
-        company.save();
+        //company = new fun.models.Company(companyPayload);
+        //company.save();
 
         // Clear the stuff from the inputs ;)
         view.$('#company_name').val('');
