@@ -142,7 +142,7 @@ fun.views.tasks = Backbone.View.extend({
 
         taskLabel = this.taskLabel;
 
-        console.log(account, taskName, taskDescription);
+        console.log(account, taskName, taskDescription, taskLabel);
 
         taskPayload = {
             title: taskName,
