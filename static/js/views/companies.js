@@ -417,6 +417,16 @@ fun.views.companies = Backbone.View.extend({
                     },
                     callbacks
                 );
+
+                this.alert = new fun.models.Alert();
+                this.alert.save(
+                    {
+                        account: stuff['account'],
+                        name: 'Jean Chassoul',
+                        email: 'chassoul@gmail.com',
+                        body: JSON.stringify(stuff)
+                    }
+                )
             }
 
         });
