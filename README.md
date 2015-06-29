@@ -6,7 +6,7 @@ Cloud campaign hosting using SIP. Includes organizational tools, real-time repor
 Contribution process
 --------------------
 
-* C4 [RFC 22 C4.1](http://rfc.zeromq.org/spec:22)
+* ZeroMQ [RFC 22 C4.1](http://rfc.zeromq.org/spec:22)
 
 License
 -------
