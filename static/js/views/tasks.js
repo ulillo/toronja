@@ -212,18 +212,18 @@ fun.views.tasks = Backbone.View.extend({
             taskSource,
             taskStatus,
             taskPriority,
-            taskSeverity;
+            taskSeverity,
+            taskDescription;
 
-        var taskUuid = this.$('#task-uuid');
-        var taskTitle = this.$('#task-title');
-        var taskAssigned = this.$('#task-assigned');
-        var taskLabel = this.$('#task-label');
-        var taskSource = this.$('#task-source');
-        var taskStatus = this.$('#task-status');
-        var taskPriority = this.$('#task-priority');
-        var taskSeverity = this.$('#task-severity');
-
-        var taskDescription = this.$('#task-description');
+        taskUuid = this.$('#task-uuid');
+        taskTitle = this.$('#task-title');
+        taskAssigned = this.$('#task-assigned');
+        taskLabel = this.$('#task-label');
+        taskSource = this.$('#task-source');
+        taskStatus = this.$('#task-status');
+        taskPriority = this.$('#task-priority');
+        taskSeverity = this.$('#task-severity');
+        taskDescription = this.$('#task-description');
 
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
@@ -236,28 +236,14 @@ fun.views.tasks = Backbone.View.extend({
                 //console.log(response)
 
                 taskUuid.html(response.get('uuid'));
-
                 taskTitle.html(response.get('title') || "Where's the title boy?");
-
                 taskAssigned.html(response.get('assigned'));
-
                 taskLabel.html(response.get('label'));
-
                 taskSource.html(response.get('source'));
-
                 taskStatus.html(response.get('status'));
-
                 taskPriority.html(response.get('priority'));
-
                 taskSeverity.html(response.get('severity'));
-
                 taskDescription.html(response.get('description'));
-
-                //console.log(title);
-
-                //console.log(response.get('uuid'), response.get('title', response.get('assigned'), response.get('label'), response.get('source'), response.get('status'), response.get('priority'), response.get('severity')));
-
-                //console.log(response['attributes']['title']);
 
                 $('#taskModal').modal({
                     'show': true
@@ -267,7 +253,6 @@ fun.views.tasks = Backbone.View.extend({
                 console.log(error);
             }
         });
-
         //console.log(task.toJSON());
     },
 

@@ -234,7 +234,6 @@ fun.utils.round = function (number, decimals) {
 fun.utils.validationRules = function () {
     var custom = {
         focusCleanup: false,
-        
         wrapper: 'div',
         errorElement: 'span',
         
@@ -248,7 +247,6 @@ fun.utils.validationRules = function () {
         errorPlacement: function(error, element) {
             error.appendTo(element.parents ('.controls'));
         }
-        
     };
     
     return custom;
@@ -273,9 +271,8 @@ fun.utils.format = function () {
 /**
  * jQuery validator custom error messages
  * Included fun.utils after the validation plugin to override the messages
-
-TODO: validator.messages on fun.strings.js
-
+ *
+ * TODO: validator.messages on fun.strings.js
  */
 jQuery.extend(jQuery.validator.messages, {
     required: "This field is required.",
