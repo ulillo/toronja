@@ -23,6 +23,7 @@ fun.conf = {
     uuidBilling: 'billing_uuid',
     uuidCarrier: 'carrier_uuid',
     uuidCampaign: 'campaign_uuid',
+    uuidAlert: 'alert_uuid',
     uuidContact: 'contact_uuid',
     uuidNode: 'node_uuid',
     uuidCluster: 'cluster_uuid',
@@ -178,6 +179,9 @@ fun.conf.urls = {
 
     campaign: fun.utils.format('/campaigns/%s', fun.conf.uuidCampaign),
     campaigns: '/campaigns/',
+
+    alert: fun.utils.format('/alerts/%s', fun.conf.uuidAlert),
+    alerts: '/alerts/',
 
     gateway: fun.utils.format('/gateways/%s', fun.conf.uuidGateway),
     gateways: '/gateways/',

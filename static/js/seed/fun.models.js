@@ -763,6 +763,53 @@ fun.models.Campaigns = Backbone.Collection.extend({
     }
 });
 
+fun.models.Alert = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    initialize: function(options) {
+        this.alertId = options.alertId;
+    },
+
+    urlRoot: fun.conf.urls.alert,
+
+    url: function() {
+        var url = this.urlRoot.replace(fun.conf.alertId, this.alertId);
+        if (!this.isNew()){
+            url += '/' + this.id;
+        } else {
+            url = fun.conf.urls.alerts;
+        }
+        return url;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+fun.models.Alerts = Backbone.Collection.extend({
+
+    model: fun.models.Alert,
+
+    urlRoot: fun.conf.urls.alerts,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    },
+
+    parse: function(response){
+        return response.alerts;
+    }
+});
+
 
 fun.models.Call = Backbone.Model.extend({
 
