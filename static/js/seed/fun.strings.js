@@ -133,6 +133,7 @@ fun.strings = {
     subscribeToOurUpdates: "Subscribe to our updates",
     signup: "Signup",
     isFastToGetStarted: "Is fast to get started",
+    getRunningInSeconds: "Get running in seconds with your own account",
     createYourUserAccount: "Create your user account",
     itsFastToGetStarted: "Is fast to get started",
     letsGetStarted: "Lets Get Started",
