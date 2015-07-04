@@ -16,7 +16,6 @@ fun.views.routes = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.routes = this.$el;
-        this.status = 'gut?';
     },
 
     /**
