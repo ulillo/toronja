@@ -135,6 +135,7 @@ fun.strings = {
     isFastToGetStarted: "Is fast to get started",
     createYourUserAccount: "Create your user account",
     itsFastToGetStarted: "Is fast to get started",
+    letsGetStarted: "Lets Get Started",
     todayActivity: "Today Activity",
     yourUsername: "Your Username",
     yourAccount: "Your Account",
