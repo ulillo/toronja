@@ -297,7 +297,7 @@ fun.strings = {
     teams: "Teams",
     member: "Member",
     team: "Team",
-    thisWeek: "This Week",
+    thisWeek: "Week",
     thisMonth: "Month",
     thisYear: "Year",
     today: "Today",
