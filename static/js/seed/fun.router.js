@@ -397,6 +397,71 @@ fun.Router = Backbone.Router.extend({
         //fun.instances.footer.render();
     },
 
+    routes: function(){
+        'use strict';
+        var routes = translate('routes'),
+            account,
+            context,
+            resourceCount = 0,
+            resources,
+            resource,
+            onSuccess;
+
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
+
+        console.log(
+            fun.utils.format('username: %s, context: %s', account, context)
+        );
+
+        // first of all here on resources the stuff seems to be fine.
+        // new note: wut?
+        resources = {
+            user: new fun.models.User({'account':account}),
+            routes: new fun.models.Routes()
+        };
+
+        // but, onSuccess we're rendering multiple times the same campaigns.render()
+        // and that stuff is bananas. ok
+
+        onSuccess = function(){
+            if(++resourceCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.routes.renderRoutesList(
+                    resources.routes
+                );
+
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(routes);
+            fun.instances.subheader.renderHeadNav();
+            
+            fun.instances.routes.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
+
+        //fun.instances.footer.render();
+    },
+
     companies: function(){
         'use strict';
         var companies = translate('companies'),
