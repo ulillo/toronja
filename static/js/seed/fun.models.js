@@ -947,6 +947,50 @@ fun.models.Tasks = Backbone.Collection.extend({
     }
 });
 
+fun.models.Route = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.route,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidRoute, this.id);
+        } else {
+            url = fun.conf.urls.routes;
+        }
+        return url;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+fun.models.Routes = Backbone.Collection.extend({
+
+    model: fun.models.Route,
+
+    urlRoot: fun.conf.urls.routes,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
 
 fun.models.Company = Backbone.Model.extend({
 

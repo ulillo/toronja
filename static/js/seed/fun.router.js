@@ -33,10 +33,12 @@ fun.Router = Backbone.Router.extend({
         "tasks": "tasks",
         "tasks/p:page": "tasks",
 
+        "routes": "routes",
+        "routes/p:page": "routes",
+
         "companies": "companies",
         "companies/p:page": "companies",
 
-        
         "campaigns": "campaigns",
         "cubes": "cubes",
         "orgs": "orgs",

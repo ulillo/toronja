@@ -30,6 +30,7 @@ fun.conf = {
     uuidCohort: 'cohort_uuid',
     uuidCube: 'cube_uuid',
     uuidTask: 'task_uuid',
+    uuidRoute: 'route_uuid',
     uuidCompany: 'company_uuid',
     uuidDirectory: 'directory_uuid',
     uuidSound: 'sound_uuid',
@@ -170,6 +171,9 @@ fun.conf.urls = {
 
     task: fun.utils.format('/tasks/%s', fun.conf.uuidTask),
     tasks: '/tasks/',
+
+    route: fun.utils.format('/routes/%s', fun.conf.uuidRoute),
+    routes: '/routes/',
 
     company: fun.utils.format('/companies/%s', fun.conf.uuidCompany),
     companies: '/companies/',
