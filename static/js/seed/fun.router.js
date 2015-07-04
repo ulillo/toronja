@@ -190,6 +190,11 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-tasks"
         });
 
+        // routes
+        fun.instances.routes = new fun.views.routes({
+            el:"#fun-routes"
+        });
+
         // companies
         fun.instances.companies = new fun.views.companies({
             el:"#fun-companies"
