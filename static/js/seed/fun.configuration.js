@@ -231,6 +231,11 @@ fun.conf.templates = {
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
     taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
 
+    routes: fun.utils.format('%s/routes.html', fun.conf.html),
+    allRoutes: fun.utils.format('%s/allRoutes.html', fun.conf.html),
+    routeRow: fun.utils.format('%s/routeRow.html', fun.conf.html),
+    routeListItem: fun.utils.format('%s/routeListItem.html', fun.conf.html),
+
     companies: fun.utils.format('%s/companies.html', fun.conf.html),
     allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
     companyRow: fun.utils.format('%s/companyRow.html', fun.conf.html),
@@ -385,6 +390,7 @@ fun.conf.hash = {
     cubes: '#cubes',
     contactsWithPage: '#contacts/p{page}',
     tasks: '#tasks',
+    routes: '#routes',
     companies: '#companies',
 
     sounds: '#sounds',
