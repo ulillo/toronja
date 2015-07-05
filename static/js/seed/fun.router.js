@@ -254,8 +254,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer = new fun.views.footer({
             el:"#fun-footer"
         });
-
-        console.log('before init');
     },
     
     home: function(){
@@ -399,7 +397,7 @@ fun.Router = Backbone.Router.extend({
         //fun.instances.footer.render();
     },
 
-    routes: function(){
+    routex: function(){
         'use strict';
         var routes = translate('routes'),
             account,
