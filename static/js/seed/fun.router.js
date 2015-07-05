@@ -254,6 +254,8 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer = new fun.views.footer({
             el:"#fun-footer"
         });
+
+        console.log('before init');
     },
     
     home: function(){
