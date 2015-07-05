@@ -191,9 +191,9 @@ fun.Router = Backbone.Router.extend({
         });
 
         // routes
-        fun.instances.routes = new fun.views.routes({
-            el:"#fun-routes"
-        });
+        //fun.instances.routes = new fun.views.routes({
+        //    el:"#fun-routes"
+        //});
 
         // companies
         fun.instances.companies = new fun.views.companies({
