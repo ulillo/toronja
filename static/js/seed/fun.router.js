@@ -441,7 +441,7 @@ fun.Router = Backbone.Router.extend({
 
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
-            fun.instances.navbar.render();
+            //fun.instances.navbar.render();
             fun.instances.subheader.render(routes);
             fun.instances.subheader.renderHeadNav();
             
