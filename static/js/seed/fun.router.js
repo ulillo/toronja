@@ -190,11 +190,6 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-tasks"
         });
 
-        // routes
-        //fun.instances.routes = new fun.views.routes({
-        //    el:"#fun-routes"
-        //});
-
         // companies
         fun.instances.companies = new fun.views.companies({
             el:"#fun-companies"
@@ -381,71 +376,6 @@ fun.Router = Backbone.Router.extend({
             fun.instances.subheader.renderHeadNav();
             
             fun.instances.tasks.render();
-
-            for (resource in resources){
-                resources[resource].fetch({
-                    success: onSuccess,
-                    error: function() {
-                        console.log('fuck error!');
-                    }
-                });
-            }
-        } else {
-            fun.utils.redirect(fun.conf.hash.login);
-        }
-
-        //fun.instances.footer.render();
-    },
-
-    routex: function(){
-        'use strict';
-        var routes = translate('routes'),
-            account,
-            context,
-            resourceCount = 0,
-            resources,
-            resource,
-            onSuccess;
-
-        // get account and context
-        account = localStorage.getItem("username");
-        context = sessionStorage.getItem("context");
-
-        console.log(
-            fun.utils.format('username: %s, context: %s', account, context)
-        );
-
-        // first of all here on resources the stuff seems to be fine.
-        // new note: wut?
-        resources = {
-            user: new fun.models.User({'account':account}),
-            routes: new fun.models.Routes()
-        };
-
-        // but, onSuccess we're rendering multiple times the same campaigns.render()
-        // and that stuff is bananas. ok
-
-        onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
-                console.log('get resources success!');
-
-                fun.instances.routes.renderRoutesList(
-                    resources.routes
-                );
-
-                fun.instances.settings.setProfileInformation(
-                    resources.user
-                );
-            }
-        };
-
-        if(fun.utils.loggedIn()){
-            fun.utils.hideAll();
-            //fun.instances.navbar.render();
-            fun.instances.subheader.render(routes);
-            fun.instances.subheader.renderHeadNav();
-            
-            fun.instances.routes.render();
 
             for (resource in resources){
                 resources[resource].fetch({
@@ -785,7 +715,7 @@ fun.Router = Backbone.Router.extend({
     
     login: function(){
         'use strict';
-        var login = translate('login');
+        var login = translate('signIn');
         if(fun.utils.loggedIn()){
             fun.utils.redirect(fun.conf.hash.dashboard);
         } else {
