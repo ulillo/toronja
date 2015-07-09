@@ -19,6 +19,11 @@
                                 <label for="current_account_0"><%= account %></label>
                             </li>
                             <li class="divider"></li>
+                            
+                            <li>
+                                <input type="radio" id="current_account_admin" name="current_account" value="admin" checked="">
+                                <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"><%= translate("systemAdmin") %></i></label>
+                            </li>
                             <li>
                                 <a href="#settings"><i class="fa fa-users fa-fw"></i> <%= translate("manageOrganizations") %></a>
                             </li>
