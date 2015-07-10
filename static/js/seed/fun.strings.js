@@ -133,6 +133,7 @@ fun.strings = {
     enterprise: "Enterprise",
     features: "Features",
     needEnterpriseResources: "Need enterprise resources",
+    systemGoingReboot: "The system is going down for reboot NOW!",
     quickLinks: "Quick links",
     comeOnOverHere: "Come on over here",
     subscribeToOurUpdates: "Subscribe to our updates",
