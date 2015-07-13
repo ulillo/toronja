@@ -6,6 +6,7 @@ fun.views.settings = Backbone.View.extend({
     // click events missing
     events: {
         "click #user-update-btn": "updateUserAccount",
+        "click #user-delete-btn": "deleteUserAccount"
     },
     
     /**
