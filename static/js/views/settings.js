@@ -96,5 +96,11 @@ fun.views.settings = Backbone.View.extend({
         console.log(newRandomStuff);
 
         confirm.save(newRandomStuff, {patch: true});
+    },
+
+    deleteUserAccount: function(event){
+        'use strict'
+        event.preventDefault();
+        console.log('delete account');
     }
 });
