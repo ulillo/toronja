@@ -14,6 +14,8 @@ fun.strings = {
     customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
     warning: 'Warning!',
+    phone: "Phone",
+    phones: "Phones",
     gate: "Gate",
     gates: "Gates",
     gateway: "Gateway",
