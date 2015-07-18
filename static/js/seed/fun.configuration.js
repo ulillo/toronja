@@ -62,7 +62,7 @@ fun.conf.daemons = {
     ws_server: 'ws://' + fun.conf.domain,
     ws_port: '10080',
     stun_port: '19302',
-    turn_port: '',
+    turn_port: '3478',
     stun_server: 'stun.' + fun.conf.domain,
     turn_server: 'turn.' + fun.conf.domain,
     sip_server: 'sip.' + fun.conf.domain
