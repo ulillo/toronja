@@ -79,12 +79,11 @@ fun.views.phone = Backbone.View.extend({
 
         -->
 
-
-        funPhone.start();
-
         this.renderDialBox();
         this.renderVideos();
         this.renderMessages();
+
+        funPhone.start();
 	},
 
 	renderDialBox: function(){
