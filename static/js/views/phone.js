@@ -13,6 +13,8 @@ fun.views.phone = Backbone.View.extend({
 			fun.utils.getTemplate(fun.conf.templates.phone)
 		);
 
+        var session;
+
         var configuration = {
             uri: 'sip:godstybba@sip.iofun.io',
             password: 'zafary',
@@ -33,6 +35,22 @@ fun.views.phone = Backbone.View.extend({
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
+
+        //here you determine whether the call has video and audio
+        var options = {
+            media: {
+                constraints: {
+                    audio: true,
+                    video: false
+                },
+                render: {
+                    remote: document.getElementById('remoteVideo'),
+                    local: document.getElementById('localVideo')
+                }
+            }
+        };
+        //makes the call
+        session = userAgent.invite('sip:500@iofun.io', options);
 
 
         <!--
