@@ -31,7 +31,7 @@ fun.views.phone = Backbone.View.extend({
                 },
         };
 
-        var funPhone = new SIP.UA(configuration);
+        var userAgent = new SIP.UA(configuration);
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
