@@ -120,19 +120,28 @@ fun.views.phone = Backbone.View.extend({
         dialpad.html(template);
 
         console.log("where's the fucking dialpad?");
+
+        var session;
+
+        
     },
 
     sipInvite: function(event){
         'use strict';
         event.preventDefault();
         console.log('sip invite');
+        this.session = 1;
     },
 
 
     sipBye: function(event){
         'use strict';
+        var session = this.session;
         event.preventDefault();
         console.log('sip bye');
+        console.log(session)
+        //session.bye();
+        console.log("SIP BYE request sended by client ended the call");
     },
 
     sipMessage: function(event){
