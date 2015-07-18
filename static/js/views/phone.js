@@ -34,6 +34,11 @@ fun.views.phone = Backbone.View.extend({
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
 
+
+        <!--
+
+        /*
+
         var selfView = this.$('#my-video');
         var remoteView = this.$('#peer-video');
 
@@ -69,6 +74,11 @@ fun.views.phone = Backbone.View.extend({
             'eventHandlers': eventHandlers,
             'mediaConstraints': {'audio': true, 'video': true}
         };
+
+        */
+
+        -->
+
 
         funPhone.start();
 
