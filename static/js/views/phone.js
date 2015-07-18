@@ -94,8 +94,6 @@ fun.views.phone = Backbone.View.extend({
         -->
 
         this.renderDialBox();
-        this.renderVideos();
-        this.renderMessages();
 
 	},
 
@@ -110,28 +108,6 @@ fun.views.phone = Backbone.View.extend({
         dialpad.html(template);
 
         console.log("where's the fucking dialpad?");
-    },
-
-    renderVideos: function(){
-        console.log('render videos');
-
-        var template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.videos)
-        );
-
-        var videos = this.$('#fun-videos');
-        videos.html(template);
-    },
-
-    renderMessages: function(){
-        console.log('render messages');
-
-        var template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.messages)
-        );
-
-        var messages = this.$('#fun-messages');
-        messages.html(template);
     }
 
 });
