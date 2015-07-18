@@ -52,13 +52,9 @@ fun.views.phone = Backbone.View.extend({
         //makes the call
         session = userAgent.invite('sip:500@iofun.io', options);
 
-
         <!--
 
         /*
-
-        var selfView = this.$('#my-video');
-        var remoteView = this.$('#peer-video');
 
         // Register callbacks to desired call events
         var eventHandlers = {
@@ -101,7 +97,6 @@ fun.views.phone = Backbone.View.extend({
         this.renderVideos();
         this.renderMessages();
 
-        //funPhone.start();
 	},
 
 	renderDialBox: function(){
@@ -113,6 +108,8 @@ fun.views.phone = Backbone.View.extend({
 
         var dialBox = this.$('#fun-dial-box');
         dialBox.html(template);
+
+        console.log("where's the fucking phone now?");
     },
 
     renderVideos: function(){
