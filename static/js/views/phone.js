@@ -36,7 +36,7 @@ fun.views.phone = Backbone.View.extend({
             hack_ip_in_contact: null
         };
 
-        var funPhone = new JsSIP.UA(configuration);
+        var funPhone = new SIP.UA(configuration);
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
