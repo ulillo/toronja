@@ -65,6 +65,7 @@ fun.conf.daemons = {
     turn_port: '3478',
     stun_server: 'stun.' + fun.conf.domain,
     turn_server: 'turn.' + fun.conf.domain,
+    coturn_server: 'coturn.' + fun.conf.domain,
     sip_server: 'sip.' + fun.conf.domain
 };
 
@@ -310,6 +311,8 @@ fun.conf.templates = {
     errorLarge: fun.utils.format('%s/errorLarge.html', fun.conf.html),
 
     numbers: fun.utils.format('%s/numbers.html', fun.conf.html),
+
+    phone: fun.utils.format('%s/phone.html', fun.conf.html),
 
     phoneNumbers: fun.utils.format('%s/phoneNumbers.html', fun.conf.html),
 
