@@ -50,7 +50,7 @@ fun.views.phone = Backbone.View.extend({
             }
         };
         //makes the call
-        session = userAgent.invite('sip:500@iofun.io', options);
+        //session = userAgent.invite('sip:500@iofun.io', options);
 
         <!--
 
