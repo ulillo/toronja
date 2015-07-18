@@ -1,7 +1,19 @@
 fun.views.phone = Backbone.View.extend({
 
 	events: {
-
+        "click #btn-call": 'sipInvite',
+        "click #btn-hangup": 'sipBye',
+        "click #btn-message": 'sipMessage',
+        "click #digit-0": 'digitZero',
+        "click #digit-1": 'digitOne',
+        "click #digit-2": 'digitTwo',
+        "click #digit-3": 'digitThree',
+        "click #digit-4": 'digitFour',
+        "click #digit-5": 'digitFive',
+        "click #digit-6": 'digitSix',
+        "click #digit-7": 'digitSeven',
+        "click #digit-8": 'digitEight',
+        "click #digit-9": 'digitNine',
 	},
 
 	initialize: function(options){
@@ -108,6 +120,51 @@ fun.views.phone = Backbone.View.extend({
         dialpad.html(template);
 
         console.log("where's the fucking dialpad?");
-    }
+    },
+
+    sipInvite: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('sip invite');
+    },
+
+
+    sipBye: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('sip bye');
+    },
+
+    sipMessage: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('sip message');
+    },
+
+    digitZero: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('digit zero');
+    },
+
+    digitOne: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('digit one');
+    },
+
+    digitTwo: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('digit two')
+    },
+
+    digitFive: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('digit five')
+    },
+
+
 
 });
