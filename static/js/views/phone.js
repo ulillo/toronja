@@ -14,26 +14,19 @@ fun.views.phone = Backbone.View.extend({
 		);
 
         var configuration = {
-            uri: 'sip:fun212@sip.ph3nix.com',
-            password: 'fun212',
-            ws_servers: 'ws://sip.ph3nix.com:10080',
-            display_name: 'IO FUN NY',
-            authorization_user: 'fun212',
+            uri: 'sip:godstybba@sip.iofun.io',
+            password: 'zafary',
+            ws_servers: 'ws://sip.iofun.io:10080',
+            display_name: 'godstybba',
+            authorization_user: 'godstybba',
             register: true,
-            register_expires: null,
-            no_answer_timeout: null,
-            trace_sip: true,
-            stun_servers: ["stun.ph3nix.com:3478"],
-            turn_servers: {
-                    server: "turn:turn.ph3nix.com:3478",
-                    username: "fun212",
-                    password: "fun212"
+            register_expires: 900,
+            stunServers: ["coturn.iofun.io:3478"],
+            turnServers: {
+                    server: "turn:coturn.iofun.io:3478",
+                    username: "godstybba",
+                    password: "zafary"
                 },
-            use_preloaded_route: null,
-            connection_recovery_min_interval: null,
-            connection_recovery_max_interval: null,
-            hack_via_tcp: null,
-            hack_ip_in_contact: null
         };
 
         var funPhone = new SIP.UA(configuration);
