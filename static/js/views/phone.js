@@ -100,16 +100,16 @@ fun.views.phone = Backbone.View.extend({
 	},
 
 	renderDialBox: function(){
-        console.log('render dial box');
+        console.log('render dialpad box');
         
         var template = _.template(
-        	fun.utils.getTemplate(fun.conf.templates.dialBox)
+        	fun.utils.getTemplate(fun.conf.templates.dialpad)
         );
 
-        var dialBox = this.$('#fun-dial-box');
-        dialBox.html(template);
+        var dialpad = this.$('#fun-dialpad');
+        dialpad.html(template);
 
-        console.log("where's the fucking phone now?");
+        console.log("where's the fucking dialpad?");
     },
 
     renderVideos: function(){
