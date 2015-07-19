@@ -63,49 +63,6 @@ fun.views.phone = Backbone.View.extend({
             }
         };
         this.options = options;
-        //makes the call
-        //session = userAgent.invite('sip:500@iofun.io', options);
-
-        <!--
-
-        /*
-
-        // Register callbacks to desired call events
-        var eventHandlers = {
-            'progress': function(e){
-                console.log('call is in progress');
-            },
-            'failed': function(e){
-                console.log('call failed with cause: '+ e.data.cause);
-            },
-            'ended': function(e){
-                console.log('call ended with cause: '+ e.data.cause);
-            },
-            'started': function(e){
-                var rtcSession = e.sender;
-
-                console.log('call started');
-
-                // Attach local stream to selfView
-                if (rtcSession.getLocalStreams().length > 0) {
-                    selfView.src = window.URL.createObjectURL(rtcSession.getLocalStreams()[0]);
-                }
-
-                // Attach remote stream to remoteView
-                if (rtcSession.getRemoteStreams().length > 0) {
-                    remoteView.src = window.URL.createObjectURL(rtcSession.getRemoteStreams()[0]);
-                }
-            }
-        };
-
-        var options = {
-            'eventHandlers': eventHandlers,
-            'mediaConstraints': {'audio': true, 'video': true}
-        };
-
-        */
-
-        -->
 
         this.renderDialBox();
 
@@ -119,13 +76,7 @@ fun.views.phone = Backbone.View.extend({
         );
 
         var dialpad = this.$('#fun-dialpad');
-        dialpad.html(template);
-
-        console.log("where's the fucking dialpad?");
-
-        var session;
-
-        
+        dialpad.html(template);  
     },
 
     sipInvite: function(event){
@@ -147,10 +98,8 @@ fun.views.phone = Backbone.View.extend({
         'use strict';
         var session = this.session;
         event.preventDefault();
-        console.log('sip bye');
-        console.log(session)
-        //session.bye();
-        console.log("SIP BYE request sended by client ended the call");
+        session.bye();
+        console.log("SIP BYE request sended by SIP.js client");
     },
 
     sipMessage: function(event){
