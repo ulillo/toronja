@@ -44,6 +44,7 @@ fun.views.phone = Backbone.View.extend({
         };
 
         var userAgent = new SIP.UA(configuration);
+        this.userAgent= userAgent;
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
@@ -61,6 +62,7 @@ fun.views.phone = Backbone.View.extend({
                 }
             }
         };
+        this.options = options;
         //makes the call
         //session = userAgent.invite('sip:500@iofun.io', options);
 
@@ -128,9 +130,16 @@ fun.views.phone = Backbone.View.extend({
 
     sipInvite: function(event){
         'use strict';
+        var userAgent,
+            options;
+
+        userAgent = this.userAgent;
+        options = this.options;
+
         event.preventDefault();
+
         console.log('sip invite');
-        this.session = 1;
+        this.session = userAgent.invite('sip:500@iofun.io', options);
     },
 
 
