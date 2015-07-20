@@ -90,7 +90,7 @@ fun.views.phone = Backbone.View.extend({
         event.preventDefault();
 
         console.log('sip invite');
-        this.session = userAgent.invite('sip:500@iofun.io', options);
+        this.session = userAgent.invite('sip:500@sip.iofun.io', options);
     },
 
 
