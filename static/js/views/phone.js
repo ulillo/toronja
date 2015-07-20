@@ -93,19 +93,20 @@ fun.views.phone = Backbone.View.extend({
         this.session = userAgent.invite('sip:500@sip.iofun.io', options);
     },
 
-
     sipBye: function(event){
         'use strict';
-        var session = this.session;
+        var session = this.session,
+            options;
+
         event.preventDefault();
         session.bye();
-        console.log("SIP BYE request sended by SIP.js client");
+        console.log("Sending SIP BYE Method");
     },
 
     sipMessage: function(event){
         'use strict';
         event.preventDefault();
-        console.log('sip message');
+        console.log('Sending SIP MESSAGE Method');
     },
 
     digitZero: function(event){
@@ -130,8 +131,6 @@ fun.views.phone = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         console.log('digit five')
-    },
-
-
+    }
 
 });
