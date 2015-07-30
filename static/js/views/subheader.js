@@ -80,9 +80,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-activity').removeClass('show').addClass('hide');
         }
 
-        if (context === 'System Admin'){
-            console.log('cartago');
-        }
+        console.log(context);
     },
 
     renderHeadNavAdmin: function(){
