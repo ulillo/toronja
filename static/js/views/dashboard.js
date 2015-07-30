@@ -334,14 +334,12 @@ fun.views.dashboard = Backbone.View.extend({
 
             var label = $("label[for='"+idVal+"']").text();
 
-            if (label === 'current_account_admin'){
+            console.log(idVal);
+
+            if (idVal === 'current_account_admin'){
                 console.log("select id with jqeury?")
                 $("#selected-icon").removeClass('show').addClass("hide")
             }
-
-            console.log(idVal);
-
-            console.log(label);
 
             // Check browser support
             if (typeof(Storage) != "undefined") {
