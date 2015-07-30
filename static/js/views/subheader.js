@@ -79,6 +79,14 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-teams').removeClass('show').addClass('hide');   
             this.$('#head-nav-activity').removeClass('show').addClass('hide');
         }
+
+        if (context === 'System Admin'){
+            console.log('cartago');
+        }
+    },
+
+    renderHeadNavAdmin: function(){
+        'use strict';
     },
 
     renderHeadNavCampaigns : function(){
