@@ -338,8 +338,6 @@ fun.views.dashboard = Backbone.View.extend({
 
             if (idVal === 'current_account_admin'){
                 $("#selected-icon").removeClass('show').addClass('hide');
-            } else {
-                $("#selected-icon").removeClass('hide').addClass('show')
             }
 
             // Check browser support
