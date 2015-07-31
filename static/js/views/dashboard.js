@@ -324,17 +324,15 @@ fun.views.dashboard = Backbone.View.extend({
     setContext: function(event){
         'use strict';
 
-        //selected-icon
-        var idVal;
-        // Set context org
         console.log('setting up activity context');
+
+        var idVal,
+            label;
 
         $('input[name="current_account"]:checked').each(function() {
             idVal = $(this).attr("id");
 
-            var label = $("label[for='"+idVal+"']").text();
-
-            console.log(idVal);
+            label = $("label[for='" + idVal + "']").text();
 
             if (idVal === 'current_account_admin'){
                 $("#selected-icon").removeClass('show').addClass('hide');
