@@ -82,7 +82,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-activity').removeClass('show').addClass('hide');
         }
 
-        if (context.trim() === 'System Admin'){
+        if (context !== 'undefined' && context !== null && context.trim() === 'System Admin'){
             console.log('new admin session and stuff');
             this.$('#head-nav-phone').removeClass('show').addClass('hide');
         }
