@@ -83,7 +83,8 @@ fun.views.subheader = Backbone.View.extend({
         }
 
         if (context.trim() === 'System Admin'){
-            console.log('new admin session and stuff');   
+            console.log('new admin session and stuff');
+            this.$('#head-nav-phone').removeClass('show').addClass('hide');
         }
     },
 
