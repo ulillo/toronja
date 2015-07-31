@@ -68,17 +68,14 @@ fun.views.subheader = Backbone.View.extend({
         );
         
         if (account !== context && typeof(context) !== 'undefined' && context !== null){
-
-            console.log('voy voy voy');
-            this.$('#head-nav-phone').removeClass('hide').addClass('show');
+            this.$('#head-nav-phone').removeClass('show').addClass('hide');
             this.$('#head-nav-members').removeClass('hide').addClass('show');
             this.$('#head-nav-teams').removeClass('hide').addClass('show');
             this.$('#head-nav-contacts').removeClass('show').addClass('hide');
             this.$('#head-nav-companies').removeClass('show').addClass('hide');
             this.$('#head-nav-activity').removeClass('hide').addClass('show');
         } else {
-            console.log('boy boy boy');
-            this.$('#head-nav-phone').removeClass('show').addClass('hide');
+            this.$('#head-nav-phone').removeClass('hide').addClass('show');
             this.$('#head-nav-members').removeClass('show').addClass('hide');
             this.$('#head-nav-contacts').removeClass('hide').addClass('show');
             this.$('#head-nav-teams').removeClass('show').addClass('hide');   
