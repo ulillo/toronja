@@ -545,6 +545,7 @@ fun.Router = Backbone.Router.extend({
         context = sessionStorage.getItem("context");
 
         console.log(context);
+        // Yeah resources bitch! fucking missing since years ago...
         resources = {
             org: new fun.models.Org({'account':context})
         };
