@@ -68,6 +68,7 @@ fun.views.subheader = Backbone.View.extend({
         );
         
         if (account !== context && typeof(context) !== 'undefined' && context !== null){
+            console.log('ORG context');
             this.$('#head-nav-phone').removeClass('show').addClass('hide');
             this.$('#head-nav-members').removeClass('hide').addClass('show');
             this.$('#head-nav-teams').removeClass('hide').addClass('show');
@@ -79,6 +80,7 @@ fun.views.subheader = Backbone.View.extend({
             //this.$('#head-nav-servers').removeClass('show').addClass('hide');
             this.$('#head-nav-accounts').removeClass('show').addClass('hide');
         } else {
+            console.log('User account');
             this.$('#head-nav-phone').removeClass('hide').addClass('show');
             this.$('#head-nav-members').removeClass('show').addClass('hide');
             this.$('#head-nav-servers').removeClass('show').addClass('hide');
@@ -90,7 +92,7 @@ fun.views.subheader = Backbone.View.extend({
         }
 
         if (context !== 'undefined' && context !== null && context.trim() === 'System Admin'){
-            console.log('new admin session and stuff');
+            console.log('System Admin and stuff');
             this.$('#head-nav-phone').removeClass('show').addClass('hide');
             this.$('#head-nav-teams').removeClass('show').addClass('hide');
             this.$('#head-nav-members').removeClass('show').addClass('hide');
