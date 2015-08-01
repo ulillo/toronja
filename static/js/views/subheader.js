@@ -81,6 +81,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-members').removeClass('show').addClass('hide');
             this.$('#head-nav-servers').removeClass('show').addClass('hide');
             this.$('#head-nav-accounts').removeClass('show').addClass('hide');
+            this.$('#head-nav-gateways').removeClass('show').addClass('hide');
             this.$('#head-nav-contacts').removeClass('hide').addClass('show');
             this.$('#head-nav-teams').removeClass('show').addClass('hide');   
             this.$('#head-nav-activity').removeClass('show').addClass('hide');
