@@ -18,6 +18,8 @@ fun.strings = {
     phones: "Phones",
     gate: "Gate",
     gates: "Gates",
+    server: "Server",
+    servers: "Servers",
     gateway: "Gateway",
     systemAdmin: "System Admin",
     newGateway: "New Gateway",
