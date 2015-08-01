@@ -763,8 +763,8 @@ fun.Router = Backbone.Router.extend({
         if (org) {
             models.org = new fun.models.Org({'account': org});
             
-            // set custom url tree, it's not a tree but you got it...
-            //window.history.pushState('orgDashboard', 'Dashboard', '/orgs/iofun/dashboard');
+            // Set custom url tree, it's not a tree but you got it...
+            // window.history.pushState('orgDashboard', 'Dashboard', '/orgs/iofun/dashboard');
         }
 
         onSuccess = function(){
