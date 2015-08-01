@@ -335,7 +335,13 @@ fun.views.dashboard = Backbone.View.extend({
             label = $("label[for='" + idVal + "']").text();
 
             if (idVal === 'current_account_admin'){
-                $("#selected-icon").removeClass('show').addClass('hide');
+                //$("#selected-icon").removeClass('show').addClass('hide');
+
+                // Check browser support
+                if (typeof(Storage) != "undefined") {
+                    // Store
+                    sessionStorage.setItem("is_admin", true);
+                }
             }
 
             // Check browser support
