@@ -15,6 +15,10 @@ fun.views.dashboard = Backbone.View.extend({
         // Initialize view constructor
         'use strict';
         fun.containers.dashboard = this.$el;
+
+        fun.omnibus.on("change:system_admin", function(){
+            this.renderBoo();
+        }, this);
     },
 
     render: function(account, summary, billing){
@@ -39,6 +43,11 @@ fun.views.dashboard = Backbone.View.extend({
         this.renderTodayActivityChart();
         this.renderLatestRecords();
         this.renderRecordType();
+    },
+
+    renderBoo: function(){
+        'use strict';
+        console.log('corporate warfare');
     },
 
     renderAccountDropdown: function(account){
@@ -342,6 +351,8 @@ fun.views.dashboard = Backbone.View.extend({
                     // Store
                     sessionStorage.setItem("is_admin", true);
                 }
+
+                fun.omnibus.trigger("change:system_admin");
             }
 
             // Check browser support
