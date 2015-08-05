@@ -155,6 +155,8 @@ fun.views.dashboard = Backbone.View.extend({
             this.seconds = summary.get('seconds');
             this.minutes = summary.get('minutes');
             this.records = summary.get('records');
+
+            console.log(this.summary);
         }
         
         // push the seconds
