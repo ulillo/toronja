@@ -163,7 +163,7 @@ fun.views.dashboard = Backbone.View.extend({
 
         _.each(this.minutes, function(o) {
             console.log(o);
-        };
+        });
         
         // push the seconds
         for (x in this.seconds){
