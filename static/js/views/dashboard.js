@@ -155,21 +155,24 @@ fun.views.dashboard = Backbone.View.extend({
             this.seconds = summary.get('seconds');
             this.minutes = summary.get('minutes');
             this.records = summary.get('records');
-
-            console.log(this.seconds);
-
-            console.log(this.minutes);
         }
 
-        //_.each(this.minutes, function(o) {
-        //    console.log(o);
-        //});
+        var secs = [];
+        var mins = [];
 
-        _.each(this.seconds, function(o) {
-            console.log(o);
+        _.each(this.minutes, function(o) {
+            //console.log(o);
+            mins.push([o, this.minutes[o]]);
         });
 
-        
+        _.each(this.seconds, function(o) {
+            secs.push([o, this.seconds[o]]);
+        });
+
+        console.log(secs);
+
+        console.log(mins);
+
         // push the seconds
         for (x in this.seconds){
             seconds.push([x, this.seconds[x]]);
