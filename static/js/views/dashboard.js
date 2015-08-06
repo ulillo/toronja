@@ -149,13 +149,6 @@ fun.views.dashboard = Backbone.View.extend({
             template,
             todayActivityChart;
 
-
-        // testing stuff counter
-        var countX = 0,
-            countY = 0,
-            countZ = 0;
-
-
         // check if response from the server
         if(summary){
             this.summary = summary;
@@ -164,6 +157,7 @@ fun.views.dashboard = Backbone.View.extend({
             this.records = summary.get('records');
         }
 
+        /*
         // push the seconds
         for (var x in this.seconds){
             seconds.push([x, this.seconds[x]]);
@@ -186,6 +180,12 @@ fun.views.dashboard = Backbone.View.extend({
             minutes.push([y, this.minutes[y]]);
         }
 
+        */
+
+        seconds = _.pairs(this.seconds)
+
+        minutes = _.pairs(this.minutes)
+
         data.push({
             data: seconds,
             label: 'Seconds'
@@ -195,50 +195,6 @@ fun.views.dashboard = Backbone.View.extend({
             data: minutes,
             label: 'Minutes'
         });
-
-        // new stuff with underscore _.each()
-        var secs = [];
-        var mins = [];
-
-        var testDic = {
-            'uno': 1,
-
-            'dos': 2,
-
-            'tres': 3,
-
-            'cuatro': 4
-        }
-
-        _.each(this.minutes, function(o) {
-            
-            if (countY <= 10){
-
-                console.log(o);
-            }
-
-            countY += 1;
-
-            mins.push(o)
-            //mins.push([o, this.minutes[o]]);
-        });
-
-        _.each(testDic, function(p) {
-            console.log(p);
-        });
-
-        _.each(this.seconds, function(q) {
-            console.log(q);
-        });
-
-        var mix = _.pairs(this.minutes) 
-
-
-        console.log(mix);
-
-        console.log(secs);
-
-        console.log(mins);
         
         // push the records
         for (x in this.records){
