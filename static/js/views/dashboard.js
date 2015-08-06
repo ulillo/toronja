@@ -214,8 +214,6 @@ fun.views.dashboard = Backbone.View.extend({
         todayActivityChart = this.$('#fun-today-activity-chart');
         todayActivityChart.html(template);
 
-        console.log(mins);
-
         // clean charts
         Charts.line('#line-chart', data);
     },
