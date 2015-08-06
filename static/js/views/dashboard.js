@@ -157,34 +157,11 @@ fun.views.dashboard = Backbone.View.extend({
             this.records = summary.get('records');
         }
 
-        /*
-        // push the seconds
-        for (var x in this.seconds){
-            seconds.push([x, this.seconds[x]]);
-        }
-
-        // push the minutes
-        for (var y in this.minutes){
-
-            if (countX <= 10){
-                console.log([y, this.minutes[y]]);
-
-                console.log(y);
-
-                console.log(this.minutes[y]);
-            }
-
-            countX += 1;
-
-            // console.log([y, this.minutes[y]]);
-            minutes.push([y, this.minutes[y]]);
-        }
-
-        */
-
         seconds = _.pairs(this.seconds)
 
         minutes = _.pairs(this.minutes)
+
+        records = _.pairs(this.records)
 
         data.push({
             data: seconds,
@@ -196,10 +173,6 @@ fun.views.dashboard = Backbone.View.extend({
             label: 'Minutes'
         });
         
-        // push the records
-        for (x in this.records){
-            records.push([x, this.records[x]]);
-        }
         data.push({
             data: records,
             label: 'Records',
