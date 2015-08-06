@@ -231,6 +231,11 @@ fun.views.dashboard = Backbone.View.extend({
             console.log(q);
         });
 
+        var mix = _.pairs(this.minutes) 
+
+
+        console.log(mix);
+
         console.log(secs);
 
         console.log(mins);
