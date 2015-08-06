@@ -163,6 +163,12 @@ fun.views.dashboard = Backbone.View.extend({
 
         records = _.pairs(this.records)
 
+        console.log(seconds);
+
+        console.log(minutes);
+
+        console.log(records);
+
         data.push({
             data: seconds,
             label: 'Seconds'
