@@ -161,7 +161,8 @@ fun.views.dashboard = Backbone.View.extend({
         var mins = [];
 
         _.each(this.minutes, function(o) {
-            console.log(o);
+            //console.log(o);
+            mins.push(o)
             //mins.push([o, this.minutes[o]]);
         });
 
@@ -212,6 +213,8 @@ fun.views.dashboard = Backbone.View.extend({
 
         todayActivityChart = this.$('#fun-today-activity-chart');
         todayActivityChart.html(template);
+
+        console.log(mins);
 
         // clean charts
         Charts.line('#line-chart', data);
