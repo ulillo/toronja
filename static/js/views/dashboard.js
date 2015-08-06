@@ -184,6 +184,8 @@ fun.views.dashboard = Backbone.View.extend({
             minutes.push([y, this.minutes[y]]);
         }
 
+        console.log(this.minutes);
+
         console.log(seconds);
         console.log(minutes);
 
