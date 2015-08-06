@@ -200,6 +200,20 @@ fun.views.dashboard = Backbone.View.extend({
         var secs = [];
         var mins = [];
 
+        var testDic = {
+            'uno': 1,
+
+            'dos': 2,
+
+            'tres': 3,
+
+            'cuatro': 4
+        }
+
+        _.each(testDic, function(p)){
+            console.log(p);
+        });
+
         _.each(this.seconds, function(o) {
             console.log(o);
             //secs.push([o, this.seconds[o]]);
@@ -211,6 +225,8 @@ fun.views.dashboard = Backbone.View.extend({
 
                 console.log(o);
             }
+
+            countY += 1;
 
             mins.push(o)
             //mins.push([o, this.minutes[o]]);
