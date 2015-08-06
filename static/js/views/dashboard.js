@@ -155,6 +155,7 @@ fun.views.dashboard = Backbone.View.extend({
             countY = 0,
             countZ = 0;
 
+
         // check if response from the server
         if(summary){
             this.summary = summary;
@@ -173,6 +174,8 @@ fun.views.dashboard = Backbone.View.extend({
 
             if (countX <= 10){
                 console.log([y, this.minutes[y]]);
+
+                console.log(y);
             }
 
             countX += 1;
