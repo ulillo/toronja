@@ -186,11 +186,6 @@ fun.views.dashboard = Backbone.View.extend({
             minutes.push([y, this.minutes[y]]);
         }
 
-        console.log(this.minutes);
-
-        console.log(seconds);
-        console.log(minutes);
-
         data.push({
             data: seconds,
             label: 'Seconds'
@@ -211,7 +206,12 @@ fun.views.dashboard = Backbone.View.extend({
         });
 
         _.each(this.minutes, function(o) {
-            //console.log(o);
+            
+            if (countY <= 10){
+
+                console.log(o);
+            }
+
             mins.push(o)
             //mins.push([o, this.minutes[o]]);
         });
