@@ -149,6 +149,12 @@ fun.views.dashboard = Backbone.View.extend({
             template,
             todayActivityChart;
 
+
+        // testing stuff counter
+        var countX = 0,
+            countY = 0,
+            countZ = 0;
+
         // check if response from the server
         if(summary){
             this.summary = summary;
@@ -157,6 +163,38 @@ fun.views.dashboard = Backbone.View.extend({
             this.records = summary.get('records');
         }
 
+        // push the seconds
+        for (var x in this.seconds){
+            seconds.push([x, this.seconds[x]]);
+        }
+
+        // push the minutes
+        for (var y in this.minutes){
+
+            if (countX <= 10){
+                console.log([y, this.minutes[y]]);
+            }
+
+            countX += 1;
+
+            console.log([y, this.minutes[y]]);
+            minutes.push([y, this.minutes[y]]);
+        }
+
+        console.log(seconds);
+        console.log(minutes);
+
+        data.push({
+            data: seconds,
+            label: 'Seconds'
+        });
+
+        data.push({
+            data: minutes,
+            label: 'Minutes'
+        });
+
+        // new stuff with underscore _.each()
         var secs = [];
         var mins = [];
 
@@ -174,33 +212,6 @@ fun.views.dashboard = Backbone.View.extend({
         console.log(secs);
 
         console.log(mins);
-
-        // push the seconds
-        for (var x in this.seconds){
-            seconds.push([x, this.seconds[x]]);
-        }
-
-
-        // push the minutes
-        for (var y in this.minutes){
-
-            console.log([y, this.minutes[y]]);
-            minutes.push([y, this.minutes[y]]);
-        }
-
-        console.log(seconds);
-        console.log(minutes);
-
-
-        data.push({
-            data: seconds,
-            label: 'Seconds'
-        });
-
-        data.push({
-            data: minutes,
-            label: 'Minutes'
-        });
         
         // push the records
         for (x in this.records){
