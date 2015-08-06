@@ -210,15 +210,6 @@ fun.views.dashboard = Backbone.View.extend({
             'cuatro': 4
         }
 
-        _.each(testDic, function(p)){
-            console.log(p);
-        });
-
-        _.each(this.seconds, function(o) {
-            console.log(o);
-            //secs.push([o, this.seconds[o]]);
-        });
-
         _.each(this.minutes, function(o) {
             
             if (countY <= 10){
@@ -230,6 +221,14 @@ fun.views.dashboard = Backbone.View.extend({
 
             mins.push(o)
             //mins.push([o, this.minutes[o]]);
+        });
+
+        _.each(testDic, function(p) {
+            console.log(p);
+        });
+
+        _.each(this.seconds, function(q) {
+            console.log(q);
         });
 
         console.log(secs);
