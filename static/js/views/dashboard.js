@@ -176,6 +176,8 @@ fun.views.dashboard = Backbone.View.extend({
                 console.log([y, this.minutes[y]]);
 
                 console.log(y);
+
+                console.log(this.minutes[y]);
             }
 
             countX += 1;
