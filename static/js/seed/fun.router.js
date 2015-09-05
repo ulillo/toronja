@@ -883,7 +883,7 @@ fun.Router = Backbone.Router.extend({
             fun.utils.redirect(fun.conf.hash.login);
         }
 
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     carriers: function(){
@@ -901,7 +901,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.instances.carriers.render();
         
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     gateways: function(){
@@ -916,7 +916,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.instances.gateways.render();
         
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     orgs: function(){
@@ -1024,7 +1024,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(settings);
         fun.instances.settings.render(this.account);
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     logout: function(){
