@@ -389,7 +389,7 @@ fun.Router = Backbone.Router.extend({
             fun.utils.redirect(fun.conf.hash.login);
         }
 
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     companies: function(){
