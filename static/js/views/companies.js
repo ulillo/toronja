@@ -418,6 +418,8 @@ fun.views.companies = Backbone.View.extend({
                     callbacks
                 );
 
+                // send alert message by email
+
                 this.alert = new fun.models.Alert();
                 this.alert.save(
                     {

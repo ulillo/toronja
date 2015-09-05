@@ -964,7 +964,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(phone);
         fun.instances.phone.render();
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     phoneNumbers: function(){
