@@ -53,6 +53,8 @@ fun.views.navbar = Backbone.View.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
+        console.log(typeof(context));
+
         // first we check for system admin
         if (context.trim() === 'System Admin') {
             console.log('remove or wut');
