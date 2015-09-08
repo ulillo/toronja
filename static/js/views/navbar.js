@@ -53,20 +53,22 @@ fun.views.navbar = Backbone.View.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
-
-        if (account !== context || typeof(context) === 'undefined' ){
-            this.$('#nav-new-org').removeClass('show').addClass('hide');
-            this.$('#nav-new-member').removeClass('hide').addClass('show');
-            this.$('#nav-new-team').removeClass('hide').addClass('show');
-        } else if (context.trim() === 'System Admin') {
+        // first we check for system admin
+        if (context.trim() === 'System Admin') {
             console.log('remove or wut');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
         } else {
-            console.log(context);
-            this.$('#nav-new-member').removeClass('show').addClass('hide');
-            this.$('#nav-new-team').removeClass('show').addClass('hide');
-            this.$('#nav-new-org').removeClass('hide').addClass('show');  
+            // if not admin, we check for user or organization accounts
+            if (account !== context || typeof(context) === 'undefined' ){
+                this.$('#nav-new-org').removeClass('show').addClass('hide');
+                this.$('#nav-new-member').removeClass('hide').addClass('show');
+                this.$('#nav-new-team').removeClass('hide').addClass('show');
+            } else {
+                this.$('#nav-new-member').removeClass('show').addClass('hide');
+                this.$('#nav-new-team').removeClass('show').addClass('hide');
+                this.$('#nav-new-org').removeClass('hide').addClass('show');  
+            }
         }
     },
 
