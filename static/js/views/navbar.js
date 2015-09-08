@@ -58,6 +58,9 @@ fun.views.navbar = Backbone.View.extend({
             console.log('remove or wut');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
+            this.$('#nav-new-contact').removeClass('show').addClass('hide');
+            this.$('#nav-new-campaign').removeClass('show').addClass('hide');
+            this.$('#nav-new-org').removeClass('show').addClass('hide');
         } else {
             // if not admin, we check for user or organization accounts
             if (account !== context || typeof(context) === 'undefined' ){
