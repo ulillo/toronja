@@ -53,10 +53,8 @@ fun.views.navbar = Backbone.View.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
-        console.log(context);
-
         // first we check for system admin
-        if (context.trim() === 'System Admin') {
+        if (context !== null && context.trim() === 'System Admin') {
             console.log('remove or wut');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
