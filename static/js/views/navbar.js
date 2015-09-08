@@ -58,6 +58,7 @@ fun.views.navbar = Backbone.View.extend({
             this.$('#nav-new-member').removeClass('hide').addClass('show');
             this.$('#nav-new-team').removeClass('hide').addClass('show');
         } else if (context === 'System Admin') {
+            console.log('remove or wut');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
         } else {
