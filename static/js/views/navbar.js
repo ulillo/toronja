@@ -11,6 +11,7 @@ fun.views.navbar = Backbone.View.extend({
         this.context = sessionStorage.getItem("context");
 
         fun.omnibus.on("change:context", function(){
+            console.log('omnibus inside navbar change:context and stuff');
             this.renderDashboard();
         }, this);
     },
