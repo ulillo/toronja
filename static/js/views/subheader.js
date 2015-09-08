@@ -18,6 +18,7 @@ fun.views.subheader = Backbone.View.extend({
         this.context = sessionStorage.getItem("context");
 
         fun.omnibus.on("change:context", function(){
+            console.log('vegetales');
             this.renderHeadNav();
         }, this);
     },
