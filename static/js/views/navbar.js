@@ -62,6 +62,8 @@ fun.views.navbar = Backbone.View.extend({
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
         } else {
+
+            console.log(context);
             this.$('#nav-new-member').removeClass('show').addClass('hide');
             this.$('#nav-new-team').removeClass('show').addClass('hide');
             this.$('#nav-new-org').removeClass('hide').addClass('show');  
