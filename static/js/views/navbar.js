@@ -55,7 +55,6 @@ fun.views.navbar = Backbone.View.extend({
 
         // first we check for system admin
         if (context !== null && context.trim() === 'System Admin') {
-            console.log('remove or wut');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
             this.$('#nav-new-contact').removeClass('show').addClass('hide');
@@ -64,9 +63,12 @@ fun.views.navbar = Backbone.View.extend({
         } else {
             // if not admin, we check for user or organization accounts
             if (account !== context || typeof(context) === 'undefined' ){
+
+                console.log(account, context, 'what is wrong with u?');
+
                 this.$('#nav-new-org').removeClass('show').addClass('hide');
-                this.$('#nav-new-member').removeClass('hide').addClass('show');
                 this.$('#nav-new-team').removeClass('hide').addClass('show');
+                this.$('#nav-new-member').removeClass('hide').addClass('show');
             } else {
                 this.$('#nav-new-member').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('show').addClass('hide');
