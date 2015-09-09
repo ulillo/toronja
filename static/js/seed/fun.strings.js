@@ -271,6 +271,7 @@ fun.strings = {
     checked: "Checked",
     selectMessage: "Select message",
     newAccount: "New Account",
+    newResource: "New Resource",
     dnc: "DNC",
     join: "Join",
     owner: "Owner",
