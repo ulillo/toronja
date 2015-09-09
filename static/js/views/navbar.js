@@ -56,6 +56,8 @@ fun.views.navbar = Backbone.View.extend({
         // first we check for system admin
         if (context !== null && context.trim() === 'System Admin') {
             this.$('#nav-new-account').removeClass('hide').addClass('show');
+            this.$('#nav-new-cube').removeClass('hide').addClass('show');
+            this.$('#nav-new-resource').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
             this.$('#nav-new-contact').removeClass('show').addClass('hide');
             this.$('#nav-new-campaign').removeClass('show').addClass('hide');
