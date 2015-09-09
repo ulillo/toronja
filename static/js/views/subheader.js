@@ -77,7 +77,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-gateways').removeClass('show').addClass('hide');
             this.$('#head-nav-cubes').removeClass('show').addClass('hide');
             this.$('#head-nav-activity').removeClass('hide').addClass('show');
-            //this.$('#head-nav-servers').removeClass('show').addClass('hide');
+            this.$('#head-nav-recordings').removeClass('show').addClass('hide');
             this.$('#head-nav-accounts').removeClass('show').addClass('hide');
         } else {
             console.log('User account');
@@ -96,6 +96,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-phone').removeClass('show').addClass('hide');
             this.$('#head-nav-teams').removeClass('show').addClass('hide');
             this.$('#head-nav-members').removeClass('show').addClass('hide');
+            this.$('#head-nav-recordings').removeClass('show').addClass('hide');
             this.$('#head-nav-resources').removeClass('hide').addClass('show');
             this.$('#head-nav-accounts').removeClass('hide').addClass('show');
             this.$('#head-nav-cubes').removeClass('hide').addClass('show');
