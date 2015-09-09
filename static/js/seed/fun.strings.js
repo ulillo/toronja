@@ -370,6 +370,7 @@ fun.strings = {
     routes: "Routes",
     summaries: "Summaries",
     lapse: "Lapse",
+    recordings: "Recordings",
     records: "Records",
     minutes: "Minutes",
     average: "Average",
