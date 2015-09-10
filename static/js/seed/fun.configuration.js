@@ -232,10 +232,10 @@ fun.conf.templates = {
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
     taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
 
-    routes: fun.utils.format('%s/routes.html', fun.conf.html),
-    allRoutes: fun.utils.format('%s/allRoutes.html', fun.conf.html),
-    routeRow: fun.utils.format('%s/routeRow.html', fun.conf.html),
-    routeListItem: fun.utils.format('%s/routeListItem.html', fun.conf.html),
+    gateways: fun.utils.format('%s/gateways.html', fun.conf.html),
+    allGateways: fun.utils.format('%s/allGateways.html', fun.conf.html),
+    gatewayRow: fun.utils.format('%s/gatewayRow.html', fun.conf.html),
+    gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
 
     companies: fun.utils.format('%s/companies.html', fun.conf.html),
     allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
