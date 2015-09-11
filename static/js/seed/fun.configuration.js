@@ -38,6 +38,7 @@ fun.conf = {
     uuidNumber: 'number_uuid',
     uuidAccount: 'account_uuid',
     uuidResource: 'resource_uuid',
+    uuidMessage: 'message_uuid',
 
     lapse: 'lapse',
 
@@ -177,6 +178,9 @@ fun.conf.urls = {
 
     resource: fun.utils.format('/resources/%s', fun.conf.uuidResource),
     resources: '/resources/',
+
+    message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
+    messages: '/messages/',
 
     company: fun.utils.format('/companies/%s', fun.conf.uuidCompany),
     companies: '/companies/',

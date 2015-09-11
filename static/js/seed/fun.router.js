@@ -220,6 +220,11 @@ fun.Router = Backbone.Router.extend({
         fun.instances.accounts = new fun.views.accounts({
             el:"#fun-accounts"
         });
+
+        // resources
+        fun.instances.resources = new fun.views.resources({
+            el:"#fun-resources"
+        });
         
         // sounds
         fun.instances.sounds = new fun.views.sounds({
