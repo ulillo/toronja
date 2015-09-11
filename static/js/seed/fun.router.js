@@ -56,6 +56,7 @@ fun.Router = Backbone.Router.extend({
         
         "sounds":"sounds",
         "accounts":"accounts",
+        "messages": "messages",
         "recordings": "recordings",
         "gateways": "gateways",
         "support": "support",
@@ -224,6 +225,11 @@ fun.Router = Backbone.Router.extend({
         // resources
         fun.instances.resources = new fun.views.resources({
             el:"#fun-resources"
+        });
+
+        // messages
+        fun.instances.messages = new fun.views.messages({
+            el:"#fun-messages"
         });
         
         // sounds
@@ -929,6 +935,54 @@ fun.Router = Backbone.Router.extend({
         
         fun.instances.footer.render();
     },
+
+    accounts: function(){
+        'use strict';
+
+        var accounts = translate('accounts');
+
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.subheader.render(accounts);
+        fun.instances.subheader.renderHeadNav();
+
+        fun.instances.accounts.render();
+        
+        fun.instances.footer.render();
+    },
+
+
+    recordings: function(){
+        'use strict';
+
+        var recordings = translate('recordings');
+
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.subheader.render(recordings);
+        fun.instances.subheader.renderHeadNav();
+
+        fun.instances.recordings.render();
+        
+        fun.instances.footer.render();
+    },
+
+
+    resources: function(){
+        'use strict';
+
+        var resources = translate('resources');
+
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.subheader.render(resources);
+        fun.instances.subheader.renderHeadNav();
+
+        fun.instances.resources.render();
+        
+        fun.instances.footer.render();
+    },
+
 
     orgs: function(){
         'use strict';
