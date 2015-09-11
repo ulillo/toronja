@@ -55,6 +55,7 @@ fun.Router = Backbone.Router.extend({
         "carriers": "carriers",
         
         "sounds":"sounds",
+        "accounts":"accounts",
         "recordings": "recordings",
         "gateways": "gateways",
         "support": "support",
@@ -213,6 +214,11 @@ fun.Router = Backbone.Router.extend({
         // recordings
         fun.instances.recordings = new fun.views.recordings({
             el:"#fun-recordings"
+        });
+
+        // accounts
+        fun.instances.accounts = new fun.views.accounts({
+            el:"#fun-accounts"
         });
         
         // sounds

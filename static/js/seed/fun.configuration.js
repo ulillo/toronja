@@ -18,11 +18,12 @@ fun.conf = {
     hw:'',
     // sip protocol
     sip:'',
+
     // system uuid's
     uuidRecord: 'record_uuid',
     uuidBilling: 'billing_uuid',
-    uuidCarrier: 'carrier_uuid',
-    uuidCampaign: 'campaign_uuid',
+    uuidCarrier: 'carrier_uuid',        // *** grey will be the color, if I have a heart.
+    uuidCampaign: 'campaign_uuid',      
     uuidAlert: 'alert_uuid',
     uuidContact: 'contact_uuid',
     uuidNode: 'node_uuid',
@@ -30,12 +31,13 @@ fun.conf = {
     uuidCohort: 'cohort_uuid',
     uuidCube: 'cube_uuid',
     uuidTask: 'task_uuid',
-    uuidRoute: 'route_uuid',
     uuidCompany: 'company_uuid',
     uuidDirectory: 'directory_uuid',
     uuidSound: 'sound_uuid',
     uuidGateway: 'gateway_uuid',
     uuidNumber: 'number_uuid',
+    uuidAccount: 'account_uuid',
+    uuidResource: 'resource_uuid',
 
     lapse: 'lapse',
 
@@ -79,7 +81,7 @@ fun.conf.timeouts = {
 };
 
 /*
- Current JsSIP configuration
+ Current SIP client configuration
 */
 fun.conf.sip = {
     registrar_server: fun.conf.daemons.sip_server,
@@ -173,8 +175,8 @@ fun.conf.urls = {
     task: fun.utils.format('/tasks/%s', fun.conf.uuidTask),
     tasks: '/tasks/',
 
-    route: fun.utils.format('/routes/%s', fun.conf.uuidRoute),
-    routes: '/routes/',
+    resource: fun.utils.format('/resources/%s', fun.conf.uuidResource),
+    resources: '/resources/',
 
     company: fun.utils.format('/companies/%s', fun.conf.uuidCompany),
     companies: '/companies/',
@@ -200,6 +202,9 @@ fun.conf.urls = {
     sounds: fun.utils.format('/sounds/')
 
     /*sounds, recordings*/
+
+    recording: fun.utils.format('/recordings/%s', fun.conf.uuidRecording),
+    recordings: '/recordings/',
 };
 
 /*
@@ -232,10 +237,25 @@ fun.conf.templates = {
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
     taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
 
+    recordings: fun.utils.format('%s/recordings.html', fun.conf.html),
+    allRecordings: fun.utils.format('%s/allRecordings.html', fun.conf.html),
+    recordingRow: fun.utils.format('%s/recordingRow.html', fun.conf.html),
+    recordingListItem: fun.utils.format('%s/recordingListItem.html', fun.conf.html),
+
     gateways: fun.utils.format('%s/gateways.html', fun.conf.html),
     allGateways: fun.utils.format('%s/allGateways.html', fun.conf.html),
     gatewayRow: fun.utils.format('%s/gatewayRow.html', fun.conf.html),
     gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
+
+    accounts: fun.utils.format('%s/accounts.html', fun.conf.html),
+    allAccounts: fun.utils.format('%s/allAccounts.html', fun.conf.html),
+    accountRow: fun.utils.format('%s/accountRow.html', fun.conf.html),
+    accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
+
+    resources: fun.utils.format('%s/resources.html', fun.conf.html),
+    allResources: fun.utils.format('%s/allResources.html', fun.conf.html),
+    resourceRow: fun.utils.format('%s/resourceRow.html', fun.conf.html),
+    resourceListItem: fun.utils.format('%s/resourceListItem.html', fun.conf.html),
 
     companies: fun.utils.format('%s/companies.html', fun.conf.html),
     allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
@@ -335,7 +355,6 @@ fun.conf.templates = {
     sounds: fun.utils.format('%s/sounds.html', fun.conf.html),
     
     
-    recordings: fun.utils.format('%s/recordings.html', fun.conf.html),
     reports: fun.utils.format('%s/reports.html', fun.conf.html),
     settings: fun.utils.format('%s/settings.html', fun.conf.html),
 
@@ -369,6 +388,9 @@ fun.conf.hash = {
     support: '#support',
     signup: '#signup',
     login: '#login',
+    gateways: '#gateways',
+    accounts: '#accounts',
+    resources: '#resources',
 
     dashboard : '#dashboard',
     dashboardWithAccount: '#dashboard/a{account}',
@@ -393,9 +415,7 @@ fun.conf.hash = {
     cubes: '#cubes',
     contactsWithPage: '#contacts/p{page}',
     tasks: '#tasks',
-    routes: '#routes',
     companies: '#companies',
-
     sounds: '#sounds',
     recordings: '#recordings',
     settings: '#settings'
