@@ -203,9 +203,10 @@ fun.conf.urls = {
     phoneNumber: fun.utils.format('/phonenumbers/%s', fun.conf.uuidPhoneNumber),
     phoneNumbers: '/phonenumbers/',
 
-    sounds: fun.utils.format('/sounds/')
 
     /*sounds, recordings*/
+
+    sounds: fun.utils.format('/sounds/'),
 
     recording: fun.utils.format('/recordings/%s', fun.conf.uuidRecording),
     recordings: '/recordings/',
