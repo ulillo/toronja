@@ -940,15 +940,63 @@ fun.Router = Backbone.Router.extend({
     accounts: function(){
         'use strict';
 
-        var accounts = translate('accounts');
+        'use strict';
+        var accounts = translate('accounts'),
+            account,
+            context,
+            vonCount = 0,
+            resources,
+            resource,
+            onSuccess;
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(accounts);
-        fun.instances.subheader.renderHeadNav();
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
 
-        fun.instances.accounts.render();
-        
+        console.log(
+            fun.utils.format('username: %s, context: %s', account, context)
+        );
+
+        // first of all here on resources the stuff seems to be fine.
+        // new note: wut?
+        resources = {
+            //account: new fun.models.Account({'account':account}),
+            user: new fun.models.User({'account':account}),
+            users: new fun.models.Users(),
+            orgs: new fun.models.Orgs()            
+        };
+
+
+        onSuccess = function(){
+            if(++resourceCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.accounts.renderAccountsList(
+                    resources.users
+                );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(accounts);
+            fun.instances.subheader.renderHeadNav();
+            
+            fun.instances.accounts.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
+
         fun.instances.footer.render();
     },
 
