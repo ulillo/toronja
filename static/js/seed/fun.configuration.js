@@ -197,6 +197,9 @@ fun.conf.urls = {
     gateway: fun.utils.format('/gateways/%s', fun.conf.uuidGateway),
     gateways: '/gateways/',
 
+    message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
+    messages: '/messages/',
+
     number: fun.utils.format('/numbers/%s', fun.conf.uuidNumber),
     numbers: '/numbers/',
 
@@ -394,6 +397,7 @@ fun.conf.hash = {
     login: '#login',
     gateways: '#gateways',
     accounts: '#accounts',
+    messages: '#messages',
     resources: '#resources',
 
     dashboard : '#dashboard',
