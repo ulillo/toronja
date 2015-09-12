@@ -57,6 +57,7 @@ fun.Router = Backbone.Router.extend({
         "sounds":"sounds",
         "accounts":"accounts",
         "messages": "messages",
+        "resources": "resources",
         "recordings": "recordings",
         "gateways": "gateways",
         "support": "support",
@@ -951,6 +952,21 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
+    messages: function(){
+        'use strict';
+
+        var messages = translate('messages');
+
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.subheader.render(messages);
+        fun.instances.subheader.renderHeadNav();
+
+        fun.instances.messages.render();
+        
+        fun.instances.footer.render();
+    },
+
 
     recordings: function(){
         'use strict';
@@ -1071,15 +1087,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
-    recordings: function(){
-        recordings = translate('recordings');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(recordings);
-        fun.instances.subheader.renderHeadNavCampaigns();
-        fun.instances.recordings.render();
-        fun.instances.footer.render();
-    },
 
     settings: function(){
         'use strict';
