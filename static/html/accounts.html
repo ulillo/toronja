@@ -5,13 +5,13 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("newCampaign") %></h3>
+                    <h3 class="panel-title"><%= translate("newAccount") %></h3>
                 </div>
                 <div class="panel-body">
 
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fa fa-random fa-stack-1x"></i>
+                        <i class="fa fa-user-secret fa-stack-1x"></i>
                     </span>
 
                     <form id="profile-form" class="form-profile" novalidate="novalidate">
@@ -26,8 +26,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <input type="radio" id="campaign_account_1" name="campaign_account" value="1" checked="">
-                                            <label for="campaign_account_1"></label>
+                                            <input type="radio" id="stuff_account_1" name="stuff_account" value="1" checked="">
+                                            <label for="stuff_account_1"></label>
                                         </li>
                                     </ul>
                                 </div>
@@ -37,19 +37,19 @@
 
                                 <div class="input-group">
                                     <span class="input-group-addon">/</span>
-                                    <input id="campaign_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
+                                    <input id="account_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
                                 </div>
 
                                 <p>
-                                    <%= translate("greatCampaignNames") %>.
+                                    <%= translate("greatAccountNames") %>.
                                 </p>
 
                             </div>
                         </div>                                       
 
                         <div class="form-group">
-                            <label for="campaign_description"><%= translate("descriptionOptional") %></label>
-                            <input type="text" id="campaign_description" name="campaign_description" class="form-control">
+                            <label for="account_description"><%= translate("descriptionOptional") %></label>
+                            <input type="text" id="account_description" name="account_description" class="form-control">
                         </div>
 
                         <div class="form-checkbox">
@@ -60,7 +60,7 @@
                             <span class="mega-octicon octicon-repo"></span>
 
                             <span class="note">
-                                Anyone can see this campaign. You choose who can send messages.
+                                Anyone can see this account. You choose who can send messages.
                             </span>
                         </div>
 
@@ -71,11 +71,11 @@
                             </label>
                             <span class="mega-octicon octicon-lock"></span>
                             <span class="note">
-                                <%= translate("youChooseWhoUseCampaign") %>.
+                                <%= translate("youChooseWhoUseAccount") %>.
                             </span>
                         </div>
 
-                        <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
+                        <button id="create-account-btn" class="btn btn-success btn-block" type="submit"><%= translate("createAccount") %></button>
                     </form>
                       
                 </div>
@@ -85,7 +85,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                    <h3 class="panel-title"><%= translate("exportAccounts") %></h3>
                 </div>
                 <div class="panel-body">
 
@@ -94,10 +94,10 @@
                         <i class="fa fa-cloud-download fa-stack-1x"></i>
                     </span>
 
-                    <form id="export-campaign-form" class="form-export" novalidate="novalidate">
+                    <form id="export-account-form" class="form-export" novalidate="novalidate">
   
 
-                        <p class="help-block"><%= translate("getCampaignList") %>.</p>
+                        <p class="help-block"><%= translate("getAccountList") %>.</p>
 
                         <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
@@ -110,14 +110,13 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-                <li><a href="#all-campaigns-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#all-accounts-tab" data-toggle="tab"><%= translate("all") %></a></li>
                 <li><a href="#active-tab" data-toggle="tab"><%= translate("active") %></a></li>
-                <li><a href="#paused-tab" data-toggle="tab"><%= translate("paused") %></a></li>
-                <li><a href="#inbound-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
-                <li><a href="#outbound-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+                <li><a href="#paused-tab" data-toggle="tab"><%= translate("disable") %></a></li>
+                <li><a href="#inbound-tab" data-toggle="tab"><%= translate("new") %></a></li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade active in" id="all-campaigns-tab"></div>
+                <div class="tab-pane fade active in" id="all-accounts-tab"></div>
                 <div class="tab-pane" id="active-tab"></div>
                 <div class="tab-pane" id="paused-tab"></div>
                 <div class="tab-pane" id="inbound-tab"></div>
