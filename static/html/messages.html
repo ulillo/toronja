@@ -20,7 +20,7 @@
                             <div class="col-md-3">
                                 <div class="btn-group ">
                                     <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                        <i class="fa fa-user fa-fw"></i>
+                                        <i class="fa fa-user fa-fw">username</i>
                                         <span data-label-placement=""></span> 
                                         <span class="caret"></span>
                                     </button>
@@ -75,7 +75,7 @@
                             </span>
                         </div>
 
-                        <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
+                        <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createMessage") %></button>
                     </form>
                       
                 </div>
@@ -85,7 +85,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                    <h3 class="panel-title"><%= translate("exportMessages") %></h3>
                 </div>
                 <div class="panel-body">
 
@@ -94,10 +94,10 @@
                         <i class="fa fa-cloud-download fa-stack-1x"></i>
                     </span>
 
-                    <form id="export-campaign-form" class="form-export" novalidate="novalidate">
+                    <form id="export-message-form" class="form-export" novalidate="novalidate">
   
 
-                        <p class="help-block"><%= translate("getCampaignList") %>.</p>
+                        <p class="help-block"><%= translate("getMessageList") %>.</p>
 
                         <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
@@ -110,9 +110,9 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-                <li><a href="#all-campaigns-tab" data-toggle="tab"><%= translate("all") %></a></li>
-                <li><a href="#active-tab" data-toggle="tab"><%= translate("active") %></a></li>
-                <li><a href="#paused-tab" data-toggle="tab"><%= translate("paused") %></a></li>
+                <li><a href="#all-messages-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#unread-tab" data-toggle="tab"><%= translate("unread") %></a></li>
+                <li><a href="#notifications-tab" data-toggle="tab"><%= translate("notifications") %></a></li>
                 <li><a href="#inbound-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
                 <li><a href="#outbound-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
             </ul>
