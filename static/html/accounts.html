@@ -17,23 +17,8 @@
                     <form id="profile-form" class="form-profile" novalidate="novalidate">
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="btn-group ">
-                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                        <i class="fa fa-user fa-fw"></i>
-                                        <span data-label-placement=""></span> 
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <input type="radio" id="stuff_account_1" name="stuff_account" value="1" checked="">
-                                            <label for="stuff_account_1"></label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <div class="col-md-8">
+                            <div class="col-md-12">
 
                                 <div class="input-group">
                                     <span class="input-group-addon">/</span>
@@ -55,7 +40,7 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
-                                <%= translate("inbound") %>
+                                <%= translate("user") %>
                             </label>
                             <span class="mega-octicon octicon-repo"></span>
 
@@ -67,7 +52,7 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
-                                <%= translate("outbound") %>
+                                <%= translate("organization") %>
                             </label>
                             <span class="mega-octicon octicon-lock"></span>
                             <span class="note">
