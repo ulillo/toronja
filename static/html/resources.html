@@ -17,21 +17,6 @@
                     <form id="profile-form" class="form-profile" novalidate="novalidate">
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="btn-group ">
-                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                        <i class="fa fa-user fa-fw"></i>
-                                        <span data-label-placement=""></span> 
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <input type="radio" id="resource_account_1" name="resource_account" value="1" checked="">
-                                            <label for="resource_account_1"></label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
                             <div class="col-md-8">
 
@@ -41,15 +26,15 @@
                                 </div>
 
                                 <p>
-                                    <%= translate("greatResourcenNames") %>.
+                                    <%= translate("greatResourceNames") %>.
                                 </p>
 
                             </div>
                         </div>                                       
 
                         <div class="form-group">
-                            <label for="campaign_description"><%= translate("descriptionOptional") %></label>
-                            <input type="text" id="campaign_description" name="campaign_description" class="form-control">
+                            <label for="resource_description"><%= translate("descriptionOptional") %></label>
+                            <input type="text" id="resource_description" name="resource_description" class="form-control">
                         </div>
 
                         <div class="form-checkbox">
@@ -60,7 +45,7 @@
                             <span class="mega-octicon octicon-repo"></span>
 
                             <span class="note">
-                                Anyone can see this campaign. You choose who can send messages.
+                                Anyone can see this resource. You choose who can send messages.
                             </span>
                         </div>
 
@@ -71,11 +56,11 @@
                             </label>
                             <span class="mega-octicon octicon-lock"></span>
                             <span class="note">
-                                <%= translate("youChooseWhoUseCampaign") %>.
+                                <%= translate("youChooseWhoUseResource") %>.
                             </span>
                         </div>
 
-                        <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
+                        <button id="create-resource-btn" class="btn btn-success btn-block" type="submit"><%= translate("createResource") %></button>
                     </form>
                       
                 </div>
@@ -85,7 +70,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                    <h3 class="panel-title"><%= translate("exportResources") %></h3>
                 </div>
                 <div class="panel-body">
 
@@ -94,10 +79,10 @@
                         <i class="fa fa-cloud-download fa-stack-1x"></i>
                     </span>
 
-                    <form id="export-campaign-form" class="form-export" novalidate="novalidate">
+                    <form id="export-resource-form" class="form-export" novalidate="novalidate">
   
 
-                        <p class="help-block"><%= translate("getCampaignList") %>.</p>
+                        <p class="help-block"><%= translate("getResourceList") %>.</p>
 
                         <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
@@ -115,6 +100,9 @@
                 <li><a href="#paused-tab" data-toggle="tab"><%= translate("paused") %></a></li>
                 <li><a href="#inbound-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
                 <li><a href="#outbound-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+                <li><a href="#imps-tab" data-toggle="tab"><%= translate("imps") %></a></li>
+                <li><a href="#nodes-tab" data-toggle="tab"><%= translate("nodes") %></a></li>
+
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-campaigns-tab"></div>
