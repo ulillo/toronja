@@ -218,7 +218,7 @@ fun.models.RecordsStartEnd = Backbone.Collection.extend({
         url = url.replace(fun.conf.endTime, this.end);
         
         return url;
-    }
+    },
 
     parse: function(response){
         return response.results;
@@ -256,7 +256,7 @@ fun.models.LapseSummaries = Backbone.Collection.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.lapse, this.lapse);
         return url;
-    }
+    },
 
     parse: function(response){
         return response.results;
