@@ -349,7 +349,7 @@ fun.Router = Backbone.Router.extend({
         var tasks = translate('tasks'),
             account,
             context,
-            resourceCount = 0,
+            vonCount = 0,
             resources,
             resource,
             onSuccess;
@@ -374,7 +374,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.tasks.renderTasksList(
@@ -415,7 +415,7 @@ fun.Router = Backbone.Router.extend({
         var companies = translate('companies'),
             account,
             context,
-            resourceCount = 0,
+            vonCount = 0,
             resources,
             resource,
             onSuccess;
@@ -440,7 +440,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.companies.renderCompaniesList(
@@ -550,7 +550,7 @@ fun.Router = Backbone.Router.extend({
 
     teams: function(){
         'use strict';
-        var resourceCount = 0,
+        var vonCount = 0,
             resources,
             resource,
             account,
@@ -569,7 +569,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
                 fun.instances.teams.render(
                     resources.org
@@ -600,7 +600,7 @@ fun.Router = Backbone.Router.extend({
 
     members: function(){
         'use strict';
-        var resourceCount = 0,
+        var vonCount = 0,
             resources,
             resource,
             account,
@@ -618,7 +618,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.members.render(
@@ -653,14 +653,14 @@ fun.Router = Backbone.Router.extend({
     contacts: function(page){
         'use strict';
         var contacts,
-            resourceCount,
+            vonCount,
             resources,
             resource,
             onSuccess;
 
         contacts = translate('contacts');
         // and now for something completely different
-        resourceCount = 0;
+        vonCount = 0;
         
         resources = {
             contacts: new fun.models.Contacts(),
@@ -668,7 +668,7 @@ fun.Router = Backbone.Router.extend({
         };
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.contacts.renderContactLists(
@@ -750,7 +750,7 @@ fun.Router = Backbone.Router.extend({
     dashboard: function(account, org){
         'use strict';
         var account,
-            modelCount = 0,
+            vonCount = 0,
             models,
             onSuccess,
             dashboard,
@@ -786,7 +786,7 @@ fun.Router = Backbone.Router.extend({
         }
 
         onSuccess = function(){
-            if(++modelCount === _.keys(models).length){
+            if(++vonCount === _.keys(models).length){
                 console.log('spawn daemon success!');
 
                 fun.instances.dashboard.renderLatestRecords(
@@ -842,10 +842,11 @@ fun.Router = Backbone.Router.extend({
 
     campaigns: function(){
         'use strict';
+
         var campaigns,
             account,
             context,
-            resourceCount = 0,
+            vonCount = 0,
             resources,
             resource,
             onSuccess;
@@ -860,10 +861,10 @@ fun.Router = Backbone.Router.extend({
             fun.utils.format('username: %s, context: %s', account, context)
         );
 
-        // first of all here on resources the stuff seems to be fine.
-
         resources = {
+
             //account: new fun.models.Account({'account':account}),
+
             user: new fun.models.User({'account':account}),
             campaigns: new fun.models.Campaigns()            
         };
@@ -872,7 +873,7 @@ fun.Router = Backbone.Router.extend({
         // and that stuff is bananas. ok
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.campaigns.renderCampaignsList(
@@ -968,7 +969,7 @@ fun.Router = Backbone.Router.extend({
 
 
         onSuccess = function(){
-            if(++resourceCount === _.keys(resources).length){
+            if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
                 fun.instances.accounts.renderAccountsList(
