@@ -53,11 +53,6 @@ fun.models.Account = Backbone.Model.extend({
             url = fun.conf.urls.users;
         }
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -108,11 +103,6 @@ fun.models.User = Backbone.Model.extend({
         //    url += '/' + this.id;
         //}
         return url;
-    },
-    
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 }); 
 
@@ -125,11 +115,6 @@ fun.models.Users = Backbone.Collection.extend({
     
     url: function(){
         return this.urlRoot;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -150,11 +135,6 @@ fun.models.Org = Backbone.Model.extend({
             url += '/' + this.id;
         }
         return url;
-    },
-    
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 }); 
 
@@ -167,11 +147,6 @@ fun.models.Orgs = Backbone.Collection.extend({
     
     url: function(){
         return this.urlRoot;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -192,11 +167,6 @@ fun.models.Record = Backbone.Model.extend({
             url += '/' + this.id;
         }
         return url;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -209,15 +179,6 @@ fun.models.Records = Backbone.Collection.extend({
     
     url: function() {
         return this.urlRoot;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
-    
-    parse: function(response) {
-        return response.results;
     }
 });
 
@@ -236,15 +197,6 @@ fun.models.RecordsStart = Backbone.Collection.extend({
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         //url = url.replace(fun.conf.startTime, this.start);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
-
-    parse: function(response){
-        return response.results;
     }
 });
 
@@ -266,12 +218,7 @@ fun.models.RecordsStartEnd = Backbone.Collection.extend({
         url = url.replace(fun.conf.endTime, this.end);
         
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
+    }
 
     parse: function(response){
         return response.results;
@@ -292,11 +239,6 @@ fun.models.LapseSummary = Backbone.Model.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.lapse, this.lapse);
         return url;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -314,12 +256,7 @@ fun.models.LapseSummaries = Backbone.Collection.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.lapse, this.lapse);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
+    }
 
     parse: function(response){
         return response.results;
@@ -342,13 +279,7 @@ fun.models.LapseSummaryStart = Backbone.Model.extend({
         var url = this.urlRoot.replace(fun.conf.lapse, this.lapse);
         url = url.replace(fun.conf.startTime, this.start);
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
-
 });
 
 
@@ -369,13 +300,7 @@ fun.models.LapseSummaryStartEnd = Backbone.Model.extend({
         url = url.replace(fun.conf.startTime, this.start);
         url = url.replace(fun.conf.endTime, this.end);
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
-
 });
 
 
@@ -387,11 +312,6 @@ fun.models.Summary = Backbone.Model.extend({
     
     url: function(){
         return this.urlRoot;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -404,11 +324,6 @@ fun.models.Summaries = Backbone.Collection.extend({
 
     url: function(){
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -430,13 +345,7 @@ fun.models.SummaryStart = Backbone.Model.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
-
 });
 
 
@@ -453,11 +362,6 @@ fun.models.SummariesStart = Backbone.Collection.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -481,11 +385,6 @@ fun.models.SummaryStartEnd = Backbone.Model.extend({
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         url = url.replace(fun.conf.endTime, this.end);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -507,11 +406,6 @@ fun.models.SummariesStartEnd = Backbone.Collection.extend({
         return url;
     },
 
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
-
     parse: function(response){
         return response.results;
     }
@@ -526,11 +420,6 @@ fun.models.Billing = Backbone.Model.extend({
     
     url: function(){
         return this.urlRoot;
-    },
-    
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -543,11 +432,6 @@ fun.models.Billings = Backbone.Collection.extend({
 
     url: function(){
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -569,11 +453,6 @@ fun.models.BillingStart = Backbone.Model.extend({
     url: function(){
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -593,11 +472,6 @@ fun.models.BillingStartEnd = Backbone.Model.extend({
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         url = url.replace(fun.conf.endTime, this.end);
         return url;
-    },
-
-    sync: function(method, model, options){
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -620,11 +494,6 @@ fun.models.PhoneNumber = Backbone.Model.extend({
             url = fun.conf.urls.phoneNumbers;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -637,11 +506,6 @@ fun.models.PhoneNumbers = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -668,11 +532,6 @@ fun.models.Contact = Backbone.Model.extend({
             url = fun.conf.urls.contacts;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -685,11 +544,6 @@ fun.models.Contacts = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -714,11 +568,6 @@ fun.models.Directory = Backbone.Model.extend({
             url += '/' + this.id;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -731,11 +580,6 @@ fun.models.Directories = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -762,11 +606,6 @@ fun.models.Campaign = Backbone.Model.extend({
             url = fun.conf.urls.campaigns;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -779,11 +618,6 @@ fun.models.Campaigns = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -807,11 +641,6 @@ fun.models.Alert = Backbone.Model.extend({
             url = fun.conf.urls.alerts;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -824,11 +653,6 @@ fun.models.Alerts = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -853,11 +677,6 @@ fun.models.Call = Backbone.Model.extend({
             url += '/' + this.id;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -870,11 +689,6 @@ fun.models.Calls = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -901,11 +715,6 @@ fun.models.Carrier = Backbone.Model.extend({
             url = fun.conf.urls.carriers;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -918,11 +727,6 @@ fun.models.Carriers = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -946,11 +750,6 @@ fun.models.Task = Backbone.Model.extend({
             url = fun.conf.urls.tasks;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -963,55 +762,6 @@ fun.models.Tasks = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    },
-
-    parse: function(response){
-        return response.results;
-    }
-});
-
-fun.models.Route = Backbone.Model.extend({
-
-    idAttribute: 'uuid',
-
-    urlRoot: fun.conf.urls.route,
-
-    url: function() {
-        'use strict';
-        var url;
-        if (!this.isNew()){
-            url = this.urlRoot.replace(fun.conf.uuidRoute, this.id);
-        } else {
-            url = fun.conf.urls.routes;
-        }
-        return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    }
-});
-
-
-fun.models.Routes = Backbone.Collection.extend({
-
-    model: fun.models.Route,
-
-    urlRoot: fun.conf.urls.routes,
-
-    url: function() {
-        return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){
@@ -1035,11 +785,6 @@ fun.models.Company = Backbone.Model.extend({
             url = fun.conf.urls.companies;
         }
         return url;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     }
 });
 
@@ -1052,11 +797,6 @@ fun.models.Companies = Backbone.Collection.extend({
 
     url: function() {
         return this.urlRoot;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
     },
 
     parse: function(response){

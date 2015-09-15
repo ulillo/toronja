@@ -15,14 +15,12 @@ fun.Router = Backbone.Router.extend({
         "dashboard/a:account/o:org": "dashboard",
         "signup": "signup",
         "login": "login",
-
         "howto": "howto",
         "features": "features",
         "enterprise": "enterprise",
         "terms": "terms",
         "security": "security",
         "privacy": "privacy",
-        "blog": "blog",
         "status": "status",
         "developers": "developers",
         "help": "help",
@@ -32,9 +30,6 @@ fun.Router = Backbone.Router.extend({
 
         "tasks": "tasks",
         "tasks/p:page": "tasks",
-
-        "routes": "routes",
-        "routes/p:page": "routes",
 
         "companies": "companies",
         "companies/p:page": "companies",
@@ -68,6 +63,7 @@ fun.Router = Backbone.Router.extend({
 
     initialize: function(){
         'use strict';
+
         // navigation bar
         fun.instances.navbar = new fun.views.navbar({
             el:"#fun-navbar"
@@ -111,11 +107,6 @@ fun.Router = Backbone.Router.extend({
         // security
         fun.instances.security = new fun.views.security({
             el:"#fun-security"
-        });
-
-        // blog
-        fun.instances.blog = new fun.views.blog({
-            el:"#fun-blog"
         });
 
         // status
@@ -268,7 +259,7 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-footer"
         });
     },
-    
+
     home: function(){
         'use strict';
         console.log('spawn some fun get account and context');
@@ -493,17 +484,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(security);
         fun.instances.security.render();
-        fun.instances.footer.render();
-    },
-
-    blog: function(){
-        'use strict';
-        var blog = translate('blog');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(blog);
-        fun.instances.blog.render();
-        
         fun.instances.footer.render();
     },
 
@@ -1059,7 +1039,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.subheader.renderHeadNav();
         fun.instances.orgs.render();
         
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     profile: function(){
@@ -1115,7 +1095,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.subheader.render(sounds);
         fun.instances.subheader.renderHeadNavCampaigns();
         fun.instances.sounds.render();
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     reports: function(page){
@@ -1168,7 +1148,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.instances.subheader.render(goodBye);      
         fun.instances.login.render();
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     }
 });
 
