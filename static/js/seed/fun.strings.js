@@ -199,6 +199,7 @@ fun.strings = {
     carrier: "Carrier",
     carriers: "Carriers",
     duration: "Duration",
+    messages: "Messages",
     status: "Status",
     terms: "Terms",
     privacy: "Privacy",
