@@ -202,7 +202,7 @@ fun.strings = {
     messages: "Messages",
     newMessage: "New Message",
     greatResourceNames: "Great resource names are impossible, try nouns instead!",
-    greatMessageNames: "The Title of the message and stuff.",
+    greatMessageNames: "The title of the message and stuff",
     status: "Status",
     terms: "Terms",
     privacy: "Privacy",
