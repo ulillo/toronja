@@ -233,6 +233,8 @@ fun.strings = {
     youChooseWhoUseMessage: "You choose who to reach can use and stuff this message",
     youChooseWhoUseAccount: "You choose who to reach can see and use this account",
     notification: "Notification",
+    notifications: "Notifications",
+    alerts: "Alerts",
     alert: "Alert",
     unread: "Unread",
     getDirectoryList: "Get a directory contact list already added",
