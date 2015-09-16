@@ -412,7 +412,7 @@ fun.strings = {
     exportRecordings: "Export Recordings",
     createRecording: "Create Recording",
     getRecordingList: "Get list of recordings",
-    greatRecordingNames: "Great recording names are easy to track and monitor",
+    greatRecordingNames: "Great names are easy to track and monitor",
     youChooseWhoUseRecording: "You choose who can access your recordings",
     records: "Records",
     minutes: "Minutes",
