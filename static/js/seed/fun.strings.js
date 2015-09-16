@@ -452,6 +452,7 @@ fun.strings = {
 
     legalCompanyName: "Legal Company Name",
     incorporatedNumber: "Incorporated Number",
+
     companyName: "Company Name",
     fax: "Fax",
     telephone: "Telephone",
