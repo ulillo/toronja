@@ -514,7 +514,7 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(help);
         fun.instances.help.render();
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     support: function(){
@@ -709,7 +709,7 @@ fun.Router = Backbone.Router.extend({
             fun.instances.subheader.render('Signup');
             fun.instances.signup.render();
         }
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
     
     login: function(){
@@ -724,7 +724,7 @@ fun.Router = Backbone.Router.extend({
             fun.instances.login.render();
         }
 
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
     
     dashboard: function(account, org){
