@@ -8,7 +8,7 @@ fun.views.footer = Backbone.View.extend({
         fun.containers.footer = this.$el;
     },
     
-    render : function(){
+    render: function(){
         var template = _.template(
             fun.utils.getTemplate(fun.conf.templates.footer)
         );
