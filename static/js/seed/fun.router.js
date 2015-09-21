@@ -46,7 +46,7 @@ fun.Router = Backbone.Router.extend({
         "reports/p:page": "reports",
         
         "phone": "phone",
-        "numbers": "phone_numbers",
+        "numbers": "phoneNumbers",
         "carriers": "carriers",
         
         "sounds":"sounds",
@@ -262,7 +262,7 @@ fun.Router = Backbone.Router.extend({
 
     home: function(){
         'use strict';
-        console.log('spawn some fun get account and context');
+        console.log('getting account and context');
 
         // get account and context
         this.account = localStorage.getItem("username");
@@ -281,8 +281,6 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.redirect(fun.conf.hash.landing);
         }
-        fun.instances.extra.render();
-        fun.instances.footer.render();
     },
 
     landing: function(){
