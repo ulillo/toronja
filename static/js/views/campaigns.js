@@ -99,8 +99,8 @@ fun.views.campaigns = Backbone.View.extend({
     renderActiveCampaignsList: function(campaigns){
         'use strict';
         var template,
-            allCampaigns;
-        console.log('render campaigns list');
+            activeCampaigns;
+        console.log('render active campaigns list');
         if (campaigns) {
             this.campaigns = campaigns;
         }
@@ -109,11 +109,11 @@ fun.views.campaigns = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.campaignsActiveTab)
         );
 
-        allCampaigns = this.$('#active-tab');
+        activeCampaigns = this.$('#active-campaigns-tab');
 
-        allCampaigns.html(template);
+        activeCampaigns.html(template);
 
-        this.tbody = this.$('#campaigns-list > tbody');
+        this.tbody = this.$('#active-campaigns-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
         this.renderActiveCampaignRows();

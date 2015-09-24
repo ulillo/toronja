@@ -844,7 +844,9 @@ fun.Router = Backbone.Router.extend({
             //account: new fun.models.Account({'account':account}),
 
             user: new fun.models.User({'account':account}),
-            campaigns: new fun.models.Campaigns()            
+
+            campaigns: new fun.models.Campaigns(),
+            active: new fun.models.Campaigns({'status':'active'})
         };
 
         // but, onSuccess we're rendering multiple times the same campaigns.render()
@@ -856,6 +858,10 @@ fun.Router = Backbone.Router.extend({
 
                 fun.instances.campaigns.renderCampaignsList(
                     resources.campaigns
+                );
+
+                fun.instances.campaigns.renderActiveCampaignsList(
+                    resources.active
                 );
             }
         };
