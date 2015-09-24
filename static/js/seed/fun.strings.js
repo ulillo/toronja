@@ -209,6 +209,7 @@ fun.strings = {
     terms: "Terms",
     privacy: "Privacy",
     exportCampaigns: "Export Campaigns",
+    activeCampaigns: "Active Campaigns",
     getCampaignList: "Get Campaign List",
     privacyPolicy: "privacy policy",
     scriptDetail: "Your teams may need to follow a script when speaking with a contact. This script will be visible in our user interface.",
