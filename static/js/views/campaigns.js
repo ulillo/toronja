@@ -96,6 +96,57 @@ fun.views.campaigns = Backbone.View.extend({
         }
     },
 
+    renderActiveCampaignsList: function(campaigns){
+        'use strict';
+        var template,
+            allCampaigns;
+        console.log('render campaigns list');
+        if (campaigns) {
+            this.campaigns = campaigns;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.campaignsActiveTab)
+        );
+
+        allCampaigns = this.$('#active-tab');
+
+        allCampaigns.html(template);
+
+        this.tbody = this.$('#campaigns-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderActiveCampaignRows();
+    },
+
+    renderActiveCampaignRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // campaigns length
+        length = this.campaigns.length;
+
+        console.log('campaigns length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.campaigns.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noCampaigns();
+        }
+    },
+
     /*
     * No campaigns
     */

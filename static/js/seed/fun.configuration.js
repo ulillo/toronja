@@ -287,6 +287,7 @@ fun.conf.templates = {
     campaigns: fun.utils.format('%s/campaigns.html', fun.conf.html),
     allCampaigns: fun.utils.format('%s/allCampaigns.html', fun.conf.html),
     campaignRow: fun.utils.format('%s/campaignRow.html', fun.conf.html),
+    campaignsActiveTab: fun.utils.format('%s/campaignsActiveTab.html', fun.conf.html),
     
     cubes: fun.utils.format('%s/cubes.html', fun.conf.html),
     allCubes: fun.utils.format('%s/allCubes.html', fun.conf.html),
