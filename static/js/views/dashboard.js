@@ -339,7 +339,7 @@ fun.views.dashboard = Backbone.View.extend({
                 //$("#selected-icon").removeClass('show').addClass('hide');
 
                 // Check browser support
-                if (typeof(Storage) != "undefined") {
+                if (typeof(Storage) !== "undefined") {
                     // Store
                     sessionStorage.setItem("is_admin", true);
                 }
@@ -348,7 +348,7 @@ fun.views.dashboard = Backbone.View.extend({
             }
 
             // Check browser support
-            if (typeof(Storage) != "undefined") {
+            if (typeof(Storage) !== "undefined") {
                 // Store
                 sessionStorage.setItem("context", label);
             }

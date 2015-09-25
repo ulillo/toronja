@@ -37,7 +37,7 @@ fun.utils.getSession = function() {
 fun.utils.loggedIn = function() {
     var session = this.getSession();
     fun.session = session;
-    return (session != null);
+    return (session !==null);
 };
 
 
@@ -143,7 +143,7 @@ fun.utils.logout = function(callbacks){
     });
 
     // Clean storage outside ajax call, this way we always clean the stuff.
-    if (typeof(Storage) != "undefined") {
+    if (typeof(Storage) !=="undefined") {
         localStorage.removeItem('username');
         localStorage.removeItem('profile');
         sessionStorage.removeItem('context');
@@ -159,7 +159,7 @@ fun.utils.logout = function(callbacks){
 */
 fun.utils.translate = function translate(key) {
     var value = key;
-    if (typeof fun.strings[key] != 'undefined') {
+    if (typeof fun.strings[key] !=='undefined') {
         value = fun.strings[key];
     }
 
@@ -206,7 +206,7 @@ fun.utils.hideAll = function() {
         // hide all containers including footer
         //fun.containers[i].hide();
         fun.containers[i].removeClass("show").addClass("hide");
-        //if ( i != 'footer'){
+        //if ( i !=='footer'){
         //    fun.containers[i].hide();
         //}
     }

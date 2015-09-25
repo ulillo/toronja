@@ -35,7 +35,7 @@ fun.models.Account = Backbone.Model.extend({
     idAttribute: 'uuid',
     
     initialize: function(options){
-        if (typeof(options) != "undefined"){
+        if (typeof(options) !=="undefined"){
             this.account = options.account;    
         }
     },

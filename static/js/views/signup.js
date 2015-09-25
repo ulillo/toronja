@@ -118,7 +118,7 @@ fun.views.signup = Backbone.View.extend({
                                     break;
                                 case 200:
                                     // Check browser support
-                                    if (typeof(Storage) != "undefined") {
+                                    if (typeof(Storage) !== "undefined") {
                                         // Store
                                         localStorage.setItem("username", account);
                                     }
@@ -137,10 +137,10 @@ fun.views.signup = Backbone.View.extend({
                 // Catch duplicate errors or some random stuff
                 signupError.removeClass("hide").addClass("show");
                 // TODO: on error add class error and label to the input field
-                if (error.responseText.indexOf('account') != -1){
+                if (error.responseText.indexOf('account') !== -1){
                     signupError.find('p').html('Username is already taken.');
                 }
-                else if (error.responseText.indexOf('email') != -1){
+                else if (error.responseText.indexOf('email') !== -1){
                     signupError.find('p').html('Email is invalid or already taken.');
                 }
                 else {

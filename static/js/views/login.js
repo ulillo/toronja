@@ -74,7 +74,7 @@ fun.views.login = Backbone.View.extend({
                         break;
                     case 200:
                         // Check browser support
-                        if (typeof(Storage) != "undefined") {
+                        if (typeof(Storage) !== "undefined") {
                             // Store
                             localStorage.setItem("username", username);
                         }

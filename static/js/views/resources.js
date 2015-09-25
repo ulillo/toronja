@@ -181,7 +181,7 @@ fun.views.resources = Backbone.View.extend({
             resourcePayload['public'] = account;
         }
 
-        if (account != undefined & resourceName != undefined){
+        if (account !== undefined & resourceName !== undefined){
             resourcePayload['account'] = account;
             
         }

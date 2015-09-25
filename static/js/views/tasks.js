@@ -182,7 +182,7 @@ fun.views.tasks = Backbone.View.extend({
             taskPayload['public'] = account;
         }
 
-        if (account != undefined & taskName != undefined){
+        if (account !== undefined && taskName !== undefined){
             taskPayload['account'] = account;
             
         }

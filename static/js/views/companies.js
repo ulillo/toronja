@@ -206,7 +206,7 @@ fun.views.companies = Backbone.View.extend({
         //    companyPayload['public'] = account;
         //}
 
-        //if (account != undefined & companyName != undefined){
+        //if (account !== undefined & companyName !== undefined){
         //    companyPayload['account'] = account;
         //    
         //}

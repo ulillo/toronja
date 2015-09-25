@@ -279,7 +279,7 @@ fun.views.campaigns = Backbone.View.extend({
             description: campaignDescription
         };
 
-        if (account != undefined & campaignName != undefined){
+        if (account !== undefined & campaignName !== undefined){
             campaign = new fun.models.Campaign(campaignPayload);
             campaign.save();
         }
