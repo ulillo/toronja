@@ -1,7 +1,11 @@
+.navbar-toggle .fa {
+    color: #FFFFFF !important;
+}
+
 .landing-text h1 {
     margin-bottom: .65em;
 
-    font-size: 28px;    
+    font-size: 28px;
     font-weight: 600;
     line-height: 1.5em;
 }
@@ -70,6 +74,11 @@
 
 
 @media (max-width: 767px) {
+
+    .navbar-brand {
+        margin-top: 6% !important;
+        margin-left: 5% !important;
+    }
 
     .landing-actions {
         margin: 3.5em 0;
