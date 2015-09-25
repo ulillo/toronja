@@ -189,6 +189,7 @@ fun.conf.urls = {
     directories: '/directories/',
 
     campaign: fun.utils.format('/campaigns/%s', fun.conf.uuidCampaign),
+    campaignsActive: '/campaigns/active/',
     campaigns: '/campaigns/',
 
     alert: fun.utils.format('/alerts/%s', fun.conf.uuidAlert),

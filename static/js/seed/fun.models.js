@@ -625,6 +625,21 @@ fun.models.Campaigns = Backbone.Collection.extend({
     }
 });
 
+fun.models.CampaignsActive = Backbone.Collection.extend({
+
+    model: fun.models.Campaign,
+
+    urlRoot: fun.conf.urls.campaignsActive,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.campaigns;
+    }
+});
+
 
 fun.models.Alert = Backbone.Model.extend({
 
