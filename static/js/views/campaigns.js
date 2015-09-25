@@ -112,6 +112,9 @@ fun.views.campaigns = Backbone.View.extend({
         noCampaigns.html(template);
     },
 
+    /*
+    * Render Active Campaigns list
+    */
     renderActiveCampaignsList: function(campaigns){
         'use strict';
         var template,
@@ -135,6 +138,9 @@ fun.views.campaigns = Backbone.View.extend({
         this.renderActiveCampaignRows();
     },
 
+    /*
+    * Render Active campaign rows
+    */
     renderActiveCampaignRows: function(){
         'use strict';
         var length,
@@ -164,7 +170,7 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * No active campaigns
+    * No Active campaigns
     */
     noActiveCampaigns: function(){
         'use strict';
@@ -179,6 +185,9 @@ fun.views.campaigns = Backbone.View.extend({
         noActiveCampaigns.html(template);
     },
 
+    /*
+    * Render Paused Campaigns list
+    */
     renderPausedCampaignsList: function(campaigns){
         'use strict';
         var template,
@@ -202,6 +211,9 @@ fun.views.campaigns = Backbone.View.extend({
         this.renderPausedCampaignRows();
     },
 
+    /*
+    * Render Paused campaign rows
+    */
     renderPausedCampaignRows: function(){
         'use strict';
         var length,
@@ -231,7 +243,7 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * No paused campaigns
+    * No Paused campaigns
     */
     noPausedCampaigns: function(){
         'use strict';
@@ -244,6 +256,79 @@ fun.views.campaigns = Backbone.View.extend({
         noPausedCampaigns = this.$('#no-paused-campaigns');
 
         noPausedCampaigns.html(template);
+    },
+
+    /*
+    * Render Inbound Campaigns list
+    */
+    renderInboundCampaignsList: function(campaigns){
+        'use strict';
+        var template,
+            inboundCampaigns;
+        console.log('render inbound campaigns list');
+        if (campaigns) {
+            this.inboundCampaigns = campaigns;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.campaignsInboundTab)
+        );
+
+        inboundCampaigns = this.$('#inbound-campaigns-tab');
+
+        inboundCampaigns.html(template);
+
+        this.tbody = this.$('#inbound-campaigns-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderInboundCampaignRows();
+    },
+
+    /*
+    * Render Inbound campaign rows
+    */
+    renderInboundCampaignRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // campaigns length
+        length = this.inboundCampaigns.length;
+
+        console.log('inbound campaigns length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.inboundCampaigns.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noInboundCampaigns();
+        }
+    },
+
+    /*
+    * No Inbound campaigns
+    */
+    noInboundCampaigns: function(){
+        'use strict';
+        var template,
+            noInboundCampaigns;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noInboundCampaigns = this.$('#no-inbound-campaigns');
+
+        noInboundCampaigns.html(template);
     },
 
     /*
