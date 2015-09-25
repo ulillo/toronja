@@ -102,7 +102,7 @@ fun.views.campaigns = Backbone.View.extend({
             activeCampaigns;
         console.log('render active campaigns list');
         if (campaigns) {
-            this.campaigns = campaigns;
+            this.activeCampaigns = campaigns;
         }
 
         template = _.template(
@@ -127,14 +127,14 @@ fun.views.campaigns = Backbone.View.extend({
             data,
             template;
         // campaigns length
-        length = this.campaigns.length;
+        length = this.activeCampaigns.length;
 
-        console.log('campaigns length: ',length);
+        console.log('active campaigns length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
-                data = _.extend(this.campaigns.at(i).toJSON(), {i:i});
+                data = _.extend(this.activeCampaigns.at(i).toJSON(), {i:i});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.campaignRow)
@@ -158,7 +158,7 @@ fun.views.campaigns = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
 
-        noCampaigns = this.$('#no-campaigns');
+        noCampaigns = this.$('#no-active-campaigns');
 
         noCampaigns.html(template);
     },
