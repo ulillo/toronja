@@ -428,7 +428,6 @@ fun.strings = {
     whyLove: "Why you'll love io fun",
     oldMan: "If every tool, when ordered, or even of its own accord, could do the work that befits it... then there would be no need either of apprentices for the master workers or of slaves for the lords.",
     growingMango: "Growing mango trees in the home landscape will give you a lifetime of fresh pungent fruit from an attractive shade tree",
-    outboundCampaigns: "Outbound campaigns for the loudest animals",
 
 
     suitWelcome: "Welcome to the golem protective system, for use in hazardous environment conditions.",
