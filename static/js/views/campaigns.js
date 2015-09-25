@@ -96,6 +96,22 @@ fun.views.campaigns = Backbone.View.extend({
         }
     },
 
+    /*
+    * No campaigns
+    */
+    noCampaigns: function(){
+        'use strict';
+        var template,
+            noCampaigns;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noCampaigns = this.$('#no-campaigns');
+
+        noCampaigns.html(template);
+    },
+
     renderActiveCampaignsList: function(campaigns){
         'use strict';
         var template,
@@ -148,22 +164,6 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * No campaigns
-    */
-    noCampaigns: function(){
-        'use strict';
-        var template,
-            noCampaigns;
-        template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.warning)
-        )({message:'noDataAvailable'});
-
-        noCampaigns = this.$('#no-campaigns');
-
-        noCampaigns.html(template);
-    },
-
-    /*
     * No active campaigns
     */
     noActiveCampaigns: function(){
@@ -177,6 +177,73 @@ fun.views.campaigns = Backbone.View.extend({
         noActiveCampaigns = this.$('#no-active-campaigns');
 
         noActiveCampaigns.html(template);
+    },
+
+    renderPausedCampaignsList: function(campaigns){
+        'use strict';
+        var template,
+            pausedCampaigns;
+        console.log('render paused campaigns list');
+        if (campaigns) {
+            this.pausedCampaigns = campaigns;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.campaignsPausedTab)
+        );
+
+        pausedCampaigns = this.$('#paused-campaigns-tab');
+
+        pausedCampaigns.html(template);
+
+        this.tbody = this.$('#paused-campaigns-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderPausedCampaignRows();
+    },
+
+    renderPausedCampaignRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // campaigns length
+        length = this.pausedCampaigns.length;
+
+        console.log('paused campaigns length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.pausedCampaigns.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noPausedCampaigns();
+        }
+    },
+
+    /*
+    * No paused campaigns
+    */
+    noPausedCampaigns: function(){
+        'use strict';
+        var template,
+            noPausedCampaigns;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noPausedCampaigns = this.$('#no-paused-campaigns');
+
+        noPausedCampaigns.html(template);
     },
 
     /*
