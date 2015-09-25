@@ -143,7 +143,7 @@ fun.views.campaigns = Backbone.View.extend({
                 rows.append(template);
             }
         } else {
-            this.noCampaigns();
+            this.noActiveCampaigns();
         }
     },
 
@@ -158,9 +158,25 @@ fun.views.campaigns = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
 
-        noCampaigns = this.$('#no-active-campaigns');
+        noCampaigns = this.$('#no-campaigns');
 
         noCampaigns.html(template);
+    },
+
+    /*
+    * No active campaigns
+    */
+    noActiveCampaigns: function(){
+        'use strict';
+        var template,
+            noActiveCampaigns;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noActiveCampaigns = this.$('#no-active-campaigns');
+
+        noActiveCampaigns.html(template);
     },
 
     /*
