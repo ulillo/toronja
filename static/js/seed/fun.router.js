@@ -880,9 +880,9 @@ fun.Router = Backbone.Router.extend({
                    resources.inbound
                 );
 
-                //fun.instances.campaigns.renderOutboundCampaignsList(
-                //    resources.outbound
-                //);
+                fun.instances.campaigns.renderOutboundCampaignsList(
+                   resources.outbound
+                );
 
             }
         };

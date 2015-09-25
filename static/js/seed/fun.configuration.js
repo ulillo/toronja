@@ -291,6 +291,7 @@ fun.conf.templates = {
     campaignsActiveTab: fun.utils.format('%s/campaignsActiveTab.html', fun.conf.html),
     campaignsPausedTab: fun.utils.format('%s/campaignsPausedTab.html', fun.conf.html),
     campaignsInboundTab: fun.utils.format('%s/campaignsInboundTab.html', fun.conf.html),
+    campaignsOutboundTab: fun.utils.format('%s/campaignsOutboundTab.html', fun.conf.html),
     
     cubes: fun.utils.format('%s/cubes.html', fun.conf.html),
     allCubes: fun.utils.format('%s/allCubes.html', fun.conf.html),

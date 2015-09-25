@@ -332,6 +332,79 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
+    * Render Outbound Campaigns list
+    */
+    renderOutboundCampaignsList: function(campaigns){
+        'use strict';
+        var template,
+            outboundCampaigns;
+        console.log('render outbound campaigns list');
+        if (campaigns) {
+            this.outboundCampaigns = campaigns;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.campaignsOutboundTab)
+        );
+
+        outboundCampaigns = this.$('#outbound-campaigns-tab');
+
+        outboundCampaigns.html(template);
+
+        this.tbody = this.$('#outbound-campaigns-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderOutboundCampaignRows();
+    },
+
+    /*
+    * Render Outbound campaign rows
+    */
+    renderOutboundCampaignRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // campaigns length
+        length = this.outboundCampaigns.length;
+
+        console.log('outbound campaigns length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.outboundCampaigns.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noOutboundCampaigns();
+        }
+    },
+
+    /*
+    * No Outbound campaigns
+    */
+    noOutboundCampaigns: function(){
+        'use strict';
+        var template,
+            noOutboundCampaigns;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noOutboundCampaigns = this.$('#no-outbound-campaigns');
+
+        noOutboundCampaigns.html(template);
+    },
+
+    /*
     * Create campaign
     */
     createCampaign: function(event){
