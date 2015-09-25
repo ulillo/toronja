@@ -1,3 +1,13 @@
+html,
+body {
+  min-height: 100vh;
+  height: auto !important;
+  /*height: 100%;*/
+  /* Negative indent footer by it's height */
+  /*margin: 0 auto -60px;*/
+  position: relative;
+}
+
 .navbar-toggle .fa {
     color: #FFFFFF !important;
 }
