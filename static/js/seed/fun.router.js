@@ -18,6 +18,7 @@ fun.Router = Backbone.Router.extend({
         "howto": "howto",
         "features": "features",
         "enterprise": "enterprise",
+        "pricing": "pricing",
         "terms": "terms",
         "security": "security",
         "privacy": "privacy",
@@ -92,6 +93,11 @@ fun.Router = Backbone.Router.extend({
         // enterprise
         fun.instances.enterprise = new fun.views.enterprise({
             el:"#fun-enterprise"
+        });
+
+        // pricing
+        fun.instances.pricing = new fun.views.pricing({
+            el:"#fun-pricing"
         });
 
         // terms
@@ -320,6 +326,16 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         //fun.instances.subheader.render(enterprise);
         fun.instances.enterprise.render();
+        fun.instances.footer.render();
+    },
+
+    pricing: function(){
+        'use strict';
+        var pricing = translate('pricing');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        //fun.instances.subheader.render(enterprise);
+        fun.instances.pricing.render();
         fun.instances.footer.render();
     },
 

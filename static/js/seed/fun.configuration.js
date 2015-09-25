@@ -12,12 +12,6 @@ fun.conf = {
     domain: 'iofun.io',
     // seed url root
     urlRoot: '/api/',
-    // software
-    sw:'',
-    // hardware
-    hw:'',
-    // sip protocol
-    sip:'',
 
     // system uuid's
     uuidRecord: 'record_uuid',
@@ -33,6 +27,7 @@ fun.conf = {
     uuidTask: 'task_uuid',
     uuidCompany: 'company_uuid',
     uuidDirectory: 'directory_uuid',
+    uuidPricing: 'pricing_uuid',
     uuidSound: 'sound_uuid',
     uuidGateway: 'gateway_uuid',
     uuidNumber: 'number_uuid',
@@ -133,6 +128,9 @@ fun.conf.urls = {
 
     billing: fun.utils.format('/billings/%s', fun.conf.uuidBilling),
     billings: '/billings/',
+
+    pricing: fun.utils.format('/pricings/%s', fun.conf.uuidPricing),
+    pricings: '/pricings/',
     
     summary: '/records/summary/',
     summaries: '/records/summaries/',
@@ -236,6 +234,7 @@ fun.conf.templates = {
     support: fun.utils.format('%s/support.html', fun.conf.html),
     features: fun.utils.format('%s/features.html', fun.conf.html),
     enterprise: fun.utils.format('%s/enterprise.html', fun.conf.html),
+    pricing: fun.utils.format('%s/pricing.html', fun.conf.html),
     howto: fun.utils.format('%s/howto.html', fun.conf.html),
     blog: fun.utils.format('%s/blog.html', fun.conf.html),
     status: fun.utils.format('%s/status.html', fun.conf.html),
@@ -390,6 +389,7 @@ fun.conf.hash = {
     howto: '#howto',
     features: '#features',
     enterprise: '#enterprise',
+    pricing: '#pricing',
     terms: '#terms',
     privacy: '#privacy',
     security: '#security',
