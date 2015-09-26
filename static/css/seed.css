@@ -477,3 +477,8 @@ textarea {
 
     text-align: center;
 }
+
+.error {
+    background-color: #eb9316;
+    background-image: none;
+}
