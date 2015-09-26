@@ -8,6 +8,15 @@ body {
   position: relative;
 }
 
+#user-plans {
+    color:#2A9EC5;
+}
+
+
+#org-plans {
+    color:#98B73F;
+}
+
 .navbar-toggle .fa {
     color: #FFFFFF !important;
 }
