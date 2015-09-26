@@ -37,41 +37,37 @@
 
     <li>
         
-        <div>
-            
-            <a data-toggle="dropdown" class="dropdown-toggle">
-                <span data-label-placement="">username</span>
-            </a>
-
-            <ul id="account-list-ul" class="dropdown-menu">
-                <li>
-                    <input type="radio" id="current_account_0" name="current_account" value="0" checked="">
-                    <label for="current_account_0">username</label>
-                </li>
-                <li class="divider"></li>
-                
-                <li>
-                    <input type="radio" id="current_account_admin" name="current_account" value="admin">
-                    <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i> <%= translate("systemAdmin") %></label>
-                </li>
-                
-                <li>
-                    <a href="#settings"><i class="fa fa-users fa-fw"></i> <%= translate("manageOrganizations") %></a>
-                </li>
-                <li>
-                    <a href="#orgs"><i class="fa fa-plus fa-fw"></i> <%= translate("createOrganization") %></a>
-                </li>
-                <li class="divider"></li>
-            </ul>
-        </div>  
-                
-    </li>
-
-    <li>
-        <a href="#settings" title="<%= translate("Settings") %>">
+        <a data-toggle="dropdown" class="dropdown-toggle">
             <i class="fa fa-cog fa-fw"></i>
-            <%= translate("Settings") %>
+            <span data-label-placement="">username</span>
         </a>
+
+        <ul id="account-list-ul" class="dropdown-menu">
+            <li>
+                <input type="radio" id="current_account_0" name="current_account" value="0" checked="">
+                <label for="current_account_0">username</label>
+            </li>
+            <li class="divider"></li>
+            
+            <li>
+                <input type="radio" id="current_account_admin" name="current_account" value="admin">
+                <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i> <%= translate("systemAdmin") %></label>
+            </li>
+            
+            <li>
+                <a href="#settings"><i class="fa fa-users fa-fw"></i> <%= translate("manageOrganizations") %></a>
+            </li>
+            <li>
+                <a href="#settings" title="<%= translate("Settings") %>">
+                    <i class="fa fa-cog fa-fw"></i>
+                    <%= translate("Settings") %>
+                </a>
+            </li>
+            <li>
+                <a href="#orgs"><i class="fa fa-plus fa-fw"></i> <%= translate("createOrganization") %></a>
+            </li>
+            <li class="divider"></li>
+        </ul>      
     </li>
 
     <li>
