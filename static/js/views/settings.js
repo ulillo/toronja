@@ -34,6 +34,10 @@ fun.views.settings = Backbone.View.extend({
 
         console.log('render settings view');
 
+        if (account === null){
+            account = 'username';
+        }
+
         template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
 
         
