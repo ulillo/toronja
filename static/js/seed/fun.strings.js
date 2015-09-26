@@ -23,6 +23,7 @@ fun.strings = {
     gateway: "Gateway",
     systemAdmin: "System Admin",
     newGateway: "New Gateway",
+    personalPlans: "Personal Plans",
     gateways: "Gateways",
     validateRequired: "This field is required.",
     validateRemote: "Please fix this field.",
