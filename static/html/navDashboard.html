@@ -38,20 +38,19 @@
     <li>
         
         <a data-toggle="dropdown" class="dropdown-toggle">
-            <i class="fa fa-cog fa-fw"></i>
             <span data-label-placement="">username</span>
         </a>
 
         <ul id="account-list-ul" class="dropdown-menu">
             <li>
                 <input type="radio" id="current_account_0" name="current_account" value="0" checked="">
-                <label for="current_account_0">username</label>
+                <label for="current_account_0"><i class="fa fa-cog fa-fw"></i>username</label>
             </li>
             <li class="divider"></li>
             
             <li>
                 <input type="radio" id="current_account_admin" name="current_account" value="admin">
-                <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i> <%= translate("systemAdmin") %></label>
+                <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i><%= translate("systemAdmin") %></label>
             </li>
             
             <li>

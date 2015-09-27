@@ -16,8 +16,8 @@ fun.conf = {
     // system uuid's
     uuidRecord: 'record_uuid',
     uuidBilling: 'billing_uuid',
-    uuidCarrier: 'carrier_uuid',        // *** grey will be the color, if I have a heart.
-    uuidCampaign: 'campaign_uuid',      
+    uuidCarrier: 'carrier_uuid',
+    uuidCampaign: 'campaign_uuid',
     uuidAlert: 'alert_uuid',
     uuidContact: 'contact_uuid',
     uuidNode: 'node_uuid',
