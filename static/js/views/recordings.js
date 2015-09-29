@@ -54,7 +54,7 @@ fun.views.recordings = Backbone.View.extend({
     },
 
     /*
-    * Render now task rows
+    * Render now recordings rows
     */
     renderAllRecordingsRows: function(){
         'use strict';
@@ -85,7 +85,7 @@ fun.views.recordings = Backbone.View.extend({
     },
 
     /*
-    * No now tasks
+    * No now recordings
     */
     noAllRecordings: function(){
         'use strict';
@@ -98,5 +98,151 @@ fun.views.recordings = Backbone.View.extend({
         noAllRecordings = this.$('#no-all-recordings');
 
         noAllRecordings.html(template);
+    },
+
+    /*
+    * Render inbound recordings list
+    */
+    renderInboundRecordingsList: function(recordings){
+        'use strict';
+        var template,
+            inboundRecordings;
+        console.log('render inbound recordings list');
+        if (recordings) {
+            this.recordings = recordings;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.recordingsInboundTab)
+        );
+
+        inboundRecordings = this.$('#inbound-recordings-tab');
+
+        inboundRecordings.html(template);
+
+        this.tbody = this.$('#inbound-recordings-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderInboundRecordingsRows();
+    },
+
+    /*
+    * Render inbound recordings rows
+    */
+    renderInboundRecordingsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.recordings.length;
+
+        console.log('inbound recordings length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.recordings.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.recordingRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noInboundRecordings();
+        }
+    },
+
+    /*
+    * No inbound recordings
+    */
+    noInboundRecordings: function(){
+        'use strict';
+        var template,
+            noInboundRecordings;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noInboundRecordings = this.$('#no-inbound-recordings');
+
+        noInboundRecordings.html(template);
+    },
+
+    /*
+    * Render outbound recordings list
+    */
+    renderOutboundRecordingsList: function(recordings){
+        'use strict';
+        var template,
+            outboundRecordings;
+        console.log('render outbound recordings list');
+        if (recordings) {
+            this.recordings = recordings;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.recordingsOutboundTab)
+        );
+
+        outboundRecordings = this.$('#outbound-recordings-tab');
+
+        outboundRecordings.html(template);
+
+        this.tbody = this.$('#outbound-recordings-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderOutboundRecordingsRows();
+    },
+
+    /*
+    * Render outbound recordings rows
+    */
+    renderOutboundRecordingsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.recordings.length;
+
+        console.log('outbound recordings length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.recordings.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.recordingRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noOutboundRecordings();
+        }
+    },
+
+    /*
+    * No inbound recordings
+    */
+    noOutboundecordings: function(){
+        'use strict';
+        var template,
+            noOutboundecordings;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noOutboundecordings = this.$('#no-outbound-recordings');
+
+        noOutboundecordings.html(template);
     },
 });

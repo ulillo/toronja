@@ -249,6 +249,8 @@ fun.conf.templates = {
 
     recordings: fun.utils.format('%s/recordings.html', fun.conf.html),
     recordingsAllTab: fun.utils.format('%s/recordingsAllTab.html', fun.conf.html),
+    recordingsInboundTab: fun.utils.format('%s/recordingsInboundTab.html', fun.conf.html),
+    recordingsOutboundTab: fun.utils.format('%s/recordingsOutboundTab.html', fun.conf.html),
     allRecordings: fun.utils.format('%s/allRecordings.html', fun.conf.html),
     recordingRow: fun.utils.format('%s/recordingRow.html', fun.conf.html),
     recordingListItem: fun.utils.format('%s/recordingListItem.html', fun.conf.html),

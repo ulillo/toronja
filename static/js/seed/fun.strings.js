@@ -419,6 +419,8 @@ fun.strings = {
     lapse: "Lapse",
     recordings: "Recordings",
     allRecordings: "All Recordings",
+    inboundRecordings: "Inbound Recordings",
+    outboundRecordings: "Outbound Recordings",
     newRecording: "New Recording",
     exportRecordings: "Export Recordings",
     createRecording: "Create Recording",
