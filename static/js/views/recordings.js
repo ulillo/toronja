@@ -233,16 +233,16 @@ fun.views.recordings = Backbone.View.extend({
     /*
     * No inbound recordings
     */
-    noOutboundecordings: function(){
+    noOutboundRecordings: function(){
         'use strict';
         var template,
-            noOutboundecordings;
+            noOutboundRecordings;
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
 
-        noOutboundecordings = this.$('#no-outbound-recordings');
+        noOutboundRecordings = this.$('#no-outbound-recordings');
 
-        noOutboundecordings.html(template);
+        noOutboundRecordings.html(template);
     },
 });
