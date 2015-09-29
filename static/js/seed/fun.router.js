@@ -375,7 +375,7 @@ fun.Router = Backbone.Router.extend({
             tasks: new fun.models.Tasks(),
 
             // Temp data only for showing warning
-            now: new fun.models.Tasks(),
+            now: new fun.models.CampaignsActive(),
             later: new fun.models.CampaignsActive(),
             done: new fun.models.CampaignsActive(),
         };
@@ -393,6 +393,18 @@ fun.Router = Backbone.Router.extend({
 
                 fun.instances.settings.setProfileInformation(
                     resources.user
+                );
+
+                fun.instances.settings.renderNowTasksList(
+                    resources.now
+                );
+
+                fun.instances.settings.renderLaterTaskList(
+                    resources.later
+                );
+
+                fun.instances.settings.renderDoneTasksList(
+                    resources.done
                 );
             }
         };
