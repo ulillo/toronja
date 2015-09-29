@@ -145,14 +145,14 @@ fun.views.tasks = Backbone.View.extend({
             data,
             template;
         // tasks length
-        length = this.nowTasks.length;
+        length = this.tasks.length;
 
         console.log('now tasks length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
-                data = _.extend(this.nowTasks.at(i).toJSON(), {i:i});
+                data = _.extend(this.tasks.at(i).toJSON(), {i:i});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
@@ -218,14 +218,14 @@ fun.views.tasks = Backbone.View.extend({
             data,
             template;
         // tasks length
-        length = this.laterTasks.length;
+        length = this.tasks.length;
 
         console.log('later tasks length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
-                data = _.extend(this.laterTasks.at(i).toJSON(), {i:i});
+                data = _.extend(this.tasks.at(i).toJSON(), {i:i});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
@@ -291,14 +291,14 @@ fun.views.tasks = Backbone.View.extend({
             data,
             template;
         // tasks length
-        length = this.doneTasks.length;
+        length = this.tasks.length;
 
         console.log('done tasks length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
-                data = _.extend(this.doneTasks.at(i).toJSON(), {i:i});
+                data = _.extend(this.tasks.at(i).toJSON(), {i:i});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
