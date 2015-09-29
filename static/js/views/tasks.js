@@ -108,16 +108,16 @@ fun.views.tasks = Backbone.View.extend({
         noTasks.html(template);
     },
 
-    /*
-    * Render Now Tasks List
+     /*
+    * Render now tasks list
     */
-    renderNowTaskList: function(tasks){
+    renderNowTasksList: function(tasks){
         'use strict';
         var template,
             nowTasks;
         console.log('render now tasks list');
         if (tasks) {
-            this.nowTasks = tasks;
+            this.tasks = tasks;
         }
 
         template = _.template(
@@ -131,20 +131,20 @@ fun.views.tasks = Backbone.View.extend({
         this.tbody = this.$('#now-tasks-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
-        this.renderNowTasksRows();
+        this.renderNowTaskRows();
     },
 
     /*
-    * Render Now Tasks rows
+    * Render now task rows
     */
-    renderNowTasksRows: function(){
+    renderNowTaskRows: function(){
         'use strict';
         var length,
             i = 0,
             rows,
             data,
             template;
-        // campaigns length
+        // tasks length
         length = this.nowTasks.length;
 
         console.log('now tasks length: ',length);
@@ -166,7 +166,7 @@ fun.views.tasks = Backbone.View.extend({
     },
 
     /*
-    * No Now Tasks
+    * No tasks
     */
     noNowTasks: function(){
         'use strict';
