@@ -1059,7 +1059,11 @@ fun.Router = Backbone.Router.extend({
 
         var recordings = translate('recordings'),
             account,
-            context;
+            context,
+            vonCount = 0,
+            resources,
+            resource,
+            onSuccess;
 
         // get account and context
         account = localStorage.getItem("username");
