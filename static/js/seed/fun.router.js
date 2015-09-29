@@ -1037,7 +1037,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
-
     recordings: function(){
         'use strict';
 
@@ -1053,7 +1052,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
-
     resources: function(){
         'use strict';
 
@@ -1068,7 +1066,6 @@ fun.Router = Backbone.Router.extend({
         
         fun.instances.footer.render();
     },
-
 
     orgs: function(){
         'use strict';
@@ -1156,7 +1153,6 @@ fun.Router = Backbone.Router.extend({
         
         fun.instances.footer.render();
     },
-
 
     settings: function(){
         'use strict';
