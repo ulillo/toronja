@@ -375,7 +375,7 @@ fun.Router = Backbone.Router.extend({
             tasks: new fun.models.Tasks(),
 
             // Temp data only for showing warning
-            now: new fun.models.CampaignsActive(),
+            now: new fun.models.Tasks(),
             later: new fun.models.CampaignsActive(),
             done: new fun.models.CampaignsActive(),
         };
