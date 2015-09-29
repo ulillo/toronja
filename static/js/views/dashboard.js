@@ -319,41 +319,6 @@ fun.views.dashboard = Backbone.View.extend({
         'use strict';
         // This year
         console.log('this year event');
-    },
-
-    setContext: function(event){
-        'use strict';
-
-        console.log('setting up activity context');
-
-        var idVal,
-            label;
-
-        $('input[name="current_account"]:checked').each(function() {
-            idVal = $(this).attr("id");
-
-            label = $("label[for='" + idVal + "']").text();
-
-            if (idVal === 'current_account_admin'){
-                //$("#selected-icon").removeClass('show').addClass('hide');
-
-                // Check browser support
-                if (typeof(Storage) != "undefined") {
-                    // Store
-                    sessionStorage.setItem("is_admin", true);
-                }
-
-                fun.omnibus.trigger("change:system_admin");
-            }
-
-            // Check browser support
-            if (typeof(Storage) != "undefined") {
-                // Store
-                sessionStorage.setItem("context", label);
-            }
-        });
-
-        fun.omnibus.trigger("change:context");
     }
 
 });
