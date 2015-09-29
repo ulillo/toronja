@@ -399,7 +399,7 @@ fun.Router = Backbone.Router.extend({
                     resources.now
                 );
 
-                fun.instances.tasks.renderLaterTaskList(
+                fun.instances.tasks.renderLaterTasksList(
                     resources.later
                 );
 
