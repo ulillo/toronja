@@ -1059,13 +1059,55 @@ fun.Router = Backbone.Router.extend({
 
         var recordings = translate('recordings');
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(recordings);
-        fun.instances.subheader.renderHeadNav();
+        resources = {
+            user: new fun.models.User({'account':account}),
+            // All recordings
+            all: new fun.models.CampaignsActive(),
+            inbound: new fun.models.CampaignsActive(),
+            outbound: new fun.models.CampaignsActive(),
+        };
 
-        fun.instances.recordings.render();
-        
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.recordings.renderAllRecordingsList(
+                    resources.all
+                );
+
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
+
+                fun.instances.recordings.renderInboundRecordingsList(
+                    resources.inbound
+                );
+
+                fun.instances.recordings.renderOutboundRecordingsList(
+                    resources.outbound
+                );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(recordings);
+            fun.instances.subheader.renderHeadNav();
+
+            fun.instances.recordings.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
         fun.instances.footer.render();
     },
 
