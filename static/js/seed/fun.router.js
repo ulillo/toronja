@@ -395,15 +395,15 @@ fun.Router = Backbone.Router.extend({
                     resources.user
                 );
 
-                fun.instances.settings.renderNowTasksList(
+                fun.instances.tasks.renderNowTasksList(
                     resources.now
                 );
 
-                fun.instances.settings.renderLaterTaskList(
+                fun.instances.tasks.renderLaterTaskList(
                     resources.later
                 );
 
-                fun.instances.settings.renderDoneTasksList(
+                fun.instances.tasks.renderDoneTasksList(
                     resources.done
                 );
             }
