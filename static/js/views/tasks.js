@@ -58,7 +58,6 @@ fun.views.tasks = Backbone.View.extend({
         this.tbody = this.$('#tasks-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderTaskRows();
     },
 
@@ -107,6 +106,79 @@ fun.views.tasks = Backbone.View.extend({
         noTasks = this.$('#no-tasks');
 
         noTasks.html(template);
+    },
+
+    /*
+    * Render Now Tasks List
+    */
+    renderNowTaskList: function(tasks){
+        'use strict';
+        var template,
+            nowTasks;
+        console.log('render now tasks list');
+        if (tasks) {
+            this.nowTasks = tasks;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.tasksNowTab)
+        );
+
+        nowTasks = this.$('#now-tasks-tab');
+
+        nowTasks.html(template);
+
+        this.tbody = this.$('#now-tasks-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderNowTasksRows();
+    },
+
+    /*
+    * Render Now Tasks rows
+    */
+    renderNowTasksRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // campaigns length
+        length = this.nowTasks.length;
+
+        console.log('now tasks length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.nowTasks.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.taskRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noNowTasks();
+        }
+    },
+
+    /*
+    * No Now Tasks
+    */
+    noNowTasks: function(){
+        'use strict';
+        var template,
+            noNowTasks;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noNowTasks = this.$('#no-now-tasks');
+
+        noNowTasks.html(template);
     },
 
     /*

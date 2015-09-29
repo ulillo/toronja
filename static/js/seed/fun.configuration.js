@@ -243,6 +243,7 @@ fun.conf.templates = {
     allTasks: fun.utils.format('%s/allTasks.html', fun.conf.html),
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
     taskListItem: fun.utils.format('%s/taskListItem.html', fun.conf.html),
+    tasksNowTab: fun.utils.format('%s/tasksNowTab.html', fun.conf.html),
 
     recordings: fun.utils.format('%s/recordings.html', fun.conf.html),
     allRecordings: fun.utils.format('%s/allRecordings.html', fun.conf.html),

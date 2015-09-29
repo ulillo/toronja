@@ -53,6 +53,7 @@ fun.strings = {
     later: "Later",
     done: "Done",
     allTasks: "All Tasks",
+    nowTasks: "Task for Now",
     exportTasks: "Export Tasks",
     getTaskList: "Get Task List",
 

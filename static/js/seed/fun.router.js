@@ -372,7 +372,12 @@ fun.Router = Backbone.Router.extend({
         resources = {
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            tasks: new fun.models.Tasks()            
+            tasks: new fun.models.Tasks(),
+
+            // Temp data only for showing warning
+            now: new fun.models.CampaignsActive(),
+            later: new fun.models.CampaignsActive(),
+            done: new fun.models.CampaignsActive(),
         };
 
         // but, onSuccess we're rendering multiple times the same campaigns.render()
