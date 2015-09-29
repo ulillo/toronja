@@ -2,7 +2,7 @@ fun.views.navbar = Backbone.View.extend({
 
 	events: {
         'click #details-report-btn': 'detailsReport',
-        'click input[name="current_account"]': 'setContext'
+        'click input[name="current_account"]': 'setContextx'
 	},
 
     initialize: function(options) {
@@ -89,7 +89,11 @@ fun.views.navbar = Backbone.View.extend({
         console.log('navbar detail reports')
     },
 
-    setContext: function(event){
+    setStuff: function(){
+        console.log('flaca');
+    },
+
+    setContextx: function(event){
         'use strict';
 
         console.log('setting up activity context');
