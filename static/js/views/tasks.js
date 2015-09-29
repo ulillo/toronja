@@ -108,7 +108,7 @@ fun.views.tasks = Backbone.View.extend({
         noTasks.html(template);
     },
 
-     /*
+    /*
     * Render now tasks list
     */
     renderNowTasksList: function(tasks){
@@ -166,7 +166,7 @@ fun.views.tasks = Backbone.View.extend({
     },
 
     /*
-    * No tasks
+    * No now tasks
     */
     noNowTasks: function(){
         'use strict';
@@ -179,6 +179,152 @@ fun.views.tasks = Backbone.View.extend({
         noNowTasks = this.$('#no-now-tasks');
 
         noNowTasks.html(template);
+    },
+
+    /*
+    * Render later tasks list
+    */
+    renderLaterTasksList: function(tasks){
+        'use strict';
+        var template,
+            laterTasks;
+        console.log('render now tasks list');
+        if (tasks) {
+            this.tasks = tasks;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.tasksLaterTab)
+        );
+
+        laterTasks = this.$('#later-tasks-tab');
+
+        laterTasks.html(template);
+
+        this.tbody = this.$('#later-tasks-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderLaterTaskRows();
+    },
+
+    /*
+    * Render later task rows
+    */
+    renderLaterTaskRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.laterTasks.length;
+
+        console.log('later tasks length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.laterTasks.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.taskRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noLaterTasks();
+        }
+    },
+
+    /*
+    * No later tasks
+    */
+    noLaterTasks: function(){
+        'use strict';
+        var template,
+            noLaterTasks;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noLaterTasks = this.$('#no-later-tasks');
+
+        noLaterTasks.html(template);
+    },
+
+    /*
+    * Render done tasks list
+    */
+    renderDoneTasksList: function(tasks){
+        'use strict';
+        var template,
+            doneTasks;
+        console.log('render done tasks list');
+        if (tasks) {
+            this.tasks = tasks;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.tasksDoneTab)
+        );
+
+        doneTasks = this.$('#done-tasks-tab');
+
+        doneTasks.html(template);
+
+        this.tbody = this.$('#now-done-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderDoneTaskRows();
+    },
+
+    /*
+    * Render done task rows
+    */
+    renderDoneTaskRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.doneTasks.length;
+
+        console.log('done tasks length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.doneTasks.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.taskRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noDoneTasks();
+        }
+    },
+
+    /*
+    * No done tasks
+    */
+    noDoneTasks: function(){
+        'use strict';
+        var template,
+            noDoneTasks;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noDoneTasks = this.$('#no-done-tasks');
+
+        noDoneTasks.html(template);
     },
 
     /*

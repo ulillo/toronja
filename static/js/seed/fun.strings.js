@@ -34,7 +34,7 @@ fun.strings = {
     validateDateISO: "Please enter a valid date (ISO).",
     validateNumber: "Please enter a valid number.",
     validateDigits: "Please enter only digits.",
-    validateCreditCard: "Please enter a valid credit card number.", 
+    validateCreditCard: "Please enter a valid credit card number.",
     validateEqualTo: "Please enter the same value again.",
     validateAccept: "Please enter a value with a valid extension.",
     validateMaxLength: "Please enter no more than {0} characters.",
@@ -54,6 +54,7 @@ fun.strings = {
     done: "Done",
     allTasks: "All Tasks",
     nowTasks: "Task for Now",
+    laterTasks: "Task for Later",
     exportTasks: "Export Tasks",
     getTaskList: "Get Task List",
 

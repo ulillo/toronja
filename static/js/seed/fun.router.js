@@ -869,7 +869,7 @@ fun.Router = Backbone.Router.extend({
             campaigns: new fun.models.Campaigns(),
 
             active: new fun.models.CampaignsActive(),
-            
+
             //paused: new fun.models.CampaignsPaused(),
             paused: new fun.models.CampaignsActive(),
             //inbound: new fun.models.CampaignsInbound(),
