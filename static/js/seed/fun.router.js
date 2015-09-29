@@ -1057,7 +1057,13 @@ fun.Router = Backbone.Router.extend({
     recordings: function(){
         'use strict';
 
-        var recordings = translate('recordings');
+        var recordings = translate('recordings'),
+            account,
+            context;
+
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
 
         resources = {
             user: new fun.models.User({'account':account}),
