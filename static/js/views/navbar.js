@@ -2,7 +2,7 @@ fun.views.navbar = Backbone.View.extend({
 
 	events: {
         'click #details-report-btn': 'detailsReport',
-        'click input[name="current_account"]': 'setContextx'
+        'click input[name="current_account"]': 'setStuff'
 	},
 
     initialize: function(options) {
