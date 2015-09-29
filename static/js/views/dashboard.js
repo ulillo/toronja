@@ -7,8 +7,7 @@ fun.views.dashboard = Backbone.View.extend({
         'click #today-btn': 'today',
         'click #this-week-btn': 'thisWeek',
         'click #this-month-btn': 'thisMonth',
-        'click #this-year-btn': 'thisYear',
-        'click input[name="current_account"]': 'setContext'
+        'click #this-year-btn': 'thisYear'
     },
 
     initialize: function(options){
