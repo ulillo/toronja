@@ -4,9 +4,7 @@ fun.views.cubes = Backbone.View.extend({
     * Bind the event functions to the different HTML elements
     */
     events : {
-
         'click #create-cube-btn': 'createCube',
-
     },
     
     /*
@@ -32,5 +30,4 @@ fun.views.cubes = Backbone.View.extend({
         event.preventDefault();
         console.log('create cube');
     }
-
 });

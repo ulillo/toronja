@@ -4,9 +4,7 @@ fun.views.accounts = Backbone.View.extend({
     * Bind the event functions to the different HTML elements
     */
     events: {
-
         'click #create-account-btn': 'createAccount',
-
     },
     
     /*

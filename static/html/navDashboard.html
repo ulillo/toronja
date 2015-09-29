@@ -11,11 +11,15 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-plus fa-fw"></i>
             <%= translate("Create") %>
-            
         </a>
 
         <ul class="dropdown-menu" role="menu">
-            <li id="nav-new-account" class="hide"><a href="#accounts"><i class="fa fa-user-plus fa-fw"></i> <%= translate("newAccount") %></a></li>
+            <li id="nav-new-account" class="hide">
+                <a href="#accounts">
+                    <i class="fa fa-user-plus fa-fw"></i>
+                    <%= translate("newAccount") %>
+                </a>
+            </li>
             <li id="nav-new-campaign"><a href="#campaigns"><i class="fa fa-dot-circle-o fa-fw"></i> <%= translate("newCampaign") %></a></li>
             <li id="nav-new-contact"><a href="#contacts"><i class="fa fa-book fa-fw"></i> <%= translate("newContact") %></a></li>
             <li id="nav-new-cube" class="hide"><a href="#cubes"><i class="fa fa-cube fa-fw"></i> <%= translate("newCube") %></a></li>
@@ -50,7 +54,10 @@
             
             <li>
                 <input type="radio" id="current_account_admin" name="current_account" value="admin">
-                <label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i><%= translate("systemAdmin") %></label>
+                <label for="current_account_admin">
+                    <i class="fa fa-puzzle-piece fa-fw"></i>
+                    <%= translate("systemAdmin") %>
+                </label>
             </li>
             
             <li>

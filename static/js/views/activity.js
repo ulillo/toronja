@@ -1,21 +1,20 @@
 fun.views.activity = Backbone.View.extend({
 
-    /**
+    /*
     * Bind the event functions to the different HTML elements
     */
-    // click events missing
     events: {
 
     },
 
-    /**
+    /*
     * Class constructor
     */
     initialize: function(options){
         fun.containers.activity = this.$el;
     },
 
-    /**
+    /*
     * Render view
     */
     render: function(){
