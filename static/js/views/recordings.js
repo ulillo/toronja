@@ -87,7 +87,7 @@ fun.views.recordings = Backbone.View.extend({
     /*
     * No now tasks
     */
-    noNowTasks: function(){
+    noAllRecordings: function(){
         'use strict';
         var template,
             noAllRecordings;
