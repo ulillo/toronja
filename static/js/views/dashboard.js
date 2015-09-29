@@ -49,51 +49,6 @@ fun.views.dashboard = Backbone.View.extend({
         console.log('corporate warfare');
     },
 
-    renderAccountDropdown: function(account){
-        // Render account dropdown
-        'use strict';
-        console.log('render account dropdown for ' + account);
-        var counter = 0, // i
-            length,
-            orgData,
-            itemData,
-            itemTemplate;
-
-        // Can I get the list from localStorage?, pretty please.
-
-        if (account) {
-            this.orgs = account.get("orgs");
-        } else {
-            this.orgs = [];
-        }
-
-        this.accountList = this.$('#account-dropdown ul');
-
-        if (this.orgs){
-            length = this.orgs.length;
-        }
-        
-        if (length > 0){
-
-            // i, search _.each function
-            for ( counter; counter < length; ++counter ) {
-
-                orgData = {
-                    'account': account.get("account"),
-                    'org': this.orgs[counter] // set, put, post, patch
-                };
-
-                itemData = _.extend(orgData, {counter:counter+1});
-
-                itemTemplate = _.template(
-                    fun.utils.getTemplate(fun.conf.templates.accountListItem)
-                )(itemData);
-
-                this.accountList.append(itemTemplate);
-            }
-        }
-    },
-
     renderTodaySummary: function(account, summary, billing){
         // Render today summary
         'use strict';

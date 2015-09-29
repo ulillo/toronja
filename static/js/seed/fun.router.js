@@ -812,7 +812,7 @@ fun.Router = Backbone.Router.extend({
                     models.lapseSummary
                 );
 
-                fun.instances.dashboard.renderAccountDropdown(
+                fun.instances.navbar.renderAccountDropdown(
                     models.user
                 );
 

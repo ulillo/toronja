@@ -2,7 +2,7 @@ fun.views.navbar = Backbone.View.extend({
 
 	events: {
         'click #details-report-btn': 'detailsReport',
-        'click input[name="current_account"]': 'setStuff'
+        'click input[name="current_account"]': 'setContext'
 	},
 
     initialize: function(options) {
@@ -89,11 +89,52 @@ fun.views.navbar = Backbone.View.extend({
         console.log('navbar detail reports')
     },
 
-    setStuff: function(){
-        console.log('flaca');
+    renderAccountDropdown: function(account){
+        // Render account dropdown
+        'use strict';
+        console.log('render account dropdown for ' + account);
+        var counter = 0, // i
+            length,
+            orgData,
+            itemData,
+            itemTemplate;
+
+        // Can I get the list from localStorage?, pretty please.
+
+        if (account) {
+            this.orgs = account.get("orgs");
+        } else {
+            this.orgs = [];
+        }
+
+        this.accountList = this.$('#account-dropdown ul');
+
+        if (this.orgs){
+            length = this.orgs.length;
+        }
+        
+        if (length > 0){
+
+            // i, search _.each function
+            for ( counter; counter < length; ++counter ) {
+
+                orgData = {
+                    'account': account.get("account"),
+                    'org': this.orgs[counter] // set, put, post, patch
+                };
+
+                itemData = _.extend(orgData, {counter:counter+1});
+
+                itemTemplate = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountListItem)
+                )(itemData);
+
+                this.accountList.append(itemTemplate);
+            }
+        }
     },
 
-    setContextx: function(event){
+    setContext: function(event){
         'use strict';
 
         console.log('setting up activity context');
@@ -103,7 +144,6 @@ fun.views.navbar = Backbone.View.extend({
 
         $('input[name="current_account"]:checked').each(function() {
             idVal = $(this).attr("id");
-
             label = $("label[for='" + idVal + "']").text();
 
             if (idVal === 'current_account_admin'){
