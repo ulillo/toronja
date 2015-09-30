@@ -206,6 +206,7 @@ fun.strings = {
     carriers: "Carriers",
     duration: "Duration",
     messages: "Messages",
+    allMessages: "All Messages",
     newMessage: "New Message",
     script: "Script",
     greatResourceNames: "Great resource names are impossible, try nouns instead",

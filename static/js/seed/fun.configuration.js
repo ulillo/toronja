@@ -326,6 +326,9 @@ fun.conf.templates = {
     dialpad: fun.utils.format('%s/dialpad.html', fun.conf.html),
     
     messages: fun.utils.format('%s/messages.html', fun.conf.html),
+    messagesRow: fun.utils.format('%s/messagesRow.html', fun.conf.html),
+    messagesAllTab: fun.utils.format('%s/messagesAllTab.html', fun.conf.html),
+
     videos: fun.utils.format('%s/videos.html', fun.conf.html),
 
     controlTo: fun.utils.format('%s/controlTo.html', fun.conf.html),

@@ -717,7 +717,7 @@ fun.Router = Backbone.Router.extend({
         }
         fun.instances.footer.render();
     },
-    
+
     cubes: function(){
         'use strict';
         var cubes = translate('cubes');
@@ -742,7 +742,7 @@ fun.Router = Backbone.Router.extend({
         }
         fun.instances.footer.render();
     },
-    
+
     login: function(){
         'use strict';
         var login = translate('signIn');
@@ -757,7 +757,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.instances.footer.render();
     },
-    
+
     dashboard: function(account, org){
         'use strict';
         var account,
@@ -1042,15 +1042,72 @@ fun.Router = Backbone.Router.extend({
     messages: function(){
         'use strict';
 
-        var messages = translate('messages');
+        var messages = translate('messages'),
+            account,
+            context,
+            vonCount = 0,
+            resources,
+            resource,
+            onSuccess;
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(messages);
-        fun.instances.subheader.renderHeadNav();
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
 
-        fun.instances.messages.render();
-        
+        resources = {
+            user: new fun.models.User({'account':account}),
+            // All recordings
+            all: new fun.models.CampaignsActive(),
+            unread: new fun.models.CampaignsActive(),
+            notifications: new fun.models.CampaignsActive(),
+            alerts: new fun.models.CampaignsActive(),
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.recordings.renderAllMessagesList(
+                    resources.all
+                );
+
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
+
+                // fun.instances.recordings.renderUnreadMessagesList(
+                //     resources.unread
+                // );
+
+                // fun.instances.recordings.renderNotificationsMessagesList(
+                //     resources.notifications
+                // );
+
+                // fun.instances.recordings.renderAlertsMessagesList(
+                //     resources.alerts
+                // );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(recordings);
+            fun.instances.subheader.renderHeadNav();
+
+            fun.instances.messages.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
         fun.instances.footer.render();
     },
 
