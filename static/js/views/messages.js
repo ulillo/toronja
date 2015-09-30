@@ -30,7 +30,7 @@ fun.views.messages = Backbone.View.extend({
     /*
     * Render all messages list
     */
-    renderAllRecordingsList: function(messages){
+    renderAllMessagesList: function(messages){
         'use strict';
         var template,
             allMessages;

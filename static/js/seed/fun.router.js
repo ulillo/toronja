@@ -1067,7 +1067,8 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.messages.renderAllMessagesList(
+                fun.instances.messages.renderAllMessagesList
+                (
                     resources.all
                 );
 
