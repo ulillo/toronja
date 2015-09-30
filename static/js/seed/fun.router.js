@@ -1080,13 +1080,13 @@ fun.Router = Backbone.Router.extend({
                     resources.unread
                 );
 
-                // fun.instances.messages.renderNotificationsMessagesList(
-                //     resources.notifications
-                // );
+                fun.instances.messages.renderNotificationsMessagesList(
+                    resources.notifications
+                );
 
-                // fun.instances.messages.renderAlertsMessagesList(
-                //     resources.alerts
-                // );
+                fun.instances.messages.renderAlertsMessagesList(
+                    resources.alerts
+                );
             }
         };
 
