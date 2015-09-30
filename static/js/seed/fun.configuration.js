@@ -328,6 +328,9 @@ fun.conf.templates = {
     messages: fun.utils.format('%s/messages.html', fun.conf.html),
     messagesRow: fun.utils.format('%s/messagesRow.html', fun.conf.html),
     messagesAllTab: fun.utils.format('%s/messagesAllTab.html', fun.conf.html),
+    messagesUnreadTab: fun.utils.format('%s/messagesUnreadTab.html', fun.conf.html),
+    messagesNotificationsTab: fun.utils.format('%s/messagesNotificationsTab.html', fun.conf.html),
+    messagesAlertsTab: fun.utils.format('%s/messagesAlertsTab.html', fun.conf.html),
 
     videos: fun.utils.format('%s/videos.html', fun.conf.html),
 

@@ -1076,9 +1076,9 @@ fun.Router = Backbone.Router.extend({
                     resources.user
                 );
 
-                // fun.instances.messages.renderUnreadMessagesList(
-                //     resources.unread
-                // );
+                fun.instances.messages.renderUnreadMessagesList(
+                    resources.unread
+                );
 
                 // fun.instances.messages.renderNotificationsMessagesList(
                 //     resources.notifications
