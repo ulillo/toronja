@@ -1092,7 +1092,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
-            fun.instances.subheader.render(recordings);
+            fun.instances.subheader.render(messages);
             fun.instances.subheader.renderHeadNav();
 
             fun.instances.messages.render();
