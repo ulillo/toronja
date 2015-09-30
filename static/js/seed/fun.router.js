@@ -1067,7 +1067,7 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.recordings.renderAllMessagesList(
+                fun.instances.messages.renderAllMessagesList(
                     resources.all
                 );
 
@@ -1075,15 +1075,15 @@ fun.Router = Backbone.Router.extend({
                     resources.user
                 );
 
-                // fun.instances.recordings.renderUnreadMessagesList(
+                // fun.instances.messages.renderUnreadMessagesList(
                 //     resources.unread
                 // );
 
-                // fun.instances.recordings.renderNotificationsMessagesList(
+                // fun.instances.messages.renderNotificationsMessagesList(
                 //     resources.notifications
                 // );
 
-                // fun.instances.recordings.renderAlertsMessagesList(
+                // fun.instances.messages.renderAlertsMessagesList(
                 //     resources.alerts
                 // );
             }
