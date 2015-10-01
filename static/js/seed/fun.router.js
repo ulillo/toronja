@@ -1004,7 +1004,7 @@ fun.Router = Backbone.Router.extend({
 
             all: new fun.models.CampaignsActive(),
             active: new fun.models.CampaignsActive(),
-            users: new fun.models.Users(),
+            users: new fun.models.CampaignsActive(),
             orgs: new fun.models.CampaignsActive(),
             disable: new fun.models.CampaignsActive(),
             suspended: new fun.models.CampaignsActive(),
