@@ -979,7 +979,6 @@ fun.Router = Backbone.Router.extend({
     accounts: function(){
         'use strict';
 
-        'use strict';
         var accounts = translate('accounts'),
             account,
             context,
