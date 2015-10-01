@@ -172,6 +172,79 @@ fun.views.accounts = Backbone.View.extend({
     },
 
     /*
+    * Render users accounts list
+    */
+    renderUsersAccountsList: function(accounts){
+        'use strict';
+        var template,
+            usersAccounts;
+        console.log('render users accounts list');
+        if (accounts) {
+            this.accounts = accounts;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.accountsUsersTab)
+        );
+
+        usersAccounts = this.$('#users-accounts-tab');
+
+        usersAccounts.html(template);
+
+        this.tbody = this.$('#users-accounts-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderUsersAccountsRows();
+    },
+
+    /*
+    * Render users accounts rows
+    */
+    renderUsersAccountsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.accounts.length;
+
+        console.log('all users length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.accounts.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noUsersAccounts();
+        }
+    },
+
+    /*
+    * No users accounts
+    */
+    noUsersAccounts: function(){
+        'use strict';
+        var template,
+            noUsersAccounts;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noUsersAccounts = this.$('#no-users-accounts');
+
+        noUsersAccounts.html(template);
+    },
+
+    /*
     * create account
     */
     createAccount: function(event){
