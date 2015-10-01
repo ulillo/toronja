@@ -392,6 +392,13 @@ fun.strings = {
     findAcampaign: "Find a campaign",
     resources: "Resources",
     accounts: "Accounts",
+    allAccounts: "All Accounts",
+    activeAccounts: "Active Accounts",
+    usersAccounts: "Users Accounts",
+    organizationAccounts: "Organization Accounts",
+    disableAccounts: "Disable Accounts",
+    suspendedAccounts: "Suspended Accounts",
+
     nodes: "Nodes",
     clusters: "Clusters",
     clouds: "Clouds",

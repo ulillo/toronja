@@ -26,7 +26,80 @@ fun.views.accounts = Backbone.View.extend({
     },
 
     /*
-    * create account 
+    * Render all accounts list
+    */
+    renderAllAccountsList: function(accounts){
+        'use strict';
+        var template,
+            allAccounts;
+        console.log('render all accounts list');
+        if (accounts) {
+            this.accounts = accounts;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.accountsAllTab)
+        );
+
+        allAccounts = this.$('#all-accounts-tab');
+
+        allAccounts.html(template);
+
+        this.tbody = this.$('#all-accounts-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderAllAccountsRows();
+    },
+
+    /*
+    * Render all accounts rows
+    */
+    renderAllAccountsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.accounts.length;
+
+        console.log('all accounts length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.accounts.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noAllAccounts();
+        }
+    },
+
+    /*
+    * No all accounts
+    */
+    noAllAccounts: function(){
+        'use strict';
+        var template,
+            noAllAccounts;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noAllAccounts = this.$('#no-all-accounts');
+
+        noAllAccounts.html(template);
+    },
+
+    /*
+    * create account
     */
     createAccount: function(event){
         'use strict';

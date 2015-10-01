@@ -1002,7 +1002,12 @@ fun.Router = Backbone.Router.extend({
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
             users: new fun.models.Users(),
-            orgs: new fun.models.Orgs()            
+            orgs: new fun.models.Orgs(),
+
+            all: new fun.models.CampaignsActive(),
+            active: new fun.models.CampaignsActive(),
+            disable: new fun.models.CampaignsActive(),
+            suspended: new fun.models.CampaignsActive(),
         };
 
 
@@ -1013,6 +1018,30 @@ fun.Router = Backbone.Router.extend({
                 fun.instances.accounts.renderAccountsList(
                     resources.users
                 );
+
+                fun.instances.accounts.renderAllAccountsList(
+                    resources.all
+                );
+
+                // fun.instances.accounts.renderActiveAccountsList(
+                //     resources.active
+                // );
+
+                // fun.instances.accounts.renderUsersAccountsList(
+                //     resources.users
+                // );
+
+                // fun.instances.accounts.renderOrganizationsAccountsList(
+                //     resources.orgs
+                // );
+
+                // fun.instances.accounts.renderDisableAccountsList(
+                //     resources.disable
+                // );
+
+                // fun.instances.accounts.renderSuspendedAccountsList(
+                //     resources.suspended
+                // );
             }
         };
 
@@ -1067,8 +1096,7 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.messages.renderAllMessagesList
-                (
+                fun.instances.messages.renderAllMessagesList(
                     resources.all
                 );
 

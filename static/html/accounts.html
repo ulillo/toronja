@@ -80,13 +80,9 @@
                     </span>
 
                     <form id="export-account-form" class="form-export" novalidate="novalidate">
-  
-
                         <p class="help-block"><%= translate("getAccountList") %>.</p>
-
                         <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
-                          
                 </div>
             </div>
         </div>
@@ -96,19 +92,20 @@
         <div class="col-md-12">
             <ul class="nav nav-pills">
                 <li><a href="#all-accounts-tab" data-toggle="tab"><%= translate("all") %></a></li>
-                <li><a href="#active-tab" data-toggle="tab"><%= translate("active") %></a></li>
-                <li><a href="#users-tab" data-toggle="tab"><%= translate("users") %></a></li>
-                <li><a href="#organizations-tab" data-toggle="tab"><%= translate("organizations") %></a></li>
-                <li><a href="#disable-tab" data-toggle="tab"><%= translate("disable") %></a></li>
-                <li><a href="#suspended-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
+                <li><a href="#active-accounts-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#users-accounts-tab" data-toggle="tab"><%= translate("users") %></a></li>
+                <li><a href="#organizations-accounts-tab" data-toggle="tab"><%= translate("organizations") %></a></li>
+                <li><a href="#disable-accounts-tab" data-toggle="tab"><%= translate("disable") %></a></li>
+                <li><a href="#suspended-accounts-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-accounts-tab"></div>
-                <div class="tab-pane" id="active-tab"></div>
-                <div class="tab-pane" id="paused-tab"></div>
-                <div class="tab-pane" id="inbound-tab"></div>
-                <div class="tab-pane" id="outbound-tab"></div>
-            </div>  
+                <div class="tab-pane" id="active-accounts-tab"></div>
+                <div class="tab-pane" id="users-accounts-tab"></div>
+                <div class="tab-pane" id="organizations-accounts-tab"></div>
+                <div class="tab-pane" id="disable-accounts-tab"></div>
+                <div class="tab-pane" id="suspended-accounts-tab"></div>
+            </div>
         </div>
     </div>
 </div>

@@ -261,7 +261,13 @@ fun.conf.templates = {
     gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
 
     accounts: fun.utils.format('%s/accounts.html', fun.conf.html),
-    allAccounts: fun.utils.format('%s/allAccounts.html', fun.conf.html),
+    accountsAllTab: fun.utils.format('%s/accountsAllTab.html', fun.conf.html),
+    accountsActiveTab: fun.utils.format('%s/accountsActiveTab.html', fun.conf.html),
+    accountsUsersTab: fun.utils.format('%s/accountsUsersTab.html', fun.conf.html),
+    accountsOrganizationsTab: fun.utils.format('%s/accountsOrganizationsTab.html', fun.conf.html),
+    accountsDisableTab: fun.utils.format('%s/accountsDisableTab.html', fun.conf.html),
+    accountsSuspendedTab: fun.utils.format('%s/accountsSuspendedTab.html', fun.conf.html),
+
     accountRow: fun.utils.format('%s/accountRow.html', fun.conf.html),
     accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
 
