@@ -1039,9 +1039,9 @@ fun.Router = Backbone.Router.extend({
                     resources.disable
                 );
 
-                // fun.instances.accounts.renderSuspendedAccountsList(
-                //     resources.suspended
-                // );
+                fun.instances.accounts.renderSuspendedAccountsList(
+                    resources.suspended
+                );
             }
         };
 

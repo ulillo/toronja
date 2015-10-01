@@ -394,6 +394,80 @@ fun.views.accounts = Backbone.View.extend({
 
 
     /*
+    * Render suspended accounts list
+    */
+    renderSuspendedAccountsList: function(accounts){
+        'use strict';
+        var template,
+            suspendedAccounts;
+        console.log('render suspended accounts list');
+        if (accounts) {
+            this.accounts = accounts;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.accountsSuspendedTab)
+        );
+
+        suspendedAccounts = this.$('#suspended-accounts-tab');
+
+        suspendedAccounts.html(template);
+
+        this.tbody = this.$('#suspended-accounts-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderSuspendedAccountsRows();
+    },
+
+    /*
+    * Render suspended accounts rows
+    */
+    renderSuspendedAccountsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.accounts.length;
+
+        console.log('all suspended length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.accounts.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noSuspendedAccounts();
+        }
+    },
+
+    /*
+    * No suspended accounts
+    */
+    noSuspendedAccounts: function(){
+        'use strict';
+        var template,
+            noSuspendedAccounts;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noSuspendedAccounts = this.$('#no-suspended-accounts');
+
+        noSuspendedAccounts.html(template);
+    },
+
+
+    /*
     * create account
     */
     createAccount: function(event){
