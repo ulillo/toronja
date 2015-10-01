@@ -1031,13 +1031,13 @@ fun.Router = Backbone.Router.extend({
                     resources.users
                 );
 
-                // fun.instances.accounts.renderOrganizationsAccountsList(
-                //     resources.orgs
-                // );
+                fun.instances.accounts.renderOrganizationsAccountsList(
+                    resources.orgs
+                );
 
-                // fun.instances.accounts.renderDisableAccountsList(
-                //     resources.disable
-                // );
+                fun.instances.accounts.renderDisableAccountsList(
+                    resources.disable
+                );
 
                 // fun.instances.accounts.renderSuspendedAccountsList(
                 //     resources.suspended

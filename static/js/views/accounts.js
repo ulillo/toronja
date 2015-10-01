@@ -244,6 +244,155 @@ fun.views.accounts = Backbone.View.extend({
         noUsersAccounts.html(template);
     },
 
+
+    /*
+    * Render organizations accounts list
+    */
+    renderOrganizationsAccountsList: function(accounts){
+        'use strict';
+        var template,
+            organizationsAccounts;
+        console.log('render organizations accounts list');
+        if (accounts) {
+            this.accounts = accounts;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.accountsOrganizationsTab)
+        );
+
+        organizationsAccounts = this.$('#organizations-accounts-tab');
+
+        organizationsAccounts.html(template);
+
+        this.tbody = this.$('#organizations-accounts-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderOrganizationsAccountsRows();
+    },
+
+    /*
+    * Render organizations accounts rows
+    */
+    renderOrganizationsAccountsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.accounts.length;
+
+        console.log('all organizations length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.accounts.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noOrganizationsAccounts();
+        }
+    },
+
+    /*
+    * No organizations accounts
+    */
+    noOrganizationsAccounts: function(){
+        'use strict';
+        var template,
+            noOrganizationsAccounts;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noOrganizationsAccounts = this.$('#no-organizations-accounts');
+
+        noOrganizationsAccounts.html(template);
+    },
+
+
+    /*
+    * Render disable accounts list
+    */
+    renderDisableAccountsList: function(accounts){
+        'use strict';
+        var template,
+            disableAccounts;
+        console.log('render disable accounts list');
+        if (accounts) {
+            this.accounts = accounts;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.accountsDisableTab)
+        );
+
+        disableAccounts = this.$('#disable-accounts-tab');
+
+        disableAccounts.html(template);
+
+        this.tbody = this.$('#disable-accounts-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        this.renderDisableAccountsRows();
+    },
+
+    /*
+    * Render disable accounts rows
+    */
+    renderDisableAccountsRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // tasks length
+        length = this.accounts.length;
+
+        console.log('all disable length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.accounts.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noDisableAccounts();
+        }
+    },
+
+    /*
+    * No disable accounts
+    */
+    noDisableAccounts: function(){
+        'use strict';
+        var template,
+            noDisableAccounts;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noDisableAccounts = this.$('#no-disable-accounts');
+
+        noDisableAccounts.html(template);
+    },
+
+
     /*
     * create account
     */
