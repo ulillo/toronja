@@ -395,7 +395,7 @@ fun.strings = {
     allAccounts: "All Accounts",
     activeAccounts: "Active Accounts",
     usersAccounts: "Users Accounts",
-    organizationAccounts: "Organization Accounts",
+    organizationsAccounts: "Organization Accounts",
     disableAccounts: "Disable Accounts",
     suspendedAccounts: "Suspended Accounts",
 
