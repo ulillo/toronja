@@ -1015,9 +1015,9 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.accounts.renderAccountsList(
-                    resources.users
-                );
+                // fun.instances.accounts.renderAccountsList(
+                //     resources.users
+                // );
 
                 fun.instances.accounts.renderAllAccountsList(
                     resources.all
