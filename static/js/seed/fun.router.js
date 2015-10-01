@@ -1023,9 +1023,9 @@ fun.Router = Backbone.Router.extend({
                     resources.all
                 );
 
-                // fun.instances.accounts.renderActiveAccountsList(
-                //     resources.active
-                // );
+                fun.instances.accounts.renderActiveAccountsList(
+                    resources.active
+                );
 
                 // fun.instances.accounts.renderUsersAccountsList(
                 //     resources.users
