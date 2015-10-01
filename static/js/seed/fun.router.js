@@ -1000,11 +1000,12 @@ fun.Router = Backbone.Router.extend({
         resources = {
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            users: new fun.models.Users(),
             // orgs: new fun.models.Orgs(),
 
             all: new fun.models.CampaignsActive(),
             active: new fun.models.CampaignsActive(),
+            users: new fun.models.Users(),
+            orgs: new fun.models.CampaignsActive(),
             disable: new fun.models.CampaignsActive(),
             suspended: new fun.models.CampaignsActive(),
         };
