@@ -222,16 +222,12 @@ fun.views.dashboard = Backbone.View.extend({
 
         length = this.collection.length;
 
-        console.log(length, this.collection);
-
         if (length !== undefined || length !== null && length > 0){
             rows = this.tbody.html('');
 
-            console.log(this.collection);
-
-            console.log(counter);
-
             var datfuq = this.collection.at(counter).toJSON();
+
+            console.log(length, datfuq);
 
             console.log(datfuq['results']);
            
