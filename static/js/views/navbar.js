@@ -102,9 +102,7 @@ fun.views.navbar = Backbone.View.extend({
             itemData,
             itemTemplate;
 
-        console.log('render account for ...');
-
-        console.log(account.get('account'));
+        console.log('render account for ... ', account.get('account'));
 
         // Can I get the list from localStorage?, pretty please.
 
@@ -123,14 +121,14 @@ fun.views.navbar = Backbone.View.extend({
         if (length > 0){
 
             // i, search _.each function
-            for ( counter; counter < length; ++counter ) {
+            for (vonCount; vonCount < length; ++vonCount) {
 
                 orgData = {
                     'account': account.get("account"),
-                    'org': this.orgs[counter] // set, put, post, patch
+                    'org': this.orgs[vonCount] // set, put, post, patch
                 };
 
-                itemData = _.extend(orgData, {counter:counter+1});
+                itemData = _.extend(orgData, {counter:vonCount + 1});
 
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
