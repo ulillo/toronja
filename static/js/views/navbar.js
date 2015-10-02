@@ -92,12 +92,18 @@ fun.views.navbar = Backbone.View.extend({
     renderAccountDropdown: function(account){
         // Render account dropdown
         'use strict';
-        console.log('render account dropdown for ' + JSON.stringify(account)['account']);
-        var counter = 0, // i
+        // this can or will receive a backbone model
+        // so we're going to stringify the shit of it first
+        var vonCount = 0,
+            account = JSON.stringify(account),
             length,
             orgData,
             itemData,
             itemTemplate;
+
+        console.log('render account for ...');
+
+        console.log(account);
 
         // Can I get the list from localStorage?, pretty please.
 
