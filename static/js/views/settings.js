@@ -14,7 +14,6 @@ fun.views.settings = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.settings = this.$el;
-        this.accountProfile = JSON.parse(localStorage.getItem("profile"));
     },
 
     /**
@@ -24,6 +23,7 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         //view cache
         var view = this,
+            accountProfile = JSON.parse(localStorage.getItem("profile")),
             email,
             firstName,
             lastName,
@@ -33,6 +33,8 @@ fun.views.settings = Backbone.View.extend({
             template;
 
         console.log('render settings view');
+
+        this.accountProfile = accountProfile;
 
         if (account === null){
             account = 'username';
