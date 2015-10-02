@@ -214,7 +214,7 @@ fun.views.dashboard = Backbone.View.extend({
     renderRows: function(){
         // Render rows
         'use strict';
-        var counter = 0,
+        var vonCount = 0,
             length,
             rows,
             data,
@@ -225,16 +225,14 @@ fun.views.dashboard = Backbone.View.extend({
         if (length !== undefined || length !== null && length > 0) {
             rows = this.tbody.html('');
 
-            var datfuq = this.collection.at(counter).toJSON();
+            // can believe this shit.
 
-            console.log(length, datfuq);
-
-            console.log(datfuq['results']);
+            var datfuq = this.collection.at(vonCount).toJSON();
            
             // da fuq dude?
-            for ( counter; counter < 7; ++counter ) {
+            for (vonCount; vonCount < 7; ++vonCount) {
 
-                data = _.extend(datfuq, {counter:counter});
+                data = _.extend(datfuq, {counter:vonCount});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.recordRow)
