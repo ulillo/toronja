@@ -233,7 +233,7 @@ fun.views.dashboard = Backbone.View.extend({
 
             var datfuq = this.collection.at(counter).toJSON();
 
-            console.log(datfuq);
+            console.log(datfuq['results']);
            
             // da fuq dude?
             for ( counter; counter < 7; ++counter ) {
