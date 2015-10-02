@@ -222,7 +222,7 @@ fun.views.dashboard = Backbone.View.extend({
 
         length = this.collection.length;
 
-        if (length !== undefined || length !== null && length > 0){
+        if (length !== undefined || length !== null && length > 0) {
             rows = this.tbody.html('');
 
             var datfuq = this.collection.at(counter).toJSON();
