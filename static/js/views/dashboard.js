@@ -224,7 +224,7 @@ fun.views.dashboard = Backbone.View.extend({
 
         console.log(length, this.collection);
 
-        if (length > 0){
+        if (length !== undefined || length !== null && length > 0){
             rows = this.tbody.html('');
            
             // da fuq dude?
