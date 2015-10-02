@@ -154,11 +154,13 @@ fun.views.dashboard = Backbone.View.extend({
 
         if (collection) {
             this.collection = collection;
+
+            _.each(collection, alert);
         } else {
             this.collection = 0;
         }
 
-        console.log(JSON.stringify(collection));
+
 
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.latestRecords)
