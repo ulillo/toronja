@@ -112,7 +112,7 @@ fun.views.navbar = Backbone.View.extend({
             this.orgs = [];
         }
 
-        this.accountList = this.$('#account-dropdown ul');
+        this.accountList = this.$('#account-list-ul');
 
         if (this.orgs){
             length = this.orgs.length;
