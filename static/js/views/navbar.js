@@ -92,7 +92,7 @@ fun.views.navbar = Backbone.View.extend({
     renderAccountDropdown: function(account){
         // Render account dropdown
         'use strict';
-        console.log('render account dropdown for ' + JSON.stringify(account));
+        console.log('render account dropdown for ' + JSON.stringify(account)['account']);
         var counter = 0, // i
             length,
             orgData,
