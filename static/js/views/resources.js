@@ -35,36 +35,36 @@ fun.views.resources = Backbone.View.extend({
     },
 
      /*
-    * Render resources list
+    * Render all resources list
     */
-    renderResourcesList: function(resources){
+    renderAllResourcesList: function(resources){
         'use strict';
         var template,
-            allresources;
+            allResources;
         console.log('render resources list');
         if (resources) {
             this.resources = resources;
         }
 
         template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.allresources)
+            fun.utils.getTemplate(fun.conf.templates.resourcesAllTab)
         );
 
-        allresources = this.$('#all-resources-tab');
+        allResources = this.$('#all-resources-tab');
 
-        allresources.html(template);
+        allResources.html(template);
 
-        this.tbody = this.$('#resources-list > tbody');
+        this.tbody = this.$('#all-resources-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
         
-        this.renderResourceRows();
+        this.renderAllResourceRows();
     },
 
     /*
-    * Render resource rows
+    * Render all resource rows
     */
-    renderResourceRows: function(){
+    renderAllResourceRows: function(){
         'use strict';
         var length,
             i = 0,
@@ -88,24 +88,24 @@ fun.views.resources = Backbone.View.extend({
                 rows.append(template);
             }
         } else {
-            this.noresources();
+            this.noAllResources();
         }
     },
 
     /*
-    * No Resources
+    * No all Resources
     */
-    noResources: function(){
+    noAllResources: function(){
         'use strict';
         var template,
-            noResources;
+            noAllResources;
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
 
-        noResources = this.$('#no-resources');
+        noAllResources = this.$('#no-all-resources');
 
-        noResources.html(template);
+        noAllResources.html(template);
     },
 
     /*

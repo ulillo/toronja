@@ -1272,15 +1272,67 @@ fun.Router = Backbone.Router.extend({
     resources: function(){
         'use strict';
 
+        var accounts = translate('accounts'),
+            account,
+            context,
+            vonCount = 0,
+            resources,
+            resource,
+            onSuccess;
+
         var resources = translate('resources');
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(resources);
-        fun.instances.subheader.renderHeadNav();
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
 
-        fun.instances.resources.render();
-        
+        resources = {
+            //account: new fun.models.Account({'account':account}),
+            user: new fun.models.User({'account':account}),
+            // orgs: new fun.models.Orgs(),
+
+            all: new fun.models.CampaignsActive(),
+            imps: new fun.models.CampaignsActive(),
+            nodes: new fun.models.CampaignsActive(),
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.resources.renderAllResourcesList(
+                    resources.all
+                );
+
+                // fun.instances.resources.renderImpsResourcesList(
+                //     resources.imps
+                // );
+
+                // fun.instances.resources.renderNodesResourcesList(
+                //     resources.nodes
+                // );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(resources);
+            fun.instances.subheader.renderHeadNav();
+
+            fun.instances.resources.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
         fun.instances.footer.render();
     },
 
