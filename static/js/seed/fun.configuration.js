@@ -256,6 +256,12 @@ fun.conf.templates = {
     recordingListItem: fun.utils.format('%s/recordingListItem.html', fun.conf.html),
 
     gateways: fun.utils.format('%s/gateways.html', fun.conf.html),
+    gatewaysAllTab: fun.utils.format('%s/gatewaysAllTab.html', fun.conf.html),
+    gatewaysActiveTab: fun.utils.format('%s/gatewaysActiveTab.html', fun.conf.html),
+    gatewaysMonitoredTab: fun.utils.format('%s/gatewaysMonitoredTab.html', fun.conf.html),
+    gatewaysInboundTab: fun.utils.format('%s/gatewaysInboundTab.html', fun.conf.html),
+    gatewaysOutboundTab: fun.utils.format('%s/gatewaysOutboundTab.html', fun.conf.html),
+
     allGateways: fun.utils.format('%s/allGateways.html', fun.conf.html),
     gatewayRow: fun.utils.format('%s/gatewayRow.html', fun.conf.html),
     gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
@@ -272,7 +278,8 @@ fun.conf.templates = {
     accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
 
     resources: fun.utils.format('%s/resources.html', fun.conf.html),
-    allResources: fun.utils.format('%s/allResources.html', fun.conf.html),
+    resourcesAllTab: fun.utils.format('%s/resourcesAllTab.html', fun.conf.html),
+
     resourceRow: fun.utils.format('%s/resourceRow.html', fun.conf.html),
     resourceListItem: fun.utils.format('%s/resourceListItem.html', fun.conf.html),
 

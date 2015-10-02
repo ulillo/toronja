@@ -30,7 +30,7 @@
                                 </p>
 
                             </div>
-                        </div>                                       
+                        </div>
 
                         <div class="form-group">
                             <label for="gateway_description"><%= translate("descriptionOptional") %></label>
@@ -80,13 +80,9 @@
                     </span>
 
                     <form id="export-campaign-form" class="form-export" novalidate="novalidate">
-  
-
                         <p class="help-block"><%= translate("getGatewayList") %>.</p>
-
                         <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
                     </form>
-                          
                 </div>
             </div>
         </div>
@@ -96,18 +92,18 @@
         <div class="col-md-12">
             <ul class="nav nav-pills">
                 <li><a href="#all-gateways-tab" data-toggle="tab"><%= translate("all") %></a></li>
-                <li><a href="#active-gateway-tab" data-toggle="tab"><%= translate("active") %></a></li>
-                <li><a href="#paused-gateway-tab" data-toggle="tab"><%= translate("monitored") %></a></li>
-                <li><a href="#inbound-gateway-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
-                <li><a href="#outbound-gateway-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+                <li><a href="#active-gateways-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#monitored-gateways-tab" data-toggle="tab"><%= translate("monitored") %></a></li>
+                <li><a href="#inbound-gateways-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
+                <li><a href="#outbound-gateways-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-gateways-tab"></div>
-                <div class="tab-pane" id="active-gateway-tab"></div>
-                <div class="tab-pane" id="paused-gateway-tab"></div>
-                <div class="tab-pane" id="inbound-gateway-tab"></div>
-                <div class="tab-pane" id="outbound-gateway-tab"></div>
-            </div>  
+                <div class="tab-pane" id="active-gateways-tab"></div>
+                <div class="tab-pane" id="monitored-gateways-tab"></div>
+                <div class="tab-pane" id="inbound-gateways-tab"></div>
+                <div class="tab-pane" id="outbound-gateways-tab"></div>
+            </div>
         </div>
     </div>
 </div>
