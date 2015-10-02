@@ -234,7 +234,7 @@ fun.views.dashboard = Backbone.View.extend({
             // da fuq dude?
             for ( counter; counter < 7; ++counter ) {
 
-                data = _.extend(this.collection.at(counter).toJSON(), {counter:counter});
+                data = _.extend(datfuq, {counter:counter});
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.recordRow)
