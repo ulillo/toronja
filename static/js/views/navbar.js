@@ -95,7 +95,8 @@ fun.views.navbar = Backbone.View.extend({
         // this can or will receive a backbone model
         // so we're going to stringify the shit of it first
         var vonCount = 0,
-            account = JSON.stringify(account),
+            account = account,
+            accountObj = JSON.stringify(account),
             length,
             orgData,
             itemData,
@@ -103,7 +104,7 @@ fun.views.navbar = Backbone.View.extend({
 
         console.log('render account for ...');
 
-        console.log(account);
+        console.log(account.get('account'));
 
         // Can I get the list from localStorage?, pretty please.
 
