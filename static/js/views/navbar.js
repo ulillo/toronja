@@ -130,6 +130,10 @@ fun.views.navbar = Backbone.View.extend({
 
                 itemData = _.extend(orgData, {counter:vonCount + 1});
 
+
+                console.log('item data', itemData);
+                
+
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
                 )(itemData);
