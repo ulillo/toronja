@@ -964,15 +964,77 @@ fun.Router = Backbone.Router.extend({
     gateways: function(){
         'use strict';
 
+        var accounts = translate('accounts'),
+            account,
+            context,
+            vonCount = 0,
+            resources,
+            resource,
+            onSuccess;
+
         var gateways = translate('gateways');
 
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(gateways);
-        fun.instances.subheader.renderHeadNav();
+        // get account and context
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
 
-        fun.instances.gateways.render();
-        
+        resources = {
+            //account: new fun.models.Account({'account':account}),
+            user: new fun.models.User({'account':account}),
+            // orgs: new fun.models.Orgs(),
+
+            all: new fun.models.CampaignsActive(),
+            active: new fun.models.CampaignsActive(),
+            monitored: new fun.models.CampaignsActive(),
+            inbound: new fun.models.CampaignsActive(),
+            outbound: new fun.models.CampaignsActive(),
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.gateways.renderAllGatewaysList(
+                    resources.all
+                );
+
+                fun.instances.gateways.renderActiveGatewaysList(
+                    resources.active
+                );
+
+                fun.instances.gateways.renderMonitoredGatewaysList(
+                    resources.monitored
+                );
+
+                fun.instances.gateways.renderInboundGatewaysList(
+                    resources.inbound
+                );
+
+                fun.instances.gateways.renderOutboundGatewaysList(
+                    resources.outbound
+                );
+            }
+        };
+
+        if(fun.utils.loggedIn()){
+            fun.utils.hideAll();
+            fun.instances.navbar.render();
+            fun.instances.subheader.render(gateways);
+            fun.instances.subheader.renderHeadNav();
+
+            fun.instances.gateways.render();
+
+            for (resource in resources){
+                resources[resource].fetch({
+                    success: onSuccess,
+                    error: function() {
+                        console.log('fuck error!');
+                    }
+                });
+            }
+        } else {
+            fun.utils.redirect(fun.conf.hash.login);
+        }
         fun.instances.footer.render();
     },
 

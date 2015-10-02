@@ -26,6 +26,12 @@ fun.strings = {
     personalPlans: "Personal Plans",
     organizationPlans: "Organization Plans",
     gateways: "Gateways",
+    gatewaysAll: "All Gateways",
+    gatewaysActive: "Active Gateways",
+    gatewaysMonitored: "Monitored Gateways",
+    gatewaysInbound: "Inbound Gateways",
+    gatewaysOutbound: "Outbound Gateways",
+
     validateRequired: "This field is required.",
     validateRemote: "Please fix this field.",
     validateEmail: "Please enter a valid email address.",
