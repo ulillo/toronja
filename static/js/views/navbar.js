@@ -121,6 +121,7 @@ fun.views.navbar = Backbone.View.extend({
         if (length > 0){
 
             // i, search _.each function
+            // fuck! pretty please use _.each
             for (vonCount; vonCount < length; ++vonCount) {
 
                 orgData = {
@@ -129,10 +130,6 @@ fun.views.navbar = Backbone.View.extend({
                 };
 
                 itemData = _.extend(orgData, {counter:vonCount + 1});
-
-
-                console.log('item data', itemData);
-                
 
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
