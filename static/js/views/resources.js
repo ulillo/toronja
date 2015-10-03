@@ -34,7 +34,7 @@ fun.views.resources = Backbone.View.extend({
         }
     },
 
-     /*
+    /*
     * Render all resources list
     */
     renderAllResourcesList: function(resources){
@@ -106,6 +106,155 @@ fun.views.resources = Backbone.View.extend({
         noAllResources = this.$('#no-all-resources');
 
         noAllResources.html(template);
+    },
+
+
+    /*
+    * Render imps resources list
+    */
+    renderImpsResourcesList: function(resources){
+        'use strict';
+        var template,
+            impsResources;
+        console.log('render imps resources list');
+        if (resources) {
+            this.resources = resources;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.resourcesImpsTab)
+        );
+
+        impsResources = this.$('#imps-resources-tab');
+
+        impsResources.html(template);
+
+        this.tbody = this.$('#imps-resources-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+
+        this.renderImpsResourceRows();
+    },
+
+    /*
+    * Render imps resource rows
+    */
+    renderImpsResourceRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // resources length
+        length = this.resources.length;
+
+        console.log('resources length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.resources.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.resourceRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noImpsResources();
+        }
+    },
+
+    /*
+    * No imps Resources
+    */
+    noImpsResources: function(){
+        'use strict';
+        var template,
+            noImpsResources;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noImpsResources = this.$('#no-imps-resources');
+
+        noImpsResources.html(template);
+    },
+
+    /*
+    * Render nodes resources list
+    */
+    renderImpsResourcesList: function(resources){
+        'use strict';
+        var template,
+            nodesResources;
+        console.log('render nodes resources list');
+        if (resources) {
+            this.resources = resources;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.resourcesNodesTab)
+        );
+
+        nodesResources = this.$('#nodes-resources-tab');
+
+        nodesResources.html(template);
+
+        this.tbody = this.$('#nodes-resources-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+
+        this.renderNodesResourceRows();
+    },
+
+    /*
+    * Render nodes resource rows
+    */
+    renderNodesResourceRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // resources length
+        length = this.resources.length;
+
+        console.log('resources length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.resources.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.resourceRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noNodesResources();
+        }
+    },
+
+    /*
+    * No imps Resources
+    */
+    noNodesResources: function(){
+        'use strict';
+        var template,
+            noNodesResources;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noNodesResources = this.$('#no-nodes-resources');
+
+        noNodesResources.html(template);
     },
 
     /*

@@ -10,7 +10,7 @@ fun.Router = Backbone.Router.extend({
         "": "home",
         "home": "home",
         "landing": "landing",
-        "dashboard": "dashboard",        
+        "dashboard": "dashboard",
         "dashboard/a:account": "dashboard",
         "dashboard/a:account/o:org": "dashboard",
         "signup": "signup",
@@ -1304,13 +1304,13 @@ fun.Router = Backbone.Router.extend({
                     resources.all
                 );
 
-                // fun.instances.resources.renderImpsResourcesList(
-                //     resources.imps
-                // );
+                fun.instances.resources.renderImpsResourcesList(
+                    resources.imps
+                );
 
-                // fun.instances.resources.renderNodesResourcesList(
-                //     resources.nodes
-                // );
+                fun.instances.resources.renderNodesResourcesList(
+                    resources.nodes
+                );
             }
         };
 

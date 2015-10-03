@@ -279,6 +279,8 @@ fun.conf.templates = {
 
     resources: fun.utils.format('%s/resources.html', fun.conf.html),
     resourcesAllTab: fun.utils.format('%s/resourcesAllTab.html', fun.conf.html),
+    resourcesImpsTab: fun.utils.format('%s/resourcesImpsTab.html', fun.conf.html),
+    resourcesNodesTab: fun.utils.format('%s/resourcesNodesTab.html', fun.conf.html),
 
     resourceRow: fun.utils.format('%s/resourceRow.html', fun.conf.html),
     resourceListItem: fun.utils.format('%s/resourceListItem.html', fun.conf.html),
