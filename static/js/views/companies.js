@@ -137,6 +137,160 @@ fun.views.companies = Backbone.View.extend({
     },
 
     /*
+    * Render active companies list
+    */
+    renderActiveCompaniesList: function(companies){
+        'use strict';
+        var template,
+            activeCompanies;
+
+        console.log('render active companies list');
+
+        if (companies) {
+            this.companies = companies;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.companiesActiveTab)
+        );
+
+        activeCompanies = this.$('#active-companies-tab');
+
+        activeCompanies.html(template);
+
+        this.tbody = this.$('#active-companies-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        
+        this.renderActiveCompanyRows();
+    },
+
+    /*
+    * Render active company rows
+    */
+    renderActiveCompanyRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // companies length
+        length = this.companies.length;
+
+        console.log('active companies length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.companies.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.companyRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noActiveCompanies();
+        }
+    },
+
+    /*
+    * No active companies
+    */
+    noActiveCompanies: function(){
+        'use strict';
+        var template,
+            noActiveCompanies;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noActiveCompanies = this.$('#no-active-companies');
+
+        noActiveCompanies.html(template);
+    },
+
+
+    /*
+    * Render disable companies list
+    */
+    renderDisableCompaniesList: function(companies){
+        'use strict';
+        var template,
+            disableCompanies;
+
+        console.log('render disable companies list');
+
+        if (companies) {
+            this.companies = companies;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.companiesDisableTab)
+        );
+
+        disableCompanies = this.$('#disable-companies-tab');
+
+        disableCompanies.html(template);
+
+        this.tbody = this.$('#disable-companies-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        
+        this.renderDisableCompanyRows();
+    },
+
+    /*
+    * Render disable company rows
+    */
+    renderDisableCompanyRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // companies length
+        length = this.companies.length;
+
+        console.log('disable companies length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.companies.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.companyRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noDisableCompanies();
+        }
+    },
+
+    /*
+    * No disable companies
+    */
+    noDisableCompanies: function(){
+        'use strict';
+        var template,
+            noDisableCompanies;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noDisableCompanies = this.$('#no-disable-companies');
+
+        noDisableCompanies.html(template);
+    },
+
+
+    /*
     * Create company
     */
     createCompany: function(event){

@@ -66,6 +66,9 @@ fun.strings = {
     getTaskList: "Get Task List",
 
     allCompanies: "All Companies",
+    activeCompanies: "Active Companies",
+    disableCompanies: "Disable Companies",
+
     exportCompanies: "Export Companies",
     createCompany: "Create Company",
     getCompanyList: "Get Company List",
