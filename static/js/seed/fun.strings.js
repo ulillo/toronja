@@ -66,6 +66,9 @@ fun.strings = {
     getTaskList: "Get Task List",
 
     allCompanies: "All Companies",
+    companiesActive: "Active Companies",
+    companiesDisable: "Disable Companies",
+
     exportCompanies: "Export Companies",
     createCompany: "Create Company",
     getCompanyList: "Get Company List",
@@ -397,7 +400,10 @@ fun.strings = {
     manageOrganizations: "Manage organizations",
     findAcampaign: "Find a campaign",
     resources: "Resources",
+    resourcesTitle: "Resources",
     resourcesAll: "All Resources",
+    resourcesImps: "Imps Resources",
+    resourcesNodes: "Nodes Resources",
 
     accounts: "Accounts",
     allAccounts: "All Accounts",

@@ -279,12 +279,17 @@ fun.conf.templates = {
 
     resources: fun.utils.format('%s/resources.html', fun.conf.html),
     resourcesAllTab: fun.utils.format('%s/resourcesAllTab.html', fun.conf.html),
+    resourcesImpsTab: fun.utils.format('%s/resourcesImpsTab.html', fun.conf.html),
+    resourcesNodesTab: fun.utils.format('%s/resourcesNodesTab.html', fun.conf.html),
 
     resourceRow: fun.utils.format('%s/resourceRow.html', fun.conf.html),
     resourceListItem: fun.utils.format('%s/resourceListItem.html', fun.conf.html),
 
     companies: fun.utils.format('%s/companies.html', fun.conf.html),
     allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
+    companiesActiveTab: fun.utils.format('%s/companiesActiveTab.html', fun.conf.html),
+    companiesDisableTab: fun.utils.format('%s/companiesDisableTab.html', fun.conf.html),
+
     companyRow: fun.utils.format('%s/companyRow.html', fun.conf.html),
     companyListItem: fun.utils.format('%s/companyListItem.html', fun.conf.html),
 

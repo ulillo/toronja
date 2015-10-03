@@ -10,7 +10,7 @@ fun.Router = Backbone.Router.extend({
         "": "home",
         "home": "home",
         "landing": "landing",
-        "dashboard": "dashboard",        
+        "dashboard": "dashboard",
         "dashboard/a:account": "dashboard",
         "dashboard/a:account/o:org": "dashboard",
         "signup": "signup",
@@ -455,7 +455,9 @@ fun.Router = Backbone.Router.extend({
         resources = {
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            companies: new fun.models.Companies()            
+            companies: new fun.models.Companies(),
+            active: new fun.models.CampaignsActive(),
+            disable: new fun.models.CampaignsActive(),
         };
 
         // but, onSuccess we're rendering multiple times the same campaigns.render()
@@ -471,6 +473,14 @@ fun.Router = Backbone.Router.extend({
 
                 fun.instances.settings.setProfileInformation(
                     resources.user
+                );
+
+                fun.instances.companies.renderActiveCompaniesList(
+                    resources.active
+                );
+
+                fun.instances.companies.renderDisableCompaniesList(
+                    resources.disable
                 );
             }
         };
@@ -1283,7 +1293,7 @@ fun.Router = Backbone.Router.extend({
             resource,
             onSuccess;
 
-        var resources = translate('resources');
+        var resourcesTitle = translate('resourcesTitle');
 
         // get account and context
         account = localStorage.getItem("username");
@@ -1307,20 +1317,20 @@ fun.Router = Backbone.Router.extend({
                     resources.all
                 );
 
-                // fun.instances.resources.renderImpsResourcesList(
-                //     resources.imps
-                // );
+                fun.instances.resources.renderImpsResourcesList(
+                    resources.imps
+                );
 
-                // fun.instances.resources.renderNodesResourcesList(
-                //     resources.nodes
-                // );
+                fun.instances.resources.renderNodesResourcesList(
+                    resources.nodes
+                );
             }
         };
 
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
-            fun.instances.subheader.render(resources);
+            fun.instances.subheader.render(resourcesTitle);
             fun.instances.subheader.renderHeadNav();
 
             fun.instances.resources.render();
