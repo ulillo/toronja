@@ -276,7 +276,6 @@ fun.conf.templates = {
     companyRow: fun.utils.format('%s/companyRow.html', fun.conf.html),
     companyListItem: fun.utils.format('%s/companyListItem.html', fun.conf.html),
 
-    developers: fun.utils.format('%s/developers.html', fun.conf.html),
     help: fun.utils.format('%s/help.html', fun.conf.html),
     security: fun.utils.format('%s/security.html', fun.conf.html),
     terms: fun.utils.format('%s/terms.html', fun.conf.html),
@@ -352,8 +351,6 @@ fun.conf.templates = {
     errorMedium: fun.utils.format('%s/errorMedium.html', fun.conf.html),
     errorLarge: fun.utils.format('%s/errorLarge.html', fun.conf.html),
 
-    numbers: fun.utils.format('%s/numbers.html', fun.conf.html),
-
     phone: fun.utils.format('%s/phone.html', fun.conf.html),
 
     profile: fun.utils.format('%s/profile.html', fun.conf.html),
@@ -401,7 +398,6 @@ fun.conf.hash = {
     privacy: '#privacy',
     security: '#security',
     status: '#status',
-    developers: '#developers',
     help: '#help',
     signup: '#signup',
     login: '#login',
@@ -418,7 +414,6 @@ fun.conf.hash = {
     campaigns: '#campaigns',
     nodes: '#nodes',
     members: '#members',
-    numbers: '#numbers',
     teams: '#teams',
     phone: '#phone',
     reports: '#reports',

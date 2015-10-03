@@ -15,7 +15,6 @@ fun.Router = Backbone.Router.extend({
         "dashboard/a:account/o:org": "dashboard",
         "signup": "signup",
         "login": "login",
-        "howto": "howto",
         "features": "features",
         "enterprise": "enterprise",
         "pricing": "pricing",
@@ -23,18 +22,13 @@ fun.Router = Backbone.Router.extend({
         "security": "security",
         "privacy": "privacy",
         "status": "status",
-        "developers": "developers",
         "help": "help",
-
         "contacts": "contacts",
         "contacts/p:page": "contacts",
-
         "tasks": "tasks",
         "tasks/p:page": "tasks",
-
         "companies": "companies",
         "companies/p:page": "companies",
-
         "campaigns": "campaigns",
         "cubes": "cubes",
         "orgs": "orgs",
@@ -42,22 +36,15 @@ fun.Router = Backbone.Router.extend({
         "profile": "profile",
         "members": "members",
         "teams": "teams",
-
         "reports": "reports",
         "reports/p:page": "reports",
-        
         "phone": "phone",
-        "numbers": "phoneNumbers",
-        "carriers": "carriers",
-        
         "sounds":"sounds",
         "accounts":"accounts",
         "messages": "messages",
         "resources": "resources",
         "recordings": "recordings",
         "gateways": "gateways",
-        "support": "support",
-
         "settings": "settings",
         "logout": "logout"
     },
@@ -453,6 +440,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(companies);
             fun.instances.subheader.renderHeadNav();
             
@@ -503,21 +491,12 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
-    developers: function(){
-        'use strict';
-        var developers = translate('developers');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(developers);
-        fun.instances.developers.render();
-        fun.instances.footer.render();
-    },
-
     help: function(){
         'use strict';
         var help = translate('help');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(help);
         fun.instances.help.render();
         fun.instances.footer.render();
@@ -688,6 +667,7 @@ fun.Router = Backbone.Router.extend({
         var cubes = translate('cubes');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(cubes);
         fun.instances.cubes.render();
         fun.instances.subheader.renderHeadNav();
