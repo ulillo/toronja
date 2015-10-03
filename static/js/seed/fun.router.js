@@ -376,6 +376,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(tasks);
             fun.instances.subheader.renderHeadNav();
             
@@ -662,6 +663,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(contacts);
             fun.instances.subheader.renderHeadNav();
             // render contacts view
