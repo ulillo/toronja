@@ -46,13 +46,13 @@ fun.views.navbar = Backbone.View.extend({
             account,
             context;
 
-        template = _.template(fun.utils.getTemplate(fun.conf.templates.navDashboard));
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
+
+        template = _.template(fun.utils.getTemplate(fun.conf.templates.navDashboard))({'account':account});
 
         navDashboard = this.$('#fun-nav-dashboard');
         navDashboard.html(template);
-
-        account = localStorage.getItem("username");
-        context = sessionStorage.getItem("context");
 
         // first we check for system admin
         if (context !== null && context.trim() === 'System Admin') {
