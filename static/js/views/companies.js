@@ -376,7 +376,7 @@ fun.views.companies = Backbone.View.extend({
         view.$('#company_name').val('');
         view.$('#company_description').val('');
     },
-    
+
     /*
     * Company details
     */
