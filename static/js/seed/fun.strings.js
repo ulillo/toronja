@@ -397,6 +397,7 @@ fun.strings = {
     manageOrganizations: "Manage organizations",
     findAcampaign: "Find a campaign",
     resources: "Resources",
+    resourcesTitle: "Resources",
     resourcesAll: "All Resources",
     resourcesImps: "Imps Resources",
     resourcesNodes: "Nodes Resources",

@@ -1280,7 +1280,7 @@ fun.Router = Backbone.Router.extend({
             resource,
             onSuccess;
 
-        var resources = translate('resources');
+        var resourcesTitle = translate('resourcesTitle');
 
         // get account and context
         account = localStorage.getItem("username");
@@ -1317,7 +1317,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
-            fun.instances.subheader.render(resources);
+            fun.instances.subheader.render(resourcesTitle);
             fun.instances.subheader.renderHeadNav();
 
             fun.instances.resources.render();
