@@ -76,9 +76,10 @@ fun.views.navbar = Backbone.View.extend({
                 this.$('#nav-new-org').removeClass('hide').addClass('show');  
             }
         }
-        //
-        console.log('no fway');
-        this.renderDropdown();
+        // this is kind of the fix for now...
+        // but duplicates the shit out of the orgs, please fix it.
+        
+        //this.renderDropdown();
     },
 
     renderAdmin: function(){
