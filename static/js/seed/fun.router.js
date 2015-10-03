@@ -923,6 +923,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(campaigns);
             fun.instances.subheader.renderHeadNav();
             
@@ -1019,6 +1020,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(gateways);
             fun.instances.subheader.renderHeadNav();
 
@@ -1110,6 +1112,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(accounts);
             fun.instances.subheader.renderHeadNav();
             

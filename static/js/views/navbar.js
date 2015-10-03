@@ -89,6 +89,53 @@ fun.views.navbar = Backbone.View.extend({
         console.log('navbar detail reports')
     },
 
+    renderDropdown: function(){
+        // Render dropdown
+        'use strict';
+        var vonCount = 0,
+            account,
+            length,
+            orgData,
+            itemData,
+            itemTemplate;
+
+        console.log('render dropdown');
+
+        account = JSON.parse(localStorage.getItem("profile"))
+        if (account) {
+            this.orgs = account.get("orgs");
+        } else {
+            this.orgs = [];
+        }
+
+        this.accountList = this.$('#account-list-ul');
+
+        if (this.orgs){
+            length = this.orgs.length;
+        }
+        
+        if (length > 0){
+
+            // i, search _.each function
+            // fuck! pretty please use _.each
+            for (vonCount; vonCount < length; ++vonCount) {
+
+                orgData = {
+                    'account': account.get("account"),
+                    'org': this.orgs[vonCount] // set, put, post, patch
+                };
+
+                itemData = _.extend(orgData, {counter:vonCount + 1});
+
+                itemTemplate = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.accountListItem)
+                )(itemData);
+
+                this.accountList.append(itemTemplate);
+            }
+        }
+    },
+
     renderAccountDropdown: function(account){
         // Render account dropdown
         'use strict';
