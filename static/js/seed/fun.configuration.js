@@ -16,13 +16,10 @@ fun.conf = {
     // system uuid's
     uuidRecord: 'record_uuid',
     uuidBilling: 'billing_uuid',
-    uuidCarrier: 'carrier_uuid',
     uuidCampaign: 'campaign_uuid',
     uuidAlert: 'alert_uuid',
     uuidContact: 'contact_uuid',
     uuidNode: 'node_uuid',
-    uuidCluster: 'cluster_uuid',
-    uuidCohort: 'cohort_uuid',
     uuidCube: 'cube_uuid',
     uuidTask: 'task_uuid',
     uuidCompany: 'company_uuid',
@@ -30,7 +27,6 @@ fun.conf = {
     uuidPricing: 'pricing_uuid',
     uuidSound: 'sound_uuid',
     uuidGateway: 'gateway_uuid',
-    uuidNumber: 'number_uuid',
     uuidAccount: 'account_uuid',
     uuidResource: 'resource_uuid',
     uuidMessage: 'message_uuid',
@@ -162,9 +158,6 @@ fun.conf.urls = {
     billingsRecordsStart: fun.utils.format('/billings/records/start/%s', fun.conf.startTime),
     billingsRecordsStartEnd: fun.utils.format('/billings/records/start/%s/end/%s', fun.conf.startTime, fun.conf.endTime),
 
-    carrier: fun.utils.format('/carriers/%s', fun.conf.uuidCarrier),
-    carriers: '/carriers/',
-
     contact: fun.utils.format('/contacts/%s', fun.conf.uuidContact),
     contacts: '/contacts/',
     
@@ -199,14 +192,6 @@ fun.conf.urls = {
     message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
     messages: '/messages/',
 
-    number: fun.utils.format('/numbers/%s', fun.conf.uuidNumber),
-    numbers: '/numbers/',
-
-    phoneNumber: fun.utils.format('/phonenumbers/%s', fun.conf.uuidPhoneNumber),
-    phoneNumbers: '/phonenumbers/',
-
-    /*sounds, recordings*/
-
     sounds: fun.utils.format('/sounds/'),
 
     recording: fun.utils.format('/recordings/%s', fun.conf.uuidRecording),
@@ -231,12 +216,10 @@ fun.conf.templates = {
     
     landing: fun.utils.format('%s/landing.html', fun.conf.html),
     
-    support: fun.utils.format('%s/support.html', fun.conf.html),
     features: fun.utils.format('%s/features.html', fun.conf.html),
     enterprise: fun.utils.format('%s/enterprise.html', fun.conf.html),
     pricing: fun.utils.format('%s/pricing.html', fun.conf.html),
-    howto: fun.utils.format('%s/howto.html', fun.conf.html),
-    blog: fun.utils.format('%s/blog.html', fun.conf.html),
+
     status: fun.utils.format('%s/status.html', fun.conf.html),
     
     tasks: fun.utils.format('%s/tasks.html', fun.conf.html),
@@ -320,14 +303,12 @@ fun.conf.templates = {
     allCubes: fun.utils.format('%s/allCubes.html', fun.conf.html),
     cubeRow: fun.utils.format('%s/cubeRow.html', fun.conf.html),
    
-
     accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
     
     campaignListItem: fun.utils.format('%s/campaignListItem.html', fun.conf.html),
     
     cubeListItem: fun.utils.format('%s/cubeListItem.html', fun.conf.html),
     
-
     recordRow: fun.utils.format('%s/recordRow.html', fun.conf.html),
     typeRow: fun.utils.format('%s/typeRow.html', fun.conf.html),
     sumRow: fun.utils.format('%s/sumRow.html', fun.conf.html),
@@ -375,8 +356,6 @@ fun.conf.templates = {
 
     phone: fun.utils.format('%s/phone.html', fun.conf.html),
 
-    phoneNumbers: fun.utils.format('%s/phoneNumbers.html', fun.conf.html),
-
     profile: fun.utils.format('%s/profile.html', fun.conf.html),
 
     activity: fun.utils.format('%s/activity.html', fun.conf.html),
@@ -394,7 +373,6 @@ fun.conf.templates = {
     contactRow: fun.utils.format('%s/contactRow.html', fun.conf.html),
     directoryRow: fun.utils.format('%s/directoryRow.html', fun.conf.html),
     sounds: fun.utils.format('%s/sounds.html', fun.conf.html),
-    
     
     reports: fun.utils.format('%s/reports.html', fun.conf.html),
     settings: fun.utils.format('%s/settings.html', fun.conf.html),
@@ -416,44 +394,35 @@ fun.conf.templates = {
 fun.conf.hash = {
     home: '#home',
     landing: '#landing',
-    howto: '#howto',
     features: '#features',
     enterprise: '#enterprise',
     pricing: '#pricing',
     terms: '#terms',
     privacy: '#privacy',
     security: '#security',
-    blog: '#blog',
     status: '#status',
     developers: '#developers',
     help: '#help',
-    support: '#support',
     signup: '#signup',
     login: '#login',
     gateways: '#gateways',
     accounts: '#accounts',
     messages: '#messages',
     resources: '#resources',
-
     dashboard : '#dashboard',
     dashboardWithAccount: '#dashboard/a{account}',
-
     profile: '#profile',
     profileWithAccount: '#profile/a{account}',
-
     activity: '#activity',
     orgs: '#orgs',
     campaigns: '#campaigns',
-    cohorts: '#cohorts',
     nodes: '#nodes',
-    clusters: '#clusters',
     members: '#members',
     numbers: '#numbers',
     teams: '#teams',
     phone: '#phone',
     reports: '#reports',
     reportsWithPage: '#reports/p{page}',
-    carriers: '#carriers',
     contacts: '#contacts',
     cubes: '#cubes',
     contactsWithPage: '#contacts/p{page}',

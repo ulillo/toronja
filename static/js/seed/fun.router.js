@@ -80,11 +80,6 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-landing"
         });
 
-        // howto
-        fun.instances.howto = new fun.views.howto({
-            el:"#fun-howto"
-        });
-
         // features
         fun.instances.features = new fun.views.features({
             el:"#fun-features"
@@ -118,11 +113,6 @@ fun.Router = Backbone.Router.extend({
         // status
         fun.instances.status = new fun.views.status({
             el:"#fun-status"
-        });
-
-        // developers
-        fun.instances.developers = new fun.views.developers({
-            el:"#fun-developers"
         });
 
         // help
@@ -170,19 +160,9 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-phone"
         });
 
-        // phone numbers
-        fun.instances.phoneNumbers = new fun.views.phoneNumbers({
-            el:"#fun-phone-numbers"
-        });
-
         // gateways
         fun.instances.gateways = new fun.views.gateways({
             el:"#fun-gateways"
-        });
-
-        // carriers
-        fun.instances.carriers = new fun.views.carriers({
-            el:"#fun-carriers"
         });
 
         // tasks
@@ -239,11 +219,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.reports = new fun.views.reports({
             el:"#fun-reports"
         });
-        
-        // support
-        fun.instances.support = new fun.views.support({
-            el:"#fun-support"
-        });
 
         // signup
         fun.instances.signup = new fun.views.signup({
@@ -294,17 +269,6 @@ fun.Router = Backbone.Router.extend({
         fun.utils.hideAll();
         fun.instances.navbar.render();
         fun.instances.landing.render();
-        fun.instances.extra.render();
-        fun.instances.footer.render();
-    },
-
-    howto: function(){
-        'use strict';
-        var howto = translate('howto');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(howto);
-        fun.instances.howto.render();
         fun.instances.extra.render();
         fun.instances.footer.render();
     },
@@ -555,17 +519,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         fun.instances.subheader.render(help);
         fun.instances.help.render();
-        fun.instances.footer.render();
-    },
-
-    support: function(){
-        'use strict';
-        var support = translate('support');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(support);
-        fun.instances.support.render();
-        fun.instances.extra.render();
         fun.instances.footer.render();
     },
 
@@ -954,24 +907,6 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
-    carriers: function(){
-        'use strict';
-
-        var carriers = translate('carriers');
-
-        fun.utils.hideAll();
-
-        fun.instances.navbar.render();
-
-        fun.instances.subheader.render(carriers);
-
-        fun.instances.subheader.renderHeadNav();
-
-        fun.instances.carriers.render();
-        
-        fun.instances.footer.render();
-    },
-
     gateways: function(){
         'use strict';
 
@@ -1196,6 +1131,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(messages);
             fun.instances.subheader.renderHeadNav();
 
@@ -1263,6 +1199,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(recordings);
             fun.instances.subheader.renderHeadNav();
 
@@ -1330,6 +1267,7 @@ fun.Router = Backbone.Router.extend({
         if(fun.utils.loggedIn()){
             fun.utils.hideAll();
             fun.instances.navbar.render();
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(resourcesTitle);
             fun.instances.subheader.renderHeadNav();
 
@@ -1355,6 +1293,7 @@ fun.Router = Backbone.Router.extend({
         
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(organizations);
         fun.instances.subheader.renderHeadNav();
         fun.instances.orgs.render();
@@ -1368,6 +1307,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(profile);
         fun.instances.profile.render();
         
@@ -1380,6 +1320,7 @@ fun.Router = Backbone.Router.extend({
 
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(activity);
         fun.instances.subheader.renderHeadNav();
         fun.instances.activity.render();
@@ -1392,18 +1333,9 @@ fun.Router = Backbone.Router.extend({
         var phone = translate('phone');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(phone);
         fun.instances.phone.render();
-        fun.instances.footer.render();
-    },
-
-    phoneNumbers: function(){
-        'use strict';
-        var numbers = translate('numbers');
-        fun.utils.hideAll();
-        fun.instances.navbar.render();
-        fun.instances.subheader.render(numbers);
-        fun.instances.phoneNumbers.render();
         fun.instances.footer.render();
     },
 
@@ -1424,7 +1356,7 @@ fun.Router = Backbone.Router.extend({
             var reports = translate('reports');
             fun.utils.hideAll();
             fun.instances.navbar.render();
-
+            fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(reports);
             fun.instances.subheader.renderHeadNavReports();
 
@@ -1442,6 +1374,7 @@ fun.Router = Backbone.Router.extend({
         var settings = translate('settings');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(settings);
         fun.instances.settings.render(this.account);
         fun.instances.footer.render();
@@ -1452,8 +1385,11 @@ fun.Router = Backbone.Router.extend({
         var goodBye = translate('goodBye'),
             onSuccess;
 
+        // the stupid shit with the navbar on logout is probably related to this.
+
         onSuccess = function(){
             fun.instances.navbar.render()
+            fun.instances.navbar.renderDropdown();
         };
 
         fun.utils.hideAll();
