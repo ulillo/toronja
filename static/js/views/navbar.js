@@ -102,8 +102,12 @@ fun.views.navbar = Backbone.View.extend({
         console.log('render dropdown');
 
         account = JSON.parse(localStorage.getItem("profile"))
+
+        // is there something to get shit from a js object with .get() on underscore?
+        // if yes, please replace the ['stuff']
+
         if (account) {
-            this.orgs = account.get("orgs");
+            this.orgs = account["orgs"];
         } else {
             this.orgs = [];
         }
@@ -121,8 +125,8 @@ fun.views.navbar = Backbone.View.extend({
             for (vonCount; vonCount < length; ++vonCount) {
 
                 orgData = {
-                    'account': account.get("account"),
-                    'org': this.orgs[vonCount] // set, put, post, patch
+                    'account': account["account"],
+                    'org': this.orgs[vonCount]
                 };
 
                 itemData = _.extend(orgData, {counter:vonCount + 1});
