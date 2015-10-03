@@ -203,9 +203,9 @@ fun.views.navbar = Backbone.View.extend({
             idVal = $(this).attr("id");
             label = $("label[for='" + idVal + "']").text();
 
-            if (idVal === 'current_account_admin'){
-                //$("#selected-icon").removeClass('show').addClass('hide');
+            console.log('this is the fucking label ', label, ' for ', idVal);
 
+            if (idVal === 'current_account_admin'){
                 // Check browser support
                 if (typeof(Storage) != "undefined") {
                     // Store
@@ -217,7 +217,7 @@ fun.views.navbar = Backbone.View.extend({
 
             // Check browser support
             if (typeof(Storage) != "undefined") {
-                // Store
+                // Store selected context
                 sessionStorage.setItem("context", label);
             }
         });
