@@ -186,7 +186,7 @@ fun.views.resources = Backbone.View.extend({
     /*
     * Render nodes resources list
     */
-    renderImpsResourcesList: function(resources){
+    renderNodesResourcesList: function(resources){
         'use strict';
         var template,
             nodesResources;
