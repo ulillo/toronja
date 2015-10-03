@@ -76,6 +76,9 @@ fun.views.navbar = Backbone.View.extend({
                 this.$('#nav-new-org').removeClass('hide').addClass('show');  
             }
         }
+        //
+        console.log('no fway');
+        this.renderDropdown();
     },
 
     renderAdmin: function(){
