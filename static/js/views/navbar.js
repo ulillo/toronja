@@ -12,8 +12,13 @@ fun.views.navbar = Backbone.View.extend({
         this.context = sessionStorage.getItem("context");
 
         fun.omnibus.on("change:context", function(){
-            console.log('omnibus inside navbar change:context and stuff');
-            this.renderDashboard();
+            console.log('omnibus inside navbar change:context render context');
+            //this.renderDashboard();
+            this.renderContext();
+        }, this);
+
+        fun.omnibus.on("change:system_admin", function(){
+            this.renderBoo();
         }, this);
     },
     
@@ -29,6 +34,34 @@ fun.views.navbar = Backbone.View.extend({
         } else {
             console.log('Out of the dungeon');
             this.renderLanding();
+        }
+    },
+
+    renderContext: function(){
+        'use strict';
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
+
+        if (context !== null && context.trim() === 'System Admin') {
+            this.$('#nav-new-account').removeClass('hide').addClass('show');
+            this.$('#nav-new-cube').removeClass('hide').addClass('show');
+            this.$('#nav-new-resource').removeClass('hide').addClass('show');
+            this.$('#nav-new-gateway').removeClass('hide').addClass('show');
+            this.$('#nav-new-contact').removeClass('show').addClass('hide');
+            this.$('#nav-new-campaign').removeClass('show').addClass('hide');
+            this.$('#nav-new-org').removeClass('show').addClass('hide');
+        } else {
+            // if not admin, we check for user or organization accounts
+            if (account !== context && context !== null){
+                // check if context !== null fix the stuff 
+                this.$('#nav-new-org').removeClass('show').addClass('hide');
+                this.$('#nav-new-team').removeClass('hide').addClass('show');
+                this.$('#nav-new-member').removeClass('hide').addClass('show');
+            } else {
+                this.$('#nav-new-member').removeClass('show').addClass('hide');
+                this.$('#nav-new-team').removeClass('show').addClass('hide');
+                this.$('#nav-new-org').removeClass('hide').addClass('show');  
+            }
         }
     },
 
@@ -215,7 +248,8 @@ fun.views.navbar = Backbone.View.extend({
             }
         });
         console.log('aqui se despicha');
-        //fun.omnibus.trigger("change:context");
+
+        fun.omnibus.trigger("change:context");
     },
 
     setContext: function(event){
