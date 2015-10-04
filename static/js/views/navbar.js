@@ -197,27 +197,24 @@ fun.views.navbar = Backbone.View.extend({
 
     setTest: function(event){
         'use strict';
-        console.log('bsd guys');
         $('input[name="current_account"]:checked').each(function() {
             var idVal = $(this).attr("id");
             var label = $("label[for='" + idVal + "']").text();
-
             if (idVal === 'current_account_admin'){
                 // Check browser support
                 if (typeof(Storage) != "undefined") {
                     // Store
                     sessionStorage.setItem("is_admin", true);
                 }
-
                 fun.omnibus.trigger("change:system_admin");
             }
-
             // Check browser support
             if (typeof(Storage) != "undefined") {
                 // Store selected context
                 sessionStorage.setItem("context", label);
             }
         });
+        fun.omnibus.trigger("change:context");
     },
 
     setContext: function(event){
