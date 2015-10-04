@@ -2,7 +2,7 @@ fun.views.navbar = Backbone.View.extend({
 
 	events: {
         'click #details-report-btn': 'detailsReport',
-        'click input[name="current_account"]': 'setContext'
+        'click input[name="current_account"]': 'setTest'
 	},
 
     initialize: function(options) {
@@ -193,6 +193,11 @@ fun.views.navbar = Backbone.View.extend({
                 this.accountList.append(itemTemplate);
             }
         }
+    },
+
+    setTest: function(event){
+        'use strict';
+        console.log('bsd guys');
     },
 
     setContext: function(event){
