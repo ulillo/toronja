@@ -39,8 +39,8 @@ fun.views.navbar = Backbone.View.extend({
 
     renderContext: function(){
         'use strict';
-        account = localStorage.getItem("username");
-        context = sessionStorage.getItem("context");
+        var account = localStorage.getItem("username");
+        var context = sessionStorage.getItem("context");
 
         if (context !== null && context.trim() === 'System Admin') {
             this.$('#nav-new-account').removeClass('hide').addClass('show');
