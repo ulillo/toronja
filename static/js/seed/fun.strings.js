@@ -249,7 +249,7 @@ fun.strings = {
     planFutureDiscussionTools: "Review calls, comment on tasks, report issues, and plan the future of your project with discussion tools",
     matchCallersandTeams: "Match callers and custom teams as they wait for an answer, get real-time stats on the number of calls by team and more",
     bringFunDataCenter: "Bring the fun to your data center",
-    useFunEnterprise: "Use IO FUN Enterprise, the best way to manage communications, on your servers",
+    useFunEnterprise: "Use I/O FUN Enterprise, the best way to manage communications, on your servers",
     learnAboutEnterprise: "Learn more about Enterprise",
     greatCampaignNames: "Great campaign names are short and memorable",
     greatTaskNames: "Great task names are short and memorable",
@@ -459,7 +459,7 @@ fun.strings = {
     find: "Find",
     accounts: "Accounts",
     cohorts: "Cohorts",
-    whyLove: "Why you'll love io fun",
+    whyLove: "Why you'll love i/o fun",
     oldMan: "If every tool, when ordered, or even of its own accord, could do the work that befits it... then there would be no need either of apprentices for the master workers or of slaves for the lords.",
     growingMango: "Growing mango trees in the home landscape will give you a lifetime of fresh pungent fruit from an attractive shade tree",
 
