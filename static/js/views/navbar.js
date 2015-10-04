@@ -46,13 +46,13 @@ fun.views.navbar = Backbone.View.extend({
             account,
             context;
 
-        template = _.template(fun.utils.getTemplate(fun.conf.templates.navDashboard));
+        account = localStorage.getItem("username");
+        context = sessionStorage.getItem("context");
+
+        template = _.template(fun.utils.getTemplate(fun.conf.templates.navDashboard))({'account':account});
 
         navDashboard = this.$('#fun-nav-dashboard');
         navDashboard.html(template);
-
-        account = localStorage.getItem("username");
-        context = sessionStorage.getItem("context");
 
         // first we check for system admin
         if (context !== null && context.trim() === 'System Admin') {
@@ -76,6 +76,10 @@ fun.views.navbar = Backbone.View.extend({
                 this.$('#nav-new-org').removeClass('hide').addClass('show');  
             }
         }
+        // this is kind of the fix for now...
+        // but duplicates the shit out of the orgs, please fix it.
+        
+        //this.renderDropdown();
     },
 
     renderAdmin: function(){
@@ -203,9 +207,9 @@ fun.views.navbar = Backbone.View.extend({
             idVal = $(this).attr("id");
             label = $("label[for='" + idVal + "']").text();
 
-            if (idVal === 'current_account_admin'){
-                //$("#selected-icon").removeClass('show').addClass('hide');
+            console.log('this is the fucking label ', label, ' for ', idVal);
 
+            if (idVal === 'current_account_admin'){
                 // Check browser support
                 if (typeof(Storage) != "undefined") {
                     // Store
@@ -217,7 +221,7 @@ fun.views.navbar = Backbone.View.extend({
 
             // Check browser support
             if (typeof(Storage) != "undefined") {
-                // Store
+                // Store selected context
                 sessionStorage.setItem("context", label);
             }
         });
