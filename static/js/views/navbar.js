@@ -2,7 +2,7 @@ fun.views.navbar = Backbone.View.extend({
 
 	events: {
         'click #details-report-btn': 'detailsReport',
-        'click input[name="current_account"]': 'setTest'
+        'click input[name="current_account"]': 'setAccountContext'
 	},
 
     initialize: function(options) {
@@ -12,13 +12,11 @@ fun.views.navbar = Backbone.View.extend({
         this.context = sessionStorage.getItem("context");
 
         fun.omnibus.on("change:context", function(){
-            console.log('omnibus inside navbar change:context render context');
-            //this.renderDashboard();
             this.renderContext();
         }, this);
 
         fun.omnibus.on("change:system_admin", function(){
-            this.renderBoo();
+            this.renderContext();
         }, this);
     },
     
@@ -228,7 +226,7 @@ fun.views.navbar = Backbone.View.extend({
         }
     },
 
-    setTest: function(event){
+    setAccountContext: function(event){
         'use strict';
         $('input[name="current_account"]:checked').each(function() {
             var idVal = $(this).attr("id");
@@ -248,40 +246,6 @@ fun.views.navbar = Backbone.View.extend({
             }
         });
         console.log('aqui se despicha');
-
-        fun.omnibus.trigger("change:context");
-    },
-
-    setContext: function(event){
-        'use strict';
-
-        console.log('setting up activity context');
-
-        var idVal,
-            label;
-
-        $('input[name="current_account"]:checked').each(function() {
-            idVal = $(this).attr("id");
-            label = $("label[for='" + idVal + "']").text();
-
-            console.log('this is the fucking label ', label, ' for ', idVal);
-
-            if (idVal === 'current_account_admin'){
-                // Check browser support
-                if (typeof(Storage) != "undefined") {
-                    // Store
-                    sessionStorage.setItem("is_admin", true);
-                }
-
-                fun.omnibus.trigger("change:system_admin");
-            }
-
-            // Check browser support
-            if (typeof(Storage) != "undefined") {
-                // Store selected context
-                sessionStorage.setItem("context", label);
-            }
-        });
 
         fun.omnibus.trigger("change:context");
     }
