@@ -42,7 +42,7 @@ fun.views.navbar = Backbone.View.extend({
 
         if (context !== null && context.trim() === 'System Admin') {
             this.$('#nav-new-account').removeClass('hide').addClass('show');
-            this.$('#nav-new-cube').removeClass('hide').addClass('show');
+            //this.$('#nav-new-cube').removeClass('hide').addClass('show');
             this.$('#nav-new-resource').removeClass('hide').addClass('show');
             this.$('#nav-new-gateway').removeClass('hide').addClass('show');
             this.$('#nav-new-contact').removeClass('show').addClass('hide');
@@ -80,7 +80,9 @@ fun.views.navbar = Backbone.View.extend({
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
-        template = _.template(fun.utils.getTemplate(fun.conf.templates.navDashboard))({'account':account});
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.navDashboard)
+        )({'account':account});
 
         navDashboard = this.$('#fun-nav-dashboard');
         navDashboard.html(template);
@@ -107,10 +109,6 @@ fun.views.navbar = Backbone.View.extend({
                 this.$('#nav-new-org').removeClass('hide').addClass('show');  
             }
         }
-        // this is kind of the fix for now...
-        // but duplicates the shit out of the orgs, please fix it.
-        
-        //this.renderDropdown();
     },
 
     renderAdmin: function(){
@@ -245,7 +243,6 @@ fun.views.navbar = Backbone.View.extend({
                 sessionStorage.setItem("context", label);
             }
         });
-        console.log('aqui se despicha');
 
         fun.omnibus.trigger("change:context");
     }
