@@ -214,7 +214,8 @@ fun.views.navbar = Backbone.View.extend({
                 sessionStorage.setItem("context", label);
             }
         });
-        fun.omnibus.trigger("change:context");
+        console.log('aqui se despicha');
+        //fun.omnibus.trigger("change:context");
     },
 
     setContext: function(event){
