@@ -432,10 +432,6 @@ fun.models.Billings = Backbone.Collection.extend({
 
     url: function(){
         return this.urlRoot;
-    },
-
-    parse: function(response){
-        return response.results;
     }
 });
 
