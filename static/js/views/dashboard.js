@@ -61,7 +61,7 @@ fun.views.dashboard = Backbone.View.extend({
         }
 
         if(billing){
-            console.log(billing.toJSON());
+            console.log(billing);
             this.billing = billing;
         }
 
