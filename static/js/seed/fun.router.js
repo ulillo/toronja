@@ -727,7 +727,7 @@ fun.Router = Backbone.Router.extend({
         models = {
             user: new fun.models.User({'account':account}),
             records: new fun.models.Records(),
-            billings: new fun.models.Billings(),
+            billing: new fun.models.Billing(),
             summary: new fun.models.Summary(),
             lapseSummary: new fun.models.LapseSummary({
                 lapse: 'hours'
@@ -750,7 +750,7 @@ fun.Router = Backbone.Router.extend({
                 );
 
                 fun.instances.dashboard.renderTodaySummary(
-                    models.summary, models.billings
+                    models.summary, models.billing
                 );
 
                 fun.instances.dashboard.renderLatestRecords(
