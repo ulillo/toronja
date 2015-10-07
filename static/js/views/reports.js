@@ -212,7 +212,7 @@ fun.views.reports = Backbone.View.extend({
         /*
          render records summary
         */
-        if(summary && cost){
+        if(summary && billing){
             this.summary = summary;
             this.billing = billing;
             
@@ -224,7 +224,7 @@ fun.views.reports = Backbone.View.extend({
             var data = {
                 minutes:0,
                 records:0,
-                rec_avg: 0,
+                record_avg: 0,
                 billing:0.0
             };
         }

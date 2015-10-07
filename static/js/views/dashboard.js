@@ -72,7 +72,7 @@ fun.views.dashboard = Backbone.View.extend({
                 minutes: 0,
                 records: 0,
                 billing: 0,
-                rec_avg: 0
+                record_avg: 0
             };
         }
         template = _.template(
