@@ -251,7 +251,6 @@ fun.conf.templates = {
     lastRecord: fun.utils.format('%s/lastRecord.html', fun.conf.html),
     latestRecords: fun.utils.format('%s/latestRecords.html', fun.conf.html),
     recordType: fun.utils.format('%s/recordType.html', fun.conf.html),
-    recordSummary: fun.utils.format('%s/recordSummary.html', fun.conf.html),
     todaySummary: fun.utils.format('%s/todaySummary.html', fun.conf.html),
     todayActivityChart: fun.utils.format('%s/todayActivityChart.html', fun.conf.html),
     dialpad: fun.utils.format('%s/dialpad.html', fun.conf.html),
