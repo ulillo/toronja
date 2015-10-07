@@ -416,7 +416,7 @@ fun.models.Billing = Backbone.Model.extend({
 
     idAttribute: 'uuid',
     
-    urlRoot: fun.conf.urls.billing,
+    urlRoot: fun.conf.urls.billings,
     
     url: function(){
         return this.urlRoot;
