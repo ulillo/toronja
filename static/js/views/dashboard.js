@@ -57,6 +57,10 @@ fun.views.dashboard = Backbone.View.extend({
             template,
             todaySummary;
 
+        console.log(summary, billing);
+
+        console.log(account);
+
         if(account !== this.account){
             account = this.account;
         }
