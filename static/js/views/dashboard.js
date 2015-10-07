@@ -40,7 +40,7 @@ fun.views.dashboard = Backbone.View.extend({
 
         this.renderTodaySummary(this.account, summary, billing);
         this.renderTodayActivityChart();
-        this.renderLatestRecords();
+        //this.renderLatestRecords();
         this.renderRecordType();
     },
 
