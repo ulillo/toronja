@@ -61,16 +61,12 @@ fun.views.dashboard = Backbone.View.extend({
         }
 
         if(billing){
-            console.log(billing);
             this.billing = billing;
         }
 
         if(summary && billing){
             data = _.extend(this.summary.toJSON(), 
                             this.billing.toJSON());
-
-            console.log(data);
-
         } else {
             data = {
                 minutes: 0,
