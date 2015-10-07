@@ -745,20 +745,20 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(models).length){
                 console.log('spawn daemon success!');
 
-                fun.instances.dashboard.renderLatestRecords(
-                    models.records
+                fun.instances.navbar.renderAccountDropdown(
+                    models.user
                 );
 
                 fun.instances.dashboard.renderTodaySummary(
                     models.summary, models.billings
                 );
 
-                fun.instances.dashboard.renderTodayActivityChart(
-                    models.lapseSummary
+                fun.instances.dashboard.renderLatestRecords(
+                    models.records
                 );
 
-                fun.instances.navbar.renderAccountDropdown(
-                    models.user
+                fun.instances.dashboard.renderTodayActivityChart(
+                    models.lapseSummary
                 );
 
                 // need to pass stuff to renderRecordType()                   
