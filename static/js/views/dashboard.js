@@ -49,21 +49,12 @@ fun.views.dashboard = Backbone.View.extend({
         console.log('corporate warfare');
     },
 
-    renderTodaySummary: function(account, summary, billing){
+    renderTodaySummary: function(summary, billing){
         // Render today summary
         'use strict';
-        var account,
-            data,
+        var data,
             template,
             todaySummary;
-
-        console.log(summary, billing);
-
-        console.log(account);
-
-        if(account !== this.account){
-            account = this.account;
-        }
 
         if(summary){
             this.summary = summary;
@@ -75,12 +66,9 @@ fun.views.dashboard = Backbone.View.extend({
 
         if(summary && billing){
             data = _.extend(this.summary.toJSON(), 
-                                {'account':account},
-                                this.billing.toJSON());
+                            this.billing.toJSON());
         } else {
             data = {
-                account: account,
-                seconds: 0,
                 minutes: 0,
                 records: 0,
                 billing: 0,

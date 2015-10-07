@@ -750,7 +750,7 @@ fun.Router = Backbone.Router.extend({
                 );
 
                 fun.instances.dashboard.renderTodaySummary(
-                    models.summary, models.billing
+                    models.summary, models.billings
                 );
 
                 fun.instances.dashboard.renderTodayActivityChart(
