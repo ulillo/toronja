@@ -1,5 +1,5 @@
 /*
-* In a client-server architecture routes are resource address capability service nouns.
+* Routes are resource address capability service nouns.
 */
 fun.Router = Backbone.Router.extend({
 
@@ -798,7 +798,6 @@ fun.Router = Backbone.Router.extend({
 
     campaigns: function(){
         'use strict';
-
         var campaigns,
             account,
             context,
@@ -891,7 +890,6 @@ fun.Router = Backbone.Router.extend({
 
     gateways: function(){
         'use strict';
-
         var accounts = translate('accounts'),
             account,
             context,

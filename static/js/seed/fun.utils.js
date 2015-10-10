@@ -1,5 +1,5 @@
 /*
-* Fun namespace object
+* Fun namespace container
 */
 var fun = {
     account: {}, 
