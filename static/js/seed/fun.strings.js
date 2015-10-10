@@ -501,7 +501,7 @@ fun.strings = {
     cityTown: "City Town",
     streetAddress: "Street Address",
     stateProvince: "State / Province",
-
+    searchIOFUN: "Search I/O FUN",
 
     goodBye: "Good bye",
     asterisk: "*",
