@@ -37,13 +37,6 @@
     </li>
 
     <li>
-        <a href="#reports" title="<%= translate("Reports") %>">
-            <i class="fa fa-pie-chart fa-fw"></i>
-            <%= translate("Reports") %>
-        </a>
-    </li>
-
-    <li>
         
         <a data-toggle="dropdown" class="dropdown-toggle">
             <span data-label-placement=""><i class="fa fa-user fa-fw"></i> <%= account %></span>
@@ -54,13 +47,20 @@
                 <input type="radio" id="current_account_0" name="current_account" value="0" checked=""><label for="current_account_0"><i class="fa fa-user fa-fw"></i><%= account %></label>
             </li>
             <li class="divider"></li>
-            
             <li>
                 <input type="radio" id="current_account_admin" name="current_account" value="admin"><label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i> <%= translate("systemAdmin") %></label>
             </li>
-            
+            <li>
+                <a href="#orgs"><i class="fa fa-plus fa-fw"></i> <%= translate("createOrganization") %></a>
+            </li>
             <li>
                 <a href="#settings"><i class="fa fa-users fa-fw"></i> <%= translate("manageOrganizations") %></a>
+            </li>
+            <li>
+                <a href="#reports" title="<%= translate("Reports") %>">
+                    <i class="fa fa-pie-chart fa-fw"></i>
+                    <%= translate("Reports") %>
+                </a>
             </li>
             <li>
                 <a href="#settings" title="<%= translate("Settings") %>">
@@ -69,16 +69,14 @@
                 </a>
             </li>
             <li>
-                <a href="#orgs"><i class="fa fa-plus fa-fw"></i> <%= translate("createOrganization") %></a>
+                <a href="#logout" title="<%= translate("Exit") %>">
+                    <i class="fa fa-sign-out fa-fw"></i> 
+                    <%= translate("Exit") %>
+                </a>
             </li>
             <li class="divider"></li>
         </ul>      
     </li>
 
-    <li>
-        <a href="#logout" title="<%= translate("Exit") %>">
-            <i class="fa fa-sign-out fa-fw"></i> 
-            <%= translate("Exit") %>
-        </a>
-    </li> 
+    
 </ul>
