@@ -1,13 +1,12 @@
-<ul class="nav navbar-nav navbar-right">
 
-    <li>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="<%= translate("searchIOFUN") %>">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><%= translate("search") %></button>
-            </span>    
-        </div>
-    </li>
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="<%= translate("searchIOFUN") %>">
+    </div>
+    <button type="submit" class="btn btn-default"><%= translate("search") %></button>
+</form>
+
+<ul class="nav navbar-nav navbar-right">
 
     <li>
         <a href="#messages" title="<%= translate("Messages") %>">
