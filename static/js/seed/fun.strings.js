@@ -148,7 +148,7 @@ fun.strings = {
     oldManAristotle: 'Greek philosopher Aristotle, 320 BC.',
     anAssistant: 'an artificial intelligence and research assistant meant to aid on the creation of artificial intelligence technology systems.',
     ioFunBanner: "Fantastical unbelievable communication.",
-    ioFunLandingText: "Powerful organization management, call, record and review tasks on inbound and outbound campaigns.",
+    ioFunLandingText: "Powerful organization management assistant, call, record and review tasks on inbound and outbound campaigns.",
     howItWorks: "How it works",
     funDescription: "I/O FUN designs, manufactures and manage advanced communication systems",
     getStarted: "Get started",
