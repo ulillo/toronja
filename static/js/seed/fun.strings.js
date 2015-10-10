@@ -16,6 +16,7 @@ fun.strings = {
     warning: 'Warning!',
     phone: "Phone",
     phones: "Phones",
+    findAteam: "Find a team",
     gate: "Gate",
     gates: "Gates",
     server: "Server",
