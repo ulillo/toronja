@@ -149,7 +149,17 @@ var Charts = function () {
     /** 
     * Move this function to toronja code
     * - update for timezone support on charts
-    */
+
+	$.plot("#placeholder", [d], {
+		xaxis: {
+			mode: "time",
+			minTickSize: [1, "hour"],
+			min: (new Date(1999, 11, 31)).getTime(),
+			max: (new Date(2000, 0, 1)).getTime(),
+			twelveHourClock: true
+		}
+	});
+	*/
     function line (target, data) {
         var options = {
                 colors: colors,
@@ -174,7 +184,11 @@ var Charts = function () {
                 tooltipOpts: {
                     content: '%s: %y'
                 },
-                xaxis: { mode: "time" }, 
+                xaxis: {
+					mode: "time",
+					minTickSize: [1, "hour"],
+					twelveHourClock: true
+				}, 
                 grid: { borderWidth: 2, hoverable: true }
         };
             
