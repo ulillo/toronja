@@ -300,3 +300,280 @@ jQuery.extend(jQuery.validator.messages, {
  */
 var translate = fun.utils.translate;
 var round = fun.utils.round;
+
+
+// random stuff that needs some new love
+
+var Charts = function () {
+    
+    var colors = Theme.chartColors;
+    
+    return { 
+        vertical: vertical,
+        horizontal: horizontal,
+        pie: pie,
+        donut: donut,
+        line: line
+    };
+    
+    function vertical (target, data) {
+        var options = {
+            colors: colors,
+    
+            grid: {
+                hoverable: true, 
+                borderWidth: 2
+            }, 
+            bars: {
+                horizontal: false, 
+                show: true, 
+                align: 'center', 
+                lineWidth: 0,
+                fillColor: { colors: [ { opacity: 1 }, { opacity: 0.5 } ] }
+            }, 
+            legend: {
+                show: true
+            },
+            
+            tooltip: true,
+            tooltipOpts: {
+                content: '%s: %y'
+            },
+        };
+    
+        var el = $(target);
+        
+        if (el.length) {
+            $.plot(el, data, options );
+        }
+    }
+    
+    function horizontal (target, data) {
+        var options = {
+                    colors: colors,
+
+                    grid: {
+                        hoverable: true, 
+                        borderWidth: 2
+                    }, 
+                    bars: {
+                        horizontal: true, 
+                        show: true, 
+                        align: 'center', 
+                        barWidth: .2,
+                        lineWidth: 0,
+                        fillColor: { colors: [ { opacity: 1 }, { opacity: 1} ] }
+                    }, 
+                    legend: {
+                        show: true
+                    },
+            
+                    tooltip: true,
+                    tooltipOpts: {
+                        content: '%s: %y'
+                    },
+                };
+            
+            var el = $(target);
+                
+                if (el.length) {
+                    $.plot(el, data, options );
+                }
+    }
+    
+    function pie (target, data) {
+        var options = {
+            colors: colors,
+            
+            series: {
+                pie: {
+                    show: true,  
+                    innerRadius: 0, 
+                    stroke: {
+                        width: 4
+                    }
+                }
+            }, 
+                
+            legend: {
+                position: 'ne'
+            }, 
+            
+            tooltip: true,
+            tooltipOpts: {
+                content: '%s: %y'
+            },
+            
+            grid: {
+                hoverable: true
+            }
+        };
+
+        var el = $(target);
+                
+            if (el.length) {
+                $.plot(el, data, options );
+            }
+    }
+    
+    function donut (target, data) {
+        var options = {
+            colors: colors,
+            
+            series: {
+                pie: {
+                    show: true,  
+                    innerRadius: .5, 
+                    stroke: {
+                        width: 4
+                    }
+                }
+            }, 
+                
+            legend: {
+                position: 'ne'
+            }, 
+            
+            tooltip: true,
+            tooltipOpts: {
+                content: '%s: %y'
+            },
+            
+            grid: {
+                hoverable: true
+            }
+        };
+        
+        var el = $(target);
+                        
+        if (el.length) {
+            $.plot(el, data, options );
+        }
+    }
+    
+    
+    /** 
+    * Move this function to toronja code
+    * - update for timezone support on charts
+
+    $.plot("#placeholder", [d], {
+        xaxis: {
+            mode: "time",
+            minTickSize: [1, "hour"],
+            min: (new Date(1999, 11, 31)).getTime(),
+            max: (new Date(2000, 0, 1)).getTime(),
+            twelveHourClock: true
+        }
+    });
+    */
+    function line (target, data) {
+        var options = {
+                colors: colors,
+                series: {
+                    lines: { 
+                        show: true, 
+                        fill: true, 
+                        lineWidth: 4, 
+                        steps: false, 
+                        fillColor: { colors: [{opacity: 0.4}, {opacity: 0}] } 
+                    },
+                    points: { 
+                        show: true, 
+                        radius: 4, 
+                        fill: true
+                    }
+                }, 
+                legend: {
+                    position: 'ne'
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: '%s: %y'
+                },
+                xaxis: {
+                    mode: "time",
+                    minTickSize: [1, "hour"],
+                    twelveHourClock: true
+                }, 
+                grid: { borderWidth: 2, hoverable: true }
+        };
+            
+            var el = $(target);
+                
+                if (el.length) {
+                    $.plot(el, data, options );
+                }
+    }
+}();
+
+
+var Theme = function () {
+    
+    var chartColors, validationRules = getValidationRules ();
+    
+    // Black & Orange
+    //chartColors = ["#FF9900", "#333", "#777", "#BBB", "#555", "#999", "#CCC"];
+    
+    // Ocean Breeze
+    //chartColors = ['#94BA65', '#2B4E72', '#2790B0', '#777','#555','#999','#bbb','#ccc','#eee'];
+    
+    // Fire Starter
+    //chartColors = ['#750000', '#F90', '#777', '#555','#002646','#999','#bbb','#ccc','#eee'];
+    
+    // Mean Green
+    chartColors = ['#5F9B43', '#DB7D1F', '#BA4139', '#777','#555','#999','#bbb','#ccc','#eee'];
+    
+    return { init: init, chartColors: chartColors, validationRules: validationRules };
+    
+    function init () {
+        enhancedAccordion ();
+        
+        if ($.fn.lightbox) {
+            $('.ui-lightbox').lightbox();
+        }
+        
+        if ($.fn.cirque) {
+            $('.ui-cirque').cirque ({  });
+        }
+    
+        $('#wrapper').append ('<div class="push"></div>');
+    }
+    
+    function enhancedAccordion () {
+        $('.accordion').on('show', function (e) {
+             $(e.target).prev('.accordion-heading').parent ().addClass('open');
+        });
+    
+        $('.accordion').on('hide', function (e) {
+            $(this).find('.accordion-toggle').not($(e.target)).parents ('.accordion-group').removeClass('open');
+        });
+        
+        $('.accordion').each (function () {            
+            $(this).find ('.accordion-body.in').parent ().addClass ('open');
+        });
+    }
+    
+    function getValidationRules () {
+        var custom = {
+            focusCleanup: false,
+            
+            wrapper: 'div',
+            errorElement: 'span',
+            
+            highlight: function(element) {
+                $(element).parents ('.control-group').removeClass ('success').addClass('error');
+            },
+            success: function(element) {
+                $(element).parents ('.control-group').removeClass ('error').addClass('success');
+                $(element).parents ('.controls:not(:has(.clean))').find ('div:last').before ('<div class="clean"></div>');
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parents ('.controls'));
+            }
+            
+        };
+        
+        return custom;
+    }
+    
+}();
