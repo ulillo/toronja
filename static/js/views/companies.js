@@ -520,27 +520,6 @@ fun.views.companies = Backbone.View.extend({
     },
 
 
-    setAccountContext: function(event){
-        'use strict';
-        $('input[name="current_account"]:checked').each(function() {
-            var idVal = $(this).attr("id");
-            var label = $("label[for='" + idVal + "']").text();
-            if (idVal === 'current_account_admin'){
-                // Check browser support
-                if (typeof(Storage) != "undefined") {
-                    // Store
-                    sessionStorage.setItem("is_admin", true);
-                }
-                fun.omnibus.trigger("change:system_admin");
-            }
-            // Check browser support
-            if (typeof(Storage) != "undefined") {
-                // Store selected context
-                sessionStorage.setItem("context", label);
-            }
-        });
-    },
-
     updateStatus: function(event){
         'use strict';
         //event.preventDefault();
@@ -573,8 +552,6 @@ fun.views.companies = Backbone.View.extend({
 
             label = $("label[for='" + idVal + "']").text();
 
-            console.log(label);
-
             if (label === 'active'){
                 this.model = new fun.models.Account();
                 this.model.save(
@@ -597,11 +574,21 @@ fun.views.companies = Backbone.View.extend({
                         body: JSON.stringify(stuff)
                     }
                 )
-            }
+            };
+
+            if (label === 'disable'){
+                console.log('con uli');
+                console.log(label);
+            };
+
+            if (label === 'suspended'){
+                console.log('sin uli');
+                console.log(label);
+            };
 
         });
 
-        //fun.omnibus.trigger("change:context");
+
     }
 
 });
