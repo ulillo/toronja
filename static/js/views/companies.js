@@ -321,8 +321,6 @@ fun.views.companies = Backbone.View.extend({
         companyDescription = this.companyDescription.val();
         companyLabel = this.companyLabel;
 
-        console.log(account, companyName, companyDescription, companyLabel);
-
         //companyPayload = {
         //    title: companyName,
         //    description: companyDescription,
@@ -418,8 +416,6 @@ fun.views.companies = Backbone.View.extend({
         password = this.password;
         email = this.email;
 
-        console.log(account, password, email);
-
         companyUuid = this.$('#company-uuid');
 
         companyName = this.companyName;
@@ -449,16 +445,12 @@ fun.views.companies = Backbone.View.extend({
 
         company = new fun.models.Company({'uuid':name});
 
-        console.log(this.email, this.account, this.password);
-
         company.fetch({
             success: function(response){
 
                 //password = response.get('password');
                 //account = response.get('account');
                 //email = response.get('email');
-
-                //console.log(response)
 
                 companyUuid.html(response.get('uuid'));
 
@@ -504,7 +496,7 @@ fun.views.companies = Backbone.View.extend({
         });
 
         //console.log(company.toJSON());
-        console.log(account, email, password);
+        //console.log(account, email, password);
     },
 
     updateCompany: function(event){
