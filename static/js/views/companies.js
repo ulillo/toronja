@@ -8,7 +8,7 @@ fun.views.companies = Backbone.View.extend({
         "click .company-popup": "companyDetails",
         "click #update-btn": "updateCompany",
         "click #close-btn": "closePopup",
-        "click input[name='company_status']": 'updateStatux'
+        "click input[name='company_status']": 'updateStatus'
     },
 
     /**
@@ -541,15 +541,9 @@ fun.views.companies = Backbone.View.extend({
         });
     },
 
-    updateStatux: function(event){
-        'use strict';
-        //event.preventDefault();
-        console.log('chuma chuma');
-    },
-
     updateStatus: function(event){
         'use strict';
-        event.preventDefault();
+        //event.preventDefault();
         var view = this,
                    idVal,
                    label,
