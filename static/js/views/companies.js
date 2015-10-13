@@ -578,12 +578,12 @@ fun.views.companies = Backbone.View.extend({
             };
 
             if (label === 'disable'){
-                console.log(uuid);
+                console.log(uuid.val());
                 console.log(label);
             };
 
             if (label === 'suspended'){
-                console.log(uuid);
+                console.log(uuid.html());
                 console.log(label);
             };
 
