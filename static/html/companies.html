@@ -30,39 +30,7 @@
                                 </p>
 
                             </div>
-                        </div>                                       
-
-                        <!--
-                        
-                        <div class="form-group">
-                            <label for="company_description"><%= translate("description") %></label>
-                            <input type="text" id="company_description" name="company_description" class="form-control">
                         </div>
-
-                        <div class="form-checkbox">
-                            <label>
-                                <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
-                                <%= translate("human") %>
-                            </label>
-                            <span class="mega-octicon octicon-repo"></span>
-
-                            <span class="note">
-                                Humans can work this company. You choose to assign the company to a human agent.
-                            </span>
-                        </div>
-
-                        <div class="form-checkbox">
-                            <label>
-                                <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
-                                <%= translate("monkey") %>
-                            </label>
-                            <span class="mega-octicon octicon-lock"></span>
-                            <span class="note">
-                                This stuff is bananas. You choose to assign the company to a group of monkeys.
-                            </span>
-                        </div>
-
-                        -->
 
                         <button id="create-company-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCompany") %></button>
                     </form>
@@ -96,23 +64,13 @@
                 <li><a href="#all-companies-tab" data-toggle="tab"><%= translate("allCompanies") %></a></li>
                 <li><a href="#active-companies-tab" data-toggle="tab"><%= translate("active") %></a></li>
                 <li><a href="#disable-companies-tab" data-toggle="tab"><%= translate("disable") %></a></li>
-                <!--
-                <li><a href="#done-tab" data-toggle="tab"><%= translate("done") %></a></li>
-                <li><a href="#humans-tab" data-toggle="tab"><%= translate("humans") %></a></li>
-                <li><a href="#monkeys-tab" data-toggle="tab"><%= translate("monkeys") %></a></li>
-                -->
+                <li><a href="#suspended-companies-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-companies-tab"></div>
-                <!-- <div class="tab-pane" id="now-tab"></div>
-                <div class="tab-pane" id="later-tab"></div>
-                <div class="tab-pane" id="done-tab"></div> -->
                 <div class="tab-pane" id="active-companies-tab"></div>
                 <div class="tab-pane" id="disable-companies-tab"></div>
-                <!--
-                <div class="tab-pane" id="humans-tab"></div>
-                <div class="tab-pane" id="monkeys-tab"></div>
-                -->
+                <div class="tab-pane" id="suspended-companies-tab"></div>
             </div>  
         </div>
     </div>
