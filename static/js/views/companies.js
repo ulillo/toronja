@@ -564,7 +564,7 @@ fun.views.companies = Backbone.View.extend({
 
             error: function(model, error){
                 console.log('wrong stuff on account create');
-                console.log(model, error);
+                //console.log(model, error);
             }
         };
 
