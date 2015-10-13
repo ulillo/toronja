@@ -578,8 +578,10 @@ fun.views.companies = Backbone.View.extend({
             };
 
             if (label === 'disable'){
-                var nota = uuid.html();
-                console.log(nota);
+                var account_uuid = uuid.html();
+                var status = {'status':label};
+
+                // now i need to do a fucking patch, in that way i can update the status stuff.
                 console.log(label);
             };
 
