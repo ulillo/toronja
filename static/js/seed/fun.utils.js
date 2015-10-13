@@ -214,6 +214,14 @@ fun.utils.hideAll = function() {
 
 
 /**
+* check if this stuff works on empty strings
+*/
+fun.utils.emptyString = function(str) {
+    return (!str || 0 === str.length);
+};
+
+
+/**
  * Rounds up a number.
  * @return Object
  */
