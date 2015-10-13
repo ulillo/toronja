@@ -20,6 +20,7 @@ fun.strings = {
     gate: "Gate",
     gates: "Gates",
     server: "Server",
+    couldNotAllow: "could not allow",
     servers: "Servers",
     gateway: "Gateway",
     systemAdmin: "System Admin",

@@ -89,7 +89,7 @@ fun.views.dashboard = Backbone.View.extend({
         // directly to the flot.js library.
         'use strict';
         var data = [],
-            seconds = [],
+            //seconds = [],
             minutes = [],
             records = [],
             template,
@@ -98,21 +98,21 @@ fun.views.dashboard = Backbone.View.extend({
         // check if response from the server
         if(summary){
             this.summary = summary;
-            this.seconds = summary.get('seconds');
+            //this.seconds = summary.get('seconds');
             this.minutes = summary.get('minutes');
             this.records = summary.get('records');
         }
 
-        seconds = _.pairs(this.seconds)
+        //seconds = _.pairs(this.seconds)
 
         minutes = _.pairs(this.minutes)
 
         records = _.pairs(this.records)
 
-        data.push({
-            data: seconds,
-            label: 'Seconds'
-        });
+        //data.push({
+        //    data: seconds,
+        //    label: 'Seconds'
+        //});
 
         data.push({
             data: minutes,
