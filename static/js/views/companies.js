@@ -8,7 +8,7 @@ fun.views.companies = Backbone.View.extend({
         "click .company-popup": "companyDetails",
         "click #update-btn": "updateCompany",
         "click #close-btn": "closePopup",
-        "click input[name='company_status']": 'updateStatus'
+        //"click input[name='company_status']": 'updateStatus'
     },
 
     /**
