@@ -524,6 +524,7 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         //event.preventDefault();
         var view = this,
+                   uuid = this.$('#company-uuid'),
                    idVal,
                    label,
                    account,
@@ -577,12 +578,12 @@ fun.views.companies = Backbone.View.extend({
             };
 
             if (label === 'disable'){
-                console.log('con uli');
+                console.log(uuid);
                 console.log(label);
             };
 
             if (label === 'suspended'){
-                console.log('sin uli');
+                console.log(uuid);
                 console.log(label);
             };
 
