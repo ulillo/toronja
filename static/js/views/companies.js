@@ -536,6 +536,8 @@ fun.views.companies = Backbone.View.extend({
         
         var stuff = JSON.parse(localStorage.getItem('tempAccount'));
 
+        console.log(stuff);
+
         // new user account callbacks
         callbacks = {
             success: function(){
