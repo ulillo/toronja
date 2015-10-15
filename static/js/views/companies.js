@@ -601,8 +601,8 @@ fun.views.companies = Backbone.View.extend({
                     'status': label
                 };
 
-                update = new fun.models.User();
-                update.save(buenaNota, {patch: true});
+                update = new fun.models.User(buenaNota);
+                update.save(, {patch: true});
             };
 
         });
