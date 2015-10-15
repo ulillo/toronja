@@ -579,7 +579,7 @@ fun.views.companies = Backbone.View.extend({
 
             if (label === 'disable'){
                 var account_uuid = uuid.html();
-                var account_name = this.account.html();
+                var account_name = stuff['account'];
                 var status = {'status':label};
 
                 // now i need to do a fucking patch, in that way i can update the status stuff.
@@ -588,7 +588,7 @@ fun.views.companies = Backbone.View.extend({
 
             if (label === 'suspended'){
                 console.log(uuid.html());
-                console.log(this.account.html());
+                console.log(stuff['account']);
                 console.log(label);
             };
 
