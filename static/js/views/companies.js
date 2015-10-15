@@ -595,12 +595,12 @@ fun.views.companies = Backbone.View.extend({
                 console.log(account_name);
                 console.log(label);
 
+                var update = new fun.models.User({'uuid':account_uuid, 'account': account_name});
+
                 var buenaNota = {
-                    //'uuid':account_uuid,
                     'status': label
                 };
 
-                var update = new fun.models.User({'account': account_name});
                 update.save(buenaNota, {patch: true});
             };
 

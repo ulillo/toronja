@@ -471,7 +471,7 @@ fun.views.resources = Backbone.View.extend({
                    resourceUuid,
                    callbacks;
 
-        this.status= $('input[name="resource_status"]:checked');
+        this.status = $('input[name="resource_status"]:checked');
         this.comment = this.$('#resource-comment');
         this.uuid = this.$('#resource-uuid');
 

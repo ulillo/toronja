@@ -541,7 +541,7 @@ fun.views.tasks = Backbone.View.extend({
                    taskUuid,
                    callbacks;
 
-        this.status= $('input[name="task_status"]:checked');
+        this.status = $('input[name="task_status"]:checked');
         this.comment = this.$('#task-comment');
         this.uuid = this.$('#task-uuid');
 

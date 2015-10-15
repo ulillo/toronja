@@ -98,10 +98,12 @@ fun.models.User = Backbone.Model.extend({
     urlRoot: fun.conf.urls.user,
     
     url: function(){
-        var url = this.urlRoot.replace(fun.conf.account, this.account);
-        //if (!this.isNew()){
-        //    url += '/' + this.id;
-        //}
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.account, this.account);
+        } else {
+            url = fun.conf.urls.users;
+        }
         return url;
     }
 }); 
