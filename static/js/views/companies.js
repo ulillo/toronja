@@ -535,8 +535,6 @@ fun.views.companies = Backbone.View.extend({
 
         console.log('update status');
 
-        console.log(stuff);
-
         // new user account callbacks
         callbacks = {
             success: function(){
@@ -584,12 +582,18 @@ fun.views.companies = Backbone.View.extend({
                 var status = {'status':label};
 
                 // now i need to do a fucking patch, in that way i can update the status stuff.
+                console.log(account_uuid);
+                console.log(account_name);
                 console.log(label);
             };
 
             if (label === 'suspended'){
-                console.log(uuid.html());
-                console.log(stuff['account']);
+                var account_uuid = uuid.html();
+                var account_name = stuff['account'];
+                var status = {'status':label};
+
+                console.log(account_uuid);
+                console.log(account_name);
                 console.log(label);
             };
 
