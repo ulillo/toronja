@@ -600,7 +600,7 @@ fun.views.companies = Backbone.View.extend({
                     'status': label
                 };
 
-                update = new fun.models.User({'account': account_name});
+                var update = new fun.models.User({'account': account_name});
                 update.save(buenaNota, {patch: true});
             };
 
