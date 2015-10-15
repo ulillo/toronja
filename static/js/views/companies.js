@@ -530,11 +530,10 @@ fun.views.companies = Backbone.View.extend({
                    account,
                    password,
                    email,
+                   stuff = JSON.parse(localStorage.getItem('tempAccount')),
                    callbacks;
 
         console.log('update status');
-        
-        var stuff = JSON.parse(localStorage.getItem('tempAccount'));
 
         console.log(stuff);
 
