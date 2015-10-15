@@ -590,11 +590,19 @@ fun.views.companies = Backbone.View.extend({
             if (label === 'suspended'){
                 var account_uuid = uuid.html();
                 var account_name = stuff['account'];
-                var status = {'status':label};
-
+                
                 console.log(account_uuid);
                 console.log(account_name);
                 console.log(label);
+
+                var buenaNota = {
+                    'uuid':account_uuid,
+                    'account': account_name,
+                    'status': label
+                };
+
+                update = new fun.models.User();
+                update.save(buenaNota, {patch: true});
             };
 
         });
