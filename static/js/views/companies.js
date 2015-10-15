@@ -527,13 +527,14 @@ fun.views.companies = Backbone.View.extend({
                    uuid = this.$('#company-uuid'),
                    idVal,
                    label,
-                   account,
-                   password,
-                   email,
+                   status,
                    stuff = JSON.parse(localStorage.getItem('tempAccount')),
                    callbacks;
 
         console.log('update status');
+        
+        var account_uuid = uuid.html();
+        var account_name = stuff['account'];
 
         // new user account callbacks
         callbacks = {
@@ -543,7 +544,6 @@ fun.views.companies = Backbone.View.extend({
 
             error: function(model, error){
                 console.log('wrong stuff on account create');
-                //console.log(model, error);
             }
         };
 
@@ -551,6 +551,8 @@ fun.views.companies = Backbone.View.extend({
             idVal = $(this).attr("id");
 
             label = $("label[for='" + idVal + "']").text();
+
+            status = {'status':label};
 
             if (label === 'active'){
                 this.model = new fun.models.Account();
@@ -562,9 +564,7 @@ fun.views.companies = Backbone.View.extend({
                     },
                     callbacks
                 );
-
                 // send alert message by email
-
                 this.alert = new fun.models.Alert();
                 this.alert.save(
                     {
@@ -577,23 +577,18 @@ fun.views.companies = Backbone.View.extend({
             };
 
             if (label === 'disable'){
-                var account_uuid = uuid.html();
-                var account_name = stuff['account'];
-                var status = {'status':label};
+                
 
-                // now i need to do a fucking patch, in that way i can update the status stuff.
-                console.log(account_uuid);
-                console.log(account_name);
-                console.log(label);
+                var update = new fun.models.User({'uuid':account_uuid, 'account': account_name});
+
+                var buenaNota = {
+                    'status': label
+                };
+
+                update.save(buenaNota, {patch: true});
             };
 
             if (label === 'suspended'){
-                var account_uuid = uuid.html();
-                var account_name = stuff['account'];
-                
-                console.log(account_uuid);
-                console.log(account_name);
-                console.log(label);
 
                 var update = new fun.models.User({'uuid':account_uuid, 'account': account_name});
 
