@@ -594,7 +594,7 @@ fun.views.companies = Backbone.View.extend({
                 var update = new fun.models.User({'uuid':account_uuid, 'account': account_name});
 
                 var buenaNota = {
-                    'status': label
+                    'status': label,
                     'uuid': account_uuid
                 };
 
