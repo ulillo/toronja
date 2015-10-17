@@ -533,7 +533,7 @@ fun.views.tasks = Backbone.View.extend({
     */
     updateTask: function(event){
         'use strict';
-        event.preventDefault();
+        //event.preventDefault();
         var view = this,
                    update,
                    status,
