@@ -181,6 +181,8 @@ fun.conf.urls = {
     sounds: fun.utils.format('/sounds/'),
     recording: fun.utils.format('/recordings/%s', fun.conf.uuidRecording),
     recordings: '/recordings/',
+    recordingsInbound: '/recordings/inbound/',
+    recordingsOutbound: '/recordings/outbound/',
 };
 
 /*
