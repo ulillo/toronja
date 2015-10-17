@@ -895,25 +895,21 @@ fun.Router = Backbone.Router.extend({
             context,
             vonCount = 0,
             resources,
+            gateways = translate('gateways'),
             resource,
             onSuccess;
-
-        var gateways = translate('gateways');
 
         // get account and context
         account = localStorage.getItem("username");
         context = sessionStorage.getItem("context");
 
         resources = {
-            //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            // orgs: new fun.models.Orgs(),
-
-            all: new fun.models.CampaignsActive(),
-            active: new fun.models.CampaignsActive(),
-            monitored: new fun.models.CampaignsActive(),
-            inbound: new fun.models.CampaignsActive(),
-            outbound: new fun.models.CampaignsActive(),
+            all: new fun.models.Gateways(),
+            active: new fun.models.GatewaysActive(),
+            monitored: new fun.models.GatewaysMonitored(),
+            inbound: new fun.models.GatewaysInbound(),
+            outbound: new fun.models.GatewaysOutbound(),
         };
 
         onSuccess = function(){

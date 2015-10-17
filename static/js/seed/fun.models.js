@@ -87,6 +87,97 @@ fun.models.logout = Backbone.Model.extend({
 });
 
 
+fun.models.Task = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.task,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidTask, this.id);
+        } else {
+            url = fun.conf.urls.tasks;
+        }
+        return url;
+    }
+});
+
+fun.models.Gateway = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.gateway,
+
+    url:function(){
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidGateway, this.id);
+        } else {
+            url = fun.conf.urls.gateways;
+        }
+        return url;
+    }
+})
+
+fun.models.Gateways = Backbone.Collection.extend({
+    model: fun.models.Gateway,
+
+    urlRoot: fun.conf.urls.gateways,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
+fun.models.GatewaysActive = Backbone.Collection.extend({
+    model: fun.models.Gateway,
+
+    urlRoot: fun.conf.urls.gatewaysActive,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
+fun.models.GatewaysInbound = Backbone.Collection.extend({
+    model: fun.models.Gateway,
+
+    urlRoot: fun.conf.urls.gatewaysInbound,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
+fun.models.GatewaysOutbound = Backbone.Collection.extend({
+    model: fun.models.Gateway,
+
+    urlRoot: fun.conf.urls.gatewaysOutbound,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
+fun.models.GatewaysMonitored = Backbone.Collection.extend({
+    model: fun.models.Gateway,
+
+    urlRoot: fun.conf.urls.gatewaysMonitored,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
 fun.models.User = Backbone.Model.extend({
 
     idAttribute: 'uuid',
@@ -106,7 +197,7 @@ fun.models.User = Backbone.Model.extend({
         }
         return url;
     }
-}); 
+});
 
 
 fun.models.Users = Backbone.Collection.extend({
