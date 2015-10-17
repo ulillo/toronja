@@ -1008,6 +1008,7 @@ fun.models.MessagesNotifications = Backbone.Collection.extend({
     }
 });
 
+
 fun.models.Task = Backbone.Model.extend({
 
     idAttribute: 'uuid',
@@ -1032,6 +1033,54 @@ fun.models.Tasks = Backbone.Collection.extend({
     model: fun.models.Task,
 
     urlRoot: fun.conf.urls.tasks,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
+
+fun.models.TasksNow = Backbone.Collection.extend({
+
+    model: fun.models.Task,
+
+    urlRoot: fun.conf.urls.tasksNow,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
+
+fun.models.TasksLater = Backbone.Collection.extend({
+
+    model: fun.models.Task,
+
+    urlRoot: fun.conf.urls.tasksLater,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
+
+fun.models.TasksDone = Backbone.Collection.extend({
+
+    model: fun.models.Task,
+
+    urlRoot: fun.conf.urls.tasksDone,
 
     url: function() {
         return this.urlRoot;
