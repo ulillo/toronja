@@ -14,6 +14,7 @@ fun.conf = {
     urlRoot: '/api/',
     // system uuid's
     uuidRecord: 'record_uuid',
+    uuidRecording: 'recording_uuid',
     uuidBilling: 'billing_uuid',
     uuidCampaign: 'campaign_uuid',
     uuidAlert: 'alert_uuid',
