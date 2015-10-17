@@ -963,6 +963,20 @@ fun.models.Messages = Backbone.Collection.extend({
     }
 });
 
+fun.models.MessagesUnread = Backbone.Collection.extend({
+
+    model: fun.models.Message,
+
+    urlRoot: fun.conf.urls.messagesUnread,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.messages;
+    }
+});
 
 fun.models.Task = Backbone.Model.extend({
 
