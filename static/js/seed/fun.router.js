@@ -984,19 +984,14 @@ fun.Router = Backbone.Router.extend({
             fun.utils.format('username: %s, context: %s', account, context)
         );
 
-        // first of all here on resources the stuff seems to be fine.
-        // new note: wut?
         resources = {
-            //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            // orgs: new fun.models.Orgs(),
-
-            all: new fun.models.CampaignsActive(),
-            active: new fun.models.CampaignsActive(),
-            users: new fun.models.CampaignsActive(),
-            orgs: new fun.models.CampaignsActive(),
-            disable: new fun.models.CampaignsActive(),
-            suspended: new fun.models.CampaignsActive(),
+            all: new fun.models.Users(),
+            active: new fun.models.UsersActive(),
+            users: new fun.models.Users(),
+            orgs: new fun.models.Orgs(),
+            disable: new fun.models.UsersDisable(),
+            suspended: new fun.models.UsersSuspended(),
         };
 
 
