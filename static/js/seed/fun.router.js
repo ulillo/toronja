@@ -318,21 +318,16 @@ fun.Router = Backbone.Router.extend({
             fun.utils.format('username: %s, context: %s', account, context)
         );
 
-        // first of all here on resources the stuff seems to be fine.
-        // new note: wut?
         resources = {
-            //account: new fun.models.Account({'account':account}),
+            
             user: new fun.models.User({'account':account}),
             tasks: new fun.models.Tasks(),
-
-            // Temp data only for showing warning
-            now: new fun.models.CampaignsActive(),
-            later: new fun.models.CampaignsActive(),
-            done: new fun.models.CampaignsActive(),
+            now: new fun.models.TasksNow(),
+            later: new fun.models.TasksLater(),
+            done: new fun.models.TasksDone(),
         };
 
-        // but, onSuccess we're rendering multiple times the same campaigns.render()
-        // and that stuff is bananas. ok
+        // onSuccess we're rendering multiple times the same campaigns.render() and that is bananas.
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
