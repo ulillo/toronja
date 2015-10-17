@@ -817,21 +817,12 @@ fun.Router = Backbone.Router.extend({
         );
 
         resources = {
-
-            //account: new fun.models.Account({'account':account}),
-
             user: new fun.models.User({'account':account}),
-
             campaigns: new fun.models.Campaigns(),
-
             active: new fun.models.CampaignsActive(),
-
-            //paused: new fun.models.CampaignsPaused(),
-            paused: new fun.models.CampaignsActive(),
-            //inbound: new fun.models.CampaignsInbound(),
-            inbound: new fun.models.CampaignsActive(),
-            //outbound: new fun.models.CampaignsOutbound()
-            outbound: new fun.models.CampaignsActive()
+            paused: new fun.models.CampaignsPaused(),
+            inbound: new fun.models.CampaignsInbound(),
+            outbound: new fun.models.CampaignsOutbound()
         };
 
         // but, onSuccess we're rendering multiple times the same campaigns.render()
@@ -1066,11 +1057,10 @@ fun.Router = Backbone.Router.extend({
 
         resources = {
             user: new fun.models.User({'account':account}),
-            // All recordings
-            all: new fun.models.CampaignsActive(),
-            unread: new fun.models.CampaignsActive(),
-            notifications: new fun.models.CampaignsActive(),
-            alerts: new fun.models.CampaignsActive(),
+            all: new fun.models.Messages(),
+            unread: new fun.models.MessagesUnread(),
+            notifications: new fun.models.MessagesNotifications(),
+            alerts: new fun.models.MessagesAlerts(),
         };
 
         onSuccess = function(){
@@ -1140,9 +1130,9 @@ fun.Router = Backbone.Router.extend({
         resources = {
             user: new fun.models.User({'account':account}),
             // All recordings
-            all: new fun.models.CampaignsActive(),
-            inbound: new fun.models.CampaignsActive(),
-            outbound: new fun.models.CampaignsActive(),
+            all: new fun.models.Recordings(),
+            inbound: new fun.models.RecordingsInbound(),
+            outbound: new fun.models.RecordingsOutbound(),
         };
 
         onSuccess = function(){
@@ -1208,13 +1198,10 @@ fun.Router = Backbone.Router.extend({
         context = sessionStorage.getItem("context");
 
         resources = {
-            //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
-            // orgs: new fun.models.Orgs(),
-
-            all: new fun.models.CampaignsActive(),
-            imps: new fun.models.CampaignsActive(),
-            nodes: new fun.models.CampaignsActive(),
+            all: new fun.models.Resources(),
+            imps: new fun.models.ResourcesImps(),
+            nodes: new fun.models.ResourcesNodes(),
         };
 
         onSuccess = function(){
