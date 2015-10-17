@@ -978,6 +978,36 @@ fun.models.MessagesUnread = Backbone.Collection.extend({
     }
 });
 
+fun.models.MessagesAlerts = Backbone.Collection.extend({
+
+    model: fun.models.Message,
+
+    urlRoot: fun.conf.urls.messagesAlerts,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.messages;
+    }
+});
+
+fun.models.MessagesNotifications = Backbone.Collection.extend({
+
+    model: fun.models.Message,
+
+    urlRoot: fun.conf.urls.messagesNotifications,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.messages;
+    }
+});
+
 fun.models.Task = Backbone.Model.extend({
 
     idAttribute: 'uuid',
