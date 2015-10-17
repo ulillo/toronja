@@ -166,6 +166,7 @@ fun.conf.urls = {
     gatewaysDisable: '/gateways/disable/',
     gatewaysInbound: '/gateways/inbound/',
     gatewaysOutbound: '/gateways/outbound/',
+    gatewaysMonitored: '/gateways/monitored/',
     message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
     messages: '/messages/',
     sounds: fun.utils.format('/sounds/'),
