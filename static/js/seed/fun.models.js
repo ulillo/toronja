@@ -144,6 +144,26 @@ fun.models.ResourcesActive = Backbone.Collection.extend({
     }
 })
 
+fun.models.ResourcesImps = Backbone.Collection.extend({
+    model: fun.models.Resource,
+
+    urlRoot: fun.conf.urls.resourcesImps,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+fun.models.ResourcesNodes = Backbone.Collection.extend({
+    model: fun.models.Resource,
+
+    urlRoot: fun.conf.urls.resourcesNodes,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
 fun.models.Gateway = Backbone.Model.extend({
 
     idAttribute: 'uuid',
