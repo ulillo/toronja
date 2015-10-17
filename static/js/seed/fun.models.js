@@ -820,7 +820,7 @@ fun.models.CampaignsOutbound = Backbone.Collection.extend({
 
     model: fun.models.Campaign,
 
-    urlRoot: fun.conf.urls.CampaignsOutbound,
+    urlRoot: fun.conf.urls.campaignsOutbound,
 
     url: function() {
         return this.urlRoot;
