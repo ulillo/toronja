@@ -408,7 +408,7 @@ fun.Router = Backbone.Router.extend({
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
             companies: new fun.models.Companies(),
-            active: new fun.models.CampaignsActive(),
+            active: new fun.models.Companies({'status':'active'}),
             disable: new fun.models.CampaignsActive(),
         };
 
