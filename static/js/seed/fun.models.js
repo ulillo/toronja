@@ -899,6 +899,36 @@ fun.models.Recordings = Backbone.Collection.extend({
     }
 });
 
+fun.models.RecordingsInbound = Backbone.Collection.extend({
+
+    model: fun.models.Recording,
+
+    urlRoot: fun.conf.urls.recordingsInbound,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.recordings;
+    }
+});
+
+fun.models.RecordingsOutbound = Backbone.Collection.extend({
+
+    model: fun.models.Recording,
+
+    urlRoot: fun.conf.urls.recordingsOutbound,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.recordings;
+    }
+});
+
 fun.models.Message = Backbone.Model.extend({
 
     idAttribute: 'uuid',
