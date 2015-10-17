@@ -121,6 +121,42 @@ fun.models.Users = Backbone.Collection.extend({
 });
 
 
+fun.models.UsersActive = Backbone.Collection.extend({
+
+    model: fun.models.User,
+    
+    urlRoot: fun.conf.urls.usersActive,
+    
+    url: function(){
+        return this.urlRoot;
+    }
+});
+
+
+fun.models.UsersDisable = Backbone.Collection.extend({
+
+    model: fun.models.User,
+    
+    urlRoot: fun.conf.urls.usersDisable,
+    
+    url: function(){
+        return this.urlRoot;
+    }
+});
+
+
+fun.models.UsersSuspended = Backbone.Collection.extend({
+
+    model: fun.models.User,
+    
+    urlRoot: fun.conf.urls.usersSuspended,
+    
+    url: function(){
+        return this.urlRoot;
+    }
+});
+
+
 fun.models.Org = Backbone.Model.extend({
 
     idAttribute: 'uuid',
