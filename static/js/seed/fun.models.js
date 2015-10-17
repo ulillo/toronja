@@ -704,3 +704,49 @@ fun.models.Companies = Backbone.Collection.extend({
         return response.results;
     }
 });
+
+fun.models.CompaniesActive = Backbone.Collection.extend({
+
+    model: fun.models.Company,
+
+    urlRoot: fun.conf.urls.companiesActive,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.companies;
+    }
+});
+
+fun.models.CompaniesDisable = Backbone.Collection.extend({
+
+    model: fun.models.Company,
+
+    urlRoot: fun.conf.urls.companiesDisable,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.companies;
+    }
+});
+
+fun.models.companiesSuspended = Backbone.Collection.extend({
+
+    model: fun.models.Company,
+
+    urlRoot: fun.conf.urls.companiesSuspended,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.companies;
+    }
+});
+
