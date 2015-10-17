@@ -146,6 +146,8 @@ fun.conf.urls = {
     tasks: '/tasks/',
     resource: fun.utils.format('/resources/%s', fun.conf.uuidResource),
     resources: '/resources/',
+    resourcesImps: '/resources/imps/',
+    resourcesNodes: '/resources/nodes/',
     message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
     messages: '/messages/',
     company: fun.utils.format('/companies/%s', fun.conf.uuidCompany),

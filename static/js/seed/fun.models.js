@@ -105,6 +105,45 @@ fun.models.Task = Backbone.Model.extend({
     }
 });
 
+fun.models.Resource = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.resource,
+
+    url:function(){
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidResource, this.id);
+        } else {
+            url = fun.conf.urls.resources;
+        }
+        return url;
+    }
+})
+
+fun.models.Resources = Backbone.Collection.extend({
+    model: fun.models.Resource,
+
+    urlRoot: fun.conf.urls.resources,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
+
+fun.models.ResourcesActive = Backbone.Collection.extend({
+    model: fun.models.Resource,
+
+    urlRoot: fun.conf.urls.resourcesActive,
+
+    url: function(){
+        return this.urlRoot;
+    }
+})
+
 fun.models.Gateway = Backbone.Model.extend({
 
     idAttribute: 'uuid',
