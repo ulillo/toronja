@@ -1107,7 +1107,7 @@ fun.models.CompaniesDisable = Backbone.Collection.extend({
     }
 });
 
-fun.models.companiesSuspended = Backbone.Collection.extend({
+fun.models.CompaniesSuspended = Backbone.Collection.extend({
 
     model: fun.models.Company,
 
