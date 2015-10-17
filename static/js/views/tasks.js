@@ -549,10 +549,13 @@ fun.views.tasks = Backbone.View.extend({
         console.log('update task');
 
         taskUuid = this.uuid.text();
-        status = this.NuStatus.val();
+        var nuStatus = this.NuStatus.val();
+        status = this.status.val();
         comment = this.comment.val();
 
         update = new fun.models.Task({'uuid':taskUuid});
+
+        console.log(status, nuStatus);
 
 
 
