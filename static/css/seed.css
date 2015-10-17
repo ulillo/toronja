@@ -103,6 +103,14 @@ textarea {
     position: relative;
 }
 
+.navbar-small-brand {
+    display: block;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../img/logo.png) no-repeat 0 0;
+}
+
 .navbar-brand {
     display: block;
     width: 130px;
