@@ -786,6 +786,51 @@ fun.models.CampaignsActive = Backbone.Collection.extend({
     }
 });
 
+fun.models.CampaignsPaused = Backbone.Collection.extend({
+
+    model: fun.models.Campaign,
+
+    urlRoot: fun.conf.urls.campaignsPaused,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.campaigns;
+    }
+});
+
+fun.models.CampaignsInbound = Backbone.Collection.extend({
+
+    model: fun.models.Campaign,
+
+    urlRoot: fun.conf.urls.campaignsInbound,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.campaigns;
+    }
+});
+
+fun.models.CampaignsOutbound = Backbone.Collection.extend({
+
+    model: fun.models.Campaign,
+
+    urlRoot: fun.conf.urls.CampaignsOutbound,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.campaigns;
+    }
+});
+
 
 fun.models.Alert = Backbone.Model.extend({
 
@@ -805,7 +850,6 @@ fun.models.Alert = Backbone.Model.extend({
     }
 });
 
-
 fun.models.Alerts = Backbone.Collection.extend({
 
     model: fun.models.Alert,
@@ -818,6 +862,74 @@ fun.models.Alerts = Backbone.Collection.extend({
 
     parse: function(response){
         return response.alerts;
+    }
+});
+
+
+fun.models.Recording = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.recording,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidRecording, this.id);
+        } else {
+            url = fun.conf.urls.alerts;
+        }
+        return url;
+    }
+});
+
+fun.models.Recordings = Backbone.Collection.extend({
+
+    model: fun.models.Recording,
+
+    urlRoot: fun.conf.urls.recordings,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.recordings;
+    }
+});
+
+fun.models.Message = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.message,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidMessage, this.id);
+        } else {
+            url = fun.conf.urls.messages;
+        }
+        return url;
+    }
+});
+
+
+fun.models.Messages = Backbone.Collection.extend({
+
+    model: fun.models.Message,
+
+    urlRoot: fun.conf.urls.messages,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.messages;
     }
 });
 
