@@ -34,6 +34,12 @@ fun.strings = {
     gatewaysInbound: "Inbound Gateways",
     gatewaysOutbound: "Outbound Gateways",
 
+    //r late 15
+    fanCommWithTeams: "Fantastic communication with teams",
+    teamsAreGreat: "Teams are a great way for groups of people to communicate and work on campaigns together. Take a look at why they're great.",
+    flexibleResourceAccess: "Flexible resource access",
+    youCanAddResources: "You can add resources to your teams with more flexible levels of access (Admin, Write, Read).",
+
     validateRequired: "This field is required.",
     validateRemote: "Please fix this field.",
     validateEmail: "Please enter a valid email address.",
