@@ -41,6 +41,7 @@ fun.views.navbar = Backbone.View.extend({
         var context = sessionStorage.getItem("context");
 
         if (context !== null && context.trim() === 'System Admin') {
+            console.log('context selected for system admin interface');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             //this.$('#nav-new-cube').removeClass('hide').addClass('show');
             this.$('#nav-new-resource').removeClass('hide').addClass('show');
@@ -51,11 +52,13 @@ fun.views.navbar = Backbone.View.extend({
         } else {
             // if not admin, we check for user or organization accounts
             if (account !== context && context !== null){
+                console.log('check if context for organization interface');
                 // check if context !== null fix the stuff 
                 this.$('#nav-new-org').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('hide').addClass('show');
                 this.$('#nav-new-member').removeClass('hide').addClass('show');
             } else {
+                console.log('do the gods said that this is the user context interface?');
                 this.$('#nav-new-member').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('show').addClass('hide');
                 this.$('#nav-new-org').removeClass('hide').addClass('show');  
