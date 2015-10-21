@@ -557,8 +557,6 @@ fun.views.tasks = Backbone.View.extend({
 
         console.log(status, nuStatus);
 
-
-
         var newRandomStuff = {
             'status': status,
             'comments': {
@@ -570,6 +568,7 @@ fun.views.tasks = Backbone.View.extend({
         };
 
         update.save(newRandomStuff, {patch: true});
+        $('#taskModal').modal('hide');
 
     },
 
