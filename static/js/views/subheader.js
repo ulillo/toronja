@@ -78,6 +78,7 @@ fun.views.subheader = Backbone.View.extend({
             this.$('#head-nav-cubes').removeClass('show').addClass('hide');
             this.$('#head-nav-activity').removeClass('hide').addClass('show');
             this.$('#head-nav-recordings').removeClass('show').addClass('hide');
+            this.$('#head-nav-resources').removeClass('show').addClass('hide');
             this.$('#head-nav-accounts').removeClass('show').addClass('hide');
         } else {
             console.log('User account');

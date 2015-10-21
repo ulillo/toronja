@@ -51,177 +51,142 @@ fun.Router = Backbone.Router.extend({
 
     initialize: function(){
         'use strict';
-
         // navigation bar
         fun.instances.navbar = new fun.views.navbar({
             el:"#fun-navbar"
         });
-
         // sub header
         fun.instances.subheader = new fun.views.subheader({
             el:"#fun-subheader"
         });
-
         // landing
         fun.instances.landing = new fun.views.landing({
             el:"#fun-landing"
         });
-
         // features
         fun.instances.features = new fun.views.features({
             el:"#fun-features"
         });
-
         // enterprise
         fun.instances.enterprise = new fun.views.enterprise({
             el:"#fun-enterprise"
         });
-
         // pricing
         fun.instances.pricing = new fun.views.pricing({
             el:"#fun-pricing"
         });
-
         // terms
         fun.instances.terms = new fun.views.terms({
             el:"#fun-terms"
         });
-
         // privacy
         fun.instances.privacy = new fun.views.privacy({
             el:"#fun-privacy"
         });
-
         // security
         fun.instances.security = new fun.views.security({
             el:"#fun-security"
         });
-
         // status
         fun.instances.status = new fun.views.status({
             el:"#fun-status"
         });
-
         // help
         fun.instances.help = new fun.views.help({
             el:"#fun-help"
         });
-
         // login
         fun.instances.login = new fun.views.login({
             el:"#fun-login"
         });
-
         // dashboard
         fun.instances.dashboard = new fun.views.dashboard({
             el:"#fun-dashboard"
         });
-
         // orgs
         fun.instances.orgs = new fun.views.orgs({
             el:"#fun-orgs"
         });
-
         // profile
         fun.instances.profile = new fun.views.profile({
             el:"#fun-profile"
         });
-
         // activity
         fun.instances.activity = new fun.views.activity({
             el:"#fun-activity"
         });
-
         // members
         fun.instances.members = new fun.views.members({
             el:"#fun-members"
         });
-
         // teams
         fun.instances.teams = new fun.views.teams({
             el:"#fun-teams"
         });
-
         // phone
         fun.instances.phone = new fun.views.phone({
             el:"#fun-phone"
         });
-
         // gateways
         fun.instances.gateways = new fun.views.gateways({
             el:"#fun-gateways"
         });
-
         // tasks
         fun.instances.tasks = new fun.views.tasks({
             el:"#fun-tasks"
         });
-
         // companies
         fun.instances.companies = new fun.views.companies({
             el:"#fun-companies"
         });
-
         // campaigns
         fun.instances.campaigns = new fun.views.campaigns({
             el:"#fun-campaigns"
         });
-
         // contacts
         fun.instances.contacts = new fun.views.contacts({
             el:"#fun-contacts"
         });
-        
         // cubes
         fun.instances.cubes = new fun.views.cubes({
             el:"#fun-cubes"
         });
-
         // recordings
         fun.instances.recordings = new fun.views.recordings({
             el:"#fun-recordings"
         });
-
         // accounts
         fun.instances.accounts = new fun.views.accounts({
             el:"#fun-accounts"
         });
-
         // resources
         fun.instances.resources = new fun.views.resources({
             el:"#fun-resources"
         });
-
         // messages
         fun.instances.messages = new fun.views.messages({
             el:"#fun-messages"
         });
-        
         // sounds
         fun.instances.sounds = new fun.views.sounds({
             el:"#fun-sounds"
         });
-
         // reports
         fun.instances.reports = new fun.views.reports({
             el:"#fun-reports"
         });
-
         // signup
         fun.instances.signup = new fun.views.signup({
             el:"#fun-signup"
         });
-        
         // settings
         fun.instances.settings = new fun.views.settings({
             el:"#fun-settings"
         });
-
         // extra
         fun.instances.extra = new fun.views.extra({
             el:"#fun-extra"
         });
-
         // footer
         fun.instances.footer = new fun.views.footer({
             el:"#fun-footer"
@@ -231,19 +196,17 @@ fun.Router = Backbone.Router.extend({
     home: function(){
         'use strict';
         console.log('getting account and context');
-
         // get account and context
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
-
         console.log(this.account, this.context);
-
+        // cognitive, i don't know car engine by account and context.
         if (this.account === this.context){
             console.log('account same as context');
         } else {
             console.log('missing or different context');
         }
-
+        // see if user is inside the dungeon or out of the dungeon.
         if(fun.utils.loggedIn()){
             fun.utils.redirect(fun.conf.hash.dashboard);
         } else {
