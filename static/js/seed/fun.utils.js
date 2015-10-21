@@ -482,8 +482,7 @@ var Charts = function () {
     
     
     /** 
-    * Move this function to toronja code
-    * - update for timezone support on charts
+    * - Please update for timezone support on charts
 
     $.plot("#placeholder", [d], {
         xaxis: {
