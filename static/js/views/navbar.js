@@ -57,18 +57,24 @@ fun.views.navbar = Backbone.View.extend({
                 console.log('check if context for organization interface');
                 // check if context !== null fix the stuff 
                 this.$('#nav-new-resource').removeClass('show').addClass('hide');
+                this.$('#nav-new-account').removeClass('show').addClass('hide');
                 this.$('#nav-new-gateway').removeClass('show').addClass('hide');
                 this.$('#nav-new-org').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('hide').addClass('show');
                 this.$('#nav-new-member').removeClass('hide').addClass('show');
+                this.$('#nav-new-contact').removeClass('hide').addClass('show');
+                this.$('#nav-new-campaign').removeClass('hide').addClass('show');
                 
             } else {
                 console.log('do the gods said that this is the user context interface?');
                 this.$('#nav-new-resource').removeClass('show').addClass('hide');
+                this.$('#nav-new-account').removeClass('show').addClass('hide');
                 this.$('#nav-new-gateway').removeClass('show').addClass('hide');
                 this.$('#nav-new-member').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('show').addClass('hide');
-                this.$('#nav-new-org').removeClass('hide').addClass('show');  
+                this.$('#nav-new-org').removeClass('hide').addClass('show');
+                this.$('#nav-new-contact').removeClass('hide').addClass('show');
+                this.$('#nav-new-campaign').removeClass('hide').addClass('show');
             }
         }
     },
