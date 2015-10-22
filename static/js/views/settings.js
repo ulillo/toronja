@@ -117,8 +117,10 @@ fun.views.settings = Backbone.View.extend({
         'use strict'
         event.preventDefault();
         console.log('delete account');
-
-        var confirm = new fun.models.User({'account':this.accountProfile['account']});
+        var confirm = new fun.models.User({
+            'uuid':this.accountProfile['uuid'],
+            'account':this.accountProfile['account']
+        });
         confirm.destroy();
     }
 
