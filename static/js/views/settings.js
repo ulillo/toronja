@@ -8,19 +8,19 @@ fun.views.settings = Backbone.View.extend({
         "click #user-delete-btn": "deleteUserAccount"
     },
     
-    /**
+    /*
     * Class constructor
     */
     initialize: function(options){
         fun.containers.settings = this.$el;
     },
 
-    /**
+    /*
     * Render view
     */
     render: function(account){
         'use strict';
-        //view cache
+        // view cache this
         var view = this,
             accountProfile = JSON.parse(localStorage.getItem("profile")),
             email,
@@ -40,28 +40,22 @@ fun.views.settings = Backbone.View.extend({
         }
 
         template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
-
-        
         this.$el.html(template);
-
-
+        // assign this variable values
         this.email = this.$('#user_email');
         this.firstName = this.$('#user_first_name');
         this.lastName = this.$('#user_last_name');
         this.location = this.$('#user_location');
         this.company = this.$('#user_company');
         this.url = this.$('#user_url');      
-
-        
+        // get stuff from account profile
         this.firstName.val(this.accountProfile['first_name'] || '');
         this.lastName.val(this.accountProfile['last_name'] || '');
         this.location.val(this.accountProfile['location'] || '');
         this.company.val(this.accountProfile['company'] || '');
         this.url.val(this.accountProfile['url'] || '');
-
         this.email.val(this.accountProfile['email'] || '');
-
-
+        // show the HTML template
         this.$el.removeClass("hide").addClass("show");
     },
 
