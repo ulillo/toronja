@@ -1,9 +1,8 @@
 fun.views.settings = Backbone.View.extend({
 
-    /**
+    /*
     * Bind the event functions to the different HTML elements
     */
-    // click events missing
     events: {
         "click #user-update-btn": "updateUserAccount",
         "click #user-delete-btn": "deleteUserAccount"
@@ -66,7 +65,7 @@ fun.views.settings = Backbone.View.extend({
         this.$el.removeClass("hide").addClass("show");
     },
 
-    /**
+    /*
     * Set profile information
     */
     setProfileInformation: function(model){
@@ -77,14 +76,21 @@ fun.views.settings = Backbone.View.extend({
     updateUserAccount: function(event){
         'use strict';
         event.preventDefault();
-        console.log('like a ninja');
+        var accountInformation,
+            email, 
+            first_name,
+            last_name,
+            location,
+            company,
+            confirm,
+            url;
 
-        var confirm = new fun.models.User({
+        console.log('update user account settings');
+
+        confirm = new fun.models.User({
             'uuid': this.accountProfile['uuid'],
             'account': this.accountProfile['account']
         });
-
-        var email, first_name, last_name, location, company, url;
 
         email = this.email.val();
         first_name = this.firstName.val();
@@ -93,7 +99,7 @@ fun.views.settings = Backbone.View.extend({
         company = this.company.val();
         url = this.url.val();
 
-        var newRandomStuff = {
+        accountInformation = {
             'first_name': first_name,
             'last_name': last_name,
             'email': email,
@@ -102,9 +108,9 @@ fun.views.settings = Backbone.View.extend({
             'url': url
         };
 
-        console.log(newRandomStuff);
+        confirm.save(accountInformation, {patch: true});
 
-        confirm.save(newRandomStuff, {patch: true});
+        // display a confirmation message or alert the user that something was wrong.
     },
 
     deleteUserAccount: function(event){
