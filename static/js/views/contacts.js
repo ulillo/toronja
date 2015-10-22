@@ -31,6 +31,7 @@ fun.views.contacts = Backbone.View.extend({
             this.contactFirstName = this.$('#contact_first_name');
             this.contactLastName = this.$('#contact_last_name');
             this.newPhoneNumber = this.$('#new-phone-number');
+            this.newEmail = this.$('#new-email'); //contact_new_email
             // directory fields
             this.directoryName = this.$('#directory_name');
             this.directoryDescription = this.$('#directory_description');
@@ -281,5 +282,6 @@ fun.views.contacts = Backbone.View.extend({
         view.$('#contact_first_name').val('');
         view.$('#contact_last_name').val('');
         view.$('#new-phone-number').val('');
+        view.$('#new-email').val('');
     }
 });
