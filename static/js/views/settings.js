@@ -79,7 +79,10 @@ fun.views.settings = Backbone.View.extend({
         event.preventDefault();
         console.log('like a ninja');
 
-        var confirm = new fun.models.User({'account':this.accountProfile['account']});
+        var confirm = new fun.models.User({
+            'uuid': this.accountProfile['uuid'],
+            'account': this.accountProfile['account']
+        });
 
         var email, first_name, last_name, location, company, url;
 
