@@ -534,6 +534,10 @@ fun.views.companies = Backbone.View.extend({
                 //account = response.get('account');
                 //email = response.get('email');
 
+                var test = response.get('status');
+
+                console.log(test);
+
                 companyUuid.html(response.get('uuid'));
 
                 account.html(response.get('account'));
@@ -542,7 +546,7 @@ fun.views.companies = Backbone.View.extend({
 
                 companyName.html(response.get('company_name'));
 
-                companyStatus.html(response.get('status', 'voz'));
+                companyStatus.html();
 
                 streetAddress.html(response.get('street_address'));
                 cityTown.html(response.get('city_town'));
