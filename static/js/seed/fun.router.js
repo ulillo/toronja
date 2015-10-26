@@ -386,6 +386,10 @@ fun.Router = Backbone.Router.extend({
                 fun.instances.companies.renderDisableCompaniesList(
                     resources.disable
                 );
+
+                fun.instances.companies.renderSuspendedCompaniesList(
+                    resources.suspended
+                );
             }
         };
 

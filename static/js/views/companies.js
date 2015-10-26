@@ -289,6 +289,82 @@ fun.views.companies = Backbone.View.extend({
         noDisableCompanies.html(template);
     },
 
+    /*
+    * Render suspended companies list
+    */
+    renderSuspendedCompaniesList: function(companies){
+        'use strict';
+        var template,
+            suspendedCompanies;
+
+        console.log('render suspended companies list');
+
+        if (companies) {
+            this.companies = companies;
+        }
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.companiesSuspendedTab)
+        );
+
+        suspendedCompanies = this.$('#suspended-companies-tab');
+
+        suspendedCompanies.html(template);
+
+        this.tbody = this.$('#suspended-companies-list > tbody');
+
+        this.$el.removeClass("hide").addClass("show");
+        
+        this.renderSuspendedCompanyRows();
+    },
+
+    /*
+    * Render suspended company rows
+    */
+    renderSuspendedCompanyRows: function(){
+        'use strict';
+        var length,
+            i = 0,
+            rows,
+            data,
+            template;
+        // companies length
+        length = this.companies.length;
+
+        console.log('suspended companies length: ',length);
+
+        if (length > 0){
+            rows = this.tbody.html('');
+            for (i; i < length; ++i) {
+                data = _.extend(this.companies.at(i).toJSON(), {i:i});
+
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.companyRow)
+                )(data);
+
+                rows.append(template);
+            }
+        } else {
+            this.noSuspendedCompanies();
+        }
+    },
+
+    /*
+    * No suspended companies
+    */
+    noSuspendedCompanies: function(){
+        'use strict';
+        var template,
+            noSuspendedCompanies;
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.warning)
+        )({message:'noDataAvailable'});
+
+        noSuspendedCompanies = this.$('#no-suspended-companies');
+
+        noSuspendedCompanies.html(template);
+    },
+
 
     /*
     * Create company
