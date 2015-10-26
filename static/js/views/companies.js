@@ -34,6 +34,9 @@ fun.views.companies = Backbone.View.extend({
             this.password = this.$('#reg_signup_password');
             this.email = this.$('#reg_signup_email');
 
+            // check this shit out
+            this.companyStatus = this.$('reg_company_status');
+
             // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
             this.streetAddress = this.$('#reg_street_address');
@@ -464,6 +467,7 @@ fun.views.companies = Backbone.View.extend({
             email,
             company,
             name,
+            status,
             companyUuid,
             companyName,
             streetAddress,
@@ -493,6 +497,7 @@ fun.views.companies = Backbone.View.extend({
         email = this.email;
 
         companyUuid = this.$('#company-uuid');
+        companyStatus = this.companyStatus;
 
         companyName = this.companyName;
         streetAddress = this.streetAddress
@@ -535,6 +540,8 @@ fun.views.companies = Backbone.View.extend({
                 email.html(response.get('email'));
 
                 companyName.html(response.get('company_name'));
+
+                companyStatus.html(response.get('status'));
 
                 streetAddress.html(response.get('street_address'));
                 cityTown.html(response.get('city_town'));
