@@ -542,7 +542,7 @@ fun.views.companies = Backbone.View.extend({
 
                 companyName.html(response.get('company_name'));
 
-                companyStatus.html(response.get('status'));
+                companyStatus.html(response.get('status', 'voz'));
 
                 streetAddress.html(response.get('street_address'));
                 cityTown.html(response.get('city_town'));
