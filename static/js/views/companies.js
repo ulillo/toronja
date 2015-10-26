@@ -35,7 +35,7 @@ fun.views.companies = Backbone.View.extend({
             this.email = this.$('#reg_signup_email');
 
             // check this shit out
-            this.companyStatus = this.$('reg_company_status');
+            this.companyStatus = this.$('#reg_company_status');
 
             // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
