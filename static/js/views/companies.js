@@ -470,6 +470,7 @@ fun.views.companies = Backbone.View.extend({
             status,
             companyUuid,
             companyName,
+            companyStatus,
             streetAddress,
             cityTown,
             stateProvince,
