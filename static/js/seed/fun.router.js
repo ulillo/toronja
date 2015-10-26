@@ -290,8 +290,6 @@ fun.Router = Backbone.Router.extend({
             done: new fun.models.TasksDone(),
         };
 
-        // onSuccess we're rendering multiple times the same campaigns.render() and that is bananas.
-
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
@@ -360,18 +358,14 @@ fun.Router = Backbone.Router.extend({
             fun.utils.format('username: %s, context: %s', account, context)
         );
 
-        // first of all here on resources the stuff seems to be fine.
-        // new note: wut?
         resources = {
             //account: new fun.models.Account({'account':account}),
             user: new fun.models.User({'account':account}),
             companies: new fun.models.Companies(),
-            active: new fun.models.Companies({'status':'active'}),
-            disable: new fun.models.Companies({'status':'disable'}),
+            active: new fun.models.CompaniesActive(),
+            disable: new fun.models.CompaniesDisable(),
+            suspended: new fun.models.CompaniesSuspended()
         };
-
-        // but, onSuccess we're rendering multiple times the same campaigns.render()
-        // and that stuff is bananas. ok
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){

@@ -1170,4 +1170,3 @@ fun.models.CompaniesSuspended = Backbone.Collection.extend({
         return response.companies;
     }
 });
-
