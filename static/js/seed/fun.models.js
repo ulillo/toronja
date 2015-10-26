@@ -1137,7 +1137,7 @@ fun.models.CompaniesActive = Backbone.Collection.extend({
     },
 
     parse: function(response){
-        return response.companies;
+        return response.results;
     }
 });
 
@@ -1152,7 +1152,7 @@ fun.models.CompaniesDisable = Backbone.Collection.extend({
     },
 
     parse: function(response){
-        return response.companies;
+        return response.results;
     }
 });
 
@@ -1167,6 +1167,6 @@ fun.models.CompaniesSuspended = Backbone.Collection.extend({
     },
 
     parse: function(response){
-        return response.companies;
+        return response.results;
     }
 });
