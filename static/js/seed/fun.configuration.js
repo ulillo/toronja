@@ -247,6 +247,7 @@ fun.conf.templates = {
     allCompanies: fun.utils.format('%s/allCompanies.html', fun.conf.html),
     companiesActiveTab: fun.utils.format('%s/companiesActiveTab.html', fun.conf.html),
     companiesDisableTab: fun.utils.format('%s/companiesDisableTab.html', fun.conf.html),
+    companiesSuspendedTab: fun.utils.format('%s/companiesSuspendedTab.html', fun.conf.html),
     companyRow: fun.utils.format('%s/companyRow.html', fun.conf.html),
     companyListItem: fun.utils.format('%s/companyListItem.html', fun.conf.html),
     help: fun.utils.format('%s/help.html', fun.conf.html),
