@@ -131,7 +131,7 @@ fun.views.settings = Backbone.View.extend({
         //confirm.destroy();
         $('#deleteAccountModal').modal('hide');
         $('#deleteAccountModal').on('hidden.bs.modal', function(e){
-            fun.utils.logout(callbacks);
+            fun.utils.logout();
         });
     },
 
