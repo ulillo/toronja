@@ -118,8 +118,9 @@ fun.views.settings = Backbone.View.extend({
             'account':this.accountProfile['account']
         });
         confirm.destroy();
+        $('#deleteAccountModal').modal('hide');
         fun.utils.logout();
-        fun.utils.redirect(fun.conf.hash.landing);
+        //fun.utils.redirect(fun.conf.hash.landing);
     },
 
     renderOrganizationList: function(){
