@@ -113,21 +113,21 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         console.log('delete account');
-        var confirm = new fun.models.User({
+        var confirm, 
+            callbacks;
+        confirm = new fun.models.User({
             'uuid':this.accountProfile['uuid'],
             'account':this.accountProfile['account']
         });
-
-        var callbacks = {
+        callbacks = {
             success: function(){
-                console.log("inside callbacks success, but we don't see any of this shit.");
+                console.log("inside success, but we don't see any of this shit.");
             },
             error: function(){
                 fun.utils.redirect(fun.conf.hash.home);
             }
         };
-
-        //confirm.destroy();
+        confirm.destroy();
         $('#deleteAccountModal').modal('hide');
         $('#deleteAccountModal').on('hidden.bs.modal', function(e){
             fun.utils.logout(callbacks);

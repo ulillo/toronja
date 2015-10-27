@@ -112,33 +112,24 @@ fun.utils.logout = function(callbacks){
         type : 'GET',
         dataType : 'json',
         success : function(data, textStatus, jqXHR) {
-
-            // this is kind of crazy.
-
-            // why? cuz it don't work anymore... 
-
+            // this is bananas... why? cuz it don't work anymore... 
             // Clear the html from the containers
             for (var i in fun.containers) {
                 if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
             }
-
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
             }
         },
         error : function(jqXHR, textStatus, errorThrown) {
-            
-            console.log('cago en la puta');
-
             // Clear the html from the containers
             for (var i in fun.containers) {
                 if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
             }
-
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error();
             }
