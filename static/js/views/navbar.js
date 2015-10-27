@@ -79,8 +79,10 @@ fun.views.navbar = Backbone.View.extend({
 
         var navLanding = this.$('#fun-nav-landing');
         navLanding.html(template);
-
-        $("#brand-n-stuff").removeClass("fun-brand");
+        
+        if ($("#brand-n-stuff").hasClass("fun-brand")){
+            $("#brand-n-stuff").removeClass("fun-brand");
+        }
     },
 
     renderDashboard: function(){

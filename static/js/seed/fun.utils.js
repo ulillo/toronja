@@ -175,7 +175,7 @@ fun.utils.translate = function translate(key) {
 fun.utils.getTemplate = function(url){
     if ( !fun.cache.templates[url] ) {
         var response = $.ajax(url, {
-            async : false,
+            async : true,
             dataTypeString : 'html'
         });
         fun.cache.templates[url] = response.responseText;
