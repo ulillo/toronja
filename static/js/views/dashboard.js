@@ -24,7 +24,7 @@ fun.views.dashboard = Backbone.View.extend({
         // Render view function
         'use strict';
         var template;
-        
+
         if (typeof(account) === 'undefined'){
             this.account = localStorage.getItem("username");
         } else {
@@ -75,6 +75,7 @@ fun.views.dashboard = Backbone.View.extend({
                 record_avg: 0
             };
         }
+        console.log('IN HERE!!!',this.summary,this.billing);
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todaySummary)
         )(data);
@@ -105,9 +106,9 @@ fun.views.dashboard = Backbone.View.extend({
 
         //seconds = _.pairs(this.seconds)
 
-        minutes = _.pairs(this.minutes)
+        minutes = _.pairs(this.minutes);
 
-        records = _.pairs(this.records)
+        records = _.pairs(this.records);
 
         //data.push({
         //    data: seconds,
@@ -122,7 +123,7 @@ fun.views.dashboard = Backbone.View.extend({
         data.push({
             data: records,
             label: 'Records',
-            points: {show: false}, 
+            points: {show: false},
             lines: {lineWidth: 2, fill: false}
         });
         

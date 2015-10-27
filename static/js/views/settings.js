@@ -7,7 +7,6 @@ fun.views.settings = Backbone.View.extend({
         "click #user-update-btn": "updateUserAccount",
         "click #user-delete-btn": "deleteUserAccount"
     },
-    
     /*
     * Class constructor
     */
