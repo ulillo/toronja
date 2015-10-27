@@ -125,7 +125,7 @@ fun.views.dashboard = Backbone.View.extend({
             points: {show: false},
             lines: {lineWidth: 2, fill: false}
         });
-        
+        console.log('TODAY ACTIVITY!',data);
         // html template
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todayActivityChart)
