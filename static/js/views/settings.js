@@ -54,6 +54,9 @@ fun.views.settings = Backbone.View.extend({
         this.company.val(this.accountProfile['company'] || '');
         this.url.val(this.accountProfile['url'] || '');
         this.email.val(this.accountProfile['email'] || '');
+
+        this.renderOrganizationList();
+
         // show the HTML template
         this.$el.removeClass("hide").addClass("show");
     },
@@ -107,7 +110,7 @@ fun.views.settings = Backbone.View.extend({
     },
 
     deleteUserAccount: function(event){
-        'use strict'
+        'use strict';
         event.preventDefault();
         console.log('delete account');
         var confirm = new fun.models.User({
@@ -115,6 +118,56 @@ fun.views.settings = Backbone.View.extend({
             'account':this.accountProfile['account']
         });
         confirm.destroy();
+    },
+
+    renderOrganizationList: function(){
+        'use strict';
+        var vonCount = 0,
+            account,
+            length,
+            orgData,
+            itemData,
+            itemTemplate;
+
+        console.log('render organization list');
+
+        account = JSON.parse(localStorage.getItem("profile"))
+
+        // is there something to get shit from a js object with .get() on underscore?
+        // if yes, please replace the ['stuff']
+
+        if (account) {
+            this.orgs = account["orgs"];
+        } else {
+            this.orgs = [];
+        }
+
+        this.orgList = this.$('#settings-orgs-ul');
+
+        if (this.orgs){
+            length = this.orgs.length;
+        }
+
+        if (length > 0){
+
+            // i, search _.each function
+            // fuck! pretty please use _.each
+            for (vonCount; vonCount < length; ++vonCount) {
+
+                orgData = {
+                    //'account': account["account"],
+                    'org': this.orgs[vonCount]
+                };
+
+                itemData = _.extend(orgData, {counter:vonCount + 1});
+
+                itemTemplate = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.settingsOrgListItem)
+                )(itemData);
+
+                this.accountList.append(itemTemplate);
+            }
+        }
     }
 
 });
