@@ -165,7 +165,7 @@ fun.views.settings = Backbone.View.extend({
                     fun.utils.getTemplate(fun.conf.templates.settingsOrgListItem)
                 )(itemData);
 
-                this.accountList.append(itemTemplate);
+                this.orgList.append(itemTemplate);
             }
         }
     }
