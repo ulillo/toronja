@@ -113,19 +113,19 @@ fun.utils.logout = function(callbacks){
         dataType : 'json',
         success : function(data, textStatus, jqXHR) {
 
+            // Clear the html from the containers
+            for (var i in fun.containers) {
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
+                    fun.containers[i].empty();
+                }
+            }
+
             // this is kind of crazy.
 
             // why? cuz it don't work anymore... 
 
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
-            }
-
-            // Clear the html from the containers
-            for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader' && i !== 'landing'){
-                    fun.containers[i].empty();
-                }
             }
         },
         error : function(jqXHR, textStatus, errorThrown) {

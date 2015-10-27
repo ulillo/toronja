@@ -117,11 +117,21 @@ fun.views.settings = Backbone.View.extend({
             'uuid':this.accountProfile['uuid'],
             'account':this.accountProfile['account']
         });
+
+
+        var callbacks = {
+            success: function(){
+                console.log('inside callbacks success');
+            },
+            error: function(){
+                console.log('mexico lindo y querido');
+            }
+        };
+
         //confirm.destroy();
         $('#deleteAccountModal').modal('hide');
         $('#deleteAccountModal').on('hidden.bs.modal', function(e){
-            fun.utils.logout();
-            fun.utils.redirect(fun.conf.hash.home);
+            fun.utils.logout(callbacks);
         });
     },
 
