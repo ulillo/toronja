@@ -208,10 +208,8 @@ fun.Router = Backbone.Router.extend({
         }
         // see if user is inside the dungeon or out of the dungeon.
         if(fun.utils.loggedIn()){
-            $("#brand-n-stuff").addClass("fun-brand");
             fun.utils.redirect(fun.conf.hash.dashboard);
         } else {
-            $("#brand-n-stuff").removeClass("fun-brand");
             fun.utils.redirect(fun.conf.hash.landing);
         }
     },
@@ -731,8 +729,6 @@ fun.Router = Backbone.Router.extend({
 
         if(fun.utils.loggedIn()){
 
-            $("#brand-n-stuff").addClass("fun-brand");
-
             dashboard = translate('dashboard');
 
             fun.utils.hideAll();
@@ -751,7 +747,6 @@ fun.Router = Backbone.Router.extend({
                 });
             }
         } else {
-            $("#brand-n-stuff").removeClass("fun-brand");
             fun.utils.redirect(fun.conf.hash.login);
         }
         fun.instances.footer.render();
