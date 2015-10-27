@@ -117,31 +117,30 @@ fun.utils.logout = function(callbacks){
 
             // why? cuz it don't work anymore... 
 
-            console.log('aqui en success');
+            // Clear the html from the containers
+            for (var i in fun.containers) {
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
+                    fun.containers[i].empty();
+                }
+            }
 
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
             }
-
-            // Clear the html from the containers
-            for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
-                    fun.containers[i].empty();
-                }
-            }
         },
         error : function(jqXHR, textStatus, errorThrown) {
-            if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
-                callbacks.error(jqXHR, textStatus, errorThrown);
-            }
-
-            console.log('o abajo en el hell del error de la shit y todos los callbacks');
+            
+            console.log('cago en la puta');
 
             // Clear the html from the containers
             for (var i in fun.containers) {
                 if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
+            }
+
+            if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
+                callbacks.error();
             }
         }
     });

@@ -118,20 +118,19 @@ fun.views.settings = Backbone.View.extend({
             'account':this.accountProfile['account']
         });
 
-
         var callbacks = {
             success: function(){
-                console.log('inside callbacks success');
+                console.log("inside callbacks success, but we don't see any of this shit.");
             },
             error: function(){
-                console.log('mexico lindo y querido');
+                fun.utils.redirect(fun.conf.hash.home);
             }
         };
 
         //confirm.destroy();
         $('#deleteAccountModal').modal('hide');
         $('#deleteAccountModal').on('hidden.bs.modal', function(e){
-            fun.utils.logout();
+            fun.utils.logout(callbacks);
         });
     },
 
