@@ -118,6 +118,8 @@ fun.views.settings = Backbone.View.extend({
             'account':this.accountProfile['account']
         });
         confirm.destroy();
+        fun.utils.logout();
+        fun.utils.redirect(fun.conf.hash.landing);
     },
 
     renderOrganizationList: function(){
