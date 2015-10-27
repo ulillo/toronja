@@ -39,8 +39,13 @@ fun.strings = {
     areYouSureWantToLeave: "Are you sure you want to leave?",
     youWillLoseAccessToAll: "You will lose access to all campaigns, teams, and resources.",
 
+    primaryEmailForAccountNotification: "Your primary email address will be used for account-related notifications (e.g. account changes and billing receipts) as well as any web-based operations",
+    notVerifiedAnyEmail: "You have not verified any email addresses. We recommend you verify at least one email for password recovery",
     accountCurrentlyOwner: "Your account is currently an owner on these organizations",
     mustTransferOwnershipOrDeleteOrgs: "You must transfer ownership or delete these organizations before you can delete your account",
+
+    accountCurrentlyAdmin: "Your account is currently an administrator on these systems",
+    mustTransferSystems: "You must transfer privileges or delete these systems before you can delete your user",
 
     //r late 15
     fanCommWithTeams: "Fantastic communication with teams",

@@ -160,7 +160,7 @@
                                     <h3 class="panel-title"><%= translate("deleteAccount") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p><%= translate("accountCurrentlyOwner") %>: </p>
+                                    <p><%= translate("accountCurrentlyOwner") %>:</p>
 
                                     <p><%= translate("mustTransferOwnershipOrDeleteOrgs") %>.</p>
 
@@ -180,9 +180,9 @@
                                     <h3 class="panel-title"><%= translate("systemAdmin") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your account is currently an administrator on these systems: </p>
+                                    <p><%= translate("accountCurrentlyAdmin") %>:</p>
 
-                                    <p>You must transfer privileges or delete these systems before you can delete your user.</p>
+                                    <p><%= translate("mustTransferSystems") %>.</p>
 
                                     <button id="user-admin-btn" class="btn btn-danger btn-block"><%= translate("systemAdmin") %></button>
                       
@@ -205,9 +205,9 @@
                                     <h3 class="panel-title"><%= translate("email") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your primary email address will be used for account-related notifications (e.g. account changes and billing receipts) as well as any web-based operations.</p>
+                                    <p><%= translate("primaryEmailForAccountNotification") %>.</p>
 
-                                    <p>You have not verified any email addresses. We recommend you verify at least one email for password recovery.</p>
+                                    <p><%= translate("notVerifiedAnyEmail") %>.</p>
 
                                     <ul class="list-group">
                                         <li class="list-group-item">
