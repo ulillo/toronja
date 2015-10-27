@@ -119,6 +119,9 @@ fun.views.settings = Backbone.View.extend({
         });
         //confirm.destroy();
         $('#deleteAccountModal').modal('hide');
+        $('#deleteAccountModal').on('hidden.bs.modal', function(e){
+            fun.utils.logout()
+        })
         //fun.utils.logout();
         //fun.utils.redirect(fun.conf.hash.landing);
     },
