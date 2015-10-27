@@ -70,8 +70,6 @@ fun.utils.login = function(account, password, callbacks) {
             }
         },
         error: function (xhr, textStatus, thrownError){
-            console.log('abajo m cago');
-            $("#brand-n-stuff").addClass("fun-brand");
             if (_.isFunction(callbacks.error)){
                 callbacks.error(xhr, textStatus, thrownError);
             }
@@ -134,7 +132,6 @@ fun.utils.logout = function(callbacks){
                     fun.containers[i].empty();
                 }
             }
-            $("#brand-n-stuff").removeClass("fun-brand");
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error();
             }
