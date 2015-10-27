@@ -164,8 +164,10 @@
 
                                     <p><%= translate("mustTransferOwnershipOrDeleteOrgs") %>.</p>
 
+                                    <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal"><%= translate("deleteAccount") %></button>
+                                    <!--
                                     <button id="user-delete-btn" class="btn btn-danger btn-block"><%= translate("deleteAccount") %></button>
-                      
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -427,3 +429,28 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><%= translate("leaveOrganization") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p><%= translate("areYouSureWantToLeave") %>?</p>
+
+                <p><%= translate("youWillLoseAccessToAll") %>.</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><%= translate("cancel") %></button>
+                <button type="button" id='ok-leave-btn' class="btn btn-primary"><%= translate("ok") %></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
