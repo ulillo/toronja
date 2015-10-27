@@ -38,6 +38,7 @@ fun.strings = {
     youWillBeMissed: "You will be missed.",
     areYouSureWantToLeave: "Are you sure you want to leave?",
     youWillLoseAccessToAll: "You will lose access to all campaigns, teams, and resources.",
+    leaveOrganization: "Leave Organization",
 
     primaryEmailForAccountNotification: "Your primary email address will be used for account-related notifications (e.g. account changes and billing receipts) as well as any web-based operations",
     notVerifiedAnyEmail: "You have not verified any email addresses. We recommend you verify at least one email for password recovery",
