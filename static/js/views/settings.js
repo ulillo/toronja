@@ -133,7 +133,7 @@ fun.views.settings = Backbone.View.extend({
         account = JSON.parse(localStorage.getItem("profile"))
 
         if (account) {
-            this.orgs = account["orgs"];
+            this.orgs = account["orgs"] || []; 
         } else {
             this.orgs = [];
         }
