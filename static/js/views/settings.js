@@ -117,9 +117,9 @@ fun.views.settings = Backbone.View.extend({
             'uuid':this.accountProfile['uuid'],
             'account':this.accountProfile['account']
         });
-        confirm.destroy();
+        //confirm.destroy();
         $('#deleteAccountModal').modal('hide');
-        fun.utils.logout();
+        //fun.utils.logout();
         //fun.utils.redirect(fun.conf.hash.landing);
     },
 
