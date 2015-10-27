@@ -75,7 +75,6 @@ fun.views.dashboard = Backbone.View.extend({
                 record_avg: 0
             };
         }
-        console.log('IN HERE!!!',this.summary,this.billing);
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todaySummary)
         )(data);
@@ -126,8 +125,7 @@ fun.views.dashboard = Backbone.View.extend({
             points: {show: false},
             lines: {lineWidth: 2, fill: false}
         });
-
-        console.log('THIS DATA!!!',data);
+        
         // html template
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todayActivityChart)

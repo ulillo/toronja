@@ -88,7 +88,6 @@ fun.views.companies = Backbone.View.extend({
         this.tbody = this.$('#companies-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderCompanyRows();
     },
 
