@@ -97,6 +97,9 @@ fun.strings = {
     companyDetails: "Company Details",
     companyDetail: "Company Detail",
 
+    cancel: "Cancel",
+    ok: "Ok",
+
     exportCSV: "Export CSV",
     title: "Title",
     label: "Lable",
