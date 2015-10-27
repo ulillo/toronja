@@ -63,8 +63,7 @@ fun.utils.login = function(account, password, callbacks) {
 
             //$.cookie( 'account', account );
 
-            console.log('aque?? arriba succes?');
-            $("#brand-n-stuff").addClass("fun-brand");
+            // so... this stuff never works...
 
             if (_.isFunction(callbacks.success)){
                 callbacks.success(data);
@@ -72,6 +71,7 @@ fun.utils.login = function(account, password, callbacks) {
         },
         error: function (xhr, textStatus, thrownError){
             console.log('abajo m cago');
+            $("#brand-n-stuff").addClass("fun-brand");
             if (_.isFunction(callbacks.error)){
                 callbacks.error(xhr, textStatus, thrownError);
             }
