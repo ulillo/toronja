@@ -124,6 +124,7 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         var vonCount = 0,
             account,
+            orgList,
             itemData,
             itemTemplate;
 
@@ -137,13 +138,11 @@ fun.views.settings = Backbone.View.extend({
             this.orgs = [];
         }
 
-        this.orgList = this.$('#settings-orgs-ul');
+        orgList = this.$('#settings-orgs-ul');
 
         if (this.orgs.length > 0){
 
             _.each(this.orgs, function(o) {
-
-                console.log(o);
 
                 itemData = {'org': o, 'counter': vonCount + 1};
 
@@ -151,7 +150,7 @@ fun.views.settings = Backbone.View.extend({
                     fun.utils.getTemplate(fun.conf.templates.settingsOrgListItem)
                 )(itemData);
 
-                this.orgList.append(itemTemplate);
+                orgList.append(itemTemplate);
             });
         }
     }
