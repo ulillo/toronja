@@ -34,6 +34,14 @@ fun.strings = {
     gatewaysInbound: "Inbound Gateways",
     gatewaysOutbound: "Outbound Gateways",
 
+    youLeft: "You left",
+    youWillBeMissed: "You will be missed.",
+    areYouSureWantToLeave: "Are you sure you want to leave?",
+    youWillLoseAccessToAll: "You will lose access to all campaigns, teams, and resources.",
+
+    accountCurrentlyOwner: "Your account is currently an owner on these organizations",
+    mustTransferOwnershipOrDeleteOrgs: "You must transfer ownership or delete these organizations before you can delete your account",
+
     //r late 15
     fanCommWithTeams: "Fantastic communication with teams",
     teamsAreGreat: "Teams are a great way for groups of people to communicate and work on campaigns together. Take a look at why they're great.",

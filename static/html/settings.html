@@ -121,24 +121,6 @@
 
                 <div id="tabs3-pane2" class="tab-pane">
 
-                    <!-- <div class="row">
-
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><%= translate("changeUsername") %></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Changing your username can have unintended side effects.</p>
-
-                                    <button id="update-btn" class="btn btn-default btn-block"><%= translate("changeUsername") %></button>
-                      
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div> -->
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -178,9 +160,9 @@
                                     <h3 class="panel-title"><%= translate("deleteAccount") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your account is currently an owner on these organizations: </p>
+                                    <p><%= translate("accountCurrentlyOwnerYour") %>: </p>
 
-                                    <p>You must transfer ownership or delete these organizations before you can delete your user.</p>
+                                    <p><%= translate("mustTransferOwnershipOrDeleteOrgs") %>.</p>
 
                                     <button id="user-delete-btn" class="btn btn-danger btn-block"><%= translate("deleteAccount") %></button>
                       
