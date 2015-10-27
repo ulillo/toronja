@@ -150,6 +150,16 @@ fun.views.settings = Backbone.View.extend({
 
         if (length > 0){
 
+
+
+            _.each(this.orgs, function(o) {
+
+                console.log(o);
+                //alert(o.transaction);
+            });
+
+
+
             // i, search _.each function
             // fuck! pretty please use _.each
             for (vonCount; vonCount < length; ++vonCount) {
