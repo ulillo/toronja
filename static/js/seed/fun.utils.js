@@ -189,10 +189,8 @@ fun.utils.getTemplatex = function(url){
         $.ajax(url, {
             //async : false,
             dataTypeString : 'html'
-        }).done(function( data ) {
-    
-            console.log( data );
-    
+        }).done(function( response ) {
+            fun.cache.templates[url] = response
         });
     }
     return fun.cache.templates[url];
