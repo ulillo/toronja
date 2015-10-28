@@ -22,45 +22,16 @@ fun.views.landing = Backbone.View.extend({
         'use strict';
         var template;
         if (!this.$el.html()){
+            template = _.template(fun.utils.getTemplate(fun.conf.templates.landing));
+            this.$el.html(template);
 
-
-            var url = fun.conf.templates.landing;
-
-
-            if ( !fun.cache.templates[url] ) {
-                $.ajax(url, {
-                    //async : false,
-                    dataTypeString : 'html'
-                }).done(function( response ) {
-                    
-                    template = _.template(response);
-
-                    this.$el.html(template);
-
-                    fun.cache.templates[url] = response;
-
-                    // Cache the DOM stuff
-                    this.signupError = this.$('#landing-alert');
-                    // Form inputs
-                    this.account = this.$('#landing_username');
-                    this.newAccount = this.account;
-                    this.email = this.$('#landing_email');
-                    this.password = this.$('#landing_password');
-                });
-            } else {
-                template = _.template(fun.cache.templates[url]);
-
-                this.$el.html(template);
-
-                // Cache the DOM stuff
-                this.signupError = this.$('#landing-alert');
-                // Form inputs
-                this.account = this.$('#landing_username');
-                this.newAccount = this.account;
-                this.email = this.$('#landing_email');
-                this.password = this.$('#landing_password');
-            }
-            //template = _.template(fun.utils.getTemplatex(fun.conf.templates.landing));
+            // Cache the DOM stuff
+            this.signupError = this.$('#landing-alert');
+            // Form inputs
+            this.account = this.$('#landing_username');
+            this.newAccount = this.account;
+            this.email = this.$('#landing_email');
+            this.password = this.$('#landing_password');
         }
         this.$el.removeClass("hide").addClass("show");
     },

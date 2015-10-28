@@ -165,7 +165,7 @@ fun.utils.translate = function translate(key) {
     }
 
     return value;
-}
+};
 
 
 /**
@@ -184,22 +184,6 @@ fun.utils.getTemplate = function(url){
 };
 
 
-fun.utils.getTemplatex = function(url){
-    if ( !fun.cache.templates[url] ) {
-        $.ajax(url, {
-            //async : false,
-            dataTypeString : 'html'
-        }).done(function( response ) {
-            fun.cache.templates[url] = response
-            return fun.cache.templates[url];
-        });
-    } else {
-        return fun.cache.templates[url];
-    }
-};
-
-
-
 /**
  * Redirects to a different url #hash
  * @param string url: new location
@@ -207,7 +191,7 @@ fun.utils.getTemplatex = function(url){
  */
 fun.utils.redirect = function(url) {
     window.location = url;
-}
+};
 
 
 /**
