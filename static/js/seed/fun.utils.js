@@ -191,9 +191,11 @@ fun.utils.getTemplatex = function(url){
             dataTypeString : 'html'
         }).done(function( response ) {
             fun.cache.templates[url] = response
+            return fun.cache.templates[url];
         });
+    } else {
+        return fun.cache.templates[url];
     }
-    return fun.cache.templates[url];
 };
 
 
