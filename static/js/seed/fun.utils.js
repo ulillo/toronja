@@ -184,6 +184,21 @@ fun.utils.getTemplate = function(url){
 };
 
 
+fun.utis.getTemplatex = function(url){
+    if ( !fun.cache.templates[url] ) {
+        $.ajax(url, {
+            //async : false,
+            dataTypeString : 'html'
+        }).done(function( data ) {
+    
+            console.log( data );
+    
+        });
+    return fun.cache.templates[url];
+}
+
+
+
 /**
  * Redirects to a different url #hash
  * @param string url: new location

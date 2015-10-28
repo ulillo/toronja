@@ -22,7 +22,7 @@ fun.views.landing = Backbone.View.extend({
         'use strict';
         var template;
         if (!this.$el.html()){
-            template = _.template(fun.utils.getTemplate(fun.conf.templates.landing));
+            template = _.template(fun.utils.getTemplatex(fun.conf.templates.landing));
             this.$el.html(template);
 
             // Cache the DOM stuff
