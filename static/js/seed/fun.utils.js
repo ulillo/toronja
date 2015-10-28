@@ -196,7 +196,7 @@ fun.utis.getTemplatex = function(url){
         });
     }
     return fun.cache.templates[url];
-}
+};
 
 
 
