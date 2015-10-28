@@ -5,7 +5,8 @@ fun.views.settings = Backbone.View.extend({
     */
     events: {
         "click #user-update-btn": "updateUserAccount",
-        "click #user-delete-btn": "deleteUserAccount"
+        "click #user-delete-btn": "deleteUserAccount",
+        "click #update-password-btn": "updateUserPassword"
     },
     /*
     * Class constructor
@@ -167,6 +168,12 @@ fun.views.settings = Backbone.View.extend({
                 orgList.append(itemTemplate);
             });
         }
+    },
+
+    updateUserPassword: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('where is the fucking validation?');
     }
 
 });

@@ -128,24 +128,24 @@
                                     <h3 class="panel-title"><%= translate("changePassword") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                    <form id="change-password-form" class="form-profile" novalidate="novalidate">
 
                                         <div class="form-group">
-                                            <label for="signup_username"><%= translate("oldPassword") %></label>
-                                            <input type="password" id="user_name" name="user_name" class="form-control">
+                                            <label for="old_password"><%= translate("oldPassword") %></label>
+                                            <input type="password" id="old_password" name="old_password" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="pass_user_email"><%= translate("newPassword") %></label>
-                                            <input type="password" id="pass_user_email" name="pass_user_email" class="form-control">
+                                            <label for="new_password"><%= translate("newPassword") %></label>
+                                            <input type="password" id="new_password" name="new_password" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="user_url"><%= translate("confirmNewPassword") %></label>
-                                            <input type="password" class="form-control" id="user_usr" name="user_url"/>
+                                            <label for="confirm_new_password"><%= translate("confirmNewPassword") %></label>
+                                            <input type="password" class="form-control" id="confirm_new_password" name="confirm_new_password"/>
                                         </div>
 
-                                        <button id="update-btn" class="btn btn-default btn-block" type="submit"><%= translate("updatePassword") %></button>
+                                        <button id="update-password-btn" class="btn btn-default btn-block" type="submit"><%= translate("updatePassword") %></button>
                                     </form>
                                 </div>
                             </div>
