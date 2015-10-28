@@ -22,7 +22,26 @@ fun.views.landing = Backbone.View.extend({
         'use strict';
         var template;
         if (!this.$el.html()){
-            template = _.template(fun.utils.getTemplatex(fun.conf.templates.landing));
+
+
+            var url = fun.conf.templates.landing;
+
+
+            if ( !fun.cache.templates[url] ) {
+                $.ajax(url, {
+                    //async : false,
+                    dataTypeString : 'html'
+                }).done(function( response ) {
+                    fun.cache.templates[url] = response;
+                    template = _.template(response);
+                });
+            } else {
+                template = _.template(fun.cache.templates[url]);
+            }
+            
+
+            //template = _.template(fun.utils.getTemplatex(fun.conf.templates.landing));
+            
             this.$el.html(template);
 
             // Cache the DOM stuff
