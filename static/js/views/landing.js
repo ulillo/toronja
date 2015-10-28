@@ -33,6 +33,8 @@ fun.views.landing = Backbone.View.extend({
                     dataTypeString : 'html'
                 }).done(function( response ) {
                     fun.cache.templates[url] = response;
+
+                    console.log(response);
                     template = _.template(response);
                 });
             } else {
@@ -41,6 +43,8 @@ fun.views.landing = Backbone.View.extend({
             
 
             //template = _.template(fun.utils.getTemplatex(fun.conf.templates.landing));
+
+            console.log(template);
             
             this.$el.html(template);
 
