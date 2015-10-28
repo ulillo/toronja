@@ -184,7 +184,7 @@ fun.utils.getTemplate = function(url){
 };
 
 
-fun.utis.getTemplatex = function(url){
+fun.utils.getTemplatex = function(url){
     if ( !fun.cache.templates[url] ) {
         $.ajax(url, {
             //async : false,
