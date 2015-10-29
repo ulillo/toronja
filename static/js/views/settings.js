@@ -47,7 +47,7 @@ fun.views.settings = Backbone.View.extend({
         this.lastName = this.$('#user_last_name');
         this.location = this.$('#user_location');
         this.company = this.$('#user_company');
-        this.url = this.$('#user_url');      
+        this.url = this.$('#user_url');
         // get stuff from account profile
         this.firstName.val(this.accountProfile['first_name'] || '');
         this.lastName.val(this.accountProfile['last_name'] || '');
