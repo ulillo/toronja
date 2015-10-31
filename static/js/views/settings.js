@@ -172,7 +172,7 @@ fun.views.settings = Backbone.View.extend({
 
     updateUserPassword: function(event){
         'use strict';
-        event.preventDefault();
+        //event.preventDefault();
         var rules, 
             validationRules;
         console.log('where is the fucking validation?');
@@ -180,16 +180,17 @@ fun.views.settings = Backbone.View.extend({
         rules = {
             rules: {
                 old_password: {
-                    minlength: 2,
+                    minlength: 8,
                     required: true
                 },
                 new_password: {
                     required: true,
-                    email: true
+                    minlength: 8
                 },
                 confirm_new_password: {
-                    minlength: 6,
-                    required: true
+                    minlength: 8,
+                    required: true,
+                    equalTo: '#new_password'
                 }
             }
         }
