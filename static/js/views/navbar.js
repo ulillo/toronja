@@ -146,6 +146,7 @@ fun.views.navbar = Backbone.View.extend({
         'use strict';
         var vonCount = 0,
             account,
+            accountList,
             length,
             orgData,
             itemData,
@@ -153,42 +154,28 @@ fun.views.navbar = Backbone.View.extend({
 
         console.log('render dropdown');
 
-        account = JSON.parse(localStorage.getItem("profile"))
-
-        // is there something to get shit from a js object with .get() on underscore?
-        // if yes, please replace the ['stuff']
+        account = JSON.parse(localStorage.getItem("profile"));
 
         if (account) {
-            this.orgs = account["orgs"];
+            this.orgs = account["orgs"] || []; 
         } else {
             this.orgs = [];
         }
 
-        this.accountList = this.$('#account-list-ul');
+        accountList = this.$('#account-list-ul');
 
-        if (this.orgs){
-            length = this.orgs.length;
-        }
-        
-        if (length > 0){
+        if (this.orgs.length > 0){
 
-            // i, search _.each function
-            // fuck! pretty please use _.each
-            for (vonCount; vonCount < length; ++vonCount) {
+            _.each(this.orgs, function(o) {
 
-                orgData = {
-                    'account': account["account"],
-                    'org': this.orgs[vonCount]
-                };
-
-                itemData = _.extend(orgData, {counter:vonCount + 1});
+                itemData = {'org': o,'account': account['account'],'counter': vonCount + 1};
 
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
                 )(itemData);
 
-                this.accountList.append(itemTemplate);
-            }
+                accountList.append(itemTemplate);
+            });
         }
     },
 
