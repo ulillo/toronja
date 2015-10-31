@@ -173,7 +173,29 @@ fun.views.settings = Backbone.View.extend({
     updateUserPassword: function(event){
         'use strict';
         event.preventDefault();
+        var rules, 
+            validationRules;
         console.log('where is the fucking validation?');
+        // form validation rules
+        rules = {
+            rules: {
+                old_password: {
+                    minlength: 2,
+                    required: true
+                },
+                new_password: {
+                    required: true,
+                    email: true
+                },
+                confirm_new_password: {
+                    minlength: 6,
+                    required: true
+                }
+            }
+        }
+        validationRules = $.extend(rules, fun.utils.validationRules);
+
+        $('#change-password-form').validate(validationRules);
     }
 
 });
