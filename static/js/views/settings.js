@@ -43,6 +43,9 @@ fun.views.settings = Backbone.View.extend({
         this.$el.html(template);
         // assign this variable values
         this.email = this.$('#user_email');
+        this.oldPassword = this.$('#old_password');
+        this.newPassword = this.$('#new_password');
+        this.confirmPassword = this.$('#confirm_password');
         this.firstName = this.$('#user_first_name');
         this.lastName = this.$('#user_last_name');
         this.location = this.$('#user_location');
@@ -175,7 +178,6 @@ fun.views.settings = Backbone.View.extend({
         //event.preventDefault();
         var rules, 
             validationRules;
-        console.log('where is the fucking validation?');
         // form validation rules
         rules = {
             rules: {
@@ -195,8 +197,22 @@ fun.views.settings = Backbone.View.extend({
             }
         }
         validationRules = $.extend(rules, fun.utils.validationRules);
-
         $('#change-password-form').validate(validationRules);
+
+        confirm = new fun.models.User({
+            'uuid': this.accountProfile['uuid'],
+            'account': this.accountProfile['account']
+        });
+
+        old_password = this.oldPassword.val();
+        new_password = this.newPassword.val();
+        confirm_new_password = this.confirmNewPassword.val();
+
+        accountInformation = {
+            'password': new_password
+        };
+
+        confirm.save(accountInformation, {patch: true});
     }
 
 });
