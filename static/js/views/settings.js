@@ -181,7 +181,7 @@ fun.views.settings = Backbone.View.extend({
             validForm,
             old_password,
             new_password,
-            confirm_new_password,
+            confirm_password,
             accountInformation;
         // form validation rules
         rules = {
@@ -215,7 +215,7 @@ fun.views.settings = Backbone.View.extend({
 
             old_password = this.oldPassword.val();
             new_password = this.newPassword.val();
-            confirm_new_password = this.confirmNewPassword.val();
+            confirm_password = this.confirmPassword.val();
 
             accountInformation = {
                 'password': new_password
