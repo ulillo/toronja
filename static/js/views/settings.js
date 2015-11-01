@@ -231,7 +231,10 @@ fun.views.settings = Backbone.View.extend({
         var alerta,
             schema,
             text,
-            body;
+            body,
+            rules,
+            validationRules,
+            validForm;
         
         alerta = new fun.models.Alert();
 
