@@ -177,7 +177,8 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         //event.preventDefault();
         var rules, 
-            validationRules;
+            validationRules,
+            validForm;
         // form validation rules
         rules = {
             rules: {
@@ -199,20 +200,25 @@ fun.views.settings = Backbone.View.extend({
         validationRules = $.extend(rules, fun.utils.validationRules);
         $('#change-password-form').validate(validationRules);
 
-        confirm = new fun.models.User({
-            'uuid': this.accountProfile['uuid'],
-            'account': this.accountProfile['account']
-        });
+        // check for a valid form and create the new user account
+        validForm = $('#langing-signup-form').valid();
+        if (validForm){
+            this.model = new fun.models.User({
+                'uuid': this.accountProfile['uuid'],
+                'account': this.accountProfile['account']
+            });
 
-        old_password = this.oldPassword.val();
-        new_password = this.newPassword.val();
-        confirm_new_password = this.confirmNewPassword.val();
+            old_password = this.oldPassword.val();
+            new_password = this.newPassword.val();
+            confirm_new_password = this.confirmNewPassword.val();
 
-        accountInformation = {
-            'password': new_password
-        };
+            accountInformation = {
+                'password': new_password
+            };
 
-        confirm.save(accountInformation, {patch: true});
+            console.log(accountInformation);
+
+            //confirm.save(accountInformation, {patch: true});
     }
 
 });
