@@ -207,6 +207,7 @@ fun.views.settings = Backbone.View.extend({
         // check for a valid form and create the new user account
         validForm = $('#change-password-form').valid();
         if(validForm){
+            event.preventDefault();
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
                 'account': this.accountProfile['account']
