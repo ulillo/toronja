@@ -71,29 +71,30 @@ fun.conf.timeouts = {
  Current SIP client configuration
 */
 fun.conf.sip = {
+    // sip and ws servers
     registrar_server: fun.conf.daemons.sip_server,
     ws_servers: fun.utils.format('%s%s', fun.conf.daemons.ws_server, fun.conf.daemons.ws_port),
-    //
+    // ice ice baby
     stun_servers: fun.utils.format('%s:%s', fun.conf.daemons.stun_server, fun.conf.daemons.stun_port),
     turn_servers: fun.utils.format('%s:%s', fun.conf.daemons.turn_server, fun.conf.daemons.turn_port),
-    //
+    // register this sip account
     register: true,
     register_expires: '480',
-    //
+    // connection recovery intervals
     connection_recovery_min_interval: '3',
     connection_recovery_max_interval: '8',
     // sip server uri
     uri: fun.utils.format('sip:%s@%s', fun.conf.account, fun.conf.domain),
-    password: '',
     // get username account or first name, last name if set.
     display_name: 'Juan Monk',
     authorization_user: '',
-    //
+    password: '',
     no_answer_timeout: '60',
+    // trace sip traffic
     trace_sip: false,
-    //
+    // use pre loaded route
     use_preloaded_route: false,
-    // is this still relevant?
+    // #TODO: is this still relevant?
     hack_via_tcp: true,
     hacK_ip_in_contact: false
 };

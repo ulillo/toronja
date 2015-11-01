@@ -23,20 +23,15 @@ fun.views.companies = Backbone.View.extend({
     */
     render: function(){
         console.log('render tasts view');
-
         var template;
-
         if (!this.$el.html()){
             template = _.template(fun.utils.getTemplate(fun.conf.templates.companies));
             this.$el.html(template);
-
             this.account = this.$('#reg_signup_username');
             this.password = this.$('#reg_signup_password');
             this.email = this.$('#reg_signup_email');
-
             // check this shit out
             this.companyStatus = this.$('#reg_company_status');
-
             // big ugly form and stuff
             this.companyName = this.$('#reg_company_name');
             this.streetAddress = this.$('#reg_street_address');
@@ -70,25 +65,17 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         var template,
             allCompanies;
-
         console.log('render companies list');
-
         if (companies) {
             this.companies = companies;
         }
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.allCompanies)
         );
-
         allCompanies = this.$('#all-companies-tab');
-
         allCompanies.html(template);
-
         this.tbody = this.$('#companies-list > tbody');
-
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderCompanyRows();
     },
 
@@ -102,20 +89,15 @@ fun.views.companies = Backbone.View.extend({
             rows,
             data,
             template;
-        // companies length
         length = this.companies.length;
-
         console.log('companies length: ',length);
-
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
                 data = _.extend(this.companies.at(i).toJSON(), {i:i});
-
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.companyRow)
                 )(data);
-
                 rows.append(template);
             }
         } else {
@@ -133,9 +115,7 @@ fun.views.companies = Backbone.View.extend({
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
-
         noCompanies = this.$('#no-companies');
-
         noCompanies.html(template);
     },
 
@@ -146,25 +126,17 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         var template,
             activeCompanies;
-
         console.log('render active companies list');
-
         if (companies) {
             this.companies = companies;
         }
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.companiesActiveTab)
         );
-
         activeCompanies = this.$('#active-companies-tab');
-
         activeCompanies.html(template);
-
         this.tbody = this.$('#active-companies-list > tbody');
-
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderActiveCompanyRows();
     },
 
@@ -178,20 +150,15 @@ fun.views.companies = Backbone.View.extend({
             rows,
             data,
             template;
-        // companies length
         length = this.companies.length;
-
         console.log('active companies length: ',length);
-
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
                 data = _.extend(this.companies.at(i).toJSON(), {i:i});
-
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.companyRow)
                 )(data);
-
                 rows.append(template);
             }
         } else {
@@ -209,12 +176,9 @@ fun.views.companies = Backbone.View.extend({
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
-
         noActiveCompanies = this.$('#no-active-companies');
-
         noActiveCompanies.html(template);
     },
-
 
     /*
     * Render disable companies list
@@ -223,25 +187,17 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         var template,
             disableCompanies;
-
         console.log('render disable companies list');
-
         if (companies) {
             this.companies = companies;
         }
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.companiesDisableTab)
         );
-
         disableCompanies = this.$('#disable-companies-tab');
-
         disableCompanies.html(template);
-
         this.tbody = this.$('#disable-companies-list > tbody');
-
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderDisableCompanyRows();
     },
 
@@ -255,11 +211,8 @@ fun.views.companies = Backbone.View.extend({
             rows,
             data,
             template;
-        // companies length
         length = this.companies.length;
-
         console.log('disable companies length: ',length);
-
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
@@ -286,9 +239,7 @@ fun.views.companies = Backbone.View.extend({
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
-
         noDisableCompanies = this.$('#no-disable-companies');
-
         noDisableCompanies.html(template);
     },
 
@@ -299,25 +250,17 @@ fun.views.companies = Backbone.View.extend({
         'use strict';
         var template,
             suspendedCompanies;
-
         console.log('render suspended companies list');
-
         if (companies) {
             this.companies = companies;
         }
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.companiesSuspendedTab)
         );
-
         suspendedCompanies = this.$('#suspended-companies-tab');
-
         suspendedCompanies.html(template);
-
         this.tbody = this.$('#suspended-companies-list > tbody');
-
         this.$el.removeClass("hide").addClass("show");
-        
         this.renderSuspendedCompanyRows();
     },
 
@@ -331,11 +274,8 @@ fun.views.companies = Backbone.View.extend({
             rows,
             data,
             template;
-        // companies length
         length = this.companies.length;
-
         console.log('suspended companies length: ',length);
-
         if (length > 0){
             rows = this.tbody.html('');
             for (i; i < length; ++i) {
@@ -362,9 +302,7 @@ fun.views.companies = Backbone.View.extend({
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.warning)
         )({message:'noDataAvailable'});
-
         noSuspendedCompanies = this.$('#no-suspended-companies');
-
         noSuspendedCompanies.html(template);
     },
 
@@ -387,50 +325,39 @@ fun.views.companies = Backbone.View.extend({
             first_name,
             last_name,
             user;
-
         console.log('create company event');
-
         this.companyName = this.$('#company_name');
         this.companyDescription = this.$('#company_description');
         this.companyLabel = 'Service Requests';
-
         account = this.account;
-
         companyName = this.companyName.val();
         companyDescription = this.companyDescription.val();
         companyLabel = this.companyLabel;
 
-        //companyPayload = {
-        //    title: companyName,
-        //    description: companyDescription,
-        //    label: companyLabel
-        //};
-
-        //profile = JSON.parse(localStorage.getItem("profile"));
-
-        //user = new fun.models.User(profile);
-        //user.fetch()
-
-        //console.log(user.get('uuid'));
-        //console.log(user.get('first_name'));
-
-        //if (typeof(user.get('first_name')) === 'undefined'){
-        //    first_name = 'Mauricio'
-        //} else {
-        //    first_name = user.get('first_name');
-        //}
-
-        //if (typeof(user.get('last_name')) === 'undefined'){
-        //    last_name = 'Montero'
-        //} else {
-        //    last_name = user.get('last_name');
-        //}
-
-        //companyPayload['first_name'] = first_name;
-        //companyPayload['last_name'] = last_name;
-        //companyPayload['email'] = user.get('email');
-
-        //console.log(JSON.stringify(profile));
+        companyPayload = {
+            title: companyName,
+            description: companyDescription,
+            label: companyLabel
+        };
+        profile = JSON.parse(localStorage.getItem("profile"));
+        user = new fun.models.User(profile);
+        user.fetch()
+        console.log(user.get('uuid'));
+        console.log(user.get('first_name'));
+        if (typeof(user.get('first_name')) === 'undefined'){
+            first_name = 'Mauricio'
+        } else {
+            first_name = user.get('first_name');
+        }
+        if (typeof(user.get('last_name')) === 'undefined'){
+            last_name = 'Montero'
+        } else {
+            last_name = user.get('last_name');
+        }
+        companyPayload['first_name'] = first_name;
+        companyPayload['last_name'] = last_name;
+        companyPayload['email'] = user.get('email');
+        console.log(JSON.stringify(profile));
 
         //if (typeof(account) === undefined){
         //    account = false;
@@ -442,8 +369,8 @@ fun.views.companies = Backbone.View.extend({
         //    
         //}
 
-        //company = new fun.models.Company(companyPayload);
-        //company.save();
+        company = new fun.models.Company(companyPayload);
+        company.save();
 
         $('#newCompanyModal').modal({
             'show': true

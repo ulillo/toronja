@@ -370,23 +370,18 @@ fun.Router = Backbone.Router.extend({
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
-
                 fun.instances.companies.renderCompaniesList(
                     resources.companies
                 );
-
                 fun.instances.settings.setProfileInformation(
                     resources.user
                 );
-
                 fun.instances.companies.renderActiveCompaniesList(
                     resources.active
                 );
-
                 fun.instances.companies.renderDisableCompaniesList(
                     resources.disable
                 );
-
                 fun.instances.companies.renderSuspendedCompaniesList(
                     resources.suspended
                 );
