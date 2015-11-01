@@ -33,6 +33,8 @@ fun.strings = {
     gatewaysMonitored: "Monitored Gateways",
     gatewaysInbound: "Inbound Gateways",
     gatewaysOutbound: "Outbound Gateways",
+    addEmail: "Add email",
+    newEmail: "New email",
 
     sentVerificationEmailTo: "We sent a verification email to",
     pleaseFollowInstructions: "Please follow the instructions in it",
