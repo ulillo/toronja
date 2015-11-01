@@ -227,23 +227,24 @@ fun.views.settings = Backbone.View.extend({
     },
 
     addEmail: function(event){
-        console.log('nin');
+        'use strict';
+        var alerta,
+            schema,
+            body;
+        
+        alerta = new fun.models.Alert();
 
-        var alerta = new fun.models.Alert();
-
-        var schema = {
-            'tres':'tristes tigres',
+        schema = {
             'subject': 'New wholesale account',
             'text': 'A new wholesale account has been register, please visit: http://fun.codemachine.io/#companies to check it out',
             'email':'jchassoul@codemachine.io'
         };
 
-        var body = JSON.stringify(schema);
+        body = JSON.stringify(schema);
 
         alerta.save({
-            account: 'sarandapio',
-            name: 'Jean Chassoul',
-            email: 'jean.chassoul@gmail.com',
+            account: this.accountProfile['account'],
+            email: this.accountProfile['email'],
             body: body
         });
     }
