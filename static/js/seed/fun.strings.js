@@ -34,6 +34,9 @@ fun.strings = {
     gatewaysInbound: "Inbound Gateways",
     gatewaysOutbound: "Outbound Gateways",
 
+    sentVerificationEmailTo: "We sent a verification email to",
+    pleaseFollowInstructions: "Please follow the instructions in it",
+
     youLeft: "You left",
     youWillBeMissed: "You will be missed.",
     areYouSureWantToLeave: "Are you sure you want to leave?",
