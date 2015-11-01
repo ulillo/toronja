@@ -244,15 +244,17 @@
                                 <div class="panel-body">
 
                                     <form id="add-email-form" class="form-profile" novalidate="novalidate">
-
+                                        <span class="input-group-addon">@</span>
                                         <div class="form-group">
-                                            <span class="input-group-addon">@</span>
+                                            
                                             <label for="new_email"><%= translate("newEmail") %></label>
                                             <input type="email" class="form-control" id="new_email" name="new_email"/>
-                                            <span class="input-group-btn">
-                                            <button id="add-email-btn" class="btn btn-default" type="button"><%= translate("add") %></button>
+
+                                            
                                         </span>
                                         </div>
+
+                                        <button id="add-email-btn" class="btn btn-default" type="button"><%= translate("add") %></button>
                                     </form>
                       
                                 </div>
