@@ -6,7 +6,8 @@ fun.views.settings = Backbone.View.extend({
     events: {
         "click #user-update-btn": "updateUserAccount",
         "click #user-delete-btn": "deleteUserAccount",
-        "click #update-password-btn": "updateUserPassword"
+        "click #update-password-btn": "updateUserPassword",
+        "click #add-email-btn": "addEmail"
     },
     /*
     * Class constructor
@@ -223,6 +224,10 @@ fun.views.settings = Backbone.View.extend({
 
             this.model.save(accountInformation, {patch: true});
         }
+    },
+
+    addEmail: function(event){
+        console.log('nin');
     }
 
 });
