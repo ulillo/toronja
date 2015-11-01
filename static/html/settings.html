@@ -122,48 +122,30 @@
                 <div id="tabs3-pane2" class="tab-pane">
 
                     <div class="row">
-
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><%= translate("changeUsername") %></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Changing your username can have unintended side effects.</p>
-
-                                    <button id="update-btn" class="btn btn-default btn-block"><%= translate("changeUsername") %></button>
-                      
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><%= translate("changePassword") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                    <form id="change-password-form" class="form-profile" novalidate="novalidate">
 
                                         <div class="form-group">
-                                            <label for="signup_username"><%= translate("oldPassword") %></label>
-                                            <input type="password" id="user_name" name="user_name" class="form-control">
+                                            <label for="old_password"><%= translate("oldPassword") %></label>
+                                            <input type="password" id="old_password" name="old_password" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="pass_user_email"><%= translate("newPassword") %></label>
-                                            <input type="password" id="pass_user_email" name="pass_user_email" class="form-control">
+                                            <label for="new_password"><%= translate("newPassword") %></label>
+                                            <input type="password" id="new_password" name="new_password" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="user_url"><%= translate("confirmNewPassword") %></label>
-                                            <input type="password" class="form-control" id="user_usr" name="user_url"/>
+                                            <label for="confirm_new_password"><%= translate("confirmNewPassword") %></label>
+                                            <input type="password" class="form-control" id="confirm_new_password" name="confirm_new_password"/>
                                         </div>
 
-                                        <button id="update-btn" class="btn btn-default btn-block" type="submit"><%= translate("updatePassword") %></button>
+                                        <button id="update-password-btn" class="btn btn-default btn-block" type="submit"><%= translate("updatePassword") %></button>
                                     </form>
                                 </div>
                             </div>
@@ -178,18 +160,20 @@
                                     <h3 class="panel-title"><%= translate("deleteAccount") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your account is currently an owner on these organizations: </p>
+                                    <p><%= translate("accountCurrentlyOwner") %>:</p>
 
-                                    <p>You must transfer ownership or delete these organizations before you can delete your user.</p>
+                                    <p><%= translate("mustTransferOwnershipOrDeleteOrgs") %>.</p>
 
+                                    <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal"><%= translate("deleteAccount") %></button>
+                                    <!--
                                     <button id="user-delete-btn" class="btn btn-danger btn-block"><%= translate("deleteAccount") %></button>
-                      
+                                    -->
                                 </div>
                             </div>
                         </div>
                     
                     </div>
-                    
+                    <!--
                     <div class="row">
 
                         <div class="col-md-12">
@@ -198,9 +182,9 @@
                                     <h3 class="panel-title"><%= translate("systemAdmin") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your account is currently an administrator on these systems: </p>
+                                    <p><%= translate("accountCurrentlyAdmin") %>:</p>
 
-                                    <p>You must transfer privileges or delete these systems before you can delete your user.</p>
+                                    <p><%= translate("mustTransferSystems") %>.</p>
 
                                     <button id="user-admin-btn" class="btn btn-danger btn-block"><%= translate("systemAdmin") %></button>
                       
@@ -209,6 +193,7 @@
                         </div>
                     
                     </div>
+                    -->
 
 
                 </div>
@@ -223,9 +208,9 @@
                                     <h3 class="panel-title"><%= translate("email") %></h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Your primary email address will be used for account-related notifications (e.g. account changes and billing receipts) as well as any web-based operations.</p>
+                                    <p><%= translate("primaryEmailForAccountNotification") %>.</p>
 
-                                    <p>You have not verified any email addresses. We recommend you verify at least one email for password recovery.</p>
+                                    <p><%= translate("notVerifiedAnyEmail") %>.</p>
 
                                     <ul class="list-group">
                                         <li class="list-group-item">
@@ -292,32 +277,9 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <ul class="list-group">
-                                                <li class="list-group-item">
-
-                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
-
-                                                    <a href="#">name</a>
-
-                                                </li>
-                                                <li class="list-group-item">
-                                                                                                
-                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
-
-                                                    <a href="#">name</a>
-
-                                                </li>
-                                                <li class="list-group-item">
-
-                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
-
-                                                    <a href="#">name</a>
-
-                                                </li>
-                                            </ul>    
+                                            <ul id="settings-orgs-ul" class="list-group"></ul>    
                                         </div>                                    
                                     </div>
-                                                    
                                 </div>
                             </div>
                         
@@ -350,11 +312,13 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">
 
-                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
-
+                                                    <a class="btn btn-default pull-right" id="juanadarco" data-toggle="modal" data-target="#leaveOrgModal"><%= translate("leave") %></a>
                                                     <a href="#">name</a>
 
                                                 </li>
+
+
+
                                                 <li class="list-group-item">
                                                                                                 
                                                     <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
@@ -442,4 +406,51 @@
 
     </div> <!-- general row -->
 </div> <!-- container -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="leaveOrgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><%= translate("leaveOrganization") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p><%= translate("areYouSureWantToLeave") %>?</p>
+
+                <p><%= translate("youWillLoseAccessToAll") %>.</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><%= translate("cancel") %></button>
+                <button type="button" id='ok-leave-btn' class="btn btn-primary"><%= translate("ok") %></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure you want to do this?</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>We will immediately delete all of your resources, along with all of your campaigns, tasks, contacts, and recordings.</p>
+
+                <p>You will no longer be billed, and your username will be available to anyone.</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button id="user-delete-btn" class="btn btn-danger btn-block">Yes, delete my account</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 

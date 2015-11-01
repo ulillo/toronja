@@ -318,6 +318,7 @@ fun.conf.templates = {
     sounds: fun.utils.format('%s/sounds.html', fun.conf.html),
     reports: fun.utils.format('%s/reports.html', fun.conf.html),
     settings: fun.utils.format('%s/settings.html', fun.conf.html),
+    settingsOrgListItem: fun.utils.format('%s/settingsOrgListItem.html', fun.conf.html),
     extra: fun.utils.format('%s/extra.html', fun.conf.html),
     extraNavbar: fun.utils.format('%s/extraNavbar.html', fun.conf.html),
     extraNavLanding: fun.utils.format('%s/extraNavLanding.html', fun.conf.html),

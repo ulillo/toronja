@@ -24,7 +24,7 @@ fun.views.dashboard = Backbone.View.extend({
         // Render view function
         'use strict';
         var template;
-        
+
         if (typeof(account) === 'undefined'){
             this.account = localStorage.getItem("username");
         } else {
@@ -105,9 +105,9 @@ fun.views.dashboard = Backbone.View.extend({
 
         //seconds = _.pairs(this.seconds)
 
-        minutes = _.pairs(this.minutes)
+        minutes = _.pairs(this.minutes);
 
-        records = _.pairs(this.records)
+        records = _.pairs(this.records);
 
         //data.push({
         //    data: seconds,
@@ -122,10 +122,10 @@ fun.views.dashboard = Backbone.View.extend({
         data.push({
             data: records,
             label: 'Records',
-            points: {show: false}, 
+            points: {show: false},
             lines: {lineWidth: 2, fill: false}
         });
-        
+        console.log('TODAY ACTIVITY!',JSON.stringify(data));
         // html template
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todayActivityChart)

@@ -34,6 +34,20 @@ fun.strings = {
     gatewaysInbound: "Inbound Gateways",
     gatewaysOutbound: "Outbound Gateways",
 
+    youLeft: "You left",
+    youWillBeMissed: "You will be missed.",
+    areYouSureWantToLeave: "Are you sure you want to leave?",
+    youWillLoseAccessToAll: "You will lose access to all campaigns, teams, and resources.",
+    leaveOrganization: "Leave Organization",
+
+    primaryEmailForAccountNotification: "Your primary email address will be used for account-related notifications (e.g. account changes and billing receipts) as well as any web-based operations",
+    notVerifiedAnyEmail: "You have not verified any email addresses. We recommend you verify at least one email for password recovery",
+    accountCurrentlyOwner: "Your account is currently an owner on these organizations",
+    mustTransferOwnershipOrDeleteOrgs: "You must transfer ownership or delete these organizations before you can delete your account",
+
+    accountCurrentlyAdmin: "Your account is currently an administrator on these systems",
+    mustTransferSystems: "You must transfer privileges or delete these systems before you can delete your user",
+
     //r late 15
     fanCommWithTeams: "Fantastic communication with teams",
     teamsAreGreat: "Teams are a great way for groups of people to communicate and work on campaigns together. Take a look at why they're great.",
@@ -82,6 +96,9 @@ fun.strings = {
     getCompanyList: "Get Company List",
     companyDetails: "Company Details",
     companyDetail: "Company Detail",
+
+    cancel: "Cancel",
+    ok: "Ok",
 
     exportCSV: "Export CSV",
     title: "Title",

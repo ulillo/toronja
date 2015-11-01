@@ -37,11 +37,10 @@ fun.views.navbar = Backbone.View.extend({
 
     renderContext: function(){
         'use strict';
-        var account = localStorage.getItem("username");
-        var context = sessionStorage.getItem("context");
+        var account = localStorage.getItem("username"),
+            context = sessionStorage.getItem("context");
 
         if (context !== null && context.trim() === 'System Admin') {
-            console.log('context selected for system admin interface');
             this.$('#nav-new-account').removeClass('hide').addClass('show');
             //this.$('#nav-new-cube').removeClass('hide').addClass('show');
             this.$('#nav-new-resource').removeClass('hide').addClass('show');
@@ -52,10 +51,7 @@ fun.views.navbar = Backbone.View.extend({
             this.$('#nav-new-team').removeClass('show').addClass('hide');
             this.$('#nav-new-member').removeClass('show').addClass('hide');
         } else {
-            // if not admin, we check for user or organization accounts
             if (account !== context && context !== null){
-                console.log('check if context for organization interface');
-                // check if context !== null fix the stuff 
                 this.$('#nav-new-resource').removeClass('show').addClass('hide');
                 this.$('#nav-new-account').removeClass('show').addClass('hide');
                 this.$('#nav-new-gateway').removeClass('show').addClass('hide');
@@ -66,7 +62,6 @@ fun.views.navbar = Backbone.View.extend({
                 this.$('#nav-new-campaign').removeClass('hide').addClass('show');
                 
             } else {
-                console.log('do the gods said that this is the user context interface?');
                 this.$('#nav-new-resource').removeClass('show').addClass('hide');
                 this.$('#nav-new-account').removeClass('show').addClass('hide');
                 this.$('#nav-new-gateway').removeClass('show').addClass('hide');
@@ -84,6 +79,10 @@ fun.views.navbar = Backbone.View.extend({
 
         var navLanding = this.$('#fun-nav-landing');
         navLanding.html(template);
+        
+        if ($("#brand-n-stuff").hasClass("fun-brand")){
+            $("#brand-n-stuff").removeClass("fun-brand");
+        }
     },
 
     renderDashboard: function(){
@@ -102,6 +101,10 @@ fun.views.navbar = Backbone.View.extend({
 
         navDashboard = this.$('#fun-nav-dashboard');
         navDashboard.html(template);
+
+        if (!$("#brand-n-stuff").hasClass("fun-brand")){
+            $("#brand-n-stuff").addClass("fun-brand");
+        }
 
         // first we check for system admin
         if (context !== null && context.trim() === 'System Admin') {
@@ -143,6 +146,7 @@ fun.views.navbar = Backbone.View.extend({
         'use strict';
         var vonCount = 0,
             account,
+            accountList,
             length,
             orgData,
             itemData,
@@ -150,42 +154,28 @@ fun.views.navbar = Backbone.View.extend({
 
         console.log('render dropdown');
 
-        account = JSON.parse(localStorage.getItem("profile"))
-
-        // is there something to get shit from a js object with .get() on underscore?
-        // if yes, please replace the ['stuff']
+        account = JSON.parse(localStorage.getItem("profile"));
 
         if (account) {
-            this.orgs = account["orgs"];
+            this.orgs = account["orgs"] || []; 
         } else {
             this.orgs = [];
         }
 
-        this.accountList = this.$('#account-list-ul');
+        accountList = this.$('#account-list-ul');
 
-        if (this.orgs){
-            length = this.orgs.length;
-        }
-        
-        if (length > 0){
+        if (this.orgs.length > 0){
 
-            // i, search _.each function
-            // fuck! pretty please use _.each
-            for (vonCount; vonCount < length; ++vonCount) {
+            _.each(this.orgs, function(o) {
 
-                orgData = {
-                    'account': account["account"],
-                    'org': this.orgs[vonCount]
-                };
-
-                itemData = _.extend(orgData, {counter:vonCount + 1});
+                itemData = {'org': o,'account': account['account'],'counter': vonCount + 1};
 
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
                 )(itemData);
 
-                this.accountList.append(itemTemplate);
-            }
+                accountList.append(itemTemplate);
+            });
         }
     },
 
@@ -197,6 +187,7 @@ fun.views.navbar = Backbone.View.extend({
         var vonCount = 0,
             account = account,
             accountObj = JSON.stringify(account),
+            accountList,
             length,
             orgData,
             itemData,
@@ -204,39 +195,28 @@ fun.views.navbar = Backbone.View.extend({
 
         console.log('render account for ... ', account.get('account'));
 
-        // Can I get the list from localStorage?, pretty please.
+        // Can I get the list from localStorage?, pretty please. or not?
 
         if (account) {
-            this.orgs = account.get("orgs");
+            this.orgs = account.get("orgs") || []; 
         } else {
             this.orgs = [];
         }
 
-        this.accountList = this.$('#account-list-ul');
+        accountList = this.$('#account-list-ul');
 
-        if (this.orgs){
-            length = this.orgs.length;
-        }
-        
-        if (length > 0){
+        if (this.orgs.length > 0){
 
-            // i, search _.each function
-            // fuck! pretty please use _.each
-            for (vonCount; vonCount < length; ++vonCount) {
+            _.each(this.orgs, function(o) {
 
-                orgData = {
-                    'account': account.get("account"),
-                    'org': this.orgs[vonCount] // set, put, post, patch
-                };
-
-                itemData = _.extend(orgData, {counter:vonCount + 1});
+                itemData = {'org': o,'account': account['account'],'counter': vonCount + 1};
 
                 itemTemplate = _.template(
                     fun.utils.getTemplate(fun.conf.templates.accountListItem)
                 )(itemData);
 
-                this.accountList.append(itemTemplate);
-            }
+                accountList.append(itemTemplate);
+            });
         }
     },
 

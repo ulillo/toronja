@@ -5,9 +5,9 @@ fun.views.settings = Backbone.View.extend({
     */
     events: {
         "click #user-update-btn": "updateUserAccount",
-        "click #user-delete-btn": "deleteUserAccount"
+        "click #user-delete-btn": "deleteUserAccount",
+        "click #update-password-btn": "updateUserPassword"
     },
-    
     /*
     * Class constructor
     */
@@ -43,11 +43,14 @@ fun.views.settings = Backbone.View.extend({
         this.$el.html(template);
         // assign this variable values
         this.email = this.$('#user_email');
+        this.oldPassword = this.$('#old_password');
+        this.newPassword = this.$('#new_password');
+        this.confirmPassword = this.$('#confirm_password');
         this.firstName = this.$('#user_first_name');
         this.lastName = this.$('#user_last_name');
         this.location = this.$('#user_location');
         this.company = this.$('#user_company');
-        this.url = this.$('#user_url');      
+        this.url = this.$('#user_url');
         // get stuff from account profile
         this.firstName.val(this.accountProfile['first_name'] || '');
         this.lastName.val(this.accountProfile['last_name'] || '');
@@ -55,6 +58,9 @@ fun.views.settings = Backbone.View.extend({
         this.company.val(this.accountProfile['company'] || '');
         this.url.val(this.accountProfile['url'] || '');
         this.email.val(this.accountProfile['email'] || '');
+
+        this.renderOrganizationList();
+
         // show the HTML template
         this.$el.removeClass("hide").addClass("show");
     },
@@ -108,14 +114,105 @@ fun.views.settings = Backbone.View.extend({
     },
 
     deleteUserAccount: function(event){
-        'use strict'
+        'use strict';
         event.preventDefault();
         console.log('delete account');
-        var confirm = new fun.models.User({
+        var confirm, 
+            callbacks;
+        confirm = new fun.models.User({
             'uuid':this.accountProfile['uuid'],
             'account':this.accountProfile['account']
         });
+        callbacks = {
+            success: function(){
+                console.log("inside success, but we don't see any of this shit.");
+            },
+            error: function(){
+                fun.utils.redirect(fun.conf.hash.home);
+            }
+        };
         confirm.destroy();
+        $('#deleteAccountModal').modal('hide');
+        $('#deleteAccountModal').on('hidden.bs.modal', function(e){
+            fun.utils.logout(callbacks);
+        });
+    },
+
+    renderOrganizationList: function(){
+        'use strict';
+        var vonCount = 0,
+            account,
+            orgList,
+            itemData,
+            itemTemplate;
+
+        console.log('render organization list');
+
+        account = JSON.parse(localStorage.getItem("profile"))
+
+        if (account) {
+            this.orgs = account["orgs"] || []; 
+        } else {
+            this.orgs = [];
+        }
+
+        orgList = this.$('#settings-orgs-ul');
+
+        if (this.orgs.length > 0){
+
+            _.each(this.orgs, function(o) {
+
+                itemData = {'org': o, 'counter': vonCount + 1};
+
+                itemTemplate = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.settingsOrgListItem)
+                )(itemData);
+
+                orgList.append(itemTemplate);
+            });
+        }
+    },
+
+    updateUserPassword: function(event){
+        'use strict';
+        //event.preventDefault();
+        var rules, 
+            validationRules;
+        // form validation rules
+        rules = {
+            rules: {
+                old_password: {
+                    minlength: 8,
+                    required: true
+                },
+                new_password: {
+                    required: true,
+                    minlength: 8
+                },
+                confirm_new_password: {
+                    minlength: 8,
+                    required: true,
+                    equalTo: '#new_password'
+                }
+            }
+        }
+        validationRules = $.extend(rules, fun.utils.validationRules);
+        $('#change-password-form').validate(validationRules);
+
+        confirm = new fun.models.User({
+            'uuid': this.accountProfile['uuid'],
+            'account': this.accountProfile['account']
+        });
+
+        old_password = this.oldPassword.val();
+        new_password = this.newPassword.val();
+        confirm_new_password = this.confirmNewPassword.val();
+
+        accountInformation = {
+            'password': new_password
+        };
+
+        confirm.save(accountInformation, {patch: true});
     }
 
 });

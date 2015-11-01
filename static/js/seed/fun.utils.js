@@ -63,6 +63,8 @@ fun.utils.login = function(account, password, callbacks) {
 
             //$.cookie( 'account', account );
 
+            // so... this stuff never works...
+
             if (_.isFunction(callbacks.success)){
                 callbacks.success(data);
             }
@@ -112,32 +114,26 @@ fun.utils.logout = function(callbacks){
         type : 'GET',
         dataType : 'json',
         success : function(data, textStatus, jqXHR) {
-
-            // this is kind of crazy.
-
-            // why? cuz it don't work anymore... 
-
+            // this is bananas... why? cuz it don't work anymore... 
+            // Clear the html from the containers
+            for (var i in fun.containers) {
+                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
+                    fun.containers[i].empty();
+                }
+            }
             if (_.isObject(callbacks) && _.isFunction(callbacks.success)) {
                 callbacks.success();
             }
-
-            // Clear the html from the containers
-            for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
-                    fun.containers[i].empty();
-                }
-            }
         },
         error : function(jqXHR, textStatus, errorThrown) {
-            if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
-                callbacks.error(jqXHR, textStatus, errorThrown);
-            }
-
             // Clear the html from the containers
             for (var i in fun.containers) {
                 if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
                     fun.containers[i].empty();
                 }
+            }
+            if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
+                callbacks.error();
             }
         }
     });
@@ -169,7 +165,7 @@ fun.utils.translate = function translate(key) {
     }
 
     return value;
-}
+};
 
 
 /**
@@ -195,7 +191,7 @@ fun.utils.getTemplate = function(url){
  */
 fun.utils.redirect = function(url) {
     window.location = url;
-}
+};
 
 
 /**
