@@ -242,6 +242,23 @@ fun.views.settings = Backbone.View.extend({
             'email':'jchassoul@codemachine.io'
         };
 
+        
+        rules = {
+            rules: {
+                new_email: {
+                    required: true,
+                }
+            }
+        }
+        validationRules = $.extend(rules, fun.utils.validationRules);
+        $('#add-email-form').validate(validationRules);
+
+        validForm = $('#add-email-form').valid();
+        if(validForm){
+            event.preventDefault();
+            console.log('yeah');
+        }
+        
         body = JSON.stringify(schema);
 
         alerta.save({
@@ -249,6 +266,8 @@ fun.views.settings = Backbone.View.extend({
             email: this.accountProfile['email'],
             body: body
         });
+
+        console.log('wtf backend sends shit to multiple guys...');
     }
 
 });
