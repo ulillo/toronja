@@ -205,7 +205,7 @@ fun.views.settings = Backbone.View.extend({
         $('#change-password-form').validate(validationRules);
 
         // check for a valid form and create the new user account
-        validForm = $('#langing-signup-form').valid();
+        validForm = $('#change-password-form').valid();
         if(validForm){
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
