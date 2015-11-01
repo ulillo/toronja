@@ -178,7 +178,11 @@ fun.views.settings = Backbone.View.extend({
         //event.preventDefault();
         var rules, 
             validationRules,
-            validForm;
+            validForm,
+            old_password,
+            new_password,
+            confirm_new_password,
+            accountInformation;
         // form validation rules
         rules = {
             rules: {
@@ -202,7 +206,7 @@ fun.views.settings = Backbone.View.extend({
 
         // check for a valid form and create the new user account
         validForm = $('#langing-signup-form').valid();
-        if (validForm){
+        if(validForm){
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
                 'account': this.accountProfile['account']
@@ -219,6 +223,7 @@ fun.views.settings = Backbone.View.extend({
             console.log(accountInformation);
 
             //confirm.save(accountInformation, {patch: true});
+        }
     }
 
 });
