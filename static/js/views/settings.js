@@ -235,7 +235,7 @@ fun.views.settings = Backbone.View.extend({
         
         alerta = new fun.models.Alert();
 
-        text = fun.utils.format("Hi @%s!\nHelp us secure your account by verifying your email address (%s). This will let you receive notifications and password resets from us.\nPlease copy and paste the following link into your browser: %s\nYou're receiving this email because you recently created a new account or added a new email address. If this wasn't you, please ignore this email.", this.accountInformation['account'], this.accountProfile['email'], 'http://example.com');
+        text = fun.utils.format("Hi @%s!\nHelp us secure your account by verifying your email address (%s). This will let you receive notifications and password resets from us.\nPlease copy and paste the following link into your browser: %s\nYou're receiving this email because you recently created a new account or added a new email address. If this wasn't you, please ignore this email.", this.accountProfile['account'], this.accountProfile['email'], 'http://example.com');
         schema = {
             'subject': 'New email address verification',
             'text': text,
