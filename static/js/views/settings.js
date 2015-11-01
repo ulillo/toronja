@@ -230,13 +230,24 @@ fun.views.settings = Backbone.View.extend({
         'use strict';
         var alerta,
             schema,
+            text,
             body;
         
         alerta = new fun.models.Alert();
 
+        text = fun.utils.format("""Hi @%s!
+
+        Help us secure your account by verifying your email address (%s). This will let you receive notifications and password resets from us.
+
+
+        Please copy and paste the following link into your browser: %s
+
+        You're receiving this email because you recently created a new account or added a new email address. If this wasn't you, please ignore this email.
+        """, this.accountInformation['account'], this.accountProfile['email'], 'http://example.com');
+
         schema = {
-            'subject': 'New wholesale account',
-            'text': 'A new wholesale account has been register, please visit: http://fun.codemachine.io/#companies to check it out',
+            'subject': 'New email address verification',
+            'text': text,
             'email':'jchassoul@codemachine.io'
         };
 
