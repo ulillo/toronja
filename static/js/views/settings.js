@@ -221,9 +221,7 @@ fun.views.settings = Backbone.View.extend({
                 'password': new_password
             };
 
-            console.log(accountInformation);
-
-            //confirm.save(accountInformation, {patch: true});
+            this.model.save(accountInformation, {patch: true});
         }
     }
 
