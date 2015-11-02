@@ -268,6 +268,10 @@ fun.views.settings = Backbone.View.extend({
         
         alerta = new fun.models.Alert();
 
+        if (!this.emails){
+            this.emails = [];
+        }
+
         text = fun.utils.format("Hi @%s!\n\nHelp us secure your account by verifying your email address (%s). This will let you receive notifications and password resets from us.\n\nPlease copy and paste the following link into your browser: %s\n\nYou're receiving this email because you recently created a new account or added a new email address. If this wasn't you, please ignore this email.", this.accountProfile['account'], this.accountProfile['email'], 'http://example.com');
         schema = {
             'subject': 'Please verify your email address',
@@ -291,13 +295,13 @@ fun.views.settings = Backbone.View.extend({
             console.log('yeah');
             new_email = this.newEmail.val();
             email = {'address': new_email};
-            emails = [email,];
+            this.emails.append(email)
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
                 'account': this.accountProfile['account']
             });
             accountInformation = {
-                'emails': emails
+                'emails': this.emails
             };
             this.model.save(accountInformation, {patch: true});
         }
