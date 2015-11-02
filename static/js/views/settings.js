@@ -260,6 +260,9 @@ fun.views.settings = Backbone.View.extend({
             body,
             rules,
             new_email,
+            email,
+            emails,
+            accountInformation,
             validationRules,
             validForm;
         
@@ -267,7 +270,7 @@ fun.views.settings = Backbone.View.extend({
 
         text = fun.utils.format("Hi @%s!\n\nHelp us secure your account by verifying your email address (%s). This will let you receive notifications and password resets from us.\n\nPlease copy and paste the following link into your browser: %s\n\nYou're receiving this email because you recently created a new account or added a new email address. If this wasn't you, please ignore this email.", this.accountProfile['account'], this.accountProfile['email'], 'http://example.com');
         schema = {
-            'subject': 'New email address verification',
+            'subject': 'Please verify your email address',
             'text': text,
             'email':'jchassoul@codemachine.io'
         };
@@ -286,24 +289,17 @@ fun.views.settings = Backbone.View.extend({
         if(validForm){
             event.preventDefault();
             console.log('yeah');
-
             new_email = this.newEmail.val();
-
-            var email = {'address': new_email};
-
-            var emails = [email,];
-
+            email = {'address': new_email};
+            emails = [email,];
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
                 'account': this.accountProfile['account']
             });
-
             accountInformation = {
                 'emails': emails
             };
-
             this.model.save(accountInformation, {patch: true});
-
         }
         
         body = JSON.stringify(schema);
