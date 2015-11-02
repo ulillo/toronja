@@ -196,6 +196,7 @@ fun.views.settings = Backbone.View.extend({
         emailList = this.$('#settings-emails-ul');
 
         console.log('now gut?');
+        console.log(this.emails.length);
     },
 
     updateUserPassword: function(event){
