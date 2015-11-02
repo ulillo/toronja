@@ -177,7 +177,7 @@ fun.views.settings = Backbone.View.extend({
 
     renderEmailList: function(){
         'use strict';
-        var vonCount = 0;
+        var vonCount = 0,
             account,
             emailList,
             itemData,
