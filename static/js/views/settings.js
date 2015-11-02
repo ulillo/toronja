@@ -44,6 +44,7 @@ fun.views.settings = Backbone.View.extend({
         this.$el.html(template);
         // assign this variable values
         this.email = this.$('#user_email');
+        this.newEmail = this.$('#new_email');
         this.oldPassword = this.$('#old_password');
         this.newPassword = this.$('#new_password');
         this.confirmPassword = this.$('#confirm_password');
@@ -258,6 +259,7 @@ fun.views.settings = Backbone.View.extend({
             text,
             body,
             rules,
+            new_email,
             validationRules,
             validForm;
         
@@ -270,7 +272,6 @@ fun.views.settings = Backbone.View.extend({
             'email':'jchassoul@codemachine.io'
         };
 
-        
         rules = {
             rules: {
                 new_email: {
@@ -285,6 +286,24 @@ fun.views.settings = Backbone.View.extend({
         if(validForm){
             event.preventDefault();
             console.log('yeah');
+
+            new_email = this.newEmail.val();
+
+            var email = {'address': new_email};
+
+            var emails = [email,];
+
+            this.model = new fun.models.User({
+                'uuid': this.accountProfile['uuid'],
+                'account': this.accountProfile['account']
+            });
+
+            accountInformation = {
+                'emails': emails
+            };
+
+            this.model.save(accountInformation, {patch: true});
+
         }
         
         body = JSON.stringify(schema);
