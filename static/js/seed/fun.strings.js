@@ -278,7 +278,7 @@ fun.strings = {
     devAcrossTeams: "Friction-less development across teams",
     workWithTeams: "Work with project collaborators or teams of people in organization accounts to communicate with ease",
     greatComStartWcoll: "Great communication starts with collaboration",
-    planFutureDiscussionTools: "Review calls, comment on tasks, report issues, and plan the future of your project with discussion tools",
+    planFutureDiscussionTools: "Review calls, comment on tasks, report issues, and plan the future of your project with communication tools",
     matchCallersandTeams: "Match callers and custom teams as they wait for an answer, get real-time stats on the number of calls by team and more",
     bringFunDataCenter: "Bring the fun to your data center",
     useFunEnterprise: "Use I/O FUN Enterprise, the best way to manage communications, on your servers",
