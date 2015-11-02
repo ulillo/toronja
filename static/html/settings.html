@@ -205,14 +205,14 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">ratona<%= translate("email") %></h3>
+                                    <h3 class="panel-title"><%= translate("email") %></h3>
                                 </div>
                                 <div class="panel-body">
                                     <p><%= translate("primaryEmailForAccountNotification") %>.</p>
 
-                                    <p><%= translate("notVerifiedAnyEmail") %>.</p>
+                                    <p id="not-verified-any"><%= translate("notVerifiedAnyEmail") %>.</p>
 
-                                    <ul class="list-group">
+                                    <ul id="settings-emails-ul" class="list-group">
                                         <li class="list-group-item">
                                                                                         
                                             <ul class="list-inline pull-right">

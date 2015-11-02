@@ -61,6 +61,7 @@ fun.views.settings = Backbone.View.extend({
         this.email.val(this.accountProfile['email'] || '');
 
         this.renderOrganizationList();
+        this.renderEmailList();
 
         // show the HTML template
         this.$el.removeClass("hide").addClass("show");
@@ -172,6 +173,29 @@ fun.views.settings = Backbone.View.extend({
                 orgList.append(itemTemplate);
             });
         }
+    },
+
+    renderEmailList: function(){
+        'use strict';
+        var vonCount = 0;
+            account,
+            emailList,
+            itemData,
+            itemTemplate;
+
+        console.log('render email list');
+
+        account = JSON.parse(localStorage.getItem("profile"));
+
+        if (account){
+            this.emails = account["emails"] || [];
+        } else {
+            this.emails = [];
+        }
+
+        emailList = this.$('#settings-emails-ul');
+
+        console.log('now gut?');
     },
 
     updateUserPassword: function(event){
