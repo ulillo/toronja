@@ -295,7 +295,7 @@ fun.views.settings = Backbone.View.extend({
             console.log('yeah');
             new_email = this.newEmail.val();
             email = {'address': new_email};
-            this.emails.append(email)
+            this.emails.push(email);
             this.model = new fun.models.User({
                 'uuid': this.accountProfile['uuid'],
                 'account': this.accountProfile['account']
