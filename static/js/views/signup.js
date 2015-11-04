@@ -32,7 +32,7 @@ fun.views.signup = Backbone.View.extend({
             this.newAccount = this.account;
             this.email = this.$('#signup_email');
             this.password = this.$('#signup_password');
-            this.confirmPassword = this.$('#confirm_password');
+            this.confirmPassword = this.$('#signup_confirm_password');
         }
         this.$el.removeClass("hide").addClass("show");
     },
@@ -79,12 +79,12 @@ fun.views.signup = Backbone.View.extend({
                     email: true
                 },
                 signup_password: {
-                    minlength: 6,
+                    minlength: 8,
                     required: true
                 },
-                confirm_password: {
-                    required: false,
-                    minlength: 6,
+                signup_confirm_password: {
+                    required: true,
+                    minlength: 8,
                     equalTo: '#signup_password'
                     
                 }
@@ -101,7 +101,7 @@ fun.views.signup = Backbone.View.extend({
                 view.$('#signup_username').val('');
                 view.$('#signup_email').val('');
                 view.$('#signup_password').val('');
-                view.$('#confirm_password').val('');
+                view.$('#signup_confirm_password').val('');
                 signupError.hide();
                 // login the created user
                 fun.utils.login(account, password,
