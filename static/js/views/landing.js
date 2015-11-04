@@ -66,7 +66,7 @@ fun.views.landing = Backbone.View.extend({
                     email: true
                 },
                 landing_password: {
-                    minlength: 6,
+                    minlength: 8,
                     required: true
                 }
             }
