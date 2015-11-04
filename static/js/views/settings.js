@@ -304,6 +304,13 @@ fun.views.settings = Backbone.View.extend({
                 'emails': this.emails
             };
             this.model.save(accountInformation, {patch: true});
+
+            var newAddress = new fun.models.Address();
+            var addressData = {
+                'account': this.accountProfile['account'],
+                'email': email
+            };
+            newAddress.save(addressData);
         }
         
         body = JSON.stringify(schema);
