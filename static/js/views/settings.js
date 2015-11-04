@@ -260,9 +260,8 @@ fun.views.settings = Backbone.View.extend({
             body,
             rules,
             new_email,
-            email,
-            emails,
-            accountInformation,
+            newAddress,
+            addressData,
             validationRules,
             validForm;
         
@@ -292,23 +291,11 @@ fun.views.settings = Backbone.View.extend({
         validForm = $('#add-email-form').valid();
         if(validForm){
             event.preventDefault();
-            console.log('yeah');
             new_email = this.newEmail.val();
-            email = {'address': new_email};
-            this.emails.push(email);
-            this.model = new fun.models.User({
-                'uuid': this.accountProfile['uuid'],
-                'account': this.accountProfile['account']
-            });
-            accountInformation = {
-                'emails': this.emails
-            };
-            this.model.save(accountInformation, {patch: true});
-
-            var newAddress = new fun.models.Address();
-            var addressData = {
+            newAddress = new fun.models.Address();
+            addressData = {
                 'account': this.accountProfile['account'],
-                'email': email
+                'email': new_email
             };
             newAddress.save(addressData);
         }
