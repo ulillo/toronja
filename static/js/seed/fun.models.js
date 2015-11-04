@@ -87,21 +87,51 @@ fun.models.logout = Backbone.Model.extend({
 });
 
 
-fun.models.Task = Backbone.Model.extend({
+fun.models.Address = Backbone.Model.extend({
 
     idAttribute: 'uuid',
 
-    urlRoot: fun.conf.urls.task,
+    urlRoot: fun.conf.urls.address,
 
     url: function() {
         'use strict';
         var url;
         if (!this.isNew()){
-            url = this.urlRoot.replace(fun.conf.uuidTask, this.id);
+            url = this.urlRoot.replace(fun.conf.uuidAddress, this.id);
         } else {
-            url = fun.conf.urls.tasks;
+            url = fun.conf.urls.addresses;
         }
         return url;
+    }
+});
+
+fun.models.Addresses = Backbone.Collection.extend({
+
+    model: fun.models.Address,
+
+    urlRoot: fun.conf.urls.addresses,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
+fun.models.AddressPrimary = Backbone.Collection.extend({
+
+    model: fun.models.Address,
+
+    urlRoot: fun.conf.urls.addressesPrimary,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
     }
 });
 
@@ -1007,7 +1037,6 @@ fun.models.MessagesNotifications = Backbone.Collection.extend({
         return response.messages;
     }
 });
-
 
 fun.models.Task = Backbone.Model.extend({
 
