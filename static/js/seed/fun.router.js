@@ -248,6 +248,16 @@ fun.Router = Backbone.Router.extend({
         fun.instances.footer.render();
     },
 
+    workshop: function(){
+        'use strict';
+        var enterprise = translate('workshop');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        //fun.instances.subheader.render(enterprise);
+        fun.instances.workshop.render();
+        fun.instances.footer.render();
+    },
+
     pricing: function(){
         'use strict';
         var pricing = translate('pricing');
