@@ -197,6 +197,7 @@ fun.conf.urls = {
  HTML templates
 */
 fun.conf.templates = {
+    workshop: fun.utils.format('%s/workshop.html', fun.conf.html),
     navbar: fun.utils.format('%s/navbar.html', fun.conf.html),
     navLanding: fun.utils.format('%s/navLanding.html', fun.conf.html),
     navDashboard: fun.utils.format('%s/navDashboard.html', fun.conf.html),
@@ -340,6 +341,7 @@ fun.conf.hash = {
     landing: '#landing',
     features: '#features',
     enterprise: '#enterprise',
+    workshop: '#workshop',
     pricing: '#pricing',
     terms: '#terms',
     privacy: '#privacy',

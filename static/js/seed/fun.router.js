@@ -13,6 +13,7 @@ fun.Router = Backbone.Router.extend({
         "dashboard": "dashboard",
         "dashboard/a:account": "dashboard",
         "dashboard/a:account/o:org": "dashboard",
+        "workshop": "workshop",
         "signup": "signup",
         "login": "login",
         "features": "features",
@@ -70,6 +71,10 @@ fun.Router = Backbone.Router.extend({
         // enterprise
         fun.instances.enterprise = new fun.views.enterprise({
             el:"#fun-enterprise"
+        });
+        // workshop
+        fun.instances.workshop = new fun.views.workshop({
+            el:"#fun-workshop"
         });
         // pricing
         fun.instances.pricing = new fun.views.pricing({
