@@ -10,9 +10,7 @@
 var backboneSync = Backbone.sync;
 
 Backbone.sync = function(method, model, options){
-
     options || (options = {});
-    
     options.crossDomain = true;
     options.contentType = 'application/json';
 
@@ -125,6 +123,39 @@ fun.models.AddressPrimary = Backbone.Collection.extend({
     model: fun.models.Address,
 
     urlRoot: fun.conf.urls.addressesPrimary,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    }
+});
+
+fun.models.Daemon = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.daemon,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidDaemon, this.id);
+        } else {
+            url = fun.conf.urls.daemons;
+        }
+        return url;
+    }
+});
+
+fun.models.Daemons = Backbone.Collection.extend({
+
+    model: fun.models.Daemon,
+
+    urlRoot: fun.conf.urls.daemons,
 
     url: function() {
         return this.urlRoot;

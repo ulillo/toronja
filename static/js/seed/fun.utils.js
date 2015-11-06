@@ -266,6 +266,7 @@ fun.utils.format = function () {
     args = [].slice.call(arguments);
     initial = args.shift();
 
+    // check if we can use {%d} instead of '%s'
     function replacer (text, replacement) {
         return text.replace('%s', replacement);
     }

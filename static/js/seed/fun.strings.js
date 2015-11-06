@@ -55,7 +55,6 @@ fun.strings = {
     accountCurrentlyAdmin: "Your account is currently an administrator on these systems",
     mustTransferSystems: "You must transfer privileges or delete these systems before you can delete your user",
 
-    //r late 15
     fanCommWithTeams: "Fantastic communication with teams",
     teamsAreGreat: "Teams are a great way for groups of people to communicate and work on campaigns together. Take a look at why they're great.",
     flexibleResourceAccess: "Flexible resource access",
