@@ -14,6 +14,7 @@ fun.Router = Backbone.Router.extend({
         "dashboard/a:account": "dashboard",
         "dashboard/a:account/o:org": "dashboard",
         "workshop": "workshop",
+        "workspace": "workspace",
         "signup": "signup",
         "login": "login",
         "features": "features",
@@ -75,6 +76,10 @@ fun.Router = Backbone.Router.extend({
         // workshop
         fun.instances.workshop = new fun.views.workshop({
             el:"#fun-workshop"
+        });
+        // workspace
+        fun.instances.workspace = new fun.views.workspace({
+            el:"#fun-workspace"
         });
         // pricing
         fun.instances.pricing = new fun.views.pricing({
@@ -255,6 +260,16 @@ fun.Router = Backbone.Router.extend({
         fun.instances.navbar.render();
         //fun.instances.subheader.render(enterprise);
         fun.instances.workshop.render();
+        fun.instances.footer.render();
+    },
+
+    workspace: function(){
+        'use strict';
+        var enterprise = translate('workspace');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        //fun.instances.subheader.render(enterprise);
+        fun.instances.workspace.render();
         fun.instances.footer.render();
     },
 
