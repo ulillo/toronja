@@ -14,6 +14,7 @@ fun.strings = {
     customerSupportSystem: "Customer Support System",
     noDataAvailable : 'No Data Available.',
     warning: 'Warning!',
+    callTracking: 'Call Tracking',
     phone: "Phone",
     phones: "Phones",
     findAteam: "Find a team",
