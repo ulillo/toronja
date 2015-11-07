@@ -93,8 +93,8 @@ body {
         display: none;
     }
 
-    #taskModal > textarea {
-        max-width: 85vw !important;
+    textarea#task-comment {
+        max-width: 85.8vw !important;
     }
     
     .landing-text h1 {  
@@ -138,8 +138,8 @@ body {
         display: none;
     }
 
-    #taskModal > textarea {
-        max-width: 85vw !important;
+    textarea#task-comment {
+        max-width: 85.8vw !important;
     }
 
     .navbar-brand {
