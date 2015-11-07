@@ -28,6 +28,10 @@
 
 
 @media (min-width: 1200px) {
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
     
     .landing-text h1 {
         margin-bottom: .65em;
@@ -45,6 +49,11 @@
 
 
 @media (min-width: 767px) and (max-width: 979px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
     
     .landing-text h1 {  
         font-size: 18px;    
@@ -73,6 +82,11 @@
 
 
 @media (max-width: 767px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
 
     .navbar-brand {
         margin-top: 7% !important;
