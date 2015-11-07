@@ -274,7 +274,7 @@ fun.views.tasks = Backbone.View.extend({
 
         doneTasks.html(template);
 
-        this.tbody = this.$('#now-done-list > tbody');
+        this.tbody = this.$('#done-tasks-list > tbody');
 
         this.$el.removeClass("hide").addClass("show");
         this.renderDoneTaskRows();
