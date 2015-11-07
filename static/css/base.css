@@ -93,6 +93,10 @@ body {
         display: none;
     }
 
+    .modal-open .modal::-webkit-scrollbar {
+        display: none;
+    }
+
     textarea#task-comment {
         max-width: 85.8vw !important;
     }
@@ -135,6 +139,10 @@ body {
     }
 
     body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-open .modal::-webkit-scrollbar {
         display: none;
     }
 
