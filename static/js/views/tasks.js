@@ -292,7 +292,6 @@ fun.views.tasks = Backbone.View.extend({
             template;
         // tasks length
         length = this.tasks.length;
-        console.log('tasks!!',this.tasks);
 
         console.log('done tasks length: ',length);
 
@@ -304,9 +303,6 @@ fun.views.tasks = Backbone.View.extend({
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
                 )(data);
-
-                console.log('TEMPLATE!!!');
-                console.log(template);
 
                 rows.append(template);
             }
