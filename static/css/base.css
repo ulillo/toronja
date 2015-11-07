@@ -92,6 +92,10 @@ body {
     body::-webkit-scrollbar {
         display: none;
     }
+
+    #taskModal > textarea {
+        max-width: 85vw !important;
+    }
     
     .landing-text h1 {  
         font-size: 18px;    
@@ -132,6 +136,10 @@ body {
 
     body::-webkit-scrollbar {
         display: none;
+    }
+
+    #taskModal > textarea {
+        max-width: 85vw !important;
     }
 
     .navbar-brand {
