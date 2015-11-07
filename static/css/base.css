@@ -49,6 +49,12 @@ body {
 
 
 @media (min-width: 1200px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+    }
     
     .landing-text h1 {
         margin-bottom: .65em;
@@ -70,6 +76,7 @@ body {
     html, body {
       width: auto !important;
       overflow-x: hidden !important;
+      overflow-y: hidden !important;
     }
     
     .landing-text h1 {  
@@ -103,6 +110,7 @@ body {
     html, body {
       width: auto !important;
       overflow-x: hidden !important;
+      overflow-y: hidden !important;
     }
 
     .navbar-brand {
