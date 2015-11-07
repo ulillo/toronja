@@ -305,6 +305,9 @@ fun.views.tasks = Backbone.View.extend({
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
                 )(data);
 
+                console.log('TEMPLATE!!!');
+                console.log(template);
+
                 rows.append(template);
             }
         } else {
