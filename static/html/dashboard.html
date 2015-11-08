@@ -55,3 +55,130 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- task Modal popup -->
+<div class="modal fade" id="incomingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel"><%= translate("taskDetails") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p>Trouble Tickets track and manage IT problems and their solutions for multiple clients. Use this page to change the contents of an existing Trouble Ticket.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("uuid") %></th>
+                                        <td id="task-uuid"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("title") %></th>
+                                        <td id="task-title"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("assigned") %></th>
+                                        <td id="task-assigned"></td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("label") %></th>
+                                        <td id="task-label"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("source") %></th>
+                                        <td id="task-source"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("status") %></th>
+                                        <!-- da fuq 
+                                        <td id="task-status">
+                                        -->
+                                        <td>
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <span id="task_status" data-label-placement="">now</span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="task_status_now" name="task_status" value="now">
+                                                        <label for="task_status_now">now</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="task_status_later" name="task_status" value="later">
+                                                        <label for="task_status_later">later</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="task_status_done" name="task_status" value="done">
+                                                        <label for="task_status_done">done</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Description:</h4>
+
+                        <p id="task-description"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>History:</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Comment:</h4>
+
+                        <textarea id="task-comment"
+                            rows="5"
+                            cols="66"></textarea>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-6">
+                        <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="update-task-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("update") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

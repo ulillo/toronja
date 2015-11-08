@@ -276,7 +276,10 @@ fun.views.dashboard = Backbone.View.extend({
     incomingCall: function(event){
         'use strict';
         // nin !
-        console.log('oh my fucking liar');
+
+        $('#incomingModal').modal({
+            'show': true
+        });
     }
 
 });
