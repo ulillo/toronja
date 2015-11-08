@@ -23,7 +23,7 @@ fun.views.workspace = Backbone.View.extend({
             this.$el.html(template);
         }
         console.log('RUNNING MODAL!!');
-        $('#testModal').modal('show');
+        $('#prescriptionFormModal').modal('show');
         this.$el.removeClass("hide").addClass("show");
     }
 
