@@ -28,18 +28,18 @@ fun.views.phone = Backbone.View.extend({
         var session;
 
         var configuration = {
-            uri: 'sip:godstybba@sip.iofun.io',
-            password: 'zafary',
-            wsServers: 'ws://sip.iofun.io:10080',
-            displayName: 'godstybba',
-            authorizationUser: 'godstybba',
+            uri: 'sip:ochodemayo@s1p.codemachine.io',
+            password: 'zafary77',
+            wsServers: 'ws://s1p.codemachine.io:10080',
+            displayName: 'ochodemayo',
+            authorizationUser: 'ochodemayo',
             register: true,
             registerExpires: 900,
-            stunServers: ["coturn.iofun.io:3478"],
+            stunServers: ["ice.codemachine.io:3478"],
             turnServers: {
-                    server: "turn:coturn.iofun.io:3478",
-                    username: "godstybba",
-                    password: "zafary"
+                    server: "turn:ice.codemachine.io:3478",
+                    username: "ochodemayo",
+                    password: "zafary77"
                 },
         };
 
