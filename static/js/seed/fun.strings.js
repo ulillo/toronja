@@ -20,6 +20,7 @@ fun.strings = {
     prescriptionFormModalFormPatientTdi: "TDI/ SS#",
     prescriptionFormModalFormPhysicianName: "PHYSICIAN name",
     prescriptionFormModalFormPhysicianPhone: "Phone #",
+    prescriptionFormModalFormPhysicianFax: "Fax #",
     prescriptionFormModalFormPhysicianAddress: "Address",
     prescriptionFormModalFormPhysicianCity: "CITY",
     prescriptionFormModalFormPhysicianSt: "ST",
