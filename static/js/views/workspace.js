@@ -22,6 +22,7 @@ fun.views.workspace = Backbone.View.extend({
             var template = _.template(fun.utils.getTemplate(fun.conf.templates.workspace));
             this.$el.html(template);
         }
+        console.log('RUNNING MODAL!!');
         $('#testModal').modal('show');
         this.$el.removeClass("hide").addClass("show");
     }
