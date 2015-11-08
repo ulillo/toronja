@@ -48,7 +48,7 @@ body {
 }
 
 #testModal .modal-dialog {
-    width: 80vw;
+    width: 70vw;
 }
 
 @media (min-width: 1200px) {
