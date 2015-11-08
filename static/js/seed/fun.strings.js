@@ -18,6 +18,7 @@ fun.strings = {
     prescriptionFormModalFormPatientZip: "ZIP",
     prescriptionFormModalFormPatientBirthday: "DATE OF BIRTH",
     prescriptionFormModalFormPatientTdi: "TDI/ SS#",
+    prescriptionFormModalFormPhysicianName: "PHYSICIAN name",
     ioFun: "IO FUN",
     login: "Login",
     active: "Active",
