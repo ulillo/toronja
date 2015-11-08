@@ -8,6 +8,8 @@ fun.strings = {
     prescriptionFormModalFormPain: "PAIN",
     prescriptionFormModalFormScar: "SCAR",
     prescriptionFormModalFormWound: "WOUND",
+    prescriptionFormModalFormPrevmeds: "Prev. Meds",
+    prescriptionFormModalFormAllergies: "Allergies",
     ioFun: "IO FUN",
     login: "Login",
     active: "Active",
