@@ -2,6 +2,9 @@
  * Default internationalization object
  */
 fun.strings = {
+    prescriptionFormModalTitle: "PESCRIPTION FORM",
+    prescriptionFormModalFormInitial: "INITIAL",
+    prescriptionFormModalFormDate: "DATE",
     ioFun: "IO FUN",
     login: "Login",
     active: "Active",

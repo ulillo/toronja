@@ -103,11 +103,28 @@
         <div class="modal-content">
             <div class="modal-header">
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                <h4 class="modal-title" id="myModalLabel"><%= translate("taskDetails") %></h4>
+                <h4 class="modal-title" id="myModalLabel"><%= translate("prescriptionFormModalTitle") %></h4>
             </div>
             <div class="modal-body">
 
-                <p>Trouble Tickets track and manage IT problems and their solutions for multiple clients. Use this page to change the contents of an existing Trouble Ticket.</p>
+                <form>
+                    <div class="row">
+                        <div class="container">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="initial"><%= translate("prescriptionFormModalFormInitial") %></label>
+                                    <input type="text" class="form-control" id="initial" placeholder="Initial">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="date"><%= translate("prescriptionFormModalFormDate") %></label>
+                                    <input type="text" class="form-control" id="date" placeholder="Date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
                 <div class="row">
                     <div class="col-md-6">
