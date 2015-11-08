@@ -1,3 +1,4 @@
+
 html,
 body {
   min-height: 100vh;
@@ -46,8 +47,28 @@ body {
     font-weight: 600;
 }
 
+#prescriptionFormModal .modal-dialog {
+    width: 70vw;
+}
+
+#pvtScriptModal .modal-dialog {
+    width: 70vw;
+}
 
 @media (min-width: 1200px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    html::-webkit-scrollbar {
+        display: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
     
     .landing-text h1 {
         margin-bottom: .65em;
@@ -65,6 +86,27 @@ body {
 
 
 @media (min-width: 767px) and (max-width: 979px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    html::-webkit-scrollbar {
+        display: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-open .modal::-webkit-scrollbar {
+        display: none;
+    }
+
+    textarea#task-comment {
+        max-width: 85.8vw !important;
+    }
     
     .landing-text h1 {  
         font-size: 18px;    
@@ -94,9 +136,30 @@ body {
 
 @media (max-width: 767px) {
 
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    html::-webkit-scrollbar {
+        display: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-open .modal::-webkit-scrollbar {
+        display: none;
+    }
+
+    textarea#task-comment {
+        max-width: 85.8vw !important;
+    }
+
     .navbar-brand {
-        margin-top: 6% !important;
-        margin-left: 5% !important;
+        margin-top: 2px !important;
+        margin-left: 5vw !important;
     }
 
     .landing-actions {
