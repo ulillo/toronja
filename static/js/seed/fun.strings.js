@@ -46,6 +46,7 @@ fun.strings = {
     prescriptionFormModalFormCustomerServiceNumber: "Customer Service #",
     prescriptionFormModalFormPharmacyInfo2: "PHARMACY INFO",
     prescriptionFormModalFormPharmacyPh: "PHARMACY PH",
+    pvtScriptModalTitle: "Script",
     ioFun: "IO FUN",
     login: "Login",
     active: "Active",
