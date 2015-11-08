@@ -7,7 +7,8 @@ fun.views.dashboard = Backbone.View.extend({
         'click #today-btn': 'today',
         'click #this-week-btn': 'thisWeek',
         'click #this-month-btn': 'thisMonth',
-        'click #this-year-btn': 'thisYear'
+        'click #this-year-btn': 'thisYear',
+        'click #fake-modal-n-stuff': 'incomingCall'
     },
 
     initialize: function(options){
@@ -270,6 +271,12 @@ fun.views.dashboard = Backbone.View.extend({
         'use strict';
         // This year
         console.log('this year event');
+    },
+
+    incomingCall: function(event){
+        'use strict';
+        // nin !
+        console.log('oh my fucking liar');
     }
 
 });

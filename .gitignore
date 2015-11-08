@@ -12,6 +12,8 @@ build/
 develop-eggs/
 dist/
 downloads/
+node_modules/
+Gruntfile.js
 eggs/
 lib/
 lib64/
