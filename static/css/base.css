@@ -47,6 +47,13 @@ body {
     font-weight: 600;
 }
 
+#prescriptionFormModal .modal-dialog {
+    width: 70vw;
+}
+
+#pvtScriptModal .modal-dialog {
+    width: 70vw;
+}
 
 @media (min-width: 1200px) {
 

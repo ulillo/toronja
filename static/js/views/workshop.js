@@ -22,6 +22,7 @@ fun.views.workshop = Backbone.View.extend({
             var template = _.template(fun.utils.getTemplate(fun.conf.templates.workshop));
             this.$el.html(template);
         }
+        $('#pvtScriptModal').modal('show');
         this.$el.removeClass("hide").addClass("show");
     }
 
