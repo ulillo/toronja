@@ -102,7 +102,7 @@
                 <h4 class="modal-title" id="myModalLabel"><%= translate("pvtScriptModalTitle") %></h4>
             </div>
             <div class="modal-body">
-                <div class"row">
+                <div class="row">
                     <div class="col-md-4">
                         <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
                     </div>
@@ -114,7 +114,6 @@
                     </div>
                 </div>
                 <hr>
-                <br>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
@@ -226,7 +225,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="form" class="col-md-6 hide">
+                    <div id="formView" class="col-md-6 hide">
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
@@ -641,6 +640,229 @@
                 <div class"row">
                     <div class="col-md-4">
                         <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="incoming-form-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("form") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="update-task-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("update") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal  fade"  id="incomingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel"><%= translate("incomingCall") %></h4>
+            </div>
+            <div class="modal-body">
+                <!--
+                <p>Trouble Tickets track and manage IT problems and their solutions for multiple clients. Use this page to change the contents of an existing Trouble Ticket.</p>
+                -->
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("campaign") %></th>
+                                            <td id="incoming-campaign"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("firstName") %></th>
+                                            <td id="incoming-firstName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("lastName") %></th>
+                                            <td id="incoming-lastName"></td>    
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("phone") %></th>
+                                            <td id="incoming-phone"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("year") %></th>
+                                            <td id="incoming-year"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("age") %></th>
+                                            <td id="incoming-age"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("address") %></th>
+                                            <td id="incoming-address"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("city") %></th>
+                                            <td id="incoming-city"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("state") %></th>
+                                            <td id="incoming-state"></td>    
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("zip") %></th>
+                                            <td id="incoming-zip"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("insurance") %></th>
+                                            <td id="incoming-insurance"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("uuid") %></th>
+                                            <td id="incoming-uuid"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Good Afternoon? Good Morning this is _________with Myco Medical who do I have the pleasure of speaking to? Hi _____ how are you? _____Miss/Mr__________. The reason you were contacted is because you are qualified for a custom compound topical pain cream that is covered through your health insurance and it goes through your physician. Now I just have to ask you 2 quick questions to make sure you are covered 100%.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>(If they say how you got my number)...Well a referral was sent over to our office most likely by your physician or by someone in the household who filled out something online</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <strong>(If they say who is Myco Medical? We are big advocates for getting patients off of oral pain medications, we market on behalf of our pharmacy.)</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <strong>(If they ask how much is this going to cost me? The cost is generally covered by your Health insurance provider, however you may be responsible for the standard co-pay. What is your normal Co-pay? That is what the cost would be.)
+                                </strong>
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <ol class="list-group">
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>1) Who is the health insurance provider that you currently have?</strong>
+                                    </p>
+                                </li>
+                                <p>(No Medicaid, Medicare, Well Care, AARP, Humana or any insurance that is through Medicaid)</p>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>2) When was the last time you saw your doctor?</strong>
+                                    </p>
+                                </li>
+                                <p>(No longer than 3 months or else not qualified, recommend patient to set up a visit and follow up)</p>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Great, congratulations it looks like you qualify for the Topical Pain cream. Let me explain what it is and does so you understand 100%</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>What you qualified for is a topical pain cream that combines 8 active pharmaceutical ingredients all geared toward treating pain. The topical cream is a new safe alternative doctors are using to treat pain, it’s a prescription strength cream that you rub 2-3 times a day on the areas of your body where you have pain. The great thing about it is that since it is topical there is little to no chance of it entering your bloodstream. As a result there is little to no chance of addiction or nasty side effects associated with oral pain medications. What I want to do is get you out a 30 day prescription and the best part about it is that your insurance covers it.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>What I will do now is send it to your doctor, so your doctor can review it and make sure you are not allergic to any of the ingredients, sign off on it and fax it back to us. Once we receive the fax back, we send it to our pharmacy who then runs it through your _______ insurance, then we overnight the prescription via mail to your doorstep. After 30 days, I or someone else will give you a call back to follow up to see if the prescription worked well. From there we will send you out 5 more refills of the prescription via mail to your door step as well.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ol class="list-group">
+                                <li class="list-group-item">
+                                    <p>1) What is your doctor’s name? [Can you spell it]</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>2) What city is your doctor located?</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>3) Can you spell your first name for me?</p>
+                                    <ul>
+                                        <li>And your last name?</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>4) Okay ____, can you say your date of birth?</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>5) And the address that you want this prescription shipped to?</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>6) When you last filled your prescription where did you go to? (Rite Aide, Walgreens, CVS etc), Ok, can you grab your pill bottle and give me the number to your pharmacy.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>What I am going to do now is obtain your insurance information from your pharmacy and send the prescription over to your physician.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>I strongly recommend that you call your doctor and leave a message at the front desk that you have a prescription coming from Myco Medical that you want to try out. Please sign and fax it back to ***-***-**** .</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Okay, I would like to thank you for this call, and again my name is_________, with Myco Medical. I will most likely be following up with you in a few days to make sure we have everything confirmed. Is this the best number to reach you at? Okay, I hope you feel better and have a nice day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Comment:</h4>
+
+                        <textarea id="task-comment"
+                            rows="5"
+                            cols="66"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-4">
+                        <button id="howler-dial-next-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
                     </div>
                     <div class="col-md-4">
                         <button id="incoming-form-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("form") %></button>

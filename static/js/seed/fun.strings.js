@@ -37,6 +37,7 @@ fun.strings = {
     gatewaysOutbound: "Outbound Gateways",
     addEmail: "Add email",
     newEmail: "New email",
+    form: "Form",
 
     incomingCall: "Incoming Call",
 

@@ -9,7 +9,7 @@ fun.views.dashboard = Backbone.View.extend({
         'click #this-month-btn': 'thisMonth',
         'click #this-year-btn': 'thisYear',
         'click #fake-modal-n-stuff': 'incomingCall',
-        'click #howler-dial-next-btn': 'alexBB'
+        'click #incoming-form-btn': 'showHideForm'
     },
 
     initialize: function(options){
@@ -278,14 +278,23 @@ fun.views.dashboard = Backbone.View.extend({
         'use strict';
         // nin !
 
-        $('#incomingModal').modal({
-            'show': true
-        });
+        $('#pvtScriptModal').modal('show');
     },
 
-    alexBB: function(event){
-        'use strict';
-        console.log('tomela');
+    showHideForm: function(){
+        if($('#formView').hasClass('hide')){
+            $('#pills').removeClass('show');
+            $('#pills').addClass('hide');
+            $('#formView').removeClass('hide');
+            $('#formView').addClass('show');
+            $('#incoming-form-btn').text(fun.strings.contact);
+        } else {
+            $('#formView').removeClass('show');
+            $('#formView').addClass('hide');
+            $('#pills').removeClass('hide');
+            $('#pills').addClass('show');
+            $('#incoming-form-btn').text(fun.strings.form);
+        }
     }
 
 });
