@@ -32,11 +32,13 @@ fun.views.workshop = Backbone.View.extend({
             $('#pills').addClass('hide');
             $('#formView').removeClass('hide');
             $('#formView').addClass('show');
+            $('#incoming-form-btn').text(fun.strings.contact);
         } else {
             $('#formView').removeClass('show');
             $('#formView').addClass('hide');
             $('#pills').removeClass('hide');
             $('#pills').addClass('show');
+            $('#incoming-form-btn').text(fun.strings.form);
         }
     }
 
