@@ -4,7 +4,7 @@ fun.views.workshop = Backbone.View.extend({
     * Bind the event functions to the different HTML elements
     */
     events : {
-        'click #form': 'showHideForm'
+        'click #incoming-form-btn': 'showHideForm'
     },
     
     /*
