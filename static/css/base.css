@@ -52,7 +52,7 @@ body {
 }
 
 #pvtScriptModal .modal-dialog {
-    width: 70vw;
+    width: 90vw;
 }
 
 @media (min-width: 1200px) {
