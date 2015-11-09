@@ -8,7 +8,8 @@ fun.views.dashboard = Backbone.View.extend({
         'click #this-week-btn': 'thisWeek',
         'click #this-month-btn': 'thisMonth',
         'click #this-year-btn': 'thisYear',
-        'click #fake-modal-n-stuff': 'incomingCall'
+        'click #fake-modal-n-stuff': 'incomingCall',
+        'click #howler-dial-next-btn': 'alexBB'
     },
 
     initialize: function(options){
@@ -280,6 +281,11 @@ fun.views.dashboard = Backbone.View.extend({
         $('#incomingModal').modal({
             'show': true
         });
+    },
+
+    alexBB: function(event){
+        'use strict';
+        console.log('tomela');
     }
 
 });
