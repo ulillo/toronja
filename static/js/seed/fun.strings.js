@@ -215,7 +215,7 @@ fun.strings = {
     featuresContentFour: "",
     featuresContentFive: "",
     dashboard: "Dashboard",
-    distributionOverview: "Distribution overview",
+    distributionOverview: "Disposition overview",
     summary: "Summary",
     todayActivity: "Today Activity",
     latestRecords: "Latest Records",
