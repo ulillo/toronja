@@ -9,6 +9,14 @@ body {
   position: relative;
 }
 
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 #user-plans {
     color:#2A9EC5;
 }

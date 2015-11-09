@@ -213,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div id="form" class="col-md-6 hide">
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
@@ -539,14 +539,100 @@
                             </div>
                         </form>
                     </div>
+                    <div id="pills" class="col-md-6 show">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+
+                                    <!-- Table -->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><%= translate("campaign") %></th>
+                                                <td id="incoming-campaign"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("firstName") %></th>
+                                                <td id="incoming-firstName"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("lastName") %></th>
+                                                <td id="incoming-lastName"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("phone") %></th>
+                                                <td id="incoming-phone"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("year") %></th>
+                                                <td id="incoming-year"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("age") %></th>
+                                                <td id="incoming-age"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+
+                                    <!-- Table -->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><%= translate("address") %></th>
+                                                <td id="incoming-address"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("city") %></th>
+                                                <td id="incoming-city"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("state") %></th>
+                                                <td id="incoming-state"></td>    
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("zip") %></th>
+                                                <td id="incoming-zip"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("insurance") %></th>
+                                                <td id="incoming-insurance"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><%= translate("uuid") %></th>
+                                                <td id="incoming-uuid"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Comment:</h4>
+
+                        <textarea id="task-comment"
+                            rows="5"
+                            cols="66"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class"row">
-                    <div class="col-md-6">
-                        <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                    <div class="col-md-4">
+                        <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <button id="incoming-form-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("form") %></button>
+                    </div>
+                    <div class="col-md-4">
                         <button id="update-task-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("update") %></button>
                     </div>
                 </div>
