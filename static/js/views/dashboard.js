@@ -54,6 +54,10 @@ fun.views.dashboard = Backbone.View.extend({
     renderTodaySummary: function(summary, billing){
         // Render today summary
         'use strict';
+
+        var md_content = "#Hello.\n\n* This is markdown.\n* It is fun\n* Love it or leave it."
+        var html_content = markdown.toHTML( md_content );
+
         var data,
             template,
             todaySummary;
@@ -82,7 +86,7 @@ fun.views.dashboard = Backbone.View.extend({
         )(data);
         
         todaySummary = this.$('#fun-today-summary');
-        todaySummary.html(template);
+        todaySummary.html(html_content);
     },
 
     renderTodayActivityChart: function(summary){
