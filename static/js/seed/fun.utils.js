@@ -16,7 +16,7 @@ var fun = {
 };
 
 
-fun.utils.updater = function() {
+fun.utils.updater = {
     socket: null,
 
     start: function() {
