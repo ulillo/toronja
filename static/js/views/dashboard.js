@@ -9,7 +9,8 @@ fun.views.dashboard = Backbone.View.extend({
         'click #this-month-btn': 'thisMonth',
         'click #this-year-btn': 'thisYear',
         'click #fake-modal-n-stuff': 'incomingCall',
-        'click #incoming-form-btn': 'showHideForm'
+        'click #incoming-form-btn': 'showHideForm',
+        'click #ws-test-btn': 'wsTest',
     },
 
     initialize: function(options){
@@ -295,6 +296,10 @@ fun.views.dashboard = Backbone.View.extend({
             $('#pills').addClass('show');
             $('#incoming-form-btn').text(fun.strings.form);
         }
+    },
+
+    wsTest: function(){
+        fun.utils.updater.start();
     }
 
 });

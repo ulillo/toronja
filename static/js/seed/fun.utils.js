@@ -16,6 +16,23 @@ var fun = {
 };
 
 
+fun.utils.updater = function() {
+    socket: null,
+
+    start: function() {
+        var url = "ws://" + location.host + "/ws/alerts";
+        fun.utils.updater.socket = new WebSocket(url);
+        fun.utils.updater.socket.onmessage = function(event) {
+            fun.utils.updater.showMessage(JSON.parse(event.data));
+        }
+    },
+
+    showMessage: function(message) {
+        console.log(message);
+    }
+};
+
+
 /*
 * Fetches the session from it's container (cookie)
 * @return Object: Session data
