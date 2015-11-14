@@ -250,7 +250,7 @@ fun.utils.emptyString = function(str) {
  * Rounds up a number.
  * @return Object
  */
-fun.utils.round = function (number, decimals) {
+fun.utils.round = function(number, decimals){
   if (typeof decimals === 'undefined')
   {
       var decimals = 2;
@@ -264,7 +264,7 @@ fun.utils.round = function (number, decimals) {
  * validation rules
  * return custom validation rules
  */
-fun.utils.validationRules = function () {
+fun.utils.validationRules = function(){
     var custom = {
         focusCleanup: false,
         wrapper: 'div',
@@ -288,7 +288,7 @@ fun.utils.validationRules = function () {
 /**
  * string 'join' format
  */
-fun.utils.format = function () {
+fun.utils.format = function(){
     'use strict';
     var args,
         initial;
@@ -338,7 +338,7 @@ var round = fun.utils.round;
 
 // random stuff that needs some new love
 
-var Theme = function () {
+var Theme = function(){
     
     var chartColors;
     
@@ -363,7 +363,7 @@ var Charts = function () {
     
     var colors = Theme.chartColors;
     
-    return { 
+    return {
         vertical: vertical,
         horizontal: horizontal,
         pie: pie,
@@ -371,7 +371,7 @@ var Charts = function () {
         line: line
     };
     
-    function vertical (target, data) {
+    function vertical(target, data) {
         var options = {
             colors: colors,
     
@@ -403,7 +403,7 @@ var Charts = function () {
         }
     }
     
-    function horizontal (target, data) {
+    function horizontal(target, data) {
         var options = {
                     colors: colors,
 
@@ -436,7 +436,7 @@ var Charts = function () {
                 }
     }
     
-    function pie (target, data) {
+    function pie(target, data) {
         var options = {
             colors: colors,
             
@@ -471,7 +471,7 @@ var Charts = function () {
             }
     }
     
-    function donut (target, data) {
+    function donut(target, data) {
         var options = {
             colors: colors,
             
