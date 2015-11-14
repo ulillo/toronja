@@ -38,7 +38,8 @@ fun.strings = {
     addEmail: "Add email",
     newEmail: "New email",
     form: "Form",
-
+    ignore: "Ignore",
+    save: "Save",
     incomingCall: "Incoming Call",
 
     sentVerificationEmailTo: "We sent a verification email to",
