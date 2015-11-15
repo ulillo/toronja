@@ -42,6 +42,8 @@ fun.strings = {
     save: "Save",
     incomingCall: "Incoming Call",
 
+    disposition: "Disposition",
+
     sentVerificationEmailTo: "We sent a verification email to",
     pleaseFollowInstructions: "Please follow the instructions in it",
 
