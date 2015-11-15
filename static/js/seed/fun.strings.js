@@ -44,6 +44,8 @@ fun.strings = {
 
     disposition: "Disposition",
 
+    update: "Update",
+
     sentVerificationEmailTo: "We sent a verification email to",
     pleaseFollowInstructions: "Please follow the instructions in it",
 
