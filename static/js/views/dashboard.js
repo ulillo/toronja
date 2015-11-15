@@ -101,21 +101,15 @@ fun.views.dashboard = Backbone.View.extend({
         // check if response from the server
         if(summary){
             this.summary = summary;
-            //this.seconds = summary.get('seconds');
             this.minutes = summary.get('minutes');
             this.records = summary.get('records');
         }
 
-        //seconds = _.pairs(this.seconds)
 
         minutes = _.pairs(this.minutes);
 
         records = _.pairs(this.records);
 
-        //data.push({
-        //    data: seconds,
-        //    label: 'Seconds'
-        //});
 
         data.push({
             data: minutes,
@@ -128,7 +122,7 @@ fun.views.dashboard = Backbone.View.extend({
             points: {show: false},
             lines: {lineWidth: 2, fill: false}
         });
-        console.log('TODAY ACTIVITY!',JSON.stringify(data));
+
         // html template
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.todayActivityChart)
