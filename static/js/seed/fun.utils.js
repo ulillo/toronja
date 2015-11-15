@@ -34,6 +34,12 @@ fun.utils.updater = {
 
     processMessage: function(message){
 
+        console.log(message['message']);
+
+        var oesd = {"message": "ping"};
+
+        console.log(oesd['message'] === message['message']);
+
         if (message['message'] !== 'ping' || message['event'] !== 'ping'){
             fun.omnibus.trigger("obelix:message");
             console.log(message);
