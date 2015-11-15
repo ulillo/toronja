@@ -42,6 +42,11 @@ fun.utils.updater = {
 
         console.log(aMessage, aEvent);
 
+
+        if (aMessage === true && message['message'] !== "ping"){
+            console.log('monkeys');
+        }
+
         if (message['message'] !== 'ping' || message['event'] !== 'ping'){
             fun.omnibus.trigger("obelix:message");
             console.log(message);
