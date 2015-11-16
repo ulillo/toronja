@@ -189,7 +189,7 @@ fun.strings = {
     ioFunBanner: "Fantastical unbelievable communication.",
     ioFunLandingText: "Powerful organization management assistant, phone call, record and review tasks on inbound and outbound campaigns.",
     howItWorks: "How it works",
-    funDescription: "I/O FUN designs, manufactures and manage advanced communication systems",
+    funDescription: "We designs, manufacture and manage advanced communication systems",
     getStarted: "Get started",
     enterprise: "Enterprise",
     features: "Features",
