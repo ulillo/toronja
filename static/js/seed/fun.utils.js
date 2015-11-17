@@ -36,7 +36,9 @@ fun.utils.updater = {
         // heartbeat
         if (message['message'] !== 'heartbeat'){
             fun.omnibus.trigger("obelix:message");
-            console.log(message);
+            //console.log(message);
+            var stuff = JSON.parse(message['message']);
+            console.log(stuff)
         }
         
     }
