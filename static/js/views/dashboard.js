@@ -58,7 +58,7 @@ fun.views.dashboard = Backbone.View.extend({
 
     renderBooBoo: function(){
         'use strict';
-        console.log('Welcome to corporate warfare on mars');
+        console.log('Welcome to corporate warfare on mars via websockets');
     },
 
     renderTodaySummary: function(summary, billing){
