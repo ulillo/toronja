@@ -62,6 +62,7 @@ fun.views.dashboard = Backbone.View.extend({
         var message = sessionStorage.getItem("obelix");
         var stuff = JSON.parse(message);
         console.log(stuff)
+        $('#pvtScriptModal').modal('show');
     },
 
     renderTodaySummary: function(summary, billing){
