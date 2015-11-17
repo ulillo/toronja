@@ -21,6 +21,10 @@ fun.views.dashboard = Backbone.View.extend({
         fun.omnibus.on("change:system_admin", function(){
             this.renderBoo();
         }, this);
+
+        fun.omnibus.on("obelix:message", function(){
+            this.renderBooBoo();
+        }, this);
     },
 
     render: function(account, summary, billing){
@@ -50,6 +54,11 @@ fun.views.dashboard = Backbone.View.extend({
     renderBoo: function(){
         'use strict';
         console.log('corporate warfare');
+    },
+
+    renderBooBoo: function(){
+        'use strict';
+        console.log('Welcome to corporate warfare on mars');
     },
 
     renderTodaySummary: function(summary, billing){
