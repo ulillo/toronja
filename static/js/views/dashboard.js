@@ -223,6 +223,9 @@ fun.views.dashboard = Backbone.View.extend({
         console.log(length);
 
         if (length !== undefined || length !== null && length > 0) {
+            
+            // table rows
+
             rows = this.tbody.html('');
 
             // can believe this shit.
@@ -232,6 +235,9 @@ fun.views.dashboard = Backbone.View.extend({
             console.log('this shit he can believe it');
            
             // da fuq dude?
+
+            console.log(datfuq);
+
             for (vonCount; vonCount < 7; ++vonCount) {
 
                 data = _.extend(datfuq, {counter:vonCount});
