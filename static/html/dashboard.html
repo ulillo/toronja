@@ -496,11 +496,32 @@
                             cols="66"></textarea>
                     </div>
                     <div class="col-md-4">
-                        <h4>Disposition:</h4>
+                        <h4><b>Disposition</b></h4>
 
-                        <textarea id="task-comment"
-                            rows="5"
-                            cols="66"></textarea>
+                        <div class="btn-group ">
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                <i class="fa fa-user fa-fw"></i>
+                                <span data-label-placement="" id="reg_company_status"></span> 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <input type="radio" id="company_status_disable" name="company_status" value="1">
+                                    <label for="company_status_disable">disable</label>
+                                </li>
+
+                                <li>
+                                    <input type="radio" id="company_status_active" name="company_status" value="2">
+                                    <label for="company_status_active">active</label>
+                                </li>
+
+                                <li>
+                                    <input type="radio" id="company_status_suspended" name="company_status" value="3">
+                                    <label for="company_status_suspended">suspended</label>
+                                </li>
+                            </ul>
+                        </div>
+                                        
                     </div>
                     <div class="col-md-4">
                         <h4>Transfer:</h4>
