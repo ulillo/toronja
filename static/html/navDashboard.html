@@ -21,12 +21,14 @@
     </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
+    <!--
     <li id="nav-tasks">
         <a href="#tasks" title="<%= translate("tasks") %>">
             <i class="fa fa-plug fa-fw"></i> 
             <%= translate("tasks") %>
         </a>
     </li>
+    -->
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-plus fa-fw"></i>
@@ -76,13 +78,13 @@
                     <%= translate("Settings") %>
                 </a>
             </li>
+            <li>
+                <a href="#logout" title="<%= translate("Exit") %>">
+                    <i class="fa fa-sign-out fa-fw"></i> 
+                    <%= translate("Exit") %>
+                </a>
+            </li>
             <li class="divider"></li>
         </ul>      
-    </li>
-    <li>
-        <a href="#logout" title="<%= translate("Exit") %>">
-            <i class="fa fa-sign-out fa-fw"></i> 
-            <%= translate("Exit") %>
-        </a>
     </li>
 </ul>
