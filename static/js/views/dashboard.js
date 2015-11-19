@@ -149,7 +149,7 @@ fun.views.dashboard = Backbone.View.extend({
     },
 
     renderLatestRecords: function(collection){
-        // Render latesst records
+        // Render latest records
         'use strict';
         var template,
             latestRecords;
@@ -159,6 +159,8 @@ fun.views.dashboard = Backbone.View.extend({
         } else {
             this.collection = 0;
         }
+
+        console.log(collection);
         
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.latestRecords)
