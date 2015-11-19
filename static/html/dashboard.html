@@ -498,20 +498,34 @@
                     <div class="col-md-4">
                         <h4>Disposition</h4>
 
+                        <!--
+
+                        No Answer
+                        Busy
+                        Wrong Number
+                        Left live message
+                        Left Voicemail
+                        Contacted
+                        Set Appointment
+
+
+                         -->
+
+
                         <div class="btn-group ">
                             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                <i class="fa fa-user fa-fw"></i>
-                                <span data-label-placement="" id="reg_company_status"></span>
+                                <i class="fa fa-phone fa-fw"></i>
+                                <span data-label-placement="" id="in_call_status">No Answer</span>
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <input type="radio" id="company_status_disable" name="company_status" value="1">
-                                    <label for="company_status_disable">disable</label>
+                                    <input type="radio" id="call_status_no_answer" name="call_status" value="1">
+                                    <label for="call_status_no_answer">No Answer</label>
                                 </li>
 
                                 <li>
-                                    <input type="radio" id="company_status_active" name="company_status" value="2">
-                                    <label for="company_status_active">active</label>
+                                    <input type="radio" id="call_status_busy" name="call_status" value="2">
+                                    <label for="call_status_busy">Busy</label>
                                 </li>
 
                                 <li>
