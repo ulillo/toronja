@@ -428,6 +428,10 @@ fun.models.Records = Backbone.Collection.extend({
     
     url: function() {
         return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
     }
 });
 
@@ -446,6 +450,10 @@ fun.models.RecordsStart = Backbone.Collection.extend({
         var url = this.urlRoot.replace(fun.conf.startTime, this.start);
         //url = url.replace(fun.conf.startTime, this.start);
         return url;
+    },
+
+    parse: function(response){
+        return response.results;
     }
 });
 
