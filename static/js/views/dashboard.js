@@ -220,8 +220,6 @@ fun.views.dashboard = Backbone.View.extend({
 
         length = this.collection.length;
 
-        console.log(length);
-
         if (length !== undefined || length !== null && length > 0) {
             
             // table rows
@@ -232,12 +230,9 @@ fun.views.dashboard = Backbone.View.extend({
 
             var datfuq = this.collection.at(vonCount).toJSON();
 
+            // da fuq dude?
             console.log('this shit he can believe it');
            
-            // da fuq dude?
-
-            console.log(datfuq);
-
             // Please use _.each instead of this crazy for() < ++ nonsense!.
 
             for (vonCount; vonCount < 7; ++vonCount) {
@@ -296,8 +291,6 @@ fun.views.dashboard = Backbone.View.extend({
 
     incomingCall: function(event){
         'use strict';
-        // nin !
-
         $('#pvtScriptModal').modal('show');
     },
 
