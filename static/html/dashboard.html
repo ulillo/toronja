@@ -498,20 +498,6 @@
                     <div class="col-md-4">
                         <h4>Disposition</h4>
 
-                        <!--
-
-                        No Answer
-                        Busy
-                        Wrong Number
-                        Left live message
-                        Left Voicemail
-                        Contacted
-                        Set Appointment
-
-
-                         -->
-
-
                         <div class="btn-group ">
                             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
                                 <i class="fa fa-phone fa-fw"></i>
@@ -548,17 +534,29 @@
                                     <label for="call_status_contacted">Contacted</label>
                                 </li>
 
-                                
+                                <li>
+                                    <input type="radio" id="call_status_appointment" name="call_status" value="7">
+                                    <label for="call_status_appointment">Set Appointment</label>
+                                </li>
+
                             </ul>
                         </div>
                                         
                     </div>
                     <div class="col-md-4">
-                        <h4>Transfer:</h4>
+                        <h4>Transfer</h4>
 
-                        <textarea id="task-comment"
-                            rows="5"
-                            cols="66"></textarea>
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">/</span>
+                            <input id="cube_name" type="text" class="form-control" placeholder="Weighted Companion Cube.">
+                        </div>
+
+                        <p>
+                            <%= translate("greatCubeNames") %>.
+                        </p>
+
+                            
                     </div>
                 </div>
             </div>
