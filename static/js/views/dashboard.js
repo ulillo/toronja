@@ -238,6 +238,8 @@ fun.views.dashboard = Backbone.View.extend({
 
             console.log(datfuq);
 
+            // Please use _.each instead of this crazy for() < ++ nonsense!.
+
             for (vonCount; vonCount < 7; ++vonCount) {
 
                 data = _.extend(datfuq, {counter:vonCount});
