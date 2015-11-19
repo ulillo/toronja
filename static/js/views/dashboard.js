@@ -159,8 +159,6 @@ fun.views.dashboard = Backbone.View.extend({
         } else {
             this.collection = 0;
         }
-
-        console.log(collection);
         
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.latestRecords)
@@ -222,12 +220,16 @@ fun.views.dashboard = Backbone.View.extend({
 
         length = this.collection.length;
 
+        console.log(length);
+
         if (length !== undefined || length !== null && length > 0) {
             rows = this.tbody.html('');
 
             // can believe this shit.
 
             var datfuq = this.collection.at(vonCount).toJSON();
+
+            console.log('this shit he can believe it');
            
             // da fuq dude?
             for (vonCount; vonCount < 7; ++vonCount) {
