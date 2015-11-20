@@ -591,5 +591,4 @@ fun.strings = {
     goodBye: "Good bye",
     asterisk: "*",
     pound: "#"
-    codeMachine: "Code Machine"
 }
