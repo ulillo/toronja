@@ -67,7 +67,7 @@ fun.models.Upload = Backbone.Model.extend({
         // Post data as FormData object on create to allow file upload
 
         console.log(method);
-        
+
         if(method == 'create'){
             var formData = new FormData();
 
@@ -82,6 +82,10 @@ fun.models.Upload = Backbone.Model.extend({
                 processData: false,
                 contentType: false
             });
+
+            console.log(options);
+            console.log(JSON.stringify(formData));
+
         }
         return Backbone.sync.call(this, method, model, options);
   }
