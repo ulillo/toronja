@@ -212,23 +212,23 @@ fun.views.contacts = Backbone.View.extend({
     uploadCSV: function(event){
         'use strict';
         console.log('send it or wut?');
-        //event.preventDefault();
-        //var view = this,
-        //    directoryName,
-        //    directoryDescription,
-        //    upload;
+        event.preventDefault();
+        var view = this,
+            directoryName,
+            directoryDescription,
+            upload;
         
-        //upload = this.model;
+        upload = this.model;
 
-        //directoryName = this.directoryName.val();
-        //directoryDescription = this.directoryDescription.val();
+        directoryName = this.directoryName.val();
+        directoryDescription = this.directoryDescription.val();
 
-        //upload.set({
-        //    'directory_name': directoryName,
-        //    'directory_description': directoryDescription
-        //});
+        upload.set({
+            'directory_name': directoryName,
+            'directory_description': directoryDescription
+        });
 
-        //upload.save();
+        upload.save();
 
         // Clear the stuff from the inputs ;)
         //view.$('#directory_name').val('');
