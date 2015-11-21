@@ -71,23 +71,25 @@ fun.models.Upload = Backbone.Model.extend({
         if(method == 'create'){
             var formData = new FormData();
 
+            console.log(options);
+
+            options || (options = {});
+            options.contentType = false;
+
             // Loop over model attributes and append to formData
             _.each(model.attributes, function(value, key){
                 formData.append(key, value);
             });
 
-
-            console.log(options);
-
             // Set processData and contentType to false so data is sent as FormData
             _.defaults(options || (options = {}), {
                 data: formData,
                 processData: false,
-                contentType: false,
-                ninTake: false
+                satan: true
             });
 
-            
+
+            console.log(options);
 
         }
         return Backbone.sync(method, model, options);
