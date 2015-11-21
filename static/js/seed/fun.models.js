@@ -80,15 +80,15 @@ fun.models.Upload = Backbone.Model.extend({
             _.defaults(options || (options = {}), {
                 data: formData,
                 processData: false,
-                contentType: false
+                contentType: false,
+                cocaCola: false
             });
 
             console.log(options);
-            console.log(JSON.stringify(formData));
 
         }
-        return Backbone.sync.call(this, method, model, options);
-  }
+        return Backbone.sync(method, model, options);
+    }
 });
 
 
