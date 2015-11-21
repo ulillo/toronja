@@ -76,15 +76,18 @@ fun.models.Upload = Backbone.Model.extend({
                 formData.append(key, value);
             });
 
+
+            console.log(options);
+
             // Set processData and contentType to false so data is sent as FormData
             _.defaults(options || (options = {}), {
                 data: formData,
                 processData: false,
                 contentType: false,
-                cocaCola: false
+                ninTake: false
             });
 
-            console.log(options);
+            
 
         }
         return Backbone.sync(method, model, options);
