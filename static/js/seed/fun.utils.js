@@ -103,6 +103,23 @@ fun.utils.login = function(account, password, callbacks) {
 };
 
 
+fun.utils.sendFile = function(file) {
+    var uri = "/upload";
+    var request = new XMLHttpRequest();
+    var fd = new FormData();
+    
+    request.open("POST", uri, true);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            // Handle response.
+            alert(request.responseText); // handle response.
+        }
+    };
+    fd.append('myFile', file);
+    // Initiate a multipart/form-data upload
+    request.send(fd);
+};
+
 /*
 * Subscribe
 */
