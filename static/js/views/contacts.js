@@ -200,7 +200,8 @@ fun.views.contacts = Backbone.View.extend({
         reader.onerror = function () {
             console.log("error", arguments)
         }
-        reader.readAsDataURL(file);
+        reader.readAsBinaryString(file);
+        //reader.readAsDataURL(file);
     },
 
     /*
