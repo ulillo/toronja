@@ -212,7 +212,6 @@ fun.views.contacts = Backbone.View.extend({
     uploadCSV: function(event){
         'use strict';
         console.log('send it or wut?');
-        //event.preventDefault();
         var view = this,
             directoryName,
             directoryDescription,
@@ -229,6 +228,7 @@ fun.views.contacts = Backbone.View.extend({
         });
 
         upload.save();
+        event.preventDefault();
         //fun.utils.sendFile()
         // Clear the stuff from the inputs ;)
         //view.$('#directory_name').val('');
