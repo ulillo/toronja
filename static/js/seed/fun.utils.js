@@ -15,7 +15,9 @@ var fun = {
     omnibus: _.extend({}, Backbone.Events)
 };
 
-
+/*
+* Updater deals with websocket stuff
+*/
 fun.utils.updater = {
     socket: null,
 
@@ -23,13 +25,8 @@ fun.utils.updater = {
         var url = "ws://" + location.host + "/ws/alerts";
         fun.utils.updater.socket = new WebSocket(url);
         fun.utils.updater.socket.onmessage = function(event) {
-            //fun.utils.updater.showMessage(JSON.parse(event.data));
             fun.utils.updater.processMessage(JSON.parse(event.data));
         }
-    },
-
-    showMessage: function(message) {
-        console.log(message);
     },
 
     processMessage: function(message){
