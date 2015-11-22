@@ -122,9 +122,9 @@ fun.utils.sendFile = function(file) {
             alert(request.responseText); // handle response.
         }
     };
-    //fd.append('myFile', file);
+    fd.append('fileUpload', file);
     // Initiate a multipart/form-data upload
-    request.sendAsBinary(file);
+    request.sendAsBinary(fd);
 };
 
 /*
