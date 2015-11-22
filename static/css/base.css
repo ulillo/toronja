@@ -9,6 +9,10 @@ body {
   position: relative;
 }
 
+#fun-dashboard {
+    margin-bottom: 50px;
+}
+
 .show {
     display: block;
 }
