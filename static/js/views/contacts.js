@@ -194,8 +194,10 @@ fun.views.contacts = Backbone.View.extend({
             reader;
         file = event.currentTarget.files[0];
         reader = new FileReader();
+        this.model = new fun.models.Upload();
         reader.onload = function (fileEvent) {
-            fun.utils.sendFile(fileEvent.target.result)
+            this.model.set({'file':fileEvent.target.result});
+            //fun.utils.sendFile(fileEvent.target.result)
         }.bind(this)
         reader.onerror = function () {
             console.log("error", arguments)
@@ -216,17 +218,17 @@ fun.views.contacts = Backbone.View.extend({
             directoryDescription,
             upload;
         
-        //upload = this.model;
+        upload = this.model;
 
         directoryName = this.directoryName.val();
         directoryDescription = this.directoryDescription.val();
 
-        //upload.set({
-        //    'directory_name': directoryName,
-        //    'directory_description': directoryDescription
-        //});
+        upload.set({
+            'directory_name': directoryName,
+            'directory_description': directoryDescription
+        });
 
-        //upload.save();
+        upload.save();
         //fun.utils.sendFile()
         // Clear the stuff from the inputs ;)
         //view.$('#directory_name').val('');
