@@ -15,16 +15,6 @@ var fun = {
     omnibus: _.extend({}, Backbone.Events)
 };
 
-
-if ( XMLHttpRequest.prototype.sendAsBinary === undefined ) {
-    XMLHttpRequest.prototype.sendAsBinary = function(string) {
-        var bytes = Array.prototype.map.call(string, function(c) {
-            return c.charCodeAt(0) & 0xff;
-        });
-        this.send(new Uint8Array(bytes));
-    };
-}
-
 /*
 * Updater deals with websocket stuff
 */
@@ -124,7 +114,7 @@ fun.utils.sendFile = function(file) {
     };
     fd.append('fileUpload', file);
     // Initiate a multipart/form-data upload
-    request.sendAsBinary(fd);
+    request.send(fd);
 };
 
 /*
