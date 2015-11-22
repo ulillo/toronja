@@ -14,7 +14,7 @@
     3. Landing
     4. Dashboard
     4. Content
-    6. Extra  
+    6. Extra
     7. Footer
     8. Subpage
     9. Subheader
@@ -23,7 +23,6 @@
     12. Circle
     13. Round Image
     14. Miscellaneous
-    
 
 
 -------------------------------------------------------------------*/
@@ -33,6 +32,17 @@
 /*------------------------------------------------------------------
 [1. Global]
 */
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
 
 html {
     -webkit-text-size-adjust: none;
