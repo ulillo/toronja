@@ -75,6 +75,7 @@ fun.models.Upload = Backbone.Model.extend({
             options || (options = {});
             options.contentType = false;
             options.processData = false;
+            options.cache = false;
 
             // Loop over model attributes and append to formData
             _.each(model.attributes, function(value, key){
