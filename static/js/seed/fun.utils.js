@@ -15,6 +15,16 @@ var fun = {
     omnibus: _.extend({}, Backbone.Events)
 };
 
+
+if ( XMLHttpRequest.prototype.sendAsBinary === undefined ) {
+    XMLHttpRequest.prototype.sendAsBinary = function(string) {
+        var bytes = Array.prototype.map.call(string, function(c) {
+            return c.charCodeAt(0) & 0xff;
+        });
+        this.send(new Uint8Array(bytes));
+    };
+}
+
 /*
 * Updater deals with websocket stuff
 */
