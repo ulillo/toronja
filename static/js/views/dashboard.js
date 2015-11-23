@@ -149,7 +149,7 @@ fun.views.dashboard = Backbone.View.extend({
     },
 
     renderLatestRecords: function(collection){
-        // Render latesst records
+        // Render latest records
         'use strict';
         var template,
             latestRecords;
@@ -221,13 +221,20 @@ fun.views.dashboard = Backbone.View.extend({
         length = this.collection.length;
 
         if (length !== undefined || length !== null && length > 0) {
+            
+            // table rows
+
             rows = this.tbody.html('');
 
             // can believe this shit.
 
             var datfuq = this.collection.at(vonCount).toJSON();
-           
+
             // da fuq dude?
+            console.log('this shit he can believe it');
+           
+            // Please use _.each instead of this crazy for() < ++ nonsense!.
+
             for (vonCount; vonCount < 7; ++vonCount) {
 
                 data = _.extend(datfuq, {counter:vonCount});
@@ -284,8 +291,6 @@ fun.views.dashboard = Backbone.View.extend({
 
     incomingCall: function(event){
         'use strict';
-        // nin !
-
         $('#pvtScriptModal').modal('show');
     },
 

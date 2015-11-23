@@ -9,6 +9,10 @@ body {
   position: relative;
 }
 
+#fun-dashboard {
+    margin-bottom: 50px;
+}
+
 .show {
     display: block;
 }
@@ -67,29 +71,26 @@ body {
 
     html, body {
       width: auto !important;
-      overflow-x: hidden !important;
+      /*overflow-x: hidden !important;*/
     }
 
-    html::-webkit-scrollbar {
+    /*html::-webkit-scrollbar {
         display: none;
     }
 
     body::-webkit-scrollbar {
         display: none;
-    }
-    
+    }*/
+
     .landing-text h1 {
         margin-bottom: .65em;
-    
-        font-size: 36px;    
+        font-size: 36px;
         font-weight: 600;
         line-height: 1.5em;
     }
-        
     .landing-text p {
         font-size: 15px;
     }
-    
 }
 
 

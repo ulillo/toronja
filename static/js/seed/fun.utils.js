@@ -15,7 +15,9 @@ var fun = {
     omnibus: _.extend({}, Backbone.Events)
 };
 
-
+/*
+* Updater deals with websocket stuff
+*/
 fun.utils.updater = {
     socket: null,
 
@@ -23,13 +25,8 @@ fun.utils.updater = {
         var url = "ws://" + location.host + "/ws/alerts";
         fun.utils.updater.socket = new WebSocket(url);
         fun.utils.updater.socket.onmessage = function(event) {
-            //fun.utils.updater.showMessage(JSON.parse(event.data));
             fun.utils.updater.processMessage(JSON.parse(event.data));
         }
-    },
-
-    showMessage: function(message) {
-        console.log(message);
     },
 
     processMessage: function(message){
@@ -102,6 +99,23 @@ fun.utils.login = function(account, password, callbacks) {
     });
 };
 
+
+fun.utils.sendFile = function(file) {
+    var uri = "/upload";
+    var request = new XMLHttpRequest();
+    var fd = new FormData();
+    
+    request.open("POST", uri, true);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            // Handle response.
+            alert(request.responseText); // handle response.
+        }
+    };
+    fd.append('fileUpload', file);
+    // Initiate a multipart/form-data upload
+    request.send(fd);
+};
 
 /*
 * Subscribe

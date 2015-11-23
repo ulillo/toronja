@@ -192,18 +192,18 @@ fun.views.contacts = Backbone.View.extend({
         'use strict';
         var file,
             reader;
-        this.model = new fun.models.Upload
         file = event.currentTarget.files[0];
         reader = new FileReader();
+        this.model = new fun.models.Upload();
         reader.onload = function (fileEvent) {
-            this.model.set({
-                'filearg': fileEvent.target.result
-            });
+            this.model.set({'file':fileEvent.target.result});
+            //fun.utils.sendFile(fileEvent.target.result)
         }.bind(this)
         reader.onerror = function () {
             console.log("error", arguments)
         }
-        reader.readAsDataURL(file);
+        reader.readAsBinaryString(file);
+        //reader.readAsDataURL(file);
     },
 
     /*
@@ -211,7 +211,7 @@ fun.views.contacts = Backbone.View.extend({
     */
     uploadCSV: function(event){
         'use strict';
-        event.preventDefault();
+        console.log('send it or wut?');
         var view = this,
             directoryName,
             directoryDescription,
@@ -228,11 +228,12 @@ fun.views.contacts = Backbone.View.extend({
         });
 
         upload.save();
-
+        event.preventDefault();
+        //fun.utils.sendFile()
         // Clear the stuff from the inputs ;)
-        view.$('#directory_name').val('');
-        view.$('#directory_description').val('');
-        view.$('#filearg').val('');
+        //view.$('#directory_name').val('');
+        //view.$('#directory_description').val('');
+        //view.$('#filearg').val('');
     },
 
     /*

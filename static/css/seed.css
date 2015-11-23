@@ -14,7 +14,7 @@
     3. Landing
     4. Dashboard
     4. Content
-    6. Extra  
+    6. Extra
     7. Footer
     8. Subpage
     9. Subheader
@@ -23,7 +23,6 @@
     12. Circle
     13. Round Image
     14. Miscellaneous
-    
 
 
 -------------------------------------------------------------------*/
@@ -42,11 +41,10 @@ body {
     font: 13px/1.7em 'Open Sans';
     background-color: #FFF;
 }
-    
-p { 
-    margin-bottom: 1.7em;
 
-    font: 14px/1.7em 'Open Sans';   
+p {
+    margin-bottom: 1.7em;
+    font: 14px/1.7em 'Open Sans';
 }
 
 ul {

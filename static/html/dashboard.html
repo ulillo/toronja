@@ -82,10 +82,9 @@
                 <hr>
                 <div class="row">
                     <div id="campaign-scriptHere" class="col-md-6">
-                        <h4>Script:</h4>
+                        <h4>Script</h4>
                     </div>
                     <div id="formView" class="col-md-6 hide">
-                        <h4>Form:</h4>
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
@@ -414,7 +413,6 @@
                     <div id="pills" class="col-md-6 show">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Contact:</h4>
                                 <div class="panel panel-default">
                                     <!-- Default panel contents -->
 
@@ -496,39 +494,42 @@
                             cols="66"></textarea>
                     </div>
                     <div class="col-md-4">
-                        <h4><b>Disposition</b></h4>
+                        <h4>Disposition</h4>
 
                         <div class="btn-group ">
                             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                <i class="fa fa-user fa-fw"></i>
-                                <span data-label-placement="" id="reg_company_status"></span> 
-                                <span class="caret"></span>
+                                <i class="fa fa-phone fa-fw"></i>
+                                <span data-label-placement="" id="in_call_status">Wrong Number</span>
                             </button>
                             <ul class="dropdown-menu">
+
                                 <li>
-                                    <input type="radio" id="company_status_disable" name="company_status" value="1">
-                                    <label for="company_status_disable">disable</label>
+                                    <input type="radio" id="call_status_wrong_number" name="call_status" value="1">
+                                    <label for="call_status_wrong_number">Wrong Number</label>
                                 </li>
 
                                 <li>
-                                    <input type="radio" id="company_status_active" name="company_status" value="2">
-                                    <label for="company_status_active">active</label>
+                                    <input type="radio" id="call_status_contacted" name="call_status" value="2">
+                                    <label for="call_status_contacted">Contacted</label>
                                 </li>
 
                                 <li>
-                                    <input type="radio" id="company_status_suspended" name="company_status" value="3">
-                                    <label for="company_status_suspended">suspended</label>
+                                    <input type="radio" id="call_status_appointment" name="call_status" value="3">
+                                    <label for="call_status_appointment">Set Appointment</label>
                                 </li>
+
                             </ul>
                         </div>
                                         
                     </div>
                     <div class="col-md-4">
-                        <h4>Transfer:</h4>
+                        <h4>Transfer</h4>
 
-                        <textarea id="task-comment"
-                            rows="5"
-                            cols="66"></textarea>
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">#</span>
+                            <input id="cube_name" type="text" class="form-control" placeholder="Queue, Account or Phone number">
+                        </div>            
                     </div>
                 </div>
             </div>
